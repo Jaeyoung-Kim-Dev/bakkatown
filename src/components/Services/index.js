@@ -19,23 +19,25 @@ const Services = () => {
       <ServicesWrapper>
         <ServicesCard>
           <ServicesIcon src={Icon1} />
-          <ServicesH2>Reduce expenses</ServicesH2>
+          <ServicesH2>
+            Reduce expenses Reduce expensesRe duce expensesRe duce expe nses
+          </ServicesH2>
           <ServicesP>
-            We help qwoeifjqwoeifjqoweifjqwoefijqwoeifjqwoef...
+            We help qwoeifjqw oeifjqow eifjqwoef ijqwoei fjqwoef...
           </ServicesP>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon2} />
           <ServicesH2>Reduce expenses</ServicesH2>
           <ServicesP>
-            Wee help qwoeifjqwoeifjqoweifjqwoefijqwoeifjqwoef help...
+            Wee help qwoeifjqwoe ifjqoweif jqwoe fijqwoeifjqw oef help...
           </ServicesP>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon3} />
           <ServicesH2>Reduce expenses</ServicesH2>
           <ServicesP>
-            We e help qwoeifjqwoeifjqoweifjqwoefijqwoeifjqwoefhelp...
+            We e help qwoeifjqw oeifjqow eifjq oefijqw oeif jqwoef help...
           </ServicesP>
         </ServicesCard>
       </ServicesWrapper>
