@@ -1,32 +1,46 @@
-import React from 'react'
+import React from 'react';
 import Icon1 from '../../images/svg-1.svg';
 import Icon2 from '../../images/svg-2.svg';
 import Icon3 from '../../images/svg-3.svg';
-import {ServicesContainer, ServicesH1, ServicesWrapper, ServicesCard, ServicesIcon, ServicesH2, ServicesP} from './ServicesElements'
+import {
+  ServicesContainer,
+  ServicesH1,
+  ServicesWrapper,
+  ServicesCard,
+  ServicesIcon,
+  ServicesH2,
+  ServicesP,
+} from './ServicesElements';
 
 const Services = () => {
   return (
-    <ServicesContainer id="services">
+    <ServicesContainer id='services'>
       <ServicesH1>Our Services</ServicesH1>
       <ServicesWrapper>
         <ServicesCard>
-          <ServicesIcon src={Icon1}/>
+          <ServicesIcon src={Icon1} />
           <ServicesH2>Reduce expenses</ServicesH2>
-          <ServicesP>We help qwoeifjqwoeifjqoweifjqwoefijqwoeifjqwoef...</ServicesP>
+          <ServicesP>
+            We help qwoeifjqwoeifjqoweifjqwoefijqwoeifjqwoef...
+          </ServicesP>
         </ServicesCard>
         <ServicesCard>
-          <ServicesIcon src={Icon2}/>
+          <ServicesIcon src={Icon2} />
           <ServicesH2>Reduce expenses</ServicesH2>
-          <ServicesP>Wee help qwoeifjqwoeifjqoweifjqwoefijqwoeifjqwoef help...</ServicesP>
+          <ServicesP>
+            Wee help qwoeifjqwoeifjqoweifjqwoefijqwoeifjqwoef help...
+          </ServicesP>
         </ServicesCard>
         <ServicesCard>
-          <ServicesIcon src={Icon3}/>
+          <ServicesIcon src={Icon3} />
           <ServicesH2>Reduce expenses</ServicesH2>
-          <ServicesP>We e help qwoeifjqwoeifjqoweifjqwoefijqwoeifjqwoefhelp...</ServicesP>
+          <ServicesP>
+            We e help qwoeifjqwoeifjqoweifjqwoefijqwoeifjqwoefhelp...
+          </ServicesP>
         </ServicesCard>
       </ServicesWrapper>
     </ServicesContainer>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

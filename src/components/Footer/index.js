@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   FooterContainer,
   FooterWrap,
@@ -7,7 +7,20 @@ import {
   FooterLinkItems,
   FooterLinkTitle,
   FooterLink,
-} from "./FooterElements";
+  SocialMedia,
+  SocialMediaWrap,
+  SocialLogo,
+  WebsiteRights,
+  SocialIcons,
+  SocialIconLink,
+} from './FooterElements';
+import {
+  FaInstagram,
+  FaFacebook,
+  FaYoutube,
+  FaTwitter,
+  FaLinkedin,
+} from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -51,6 +64,39 @@ const Footer = () => {
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinkContainer>
+        <SocialMedia>
+          <SocialMediaWrap>
+            <SocialLogo to='/'>JK</SocialLogo>
+            <WebsiteRights>
+              JK Copyright {new Date().getFullYear()} All rights reserved.
+            </WebsiteRights>
+            <SocialIcons>
+              <SocialIconLink href='/' target='_blank' arial-label='Facebook'>
+                <FaFacebook />
+              </SocialIconLink>
+              <SocialIconLink href='/' target='_blank' arial-label='Instagram'>
+                <FaInstagram />
+              </SocialIconLink>
+              <SocialIconLink
+                href='www.youtube.com'
+                target='_blank'
+                arial-label='Youtube'
+              >
+                <FaYoutube />
+              </SocialIconLink>
+              <SocialIconLink href='/' target='_blank' arial-label='Twitter'>
+                <FaTwitter />
+              </SocialIconLink>
+              <SocialIconLink
+                href='https://www.linkedin.com/in/jaeyoung-kim-dev/'
+                target='_blank'
+                arial-label='Linkedin'
+              >
+                <FaLinkedin />
+              </SocialIconLink>
+            </SocialIcons>
+          </SocialMediaWrap>
+        </SocialMedia>
       </FooterWrap>
     </FooterContainer>
   );
