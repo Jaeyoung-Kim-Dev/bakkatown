@@ -1,4 +1,5 @@
 import React from 'react';
+import { animateScroll as scroll } from 'react-scroll';
 import {
   FooterContainer,
   FooterWrap,
@@ -23,6 +24,10 @@ import {
 } from 'react-icons/fa';
 
 const Footer = () => {
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <FooterContainer>
       <FooterWrap>
@@ -66,7 +71,9 @@ const Footer = () => {
         </FooterLinkContainer>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to='/'>JK</SocialLogo>
+            <SocialLogo to='/' onClick={toggleHome}>
+              JK
+            </SocialLogo>
             <WebsiteRights>
               JK Copyright {new Date().getFullYear()} All rights reserved.
             </WebsiteRights>
