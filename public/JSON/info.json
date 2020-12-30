@@ -16,35 +16,19 @@
     "darkText": false
   },
   {
-    "id": "discover",
-    "lightBg": true,
-    "lightText": false,
-    "lightTextDesc": false,
-    "topLine": "Premium Bank",
-    "headline": "Unlimited ...",
-    "description": "Get access to our exclusive app ..",
-    "buttonLabel": "Button1",
-    "imgStart": true,
-    "img": "svg-2.svg",
-    "alt": "Car",
-    "dark": false,
-    "primary": false,
-    "darkText": true
-  },
-  {
-    "id": "signup",
-    "lightBg": true,
-    "lightText": false,
-    "lightTextDesc": false,
+    "id": "discovery",
+    "lightBg": false,
+    "lightText": true,
+    "lightTextDesc": true,
     "topLine": "Premium Bank",
     "headline": "Unlimited ...",
     "description": "Get access to our exclusive app ..",
     "buttonLabel": "Button1",
     "imgStart": false,
-    "img": "svg-3.svg",
+    "img": "svg-1.svg",
     "alt": "Car",
-    "dark": false,
-    "primary": false,
-    "darkText": true
+    "dark": true,
+    "primary": true,
+    "darkText": false
   }
 ]
