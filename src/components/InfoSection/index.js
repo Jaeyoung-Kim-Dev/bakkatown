@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '../ButtonElements';
 import {
   InfoContainer,
@@ -15,58 +15,53 @@ import {
   Img,
 } from './InfoElements';
 
-const InfoSection = ({
-  lightBg,
-  id,
-  imgStart,
-  topLine,
-  lightText,
-  headline,
-  darkText,
-  description,
-  buttonLabel,
-  img,
-  alt,
-  primary,
-  dark,
-  dark2,
-}) => {
+const InfoSection = ({ jsonFile }) => {
+  const [infos, setInfos] = useState([]);
+
+  useEffect(() => {
+    fetch(`./JSON/info/${jsonFile}.json`)
+      .then((response) => response.json())
+      .then((result) => setInfos(result));
+  }, []);
+
   return (
     <>
-      <InfoContainer lightBg={lightBg} id={id}>
-        <InfoWrapper>
-          <InfoRow imgStart={imgStart}>
-            <Column1>
-              <TextWrapper>
-                <TopLine>{topLine}</TopLine>
-                <Heading lightText={lightText}>{headline}</Heading>
-                <Subtitle darkText={darkText}>{description}</Subtitle>
-                <BtnWrap>
-                  <Button
-                    to='home'
-                    smooth='true'
-                    duration={500}
-                    spy='true'
-                    exact='true'
-                    offset={-80}
-                    primary={primary ? 1 : 0}
-                    dark={dark ? 1 : 0}
-                    dark2={dark2 ? 1 : 0}
-                  >
-                    {buttonLabel}
-                  </Button>
-                </BtnWrap>
-              </TextWrapper>
-            </Column1>
-            <Column2>
-              <ImgWrap>
-                {/* <Img src={img} alt={alt} /> */}
-                <Img src={img} alt={alt} />
-              </ImgWrap>
-            </Column2>
-          </InfoRow>
-        </InfoWrapper>
-      </InfoContainer>
+      {infos.map((info) => (
+        <InfoContainer dark={info.dark} id={info.id}>
+          <InfoWrapper>
+            <InfoRow imgStart={info.imgStart}>
+              <Column1>
+                <TextWrapper>
+                  <TopLine>{info.topLine}</TopLine>
+                  <Heading lightText={info.dark}>{info.headline}</Heading>
+                  <Subtitle darkText={info.dark}>{info.description}</Subtitle>
+                  <BtnWrap>
+                    <Button
+                      to='home'
+                      smooth='true'
+                      duration={500}
+                      spy='true'
+                      exact='true'
+                      offset={-80}
+                      primary={info.primary ? 1 : 0}
+                      dark={info.dark ? 1 : 0}
+                      dark2={info.dark2 ? 1 : 0}
+                    >
+                      {info.buttonLabel}
+                    </Button>
+                  </BtnWrap>
+                </TextWrapper>
+              </Column1>
+              <Column2>
+                <ImgWrap>
+                  {/* <Img src={img} alt={alt} /> */}
+                  <Img src={info.img} alt={info.alt} />
+                </ImgWrap>
+              </Column2>
+            </InfoRow>
+          </InfoWrapper>
+        </InfoContainer>
+      ))}
     </>
   );
 };
