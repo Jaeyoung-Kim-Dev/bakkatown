@@ -1,18 +1,18 @@
 [
   {
     "id": "discovery",
-    "lightBg": false,
-    "lightText": true,
-    "lightTextDesc": true,
+    "lightBg": true,
+    "lightText": false,
+    "lightTextDesc": false,
     "topLine": "Premium Bank",
     "headline": "Unlimited ...",
     "description": "Get access to our exclusive app ..",
     "buttonLabel": "Button1",
-    "imgStart": false,
+    "imgStart": true,
     "img": "svg-1.svg",
     "alt": "Car",
-    "dark": true,
-    "primary": true,
-    "darkText": false
+    "dark": false,
+    "primary": false,
+    "darkText": true
   }
 ]

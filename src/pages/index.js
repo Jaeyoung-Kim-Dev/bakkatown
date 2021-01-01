@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSection';
-import {
-  homeObjOne,
-  homeObjTwo,
-  homeObjThree,
-} from '../components/InfoSection/Data';
 import Services from '../components/Services';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
@@ -23,10 +18,10 @@ const Home = () => {
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <HeroSection />
-      <InfoSection {...homeObjOne} />
-      <InfoSection {...homeObjTwo} />
+      <InfoSection jsonFile={'about'} dark={true} imgStart={false} />
+      <InfoSection jsonFile={'discovery'} dark={false} imgStart={false} />
       <Services />
-      <InfoSection {...homeObjThree} />
+      <InfoSection jsonFile={'signup'} dark={true} imgStart={false} />
       <Footer />
     </>
   );
