@@ -19,9 +19,9 @@ const Home = () => {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <HeroSection />
       <InfoSection jsonFile={'about'} dark={true} imgStart={false} />
-      <InfoSection jsonFile={'discovery'} dark={false} imgStart={false} />
+      <InfoSection jsonFile={'discover'} dark={false} imgStart={true} />
       <Services />
-      <InfoSection jsonFile={'signup'} dark={true} imgStart={false} />
+      <InfoSection jsonFile={'signup'} dark={false} imgStart={false} />
       <Footer />
     </>
   );

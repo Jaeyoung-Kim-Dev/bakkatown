@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '../ButtonElements';
+// import { Button } from '../ButtonElements';
 import {
   InfoContainer,
   InfoWrapper,
@@ -10,31 +10,32 @@ import {
   Heading,
   Subtitle,
   BtnWrap,
+  Button,
   Column2,
   ImgWrap,
   Img,
 } from './InfoElements';
 
-const InfoSection = ({ jsonFile }) => {
+const InfoSection = ({ jsonFile, dark, imgStart }) => {
   const [infos, setInfos] = useState([]);
 
   useEffect(() => {
     fetch(`./JSON/info/${jsonFile}.json`)
       .then((response) => response.json())
       .then((result) => setInfos(result));
-  }, []);
+  }, [jsonFile]);
 
   return (
     <>
       {infos.map((info) => (
-        <InfoContainer dark={info.dark} id={info.id}>
+        <InfoContainer isDark={dark} id={info.id} key={info.id}>
           <InfoWrapper>
-            <InfoRow imgStart={info.imgStart}>
+            <InfoRow imgStart={imgStart}>
               <Column1>
                 <TextWrapper>
                   <TopLine>{info.topLine}</TopLine>
-                  <Heading lightText={info.dark}>{info.headline}</Heading>
-                  <Subtitle darkText={info.dark}>{info.description}</Subtitle>
+                  <Heading isDark={dark}>{info.headline}</Heading>
+                  <Subtitle isDark={dark}>{info.description}</Subtitle>
                   <BtnWrap>
                     <Button
                       to='home'
@@ -43,9 +44,7 @@ const InfoSection = ({ jsonFile }) => {
                       spy='true'
                       exact='true'
                       offset={-80}
-                      primary={info.primary ? 1 : 0}
-                      dark={info.dark ? 1 : 0}
-                      dark2={info.dark2 ? 1 : 0}
+                      isDark={dark}
                     >
                       {info.buttonLabel}
                     </Button>
@@ -55,7 +54,7 @@ const InfoSection = ({ jsonFile }) => {
               <Column2>
                 <ImgWrap>
                   {/* <Img src={img} alt={alt} /> */}
-                  <Img src={info.img} alt={info.alt} />
+                  <Img src={info.img} alt={info.alt} isDark={dark} />
                 </ImgWrap>
               </Column2>
             </InfoRow>

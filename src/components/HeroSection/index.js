@@ -7,11 +7,12 @@ import {
   HeroH1,
   HeroP,
   HeroBtnWrapper,
+  Button,
   ArrowForward,
   ArrowRight,
 } from './HeroElements';
 import Video from '../../videos/video.mp4';
-import { Button } from '../ButtonElements';
+// import { Button } from '../ButtonElements';
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -29,13 +30,7 @@ const HeroSection = () => {
         <HeroH1>I build WebSites</HeroH1>
         <HeroP>My name is Jaeyoung Kim</HeroP>
         <HeroBtnWrapper>
-          <Button
-            to='signup'
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
-            primary='true'
-            dark='true'
-          >
+          <Button to='signup' onMouseEnter={onHover} onMouseLeave={onHover}>
             Contact{hover ? <ArrowForward /> : <ArrowRight />}
           </Button>
         </HeroBtnWrapper>
