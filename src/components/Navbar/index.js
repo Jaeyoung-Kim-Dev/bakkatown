@@ -16,9 +16,10 @@ import { IconContext } from 'react-icons/lib';
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
+  const [navItems, setNavItems] = useState([]);
 
   const changeNav = () => {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= document.documentElement.clientHeight * 0.1) {
       setScrollNav(true);
     } else {
       setScrollNav(false);
@@ -27,6 +28,9 @@ const Navbar = ({ toggle }) => {
 
   useEffect(() => {
     window.addEventListener('scroll', changeNav);
+    fetch(`./JSON/navItems.json`)
+      .then((response) => response.json())
+      .then((result) => setNavItems(result));
   }, []);
 
   const toggleHome = () => {
@@ -45,54 +49,20 @@ const Navbar = ({ toggle }) => {
               <FaBars />
             </MobileIcon>
             <NavMenu>
-              <NavItem>
-                <NavLinks
-                  to='about'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  About
-                </NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks
-                  to='discover'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Discover
-                </NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks
-                  to='services'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Services
-                </NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks
-                  to='signup'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Sign Up
-                </NavLinks>
-              </NavItem>
+              {navItems.map((navItem, key) => (
+                <NavItem key={key}>
+                  <NavLinks
+                    to={navItem.itemName.toLowerCase().replace(' ', '')}
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact='true'
+                    offset={-document.documentElement.clientHeight * 0.1}
+                  >
+                    {navItem.itemName}
+                  </NavLinks>
+                </NavItem>
+              ))}
             </NavMenu>
             <NavBtn>
               <NavBtnLink
@@ -101,7 +71,7 @@ const Navbar = ({ toggle }) => {
                 duration={500}
                 spy={true}
                 exact='true'
-                offset={-80}
+                offset={document.documentElement.clientHeight * 0.1}
               >
                 Sign In
               </NavBtnLink>

@@ -43,7 +43,7 @@ const InfoSection = ({ jsonFile, dark, imgStart }) => {
                       duration={500}
                       spy='true'
                       exact='true'
-                      offset={-80}
+                      offset={-document.documentElement.clientHeight * 0.1}
                       isDark={dark}
                     >
                       {info.buttonLabel}
