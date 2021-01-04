@@ -72,7 +72,7 @@ const Footer = () => {
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo to='/' onClick={toggleHome}>
-              JK
+              Bakkatown Belize
             </SocialLogo>
             <WebsiteRights>
               JK Copyright {new Date().getFullYear()} All rights reserved.

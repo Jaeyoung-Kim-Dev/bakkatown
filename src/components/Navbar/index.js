@@ -43,7 +43,7 @@ const Navbar = ({ toggle }) => {
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
             <Navlogo to='/' onClick={toggleHome}>
-              Jaeyoung Kim
+              Bakkatown Belize
             </Navlogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
@@ -73,7 +73,7 @@ const Navbar = ({ toggle }) => {
                 exact='true'
                 offset={document.documentElement.clientHeight * 0.1}
               >
-                Sign In
+                BOOK
               </NavBtnLink>
             </NavBtn>
           </NavbarContainer>
