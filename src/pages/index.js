@@ -18,10 +18,14 @@ const Home = () => {
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <HeroSection />
-      <InfoSection jsonFile={'about'} dark={true} imgStart={false} />
-      <InfoSection jsonFile={'discover'} dark={false} imgStart={true} />
+      <InfoSection jsonFile={'overview'} dark={true} imgStart={false} />
+      <InfoSection jsonFile={'map'} dark={false} imgStart={true} />
+      <InfoSection jsonFile={'gallery'} dark={true} imgStart={false} />
+      <InfoSection jsonFile={'rates'} dark={false} imgStart={true} />
+      <InfoSection jsonFile={'availability'} dark={true} imgStart={false} />
+      <InfoSection jsonFile={'reviews'} dark={false} imgStart={true} />
       <Services />
-      <InfoSection jsonFile={'signup'} dark={false} imgStart={false} />
+      <InfoSection jsonFile={'contact'} dark={false} imgStart={false} />
       <Footer />
     </>
   );

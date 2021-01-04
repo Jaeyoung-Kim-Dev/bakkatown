@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import {
   HeroContainer,
-  HeroBg,
-  VideoBg,
   HeroContent,
   HeroH1,
-  HeroP,
+  HeroImg,
   HeroBtnWrapper,
   Button,
   ArrowForward,
   ArrowRight,
+  Slider,
 } from './HeroElements';
-import Video from '../../videos/video.mp4';
-// import { Button } from '../ButtonElements';
+import heroImage from '../../images/heroImage.jpg';
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -22,20 +20,20 @@ const HeroSection = () => {
   };
 
   return (
-    <HeroContainer id='home'>
-      <HeroBg>
-        <VideoBg playsInline autoPlay loop muted src={Video} type='video/mp4' />
-      </HeroBg>
-      <HeroContent>
-        <HeroH1>I build WebSites</HeroH1>
-        <HeroP>My name is Jaeyoung Kim</HeroP>
-        <HeroBtnWrapper>
-          <Button to='signup' onMouseEnter={onHover} onMouseLeave={onHover}>
-            Contact{hover ? <ArrowForward /> : <ArrowRight />}
-          </Button>
-        </HeroBtnWrapper>
-      </HeroContent>
-    </HeroContainer>
+    <>
+      <HeroContainer id='home'>
+        <HeroContent>
+          <HeroH1>Bakkatown Belize</HeroH1>
+          <HeroImg src={heroImage}></HeroImg>
+          <HeroBtnWrapper>
+            <Button to='signup' onMouseEnter={onHover} onMouseLeave={onHover}>
+              BOOK{hover ? <ArrowForward /> : <ArrowRight />}
+            </Button>
+          </HeroBtnWrapper>
+        </HeroContent>
+      </HeroContainer>
+      <Slider></Slider>
+    </>
   );
 };
 

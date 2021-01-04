@@ -1,6 +1,9 @@
 [
-  { "itemName": "About" },
-  { "itemName": "Discover" },
-  { "itemName": "Services" },
-  { "itemName": "Sign Up" }
+  { "itemName": "Overview" },
+  { "itemName": "Map" },
+  { "itemName": "Gallery" },
+  { "itemName": "Rates" },
+  { "itemName": "Availability" },
+  { "itemName": "Reviews" },
+  { "itemName": "Contact" }
 ]
