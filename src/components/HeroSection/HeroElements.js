@@ -29,7 +29,7 @@ export const HeroContent = styled.div`
 export const HeroH1 = styled.h1`
   position: absolute;
   top: 85%;
-  left: 10%;
+  left: 20%;
   font-size: 5vw;
   transform: translate(-20%, -70%);
   color: white;
@@ -94,6 +94,6 @@ export const Slider = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to left, #ba7453, #d1a984);
+  background: linear-gradient(to left, #003754, #006994);
   z-index: -1;
 `;

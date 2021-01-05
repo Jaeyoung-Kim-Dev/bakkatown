@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSection';
 import InfoSection2 from '../components/InfoSection2';
-import Services from '../components/Services';
+import Rooms from '../components/Rooms';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
@@ -25,7 +25,7 @@ const Home = () => {
       <InfoSection jsonFile={'rates'} dark={false} imgStart={true} />
       <InfoSection jsonFile={'availability'} dark={true} imgStart={false} />
       <InfoSection jsonFile={'reviews'} dark={false} imgStart={true} />
-      <Services />
+      <Rooms />
       <InfoSection jsonFile={'contact'} dark={false} imgStart={false} />
       <Footer />
     </>
