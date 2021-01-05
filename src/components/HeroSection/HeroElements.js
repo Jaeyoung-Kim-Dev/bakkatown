@@ -11,7 +11,7 @@ export const HeroContainer = styled.div`
 
 export const HeroContent = styled.div`
   height: 60%;
-  width: 100%;
+  width: 80%;
   position: absolute;
 
   &::after {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSection';
+import InfoSection2 from '../components/InfoSection2';
 import Services from '../components/Services';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
@@ -19,7 +20,7 @@ const Home = () => {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <HeroSection />
       <InfoSection jsonFile={'overview'} dark={true} imgStart={false} />
-      <InfoSection jsonFile={'map'} dark={false} imgStart={true} />
+      <InfoSection2 jsonFile={'map'} dark={false} imgStart={true} />
       <InfoSection jsonFile={'gallery'} dark={true} imgStart={false} />
       <InfoSection jsonFile={'rates'} dark={false} imgStart={true} />
       <InfoSection jsonFile={'availability'} dark={true} imgStart={false} />

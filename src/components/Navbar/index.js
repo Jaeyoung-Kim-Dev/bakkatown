@@ -45,9 +45,7 @@ const Navbar = ({ toggle }) => {
             <Navlogo to='/' onClick={toggleHome}>
               Bakkatown Belize
             </Navlogo>
-            <MobileIcon onClick={toggle}>
-              <FaBars />
-            </MobileIcon>
+
             <NavMenu>
               {navItems.map((navItem, key) => (
                 <NavItem key={key}>
@@ -76,6 +74,9 @@ const Navbar = ({ toggle }) => {
                 BOOK
               </NavBtnLink>
             </NavBtn>
+            <MobileIcon onClick={toggle}>
+              <FaBars />
+            </MobileIcon>
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { Button } from '../ButtonElements';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import {
   InfoContainer,
   InfoWrapper,
@@ -16,7 +16,7 @@ import {
   Img,
 } from './InfoElements';
 
-const InfoSection = ({ jsonFile, dark, imgStart }) => {
+const InfoSection2 = ({ jsonFile, dark, imgStart }) => {
   const [infos, setInfos] = useState([]);
 
   useEffect(() => {
@@ -24,6 +24,28 @@ const InfoSection = ({ jsonFile, dark, imgStart }) => {
       .then((response) => response.json())
       .then((result) => setInfos(result));
   }, [jsonFile]);
+
+  const containerStyle = {
+    width: '400px',
+    height: '400px',
+  };
+
+  const center = {
+    lat: 17.9124717,
+    lng: -87.9790681,
+  };
+
+  const [map, setMap] = React.useState(null);
+
+  const onLoad = React.useCallback(function callback(map) {
+    const bounds = new window.google.maps.LatLngBounds();
+    map.fitBounds(bounds);
+    setMap(map);
+  }, []);
+
+  const onUnmount = React.useCallback(function callback(map) {
+    setMap(null);
+  }, []);
 
   return (
     <>
@@ -53,7 +75,16 @@ const InfoSection = ({ jsonFile, dark, imgStart }) => {
               </Column1>
               <Column2>
                 <ImgWrap>
-                  <Img src={info.img} alt={info.alt} isDark={dark} />
+                  <LoadScript>
+                    {/* googleMapsApiKey='YOUR_API_KEY'> */}
+                    <GoogleMap
+                      mapContainerStyle={containerStyle}
+                      center={center}
+                      zoom={10}
+                      onLoad={onLoad}
+                      onUnmount={onUnmount}
+                    ></GoogleMap>
+                  </LoadScript>
                 </ImgWrap>
               </Column2>
             </InfoRow>
@@ -64,4 +95,4 @@ const InfoSection = ({ jsonFile, dark, imgStart }) => {
   );
 };
 
-export default InfoSection;
+export default InfoSection2;
