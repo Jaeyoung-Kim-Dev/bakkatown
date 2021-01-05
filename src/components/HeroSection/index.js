@@ -31,7 +31,7 @@ const HeroSection = () => {
         ease: Power2.easeInOut,
       })
       .from(slider, 1.2, { x: '-100%', ease: Power2.easeInOut }, '-=1.2');
-  });
+  }, []);
 
   return (
     <>
