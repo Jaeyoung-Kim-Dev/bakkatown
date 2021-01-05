@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { TimelineMax, Power2 } from 'gsap';
 import {
   HeroContainer,
   HeroContent,
@@ -19,10 +20,23 @@ const HeroSection = () => {
     setHover(!hover);
   };
 
+  let tl = new TimelineMax();
+  let content = useRef(null);
+  let slider = useRef(null);
+
+  useEffect(() => {
+    tl.from(content, 1, { height: '0%', ease: Power2.easeInOut })
+      .from(content, 1.2, {
+        width: '100%',
+        ease: Power2.easeInOut,
+      })
+      .from(slider, 1.2, { x: '-100%', ease: Power2.easeInOut }, '-=1.2');
+  });
+
   return (
     <>
       <HeroContainer id='home'>
-        <HeroContent>
+        <HeroContent ref={(el) => (content = el)}>
           <HeroH1>Bakkatown Belize</HeroH1>
           <HeroImg src={heroImage}></HeroImg>
           <HeroBtnWrapper>
@@ -32,7 +46,7 @@ const HeroSection = () => {
           </HeroBtnWrapper>
         </HeroContent>
       </HeroContainer>
-      <Slider></Slider>
+      <Slider ref={(el) => (slider = el)}></Slider>
     </>
   );
 };

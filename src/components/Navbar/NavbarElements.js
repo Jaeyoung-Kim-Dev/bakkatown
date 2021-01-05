@@ -91,7 +91,7 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 480px) {
     display: none;
   }
 `;
@@ -100,6 +100,7 @@ export const NavBtnLink = styled(LinkR)`
   border-radius: 50px;
   background: #01bf71;
   white-space: nowrap;
+
   padding: 10px 22px;
   color: #010606;
   font-size: 16px;
