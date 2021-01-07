@@ -21,22 +21,27 @@ const HeroSection = () => {
   };
 
   let tl = new TimelineMax();
-  let content = useRef(null);
-  let slider = useRef(null);
+  let content = useRef();
+  let slider = useRef();
 
   useEffect(() => {
-    tl.from(content, 1, { height: '0%', ease: Power2.easeInOut })
-      .from(content, 1.2, {
+    tl.from(content.current, 1, { height: '0%', ease: Power2.easeInOut })
+      .from(content.current, 1.2, {
         width: '100%',
         ease: Power2.easeInOut,
       })
-      .from(slider, 1.2, { x: '-100%', ease: Power2.easeInOut }, '-=1.2');
+      .from(
+        slider.current,
+        1.2,
+        { x: '-100%', ease: Power2.easeInOut },
+        '-=1.2'
+      );
   }, []);
 
   return (
     <>
       <HeroContainer id='home'>
-        <HeroContent ref={(el) => (content = el)}>
+        <HeroContent ref={content}>
           <HeroH1>Bakkatown Belize</HeroH1>
           <HeroImg src={heroImage}></HeroImg>
           <HeroBtnWrapper>
@@ -46,7 +51,7 @@ const HeroSection = () => {
           </HeroBtnWrapper>
         </HeroContent>
       </HeroContainer>
-      <Slider ref={(el) => (slider = el)}></Slider>
+      <Slider ref={slider}></Slider>
     </>
   );
 };
