@@ -16,6 +16,7 @@ export const HeroContent = styled.div`
 
   &::after {
     content: '';
+    border-radius: 10px;
     background: black;
     width: 100%;
     height: 100%;
@@ -23,6 +24,7 @@ export const HeroContent = styled.div`
     left: 0;
     top: 0;
     opacity: 0.3;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 1);
   }
 `;
 
@@ -39,7 +41,9 @@ export const HeroH1 = styled.h1`
 export const HeroImg = styled.img`
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   object-fit: cover;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
 `;
 
 export const HeroP = styled.p`
@@ -71,6 +75,7 @@ export const Button = styled(Link)`
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -94,6 +99,6 @@ export const Slider = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to left, #003754, #006994);
+  background: linear-gradient(to left, #0178bd, #368dc5);
   z-index: -1;
 `;
