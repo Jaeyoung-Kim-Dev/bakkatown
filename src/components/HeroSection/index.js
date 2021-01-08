@@ -23,6 +23,7 @@ const HeroSection = () => {
   let tl = new TimelineMax();
   let content = useRef();
   let slider = useRef();
+  let button = useRef();
 
   useEffect(() => {
     tl.from(content.current, 1, { height: '0%', ease: Power2.easeInOut })
@@ -35,7 +36,8 @@ const HeroSection = () => {
         1.2,
         { x: '-100%', ease: Power2.easeInOut },
         '-=1.2'
-      );
+      )
+      .from(button.current, 1.2, { display: 'none' }, '-=1.2');
   }, []);
 
   return (
@@ -45,7 +47,12 @@ const HeroSection = () => {
           <HeroH1>Bakkatown Belize</HeroH1>
           <HeroImg src={heroImage}></HeroImg>
           <HeroBtnWrapper>
-            <Button to='signup' onMouseEnter={onHover} onMouseLeave={onHover}>
+            <Button
+              ref={button}
+              to='*'
+              onMouseEnter={onHover}
+              onMouseLeave={onHover}
+            >
               BOOK{hover ? <ArrowForward /> : <ArrowRight />}
             </Button>
           </HeroBtnWrapper>
