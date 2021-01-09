@@ -24,22 +24,30 @@ const HeroSection = () => {
   let slider = useRef();
 
   useEffect(() => {
-    let tl = new gsap.timeline();
-    tl.from(content.current, {
+    gsap.from(content.current, {
       duration: 1,
+      autoAlpha: 0,
+      ease: 'none',
       height: '0%',
-      ease: Power2.easeInOut,
-    })
-      .from(content.current, {
-        duration: 1.2,
-        width: '100%',
-        ease: Power2.easeInOut,
-      })
-      .from(
-        slider.current,
-        { duration: 1.2, x: '-100%', ease: Power2.easeInOut },
-        '-=1.2'
-      );
+      delay: Power2.easeInOut,
+    });
+    // let tl = new TimelineMax();
+    // gsap
+    //   .from(content.current, {
+    //     duration: 1,
+    //     height: '0%',
+    //     ease: Power2.easeInOut,
+    //   })
+    //   .from(content.current, {
+    //     duration: 1.2,
+    //     width: '100%',
+    //     ease: Power2.easeInOut,
+    //   })
+    //   .from(
+    //     slider.current,
+    //     { duration: 1.2, x: '-100%', ease: Power2.easeInOut },
+    //     '-=1.2'
+    //   );
   }, []);
 
   return (

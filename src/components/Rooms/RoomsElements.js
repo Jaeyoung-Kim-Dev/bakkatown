@@ -55,7 +55,7 @@ export const RoomsCard = styled.div`
   }
 `;
 
-export const RoomsIcon = styled.img`
+export const RoomsImage = styled.img`
   height: 160px;
   width: 160px;
   margin-bottom: 10px;
