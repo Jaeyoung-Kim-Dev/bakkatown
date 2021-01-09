@@ -34,17 +34,17 @@ const InfoSection2 = ({ jsonFile, dark, imgStart }) => {
     lng: -87.9790681,
   };
 
-  const [map, setMap] = React.useState(null);
+  // const [map, setMap] = React.useState(null);
 
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map);
-  }, []);
+  // const onLoad = React.useCallback(function callback(map) {
+  //   const bounds = new window.google.maps.LatLngBounds();
+  //   map.fitBounds(bounds);
+  //   setMap(map);
+  // }, []);
 
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null);
-  }, []);
+  // const onUnmount = React.useCallback(function callback(map) {
+  //   setMap(null);
+  // }, []);
 
   return (
     <>
@@ -80,8 +80,8 @@ const InfoSection2 = ({ jsonFile, dark, imgStart }) => {
                       mapContainerStyle={containerStyle}
                       center={center}
                       zoom={10}
-                      onLoad={onLoad}
-                      onUnmount={onUnmount}
+                      // onLoad={onLoad}
+                      // onUnmount={onUnmount}
                     ></GoogleMap>
                   </LoadScript>
                 </ImgWrap>
