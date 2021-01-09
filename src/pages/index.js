@@ -19,13 +19,13 @@ const Home = () => {
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <HeroSection />
+      <Rooms />
       <InfoSection jsonFile={'overview'} dark={true} imgStart={false} />
       <InfoSection2 jsonFile={'map'} dark={false} imgStart={true} />
       <InfoSection jsonFile={'gallery'} dark={true} imgStart={false} />
       <InfoSection jsonFile={'rates'} dark={false} imgStart={true} />
       <InfoSection jsonFile={'availability'} dark={true} imgStart={false} />
       <InfoSection jsonFile={'reviews'} dark={false} imgStart={true} />
-      <Rooms />
       <InfoSection jsonFile={'contact'} dark={false} imgStart={false} />
       <Footer />
     </>

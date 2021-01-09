@@ -22,13 +22,16 @@ const Rooms = () => {
       .then((result) => setRooms(result));
   }, []);
 
+  const photo = require('./King_Studio_Apartment.jpg');
+  console.log(photo);
+
   return (
     <RoomsContainer id='services'>
       <RoomsH1>Our Rooms</RoomsH1>
       <RoomsWrapper>
         {rooms.map((room, key) => (
           <RoomsCard key={key}>
-            <RoomsIcon src={RoomKing} alt={room.name} />
+            <img src={photo} alt={room.name} />
             <RoomsH2>{room.name}</RoomsH2>
             <RoomsP>{room.people}</RoomsP>
           </RoomsCard>
