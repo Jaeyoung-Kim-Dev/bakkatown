@@ -26,23 +26,21 @@ const HeroSection = () => {
 
   useEffect(() => {
     let tl = new TimelineMax();
-    tl.from(content.current, { height: '0%', ease: Power2.easeInOut })
+    tl.from(content.current, {
+      duration: 1,
+      height: '0%',
+      ease: Power2.easeInOut,
+    })
       .from(content.current, {
+        duration: 1.2,
         width: '100%',
         ease: Power2.easeInOut,
       })
       .from(
         slider.current,
-
-        { x: '-100%', ease: Power2.easeInOut },
+        { duration: 1.2, x: '-100%', ease: Power2.easeInOut },
         '-=1.2'
-      )
-      .from(
-        button.current,
-
-        { height: '0%', ease: Power2.easeInOut },
-        '-=1.2'
-      ); //TODO: button animation doesn't work
+      );
   }, []);
 
   return (
@@ -52,12 +50,7 @@ const HeroSection = () => {
           <HeroH1>Bakkatown Belize</HeroH1>
           <HeroImg src={heroImage}></HeroImg>
           <HeroBtnWrapper>
-            <Button
-              ref={button}
-              to='*'
-              onMouseEnter={onHover}
-              onMouseLeave={onHover}
-            >
+            <Button to='*' onMouseEnter={onHover} onMouseLeave={onHover}>
               BOOK{hover ? <ArrowForward /> : <ArrowRight />}
             </Button>
           </HeroBtnWrapper>
