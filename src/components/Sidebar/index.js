@@ -37,7 +37,7 @@ const Sidebar = ({ isOpen, toggle }) => {
           ))}
         </SidebarMenu>
         <SideBtnWrap>
-          <SidebarRoute>Sign In</SidebarRoute>
+          <SidebarRoute>BOOK</SidebarRoute>
         </SideBtnWrap>
       </SidebarWrapper>
     </SidebarContainer>

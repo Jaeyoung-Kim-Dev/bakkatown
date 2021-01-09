@@ -13,7 +13,6 @@ import {
   Button,
   Column2,
   ImgWrap,
-  Img,
 } from './InfoElements';
 
 const InfoSection2 = ({ jsonFile, dark, imgStart }) => {

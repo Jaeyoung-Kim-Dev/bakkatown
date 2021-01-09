@@ -1,17 +1,17 @@
 [
   {
-    "icon": "svg1",
-    "title": "1Reduce expenses Reduce",
-    "text": "1We help qwoeifjqw oeifjqow ..."
+    "name": "King Studio Apartment",
+    "photo": "RoomKing",
+    "people": "1We help qwoeifjqw oeifjqow ..."
   },
   {
-    "icon": "svg1",
-    "title": "2Reduce expenses Reduce ",
-    "text": "2We help qwoeifjqw oeifjqow ."
+    "name": "Queen Apartments",
+    "photo": "RoomQueen",
+    "people": "1We help qwoeifjqw oeifjqow ..."
   },
   {
-    "icon": "svg1",
-    "title": "3Reduce expenses Reduce",
-    "text": "ow eifjqwoef ijqwoei fjqwoef..."
+    "name": "Tralapa Casita by the Sea",
+    "photo": "RoomTralapa",
+    "people": "1We help qwoeifjqw oeifjqow ..."
   }
 ]
