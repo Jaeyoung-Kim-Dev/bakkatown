@@ -26,20 +26,20 @@ const HeroSection = () => {
 
   useEffect(() => {
     let tl = new TimelineMax();
-    tl.from(content.current, 1, { height: '0%', ease: Power2.easeInOut })
-      .from(content.current, 1.2, {
+    tl.from(content.current, { height: '0%', ease: Power2.easeInOut })
+      .from(content.current, {
         width: '100%',
         ease: Power2.easeInOut,
       })
       .from(
         slider.current,
-        1.2,
+
         { x: '-100%', ease: Power2.easeInOut },
         '-=1.2'
       )
       .from(
         button.current,
-        1.2,
+
         { height: '0%', ease: Power2.easeInOut },
         '-=1.2'
       ); //TODO: button animation doesn't work
