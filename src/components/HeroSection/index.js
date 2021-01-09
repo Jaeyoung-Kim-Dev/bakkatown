@@ -22,7 +22,6 @@ const HeroSection = () => {
 
   let content = useRef();
   let slider = useRef();
-  let button = useRef();
 
   useEffect(() => {
     let tl = new TimelineMax();
