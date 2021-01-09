@@ -62,7 +62,7 @@ export const HeroBtnWrapper = styled.div`
 `;
 
 export const Button = styled(Link)`
-  border-radius: 50px;
+  border-radius: 25px;
   background: #01bf71;
   white-space: nowrap;
   padding: 12px 30px;

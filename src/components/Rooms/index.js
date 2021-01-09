@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Icon1 from '../../images/svg1.svg';
-// import Icon2 from '../../images/svg-2.svg';
-// import Icon3 from '../../images/svg-3.svg';
+import RoomKing from '../../images/rooms/King_Studio_Apartment.jpg';
+import RoomQueen from '../../images/rooms/Queen_Apartments.jpg';
+import RoomTralapa from '../../images/rooms/Tralapa_Casita_by_the_Sea.jpg';
+import RoomHostel from '../../images/rooms/Hostel_Mixed_Dorm_Room.jpg';
 import {
   RoomsContainer,
   RoomsH1,
@@ -27,12 +28,9 @@ const Rooms = () => {
       <RoomsWrapper>
         {rooms.map((room, key) => (
           <RoomsCard key={key}>
-            <RoomsIcon
-              src={require(`../../images/${room.icon}.svg`)}
-              alt={room.title}
-            />
-            <RoomsH2>{room.title}</RoomsH2>
-            <RoomsP>{room.text}</RoomsP>
+            <RoomsIcon src={RoomKing} alt={room.name} />
+            <RoomsH2>{room.name}</RoomsH2>
+            <RoomsP>{room.people}</RoomsP>
           </RoomsCard>
         ))}
       </RoomsWrapper>
