@@ -20,12 +20,12 @@ const HeroSection = () => {
     setHover(!hover);
   };
 
-  let tl = new TimelineMax();
   let content = useRef();
   let slider = useRef();
   let button = useRef();
 
   useEffect(() => {
+    let tl = new TimelineMax();
     tl.from(content.current, 1, { height: '0%', ease: Power2.easeInOut })
       .from(content.current, 1.2, {
         width: '100%',
