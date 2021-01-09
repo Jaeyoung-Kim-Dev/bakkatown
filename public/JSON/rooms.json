@@ -1,17 +1,17 @@
 [
   {
     "name": "King Studio Apartment",
-    "photo": "RoomKing",
+    "image": "King_Studio_Apartment",
     "people": "1We help qwoeifjqw oeifjqow ..."
   },
   {
     "name": "Queen Apartments",
-    "photo": "RoomQueen",
+    "image": "Queen_Apartments",
     "people": "1We help qwoeifjqw oeifjqow ..."
   },
   {
     "name": "Tralapa Casita by the Sea",
-    "photo": "RoomTralapa",
+    "image": "Tralapa_Casita_by_the_Sea",
     "people": "1We help qwoeifjqw oeifjqow ..."
   }
 ]

@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import RoomKing from '../../images/rooms/King_Studio_Apartment.jpg';
-// import RoomQueen from '../../images/rooms/Queen_Apartments.jpg';
-// import RoomTralapa from '../../images/rooms/Tralapa_Casita_by_the_Sea.jpg';
-// import RoomHostel from '../../images/rooms/Hostel_Mixed_Dorm_Room.jpg';
 import {
   RoomsContainer,
   RoomsH1,
   RoomsWrapper,
   RoomsCard,
-  RoomsIcon,
+  RoomsImage,
   RoomsH2,
   RoomsP,
 } from './RoomsElements';
@@ -22,16 +18,17 @@ const Rooms = () => {
       .then((result) => setRooms(result));
   }, []);
 
-  const photo = require('./King_Studio_Apartment.jpg');
-  console.log(photo);
-
   return (
     <RoomsContainer id='services'>
       <RoomsH1>Our Rooms</RoomsH1>
       <RoomsWrapper>
         {rooms.map((room, key) => (
           <RoomsCard key={key}>
-            <img src={photo} alt={room.name} />
+            <RoomsImage
+              src={require(`../../images/rooms/${room.image}.jpg`)?.default}
+              alt={room.name}
+            />
+            {/* ?.default is temporary because of react-scripts v4.0.1's bug */}
             <RoomsH2>{room.name}</RoomsH2>
             <RoomsP>{room.people}</RoomsP>
           </RoomsCard>
