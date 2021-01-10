@@ -52,7 +52,11 @@ const InfoSection = ({ jsonFile, dark, imgStart }) => {
               </Column1>
               <Column2>
                 <ImgWrap>
-                  <Img src={info.img} alt={info.alt} isDark={dark} />
+                  <Img
+                    src={require(`../../images/${info.img}`)?.default}
+                    alt={info.alt}
+                    isDark={dark}
+                  />
                 </ImgWrap>
               </Column2>
             </InfoRow>
