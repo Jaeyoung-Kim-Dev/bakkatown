@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import Overview from '../components/sections/indexOverview';
-import InfoSection from '../components/InfoSection';
-import InfoSection2 from '../components/InfoSection2';
+import Map from '../components/sections/indexMap';
+import Gallery from '../components/sections/indexGallery';
+import Rates from '../components/sections/indexRates';
+import Availability from '../components/sections/indexAvailability';
+import Reviews from '../components/sections/indexReviews';
+import Contact from '../components/sections/indexContact';
 import Rooms from '../components/Rooms';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
@@ -21,13 +25,14 @@ const Home = () => {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <HeroSection />
       {/* <InfoSection jsonFile={'overview'} dark={true} imgStart={false} /> */}
-      <InfoSection2 jsonFile={'map'} dark={false} imgStart={true} />
-      <InfoSection jsonFile={'gallery'} dark={true} imgStart={false} />
-      <InfoSection jsonFile={'rates'} dark={false} imgStart={true} />
-      <InfoSection jsonFile={'availability'} dark={true} imgStart={false} />
-      <InfoSection jsonFile={'reviews'} dark={false} imgStart={true} />
+      <Overview dark={true} imgStart={false} />
+      <Map dark={false} imgStart={true} />
+      <Gallery dark={true} imgStart={false} />
+      <Rates dark={false} imgStart={true} />
+      <Availability dark={true} imgStart={false} />
+      <Reviews dark={false} imgStart={true} />
       <Rooms />
-      <InfoSection jsonFile={'contact'} dark={false} imgStart={false} />
+      <Contact dark={false} imgStart={false} />
       <Footer />
     </>
   );
