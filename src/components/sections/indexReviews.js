@@ -22,25 +22,18 @@ const Reviews = ({ dark, imgStart }) => {
           <Column1>
             <TextWrapper>
               <TopLine>reviews</TopLine>
-              <Heading isDark={dark}>What is BAKKATOWN?</Heading>
+              <Heading isDark={dark}>What do you think?</Heading>
               <Subtitle isDark={dark}>
-                BAKKATOWN is Back of Town. <br />
-                This is where the local working people live. <br />
-                Tourists stay in the high end properties on the reef side.
-                <br /> The lagoon is on the back of San Pedro Town, where the
-                island is only 4 blocks wide in town.
+                There are no reviews for this house.
+                <br /> Be the first to add one.
               </Subtitle>
               <BtnWrap>
                 <ButtonS
-                  to='home'
-                  smooth='true'
-                  duration={500}
-                  spy='true'
-                  exact='true'
+                  to='*'
                   offset={-document.documentElement.clientHeight * 0.1}
                   isDark={dark}
                 >
-                  More..
+                  Add a review
                 </ButtonS>
               </BtnWrap>
             </TextWrapper>
