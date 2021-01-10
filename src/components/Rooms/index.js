@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { BiUser, BiBed, BiBath, BiWifi } from 'react-icons/bi';
+import { RiParkingBoxLine } from 'react-icons/ri';
 import {
   RoomsContainer,
   RoomsH1,
@@ -30,7 +32,17 @@ const Rooms = () => {
             />
             {/* ?.default is temporary because of react-scripts v4.0.1's bug */}
             <RoomsH2>{room.name}</RoomsH2>
-            <RoomsP>{room.people}</RoomsP>
+            <RoomsP>
+              <BiUser />
+              {room.people}
+              <BiBed />
+              {room.bed}
+              <BiBath />
+              {room.bath}
+              {room.sqf}SQF
+              {room.wifi && <BiWifi />}
+              {room.parking && <RiParkingBoxLine />}
+            </RoomsP>
           </RoomsCard>
         ))}
       </RoomsWrapper>
