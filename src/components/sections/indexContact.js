@@ -1,3 +1,4 @@
+import { FiPhone, FiMail } from 'react-icons/fi';
 import {
   InfoContainer,
   InfoWrapper,
@@ -22,25 +23,22 @@ const Contact = ({ dark, imgStart }) => {
           <Column1>
             <TextWrapper>
               <TopLine>contact</TopLine>
-              <Heading isDark={dark}>What is BAKKATOWN?</Heading>
+              <Heading isDark={dark}>BAKKATOWN BELIZE</Heading>
               <Subtitle isDark={dark}>
-                BAKKATOWN is Back of Town. <br />
-                This is where the local working people live. <br />
-                Tourists stay in the high end properties on the reef side.
-                <br /> The lagoon is on the back of San Pedro Town, where the
-                island is only 4 blocks wide in town.
+                <FiMail style={{ marginRight: '15px' }} />
+                Bakkatown@gmail.com
+              </Subtitle>
+              <Subtitle isDark={dark}>
+                <FiPhone style={{ marginRight: '15px' }} />
+                +5016140034
               </Subtitle>
               <BtnWrap>
                 <ButtonS
-                  to='home'
-                  smooth='true'
-                  duration={500}
-                  spy='true'
-                  exact='true'
+                  to='*'
                   offset={-document.documentElement.clientHeight * 0.1}
                   isDark={dark}
                 >
-                  More..
+                  Leave a Message
                 </ButtonS>
               </BtnWrap>
             </TextWrapper>
