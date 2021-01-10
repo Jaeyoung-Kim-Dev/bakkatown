@@ -21,7 +21,7 @@ const Reviews = ({ dark, imgStart }) => {
         <InfoRow imgStart={imgStart}>
           <Column1>
             <TextWrapper>
-              <TopLine>overview</TopLine>
+              <TopLine>reviews</TopLine>
               <Heading isDark={dark}>What is BAKKATOWN?</Heading>
               <Subtitle isDark={dark}>
                 BAKKATOWN is Back of Town. <br />
