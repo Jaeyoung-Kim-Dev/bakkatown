@@ -1,11 +1,11 @@
 [
   {
     "id": "availability",
-    "topLine": "Premium Bank",
-    "headline": "Unlimited ...",
+    "topLine": "availability",
+    "headline": "Availability",
     "description": "Get access to our exclusive app ..",
     "buttonLabel": "Button1",
     "img": "img4.jpg",
-    "alt": "Car"
+    "alt": "availability"
   }
 ]
