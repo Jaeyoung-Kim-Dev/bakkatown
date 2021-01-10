@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
+import { Link as LinkS } from 'react-scroll';
 
 const backgroundDark = '#010606';
 const backgroundLight = '#f9f9f9';
@@ -102,7 +102,28 @@ export const BtnWrap = styled.div`
   justify-content: flex-start;
 `;
 
-export const Button = styled(Link)`
+export const ButtonS = styled(LinkS)`
+  border-radius: 50px;
+  background: ${({ isDark }) => (isDark ? btnBgDark : btnBgLight)};
+  white-space: nowrap;
+  padding: 12px 30px;
+  color: ${({ isDark }) => (isDark ? btnTxtDark : btnTxtLight)};
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: ${({ isDark }) => (isDark ? btnBgHoverDark : btnBgHoverLight)};
+  }
+`;
+
+export const ButtonA = styled.a`
   border-radius: 50px;
   background: ${({ isDark }) => (isDark ? btnBgDark : btnBgLight)};
   white-space: nowrap;
