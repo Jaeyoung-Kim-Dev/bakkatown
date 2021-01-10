@@ -46,7 +46,10 @@ const HeroSection = () => {
     <>
       <HeroContainer id='home'>
         <HeroContent ref={content}>
-          <HeroH1>Bakkatown Belize</HeroH1>
+          <HeroH1>
+            BAKKATOWN
+            <br /> BELIZE
+          </HeroH1>
           <HeroImg src={heroImage}></HeroImg>
           <HeroBtnWrapper>
             <Button to='*' onMouseEnter={onHover} onMouseLeave={onHover}>

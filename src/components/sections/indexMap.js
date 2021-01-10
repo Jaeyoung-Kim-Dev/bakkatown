@@ -32,7 +32,7 @@ const Map = ({ dark, imgStart }) => {
           <Column1>
             <TextWrapper>
               <TopLine>map</TopLine>
-              <Heading isDark={dark}>Where is?</Heading>
+              <Heading isDark={dark}>Address</Heading>
               <Subtitle isDark={dark}>
                 Bakkatown , San Pedro, 111111, Belize
               </Subtitle>

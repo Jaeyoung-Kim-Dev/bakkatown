@@ -32,7 +32,7 @@ export const HeroH1 = styled.h1`
   position: absolute;
   top: 85%;
   left: 20%;
-  font-size: 5vw;
+  font-size: 4vw;
   transform: translate(-20%, -70%);
   color: white;
   z-index: 3;

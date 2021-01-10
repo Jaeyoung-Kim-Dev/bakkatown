@@ -21,7 +21,7 @@ const Availability = ({ dark, imgStart }) => {
         <InfoRow imgStart={imgStart}>
           <Column1>
             <TextWrapper>
-              <TopLine>overview</TopLine>
+              <TopLine>availability</TopLine>
               <Heading isDark={dark}>What is BAKKATOWN?</Heading>
               <Subtitle isDark={dark}>
                 BAKKATOWN is Back of Town. <br />
@@ -48,7 +48,7 @@ const Availability = ({ dark, imgStart }) => {
           <Column2>
             <ImgWrap>
               <Img
-                src={require(`../../images/img1.jpg`)?.default}
+                src={require(`../../images/img4.jpg`)?.default}
                 alt={'overview'}
                 isDark={dark}
               />
