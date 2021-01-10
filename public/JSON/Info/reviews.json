@@ -1,11 +1,11 @@
 [
   {
     "id": "reviews",
-    "topLine": "Premium Bank",
-    "headline": "Unlimited ...",
+    "topLine": "reviews",
+    "headline": "Reviews",
     "description": "Get access to our exclusive app ..",
     "buttonLabel": "Button1",
     "img": "img1.jpg",
-    "alt": "Car"
+    "alt": "reviews"
   }
 ]

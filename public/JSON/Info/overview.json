@@ -1,11 +1,11 @@
 [
   {
     "id": "overview",
-    "topLine": "Premium Bank",
-    "headline": "Unlimited ...",
-    "description": "Get access to our exclusive app ..",
-    "buttonLabel": "Button1",
+    "topLine": "overview",
+    "headline": "What is BAKKATOWN?",
+    "description": "BAKKATOWN is Back of Town. This is where the local working people live. Tourists stay in the high end properties on the reef side. The lagoon is on the back of San Pedro Town, where the island is only 4 blocks wide in town.",
+    "buttonLabel": "More..",
     "img": "img1.jpg",
-    "alt": "Car"
+    "alt": "overview"
   }
 ]

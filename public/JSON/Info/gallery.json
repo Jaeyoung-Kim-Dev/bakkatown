@@ -1,11 +1,11 @@
 [
   {
     "id": "gallery",
-    "topLine": "Premium Bank",
-    "headline": "Unlimited ...",
-    "description": "Get access to our exclusive app ..",
-    "buttonLabel": "Button1",
+    "topLine": "gallery",
+    "headline": "Gallery",
+    "description": "Phtos will be displayed here.",
+    "buttonLabel": "More..",
     "img": "img2.jpg",
-    "alt": "Car"
+    "alt": "gallery"
   }
 ]
