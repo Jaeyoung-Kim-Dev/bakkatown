@@ -34,6 +34,11 @@ export const InfoWrapper = styled.div`
   margin-left: auto;
   padding: 0 24px;
   justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    height: 850px;
+  } ;
 `;
 
 export const InfoRow = styled.div`
@@ -153,8 +158,13 @@ export const ImgWrap = styled.div`
 
 export const Img = styled.img`
   width: 100%;
+  max-height: 70vh;
   margin: 0 0 5px 0;
   padding-right: 0;
   border-radius: 10px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+
+  @media screen and (max-width: 768px) {
+    max-height: 50vh;
+  } ;
 `;

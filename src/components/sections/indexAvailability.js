@@ -15,13 +15,15 @@ import {
 } from './sectionElements';
 
 const Availability = ({ dark, imgStart }) => {
+  const id = 'availability';
+
   return (
-    <InfoContainer isDark={dark} id={'availability'}>
+    <InfoContainer isDark={dark} id={id}>
       <InfoWrapper>
         <InfoRow imgStart={imgStart}>
           <Column1>
             <TextWrapper>
-              <TopLine>availability</TopLine>
+              <TopLine>{id}</TopLine>
               <Heading isDark={dark}>What is BAKKATOWN?</Heading>
               <Subtitle isDark={dark}>
                 BAKKATOWN is Back of Town. <br />
@@ -48,8 +50,8 @@ const Availability = ({ dark, imgStart }) => {
           <Column2>
             <ImgWrap>
               <Img
-                src={require(`../../images/img4.jpg`)?.default}
-                alt={'overview'}
+                src={require(`../../images/${id}.jpg`)?.default}
+                alt={id}
                 isDark={dark}
               />
             </ImgWrap>

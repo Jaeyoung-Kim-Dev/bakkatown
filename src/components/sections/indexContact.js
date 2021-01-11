@@ -16,17 +16,19 @@ import {
 } from './sectionElements';
 
 const Contact = ({ dark, imgStart }) => {
+  const id = 'contact';
+
   return (
-    <InfoContainer isDark={dark} id={'contact'}>
+    <InfoContainer isDark={dark} id={id}>
       <InfoWrapper>
         <InfoRow imgStart={imgStart}>
           <Column1>
             <TextWrapper>
-              <TopLine>contact</TopLine>
+              <TopLine>{id}</TopLine>
               <Heading isDark={dark}>BAKKATOWN BELIZE</Heading>
               <Subtitle isDark={dark}>
                 <FiMail style={{ marginRight: '15px' }} />
-                Bakkatown@gmail.com
+                bakkatown@gmail.com
               </Subtitle>
               <Subtitle isDark={dark}>
                 <FiPhone style={{ marginRight: '15px' }} />
@@ -46,8 +48,8 @@ const Contact = ({ dark, imgStart }) => {
           <Column2>
             <ImgWrap>
               <Img
-                src={require(`../../images/img2.jpg`)?.default}
-                alt={'overview'}
+                src={require(`../../images/${id}.jpg`)?.default}
+                alt={id}
                 isDark={dark}
               />
             </ImgWrap>

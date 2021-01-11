@@ -16,8 +16,8 @@ import {
 
 const Map = ({ dark, imgStart }) => {
   const containerStyle = {
-    width: '400px',
-    height: '400px',
+    width: '100%',
+    height: '50vh',
   };
 
   const center = {
