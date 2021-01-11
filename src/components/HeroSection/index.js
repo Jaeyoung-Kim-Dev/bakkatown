@@ -11,7 +11,8 @@ import {
   ArrowRight,
   Slider,
 } from './HeroElements';
-import heroImage from '../../images/heroImage.jpg';
+import heroImageH from '../../images/heroImage.jpg';
+import heroImageV from '../../images/contact.jpg';
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -41,6 +42,13 @@ const HeroSection = () => {
         '-=1.2'
       );
   }, []);
+
+  let heroImage;
+  if (
+    document.documentElement.clientHeight < document.documentElement.clientWidth
+  ) {
+    heroImage = heroImageH;
+  } else heroImage = heroImageV;
 
   return (
     <>

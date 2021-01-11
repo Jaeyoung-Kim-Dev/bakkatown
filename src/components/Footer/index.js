@@ -34,7 +34,7 @@ const Footer = () => {
         <FooterLinkContainer>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>About Me</FooterLinkTitle>
+              <FooterLinkTitle>Get to Know Us</FooterLinkTitle>
               <FooterLink to='/signin'>How it works</FooterLink>
               <FooterLink to='/signin'>Testimonials</FooterLink>
               <FooterLink to='/signin'>Careers</FooterLink>
@@ -42,7 +42,7 @@ const Footer = () => {
               <FooterLink to='/signin'>Terms of Services</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle>About Me</FooterLinkTitle>
+              <FooterLinkTitle>Stay Here</FooterLinkTitle>
               <FooterLink to='/signin'>How it works</FooterLink>
               <FooterLink to='/signin'>Testimonials</FooterLink>
               <FooterLink to='/signin'>Careers</FooterLink>
@@ -52,7 +52,7 @@ const Footer = () => {
           </FooterLinksWrapper>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>About Me</FooterLinkTitle>
+              <FooterLinkTitle>Let Us Help You</FooterLinkTitle>
               <FooterLink to='/signin'>How it works</FooterLink>
               <FooterLink to='/signin'>Testimonials</FooterLink>
               <FooterLink to='/signin'>Careers</FooterLink>
@@ -60,7 +60,7 @@ const Footer = () => {
               <FooterLink to='/signin'>Terms of Services</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle>About Me</FooterLinkTitle>
+              <FooterLinkTitle>Social Media</FooterLinkTitle>
               <FooterLink to='/signin'>How it works</FooterLink>
               <FooterLink to='/signin'>Testimonials</FooterLink>
               <FooterLink to='/signin'>Careers</FooterLink>
