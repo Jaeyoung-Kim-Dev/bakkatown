@@ -11,8 +11,6 @@ import {
   ArrowRight,
   Slider,
 } from './HeroElements';
-import heroImageH from '../../images/heroImage.jpg';
-import heroImageV from '../../images/contact.jpg';
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -47,8 +45,8 @@ const HeroSection = () => {
   if (
     document.documentElement.clientHeight < document.documentElement.clientWidth
   ) {
-    heroImage = heroImageH;
-  } else heroImage = heroImageV;
+    heroImage = require(`../../images/heroImageH.jpg`)?.default;
+  } else heroImage = require(`../../images/heroImageV.jpg`)?.default;
 
   return (
     <>
