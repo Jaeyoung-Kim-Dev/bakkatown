@@ -9,6 +9,10 @@ import {
   RoomsImage,
   RoomsH2,
   RoomsP,
+  BtnWrap,
+  Button,
+  RoomSpecs,
+  RoomSpecList,
 } from './RoomsElements';
 
 const Rooms = () => {
@@ -26,23 +30,48 @@ const Rooms = () => {
       <RoomsWrapper>
         {rooms.map((room, key) => (
           <RoomsCard key={key}>
+            <RoomsH2>{room.name}</RoomsH2>
             <RoomsImage
               src={require(`../../images/rooms/${room.image}.jpg`)?.default}
               alt={room.name}
             />
             {/* ?.default is temporary because of react-scripts v4.0.1's bug */}
-            <RoomsH2>{room.name}</RoomsH2>
+
+            <RoomSpecs>
+              <RoomSpecList>
+                <BiUser />
+                {room.people}
+              </RoomSpecList>
+              <RoomSpecList>
+                <BiBed />
+                {room.bed}
+              </RoomSpecList>
+              <RoomSpecList>
+                <BiBath />
+                {room.bath}
+              </RoomSpecList>
+              <RoomSpecList>
+                {room.sqf}
+                <span style={{ fontSize: '0.7rem' }}>SQF</span>
+              </RoomSpecList>
+              {room.wifi && (
+                <RoomSpecList>
+                  <BiWifi />
+                </RoomSpecList>
+              )}
+              {room.parking && (
+                <RoomSpecList>
+                  <RiParkingBoxLine />
+                </RoomSpecList>
+              )}
+            </RoomSpecs>
             <RoomsP>
-              <BiUser />
-              {room.people}
-              <BiBed />
-              {room.bed}
-              <BiBath />
-              {room.bath}
-              {room.sqf}SQF
-              {room.wifi && <BiWifi />}
-              {room.parking && <RiParkingBoxLine />}
+              From <span style={{ fontSize: '2rem' }}>${room.price}</span> Per
+              Night
             </RoomsP>
+            <BtnWrap>
+              <Button>More Info</Button>
+            </BtnWrap>
           </RoomsCard>
         ))}
       </RoomsWrapper>

@@ -1,4 +1,19 @@
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
+
+// const backgroundDark = '#010606';
+// const backgroundLight = '#f9f9f9';
+// const topLine = '#01bf71';
+// const headingDark = '#f7f8fa';
+// const headingLight = '#010606';
+// const subtitleDark = '#fff';
+// const subtitleLight = '#010606';
+const btnBgDark = '#01BF71';
+const btnBgLight = '#010606';
+const btnTxtDark = '#010606';
+const btnTxtLight = '#fff';
+const btnBgHoverDark = '#fff';
+const btnBgHoverLight = '#01BF71';
 
 export const RoomsContainer = styled.div`
   min-height: 90vh;
@@ -9,11 +24,11 @@ export const RoomsContainer = styled.div`
   background: #010606;
 
   @media screen and (max-width: 1400px) {
-    height: 850px;
+    height: 1100px;
   }
 
   @media screen and (max-width: 750px) {
-    height: 1400px;
+    height: 1950px;
   }
 `;
 
@@ -43,7 +58,7 @@ export const RoomsCard = styled.div`
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
-  max-height: 340px;
+  max-height: 500px;
   padding: 30px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
@@ -57,8 +72,10 @@ export const RoomsCard = styled.div`
 
 export const RoomsImage = styled.img`
   height: 160px;
-
+  margin-top: 10px;
   margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
 `;
 
 export const RoomsH1 = styled.h1`
@@ -72,13 +89,58 @@ export const RoomsH1 = styled.h1`
 `;
 
 export const RoomsH2 = styled.h2`
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 10px;
 `;
 
 export const RoomsP = styled.p`
   font-size: 1rem;
+  /* text-align: center; */
+  /* align-items: center; */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 40px;
+  word-spacing: 5px;
+`;
+
+export const BtnWrap = styled.div`
   display: flex;
-  text-align: center;
+  justify-content: flex-start;
+`;
+
+export const Button = styled(Link)`
+  border-radius: 50px;
+  background: ${({ isDark }) => (isDark ? btnBgDark : btnBgLight)};
+  white-space: nowrap;
+  padding: 12px 30px;
+  color: ${({ isDark }) => (isDark ? btnTxtDark : btnTxtLight)};
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: ${({ isDark }) => (isDark ? btnBgHoverDark : btnBgHoverLight)};
+  }
+`;
+
+export const RoomSpecs = styled.ul`
+  display: flex;
+  width: 100%;
+  /* align-items: center; */
+  /* list-style: none; */
+  /* text-align: center; */
+  justify-content: space-between;
+`;
+
+export const RoomSpecList = styled.li`
+  font-size: 1rem;
+  height: 40px;
+  display: flex;
   align-items: center;
 `;

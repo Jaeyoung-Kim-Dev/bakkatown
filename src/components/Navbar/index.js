@@ -45,7 +45,6 @@ const Navbar = ({ toggle }) => {
             <Navlogo to='/' onClick={toggleHome}>
               Bakkatown Belize
             </Navlogo>
-
             <NavMenu>
               {navItems.map((navItem, key) => (
                 <NavItem key={key}>

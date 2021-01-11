@@ -15,13 +15,15 @@ import {
 } from './sectionElements';
 
 const Overview = ({ dark, imgStart }) => {
+  const id = 'overview';
+
   return (
-    <InfoContainer isDark={dark} id={'overview'}>
+    <InfoContainer isDark={dark} id={id}>
       <InfoWrapper>
         <InfoRow imgStart={imgStart}>
           <Column1>
             <TextWrapper>
-              <TopLine>overview</TopLine>
+              <TopLine>{id}</TopLine>
               <Heading isDark={dark}>What is BAKKATOWN?</Heading>
               <Subtitle isDark={dark}>
                 BAKKATOWN is Back of Town. <br />
@@ -44,8 +46,8 @@ const Overview = ({ dark, imgStart }) => {
           <Column2>
             <ImgWrap>
               <Img
-                src={require(`../../images/img1.jpg`)?.default}
-                alt={'overview'}
+                src={require(`../../images/${id}.jpg`)?.default}
+                alt={id}
                 isDark={dark}
               />
             </ImgWrap>
