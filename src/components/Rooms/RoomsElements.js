@@ -22,13 +22,12 @@ export const RoomsContainer = styled.div`
   justify-content: center;
   align-items: center;
   background: #010606;
+  padding-top: 30px;
 
   @media screen and (max-width: 1400px) {
-    height: 1100px;
-  }
-
-  @media screen and (max-width: 750px) {
-    height: 1950px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: auto;
   }
 `;
 

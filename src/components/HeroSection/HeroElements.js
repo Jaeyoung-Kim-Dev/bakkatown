@@ -36,6 +36,10 @@ export const HeroH1 = styled.h1`
   transform: translate(-20%, -70%);
   color: white;
   z-index: 3;
+
+  @media screen and (max-width: 768px) {
+    font-size: 6vw;
+  }
 `;
 
 export const HeroImg = styled.img`

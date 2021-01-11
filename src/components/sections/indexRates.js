@@ -24,13 +24,20 @@ const Rates = ({ dark, imgStart }) => {
           <Column1>
             <TextWrapper>
               <TopLine>{id}</TopLine>
-              <Heading isDark={dark}>What is BAKKATOWN?</Heading>
+              <Heading isDark={dark}>Local Rates</Heading>
               <Subtitle isDark={dark}>
-                BAKKATOWN is Back of Town. <br />
-                This is where the local working people live. <br />
-                Tourists stay in the high end properties on the reef side.
-                <br /> The lagoon is on the back of San Pedro Town, where the
-                island is only 4 blocks wide in town.
+                <span style={{ fontWeight: 'bold' }}>Rates Table here...</span>
+                <br /> <br />
+                <span style={{ fontWeight: 'bold' }}>POLICIES:</span> <br />
+                <span style={{ fontWeight: 'bold' }}>Payment Schedule:</span>
+                <br /> 50% due at time of booking. <br />
+                Remaining balance due 7 days before arrival. <br />
+                <span style={{ fontWeight: 'bold' }}>Cancellation Policy:</span>
+                <br />
+                All paid prepayments are non-refundable.
+                <br />
+                <span style={{ fontWeight: 'bold' }}>Damage deposit:</span>
+                <br /> No damage deposit is due.
               </Subtitle>
               <BtnWrap>
                 <ButtonS

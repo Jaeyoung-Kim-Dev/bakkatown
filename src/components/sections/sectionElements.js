@@ -3,7 +3,7 @@ import { Link as LinkS } from 'react-scroll';
 
 const backgroundDark = '#010606';
 const backgroundLight = '#f9f9f9';
-const topLine = '#01bf71';
+const topLine = '#01BF71';
 const headingDark = '#f7f8fa';
 const headingLight = '#010606';
 const subtitleDark = '#fff';
@@ -37,7 +37,7 @@ export const InfoWrapper = styled.div`
   align-items: center;
 
   @media screen and (max-width: 768px) {
-    height: 850px;
+    height: auto;
   } ;
 `;
 
@@ -70,6 +70,7 @@ export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60px;
+  justify-content: center;
 `;
 
 export const TopLine = styled.p`
@@ -95,7 +96,7 @@ export const Heading = styled.h1`
 `;
 
 export const Subtitle = styled.p`
-  display: flex;
+  /* display: flex; */
   align-items: center;
   max-width: 440px;
   margin-bottom: 35px;
@@ -154,17 +155,19 @@ export const ButtonA = styled.a`
 export const ImgWrap = styled.div`
   max-width: 555px;
   height: 100%;
+  justify-content: center;
+  display: flex;
 `;
 
 export const Img = styled.img`
   width: 100%;
-  max-height: 70vh;
+  max-height: 65vh;
   margin: 0 0 5px 0;
-  padding-right: 0;
+  /* padding-right: 0; */
   border-radius: 10px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
 
   @media screen and (max-width: 768px) {
-    max-height: 50vh;
+    max-height: 45vh;
   } ;
 `;
