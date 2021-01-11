@@ -28,11 +28,7 @@ const Availability = ({ dark, imgStart }) => {
               <Subtitle isDark={dark}>Calendar here</Subtitle>
               <BtnWrap>
                 <ButtonS
-                  to='home'
-                  smooth='true'
-                  duration={500}
-                  spy='true'
-                  exact='true'
+                  to='*'
                   offset={-document.documentElement.clientHeight * 0.1}
                   isDark={dark}
                 >

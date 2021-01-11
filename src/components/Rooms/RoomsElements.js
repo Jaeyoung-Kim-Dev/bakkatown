@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
 
-// const backgroundDark = '#010606';
-// const backgroundLight = '#f9f9f9';
-// const topLine = '#01bf71';
+const backgroundDark = '#030929';
+// const backgroundLight = '#f5faff';
+// const topLine = '#01BF71';
 // const headingDark = '#f7f8fa';
-// const headingLight = '#010606';
+// const headingLight = '#030929';
 // const subtitleDark = '#fff';
-// const subtitleLight = '#010606';
+// const subtitleLight = '#030929';
 const btnBgDark = '#01BF71';
-const btnBgLight = '#010606';
-const btnTxtDark = '#010606';
+const btnBgLight = '#030929';
+const btnTxtDark = '#030929';
 const btnTxtLight = '#fff';
 const btnBgHoverDark = '#fff';
 const btnBgHoverLight = '#01BF71';
@@ -21,7 +21,7 @@ export const RoomsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #010606;
+  background: ${backgroundDark};
   padding-top: 30px;
 
   @media screen and (max-width: 1400px) {
@@ -93,7 +93,6 @@ export const RoomsH2 = styled.h2`
 `;
 
 export const RoomsP = styled.p`
-  font-size: 1rem;
   /* text-align: center; */
   /* align-items: center; */
   margin-top: 10px;
@@ -138,7 +137,6 @@ export const RoomSpecs = styled.ul`
 `;
 
 export const RoomSpecList = styled.li`
-  font-size: 1rem;
   height: 40px;
   display: flex;
   align-items: center;

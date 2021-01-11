@@ -10,7 +10,7 @@ export const HeroContainer = styled.div`
 `;
 
 export const HeroContent = styled.div`
-  height: 60%;
+  height: 70%;
   width: 80%;
   position: absolute;
 
@@ -31,14 +31,18 @@ export const HeroContent = styled.div`
 export const HeroH1 = styled.h1`
   position: absolute;
   top: 85%;
-  left: 20%;
+  left: 15%;
   font-size: 4vw;
+  line-height: 6rem;
   transform: translate(-20%, -70%);
   color: white;
   z-index: 3;
 
   @media screen and (max-width: 768px) {
-    font-size: 6vw;
+    font-size: 7vw;
+    line-height: 4rem;
+    top: 85%;
+    left: 25%;
   }
 `;
 

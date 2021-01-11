@@ -39,20 +39,43 @@ const Rooms = () => {
 
             <RoomSpecs>
               <RoomSpecList>
-                <BiUser />
+                <BiUser
+                  style={{
+                    color: 'green',
+                    marginRight: '0.2rem',
+                  }}
+                />
                 {room.people}
               </RoomSpecList>
               <RoomSpecList>
-                <BiBed />
+                <BiBed
+                  style={{
+                    color: 'green',
+                    marginRight: '0.2rem',
+                  }}
+                />
                 {room.bed}
               </RoomSpecList>
               <RoomSpecList>
-                <BiBath />
+                <BiBath
+                  style={{
+                    color: 'green',
+                    marginRight: '0.2rem',
+                  }}
+                />
                 {room.bath}
               </RoomSpecList>
               <RoomSpecList>
                 {room.sqf}
-                <span style={{ fontSize: '0.7rem' }}>SQF</span>
+                <span
+                  style={{
+                    fontSize: '0.7rem',
+                    color: 'green',
+                    marginLeft: '0.1rem',
+                  }}
+                >
+                  SQF
+                </span>
               </RoomSpecList>
               {room.wifi && (
                 <RoomSpecList>
@@ -66,7 +89,7 @@ const Rooms = () => {
               )}
             </RoomSpecs>
             <RoomsP>
-              From <span style={{ fontSize: '2rem' }}>${room.price}</span> Per
+              From <span style={{ fontSize: '1.7rem' }}>${room.price}</span> Per
               Night
             </RoomsP>
             <BtnWrap>
