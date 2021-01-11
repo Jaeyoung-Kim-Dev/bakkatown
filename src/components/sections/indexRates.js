@@ -27,8 +27,18 @@ const Rates = ({ dark, imgStart }) => {
               <Heading isDark={dark}>Local Rates</Heading>
               <Subtitle isDark={dark}>
                 <span style={{ fontWeight: 'bold' }}>Rates Table here...</span>
-                <br /> <br />
-                <span style={{ fontWeight: 'bold' }}>POLICIES:</span> <br />
+                <br /> <br /> <br />
+                <span
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '1.7rem',
+                    letterSpacing: '0.4rem',
+                  }}
+                >
+                  POLICIES
+                </span>
+                <br />
+                <br />
                 <span style={{ fontWeight: 'bold' }}>Payment Schedule:</span>
                 <br /> 50% due at time of booking. <br />
                 Remaining balance due 7 days before arrival. <br />
@@ -41,11 +51,7 @@ const Rates = ({ dark, imgStart }) => {
               </Subtitle>
               <BtnWrap>
                 <ButtonS
-                  to='home'
-                  smooth='true'
-                  duration={500}
-                  spy='true'
-                  exact='true'
+                  to='*'
                   offset={-document.documentElement.clientHeight * 0.1}
                   isDark={dark}
                 >

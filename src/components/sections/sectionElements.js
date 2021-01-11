@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 import { Link as LinkS } from 'react-scroll';
 
-const backgroundDark = '#010606';
-const backgroundLight = '#f9f9f9';
+const backgroundDark = '#030929';
+const backgroundLight = '#f5faff';
 const topLine = '#01BF71';
 const headingDark = '#f7f8fa';
-const headingLight = '#010606';
+const headingLight = '#030929';
 const subtitleDark = '#fff';
-const subtitleLight = '#010606';
+const subtitleLight = '#030929';
 const btnBgDark = '#01BF71';
-const btnBgLight = '#010606';
-const btnTxtDark = '#010606';
+const btnBgLight = '#030929';
+const btnTxtDark = '#030929';
 const btnTxtLight = '#fff';
 const btnBgHoverDark = '#fff';
 const btnBgHoverLight = '#01BF71';
@@ -81,6 +81,7 @@ export const TopLine = styled.p`
   letter-spacing: 1.4px;
   text-transform: uppercase;
   margin-bottom: 16px;
+  letter-spacing: 0.3rem;
 `;
 
 export const Heading = styled.h1`
@@ -138,6 +139,7 @@ export const ButtonA = styled.a`
   padding: 12px 30px;
   color: ${({ isDark }) => (isDark ? btnTxtDark : btnTxtLight)};
   font-size: 16px;
+  text-decoration: none;
   outline: none;
   border: none;
   cursor: pointer;
