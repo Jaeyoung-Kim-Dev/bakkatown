@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import Overview from '../components/sections/indexOverview';
 import Map from '../components/sections/indexMap';
-import Gallery from '../components/sections/indexGallery';
+import Gallery from '../components/Gallery/index';
 import Rates from '../components/sections/indexRates';
 import Availability from '../components/sections/indexAvailability';
 import Reviews from '../components/sections/indexReviews';
