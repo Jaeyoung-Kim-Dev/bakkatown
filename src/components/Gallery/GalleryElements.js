@@ -27,6 +27,8 @@ export const GalleryWrapper = styled.div`
   padding: 0 24px;
   justify-content: center;
   align-items: center;
+  touch-action: pan-y;
+  --ms-touch-action: pan-y;
 
   @media screen and (max-width: 768px) {
     height: auto;
