@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
-import Overview from '../components/sections/indexOverview';
+// import Overview from '../components/sections/indexOverview';
+import Overview from '../components/Overview/index';
 import Map from '../components/sections/indexMap';
 import Gallery from '../components/Gallery/index';
 import Rates from '../components/sections/indexRates';
@@ -25,7 +26,7 @@ const Home = () => {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <HeroSection />
       {/* <InfoSection jsonFile={'overview'} dark={true} imgStart={false} /> */}
-      <Overview dark={true} imgStart={false} />
+      <Overview />
       <Map dark={false} imgStart={true} />
       <Gallery dark={true} imgStart={false} />
       <Rates dark={false} imgStart={true} />

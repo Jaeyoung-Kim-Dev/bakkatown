@@ -38,31 +38,6 @@ const Gallery = ({ dark, imgStart }) => {
             </ImgWrap>
           ))}
         </Carousel>
-        {/* <Column1>
-            <TextWrapper>
-              <TopLine>{id}</TopLine>
-              <Heading isDark={dark}>Availability...</Heading>
-              <Subtitle isDark={dark}>Calendar here</Subtitle>
-              <BtnWrap>
-                <ButtonS
-                  to='*'
-                  offset={-document.documentElement.clientHeight * 0.1}
-                  isDark={dark}
-                >
-                  More..
-                </ButtonS>
-              </BtnWrap>
-            </TextWrapper>
-          </Column1>
-          <Column2>
-            <ImgWrap>
-              <Img
-                src={require(`../../images/${id}.jpg`)?.default}
-                alt={id}
-                isDark={dark}
-              />
-            </ImgWrap>
-          </Column2> */}
       </GalleryWrapper>
     </GalleryContainer>
   );
