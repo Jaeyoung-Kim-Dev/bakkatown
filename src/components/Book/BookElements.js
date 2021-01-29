@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-  min-height: 692px;
+  /* min-height: 692px; */
   position: fixed;
   bottom: 0;
   left: 0;
@@ -18,7 +18,7 @@ export const Container = styled.div`
 `;
 
 export const FormWrap = styled.div`
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,36 +42,38 @@ export const Icon = styled(Link)`
   }
 `;
 
-export const FormContent = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @media screen and (max-width: 480px) {
-    padding: 10px;
-  }
-`;
-
 export const Form = styled.form`
-  background: #010101;
-  max-width: 400px;
   height: auto;
   width: 100%;
   z-index: 1;
-  display: grid;
+  display: flex;
   margin: 0 auto;
   padding: 80px 32px;
   border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  justify-content: space-evenly;
 
   @media screen and (max-width: 400px) {
     padding: 32px 32px;
   }
 `;
 
+export const FormContent = styled.div`
+  background: #010101;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  max-width: 350px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+
+  @media screen and (max-width: 480px) {
+    padding: 10px;
+  }
+`;
+
 export const FormH1 = styled.h1`
-  margin-bottom: 40px;
+  margin: 40px;
   color: #fff;
   font-size: 20px;
   font-weight: 400;

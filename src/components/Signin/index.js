@@ -21,10 +21,10 @@ const SignIn = () => {
           <FormContent>
             <Form action='#'>
               <FormH1>Sign in to your account</FormH1>
-              <FormLabel htmlFor='for'>Email</FormLabel>
-              <FormInput type='email' required />
-              <FormLabel htmlFor='for'>Password</FormLabel>
-              <FormInput type='password' required />
+              <FormLabel htmlFor='email'>Email</FormLabel>
+              <FormInput type='email' id='email' required />
+              <FormLabel htmlFor='password'>Password</FormLabel>
+              <FormInput type='password' id='password' required />
               <FormButton type='submit'>Continue</FormButton>
               <Text>Forgot password</Text>
             </Form>
