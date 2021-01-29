@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md';
 
 export const HeroContainer = styled.div`
@@ -84,6 +85,7 @@ export const Button = styled(Link)`
   align-items: center;
   transition: all 0.2s ease-in-out;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
 
   &:hover {
     transition: all 0.2s ease-in-out;

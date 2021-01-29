@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link as LinkS } from 'react-scroll';
+// import { Link as LinkS } from 'react-scroll';
 
 const backgroundDark = '#030929';
 const backgroundLight = '#f5faff';
@@ -8,12 +8,12 @@ const headingDark = '#f7f8fa';
 const headingLight = '#030929';
 const subtitleDark = '#fff';
 const subtitleLight = '#030929';
-const btnBgDark = '#01BF71';
-const btnBgLight = '#030929';
-const btnTxtDark = '#030929';
-const btnTxtLight = '#fff';
-const btnBgHoverDark = '#fff';
-const btnBgHoverLight = '#01BF71';
+// const btnBgDark = '#01BF71';
+// const btnBgLight = '#030929';
+// const btnTxtDark = '#030929';
+// const btnTxtLight = '#fff';
+// const btnBgHoverDark = '#fff';
+// const btnBgHoverLight = '#01BF71';
 
 export const OverviewContainer = styled.div`
   color: #fff;
@@ -57,21 +57,21 @@ export const OverviewRow = styled.div`
 `;
 
 export const Column1 = styled.div`
-  padding: 20px;
+  /* padding: 20px; */
   grid-area: col1;
 `;
 
 export const Column2 = styled.div`
-  padding: 20px;
+  /* padding: 20px; */
   grid-area: col2;
 `;
 
 export const TextWrapper = styled.div`
   max-width: 540px;
   /* padding-top: 0; */
-  /* padding-bottom: 60px; */
-  justify-content: center;
-  text-align: left;
+  margin-left: 10px;
+  /* justify-content: center; */
+  text-align: ${({ imgStart }) => (imgStart ? 'left' : 'right')};
 `;
 
 export const TopLine = styled.p`
@@ -98,8 +98,8 @@ export const Heading = styled.h1`
 `;
 
 export const Subtitle = styled.p`
-  /* display: flex; */
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   max-width: 440px;
   margin-bottom: 5px;
   font-size: 18px;
@@ -107,53 +107,53 @@ export const Subtitle = styled.p`
   color: ${({ isDark }) => (isDark ? subtitleDark : subtitleLight)};
 `;
 
-export const BtnWrap = styled.div`
-  display: flex;
-  justify-content: flex-start;
-`;
+// export const BtnWrap = styled.div`
+//   display: flex;
+//   justify-content: flex-start;
+// `;
 
-export const ButtonS = styled(LinkS)`
-  border-radius: 50px;
-  background: ${({ isDark }) => (isDark ? btnBgDark : btnBgLight)};
-  white-space: nowrap;
-  padding: 12px 30px;
-  color: ${({ isDark }) => (isDark ? btnTxtDark : btnTxtLight)};
-  font-size: 16px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
+// export const ButtonS = styled(LinkS)`
+//   border-radius: 50px;
+//   background: ${({ isDark }) => (isDark ? btnBgDark : btnBgLight)};
+//   white-space: nowrap;
+//   padding: 12px 30px;
+//   color: ${({ isDark }) => (isDark ? btnTxtDark : btnTxtLight)};
+//   font-size: 16px;
+//   outline: none;
+//   border: none;
+//   cursor: pointer;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   transition: all 0.2s ease-in-out;
 
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: ${({ isDark }) => (isDark ? btnBgHoverDark : btnBgHoverLight)};
-  }
-`;
+//   &:hover {
+//     transition: all 0.2s ease-in-out;
+//     background: ${({ isDark }) => (isDark ? btnBgHoverDark : btnBgHoverLight)};
+//   }
+// `;
 
-export const ButtonA = styled.a`
-  border-radius: 50px;
-  background: ${({ isDark }) => (isDark ? btnBgDark : btnBgLight)};
-  white-space: nowrap;
-  padding: 12px 30px;
-  color: ${({ isDark }) => (isDark ? btnTxtDark : btnTxtLight)};
-  font-size: 16px;
-  text-decoration: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
+// export const ButtonA = styled.a`
+//   border-radius: 50px;
+//   background: ${({ isDark }) => (isDark ? btnBgDark : btnBgLight)};
+//   white-space: nowrap;
+//   padding: 12px 30px;
+//   color: ${({ isDark }) => (isDark ? btnTxtDark : btnTxtLight)};
+//   font-size: 16px;
+//   text-decoration: none;
+//   outline: none;
+//   border: none;
+//   cursor: pointer;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   transition: all 0.2s ease-in-out;
 
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: ${({ isDark }) => (isDark ? btnBgHoverDark : btnBgHoverLight)};
-  }
-`;
+//   &:hover {
+//     transition: all 0.2s ease-in-out;
+//     background: ${({ isDark }) => (isDark ? btnBgHoverDark : btnBgHoverLight)};
+//   }
+// `;
 
 export const ImgWrap = styled.div`
   max-width: 555px;

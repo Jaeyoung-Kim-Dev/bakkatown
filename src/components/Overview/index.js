@@ -36,11 +36,13 @@ const Overview = () => {
               key={overview.id}
             >
               <Column1>
-                <TextWrapper>
+                <TextWrapper imgStart={overview.imgStart}>
                   <TopLine>Overview</TopLine>
                   <Heading isDark={dark}>{overview.heading}</Heading>
                   {overview.subtitles.map((subtitle, subKey) => (
-                    <Subtitle isDark={dark}>{subtitle}</Subtitle>
+                    <Subtitle isDark={dark} key={subKey}>
+                      {subtitle}
+                    </Subtitle>
                   ))}
                   {/* 
                   <Subtitle isDark={dark}>
