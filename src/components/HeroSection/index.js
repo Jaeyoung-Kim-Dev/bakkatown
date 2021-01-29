@@ -58,7 +58,7 @@ const HeroSection = () => {
           </HeroH1>
           <HeroImg src={heroImage}></HeroImg>
           <HeroBtnWrapper>
-            <Button to='*' onMouseEnter={onHover} onMouseLeave={onHover}>
+            <Button to='./book' onMouseEnter={onHover} onMouseLeave={onHover}>
               BOOK{hover ? <ArrowForward /> : <ArrowRight />}
             </Button>
           </HeroBtnWrapper>
