@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { countries } from 'country-data';
 import {
   Container,
   FormWrap,
@@ -15,13 +16,22 @@ import {
 } from './BookElements';
 
 const Book = () => {
-  const [countries, setCountries] = useState([]);
+  // const [countriesd, setCountries] = useState([]);
+  // const countriesw = countries.all;
+  // const countriesw = JSON.stringify(countries);
+  // const test = [1, 2, 3];
+  // const countriesw = countries;
 
-  useEffect(() => {
-    fetch('./JSON/countries.json')
-      .then((response) => response.json())
-      .then((result) => setCountries(result));
-  }, []);
+  // useEffect(() => {
+  //   fetch('./JSON/countries.json')
+  //     .then((response) => response.json())
+  //     .then((result) => setCountries(result));
+  //   // setCountries(JSON.stringify(countries));
+  // }, []);
+  // console.log(typeof countriesw);
+  // // console.log(countriesw.all);
+  // console.log(test);
+  // console.log(countriesd);
 
   return (
     <>
@@ -82,8 +92,8 @@ const Book = () => {
               <FormInput type='phone' placeholder='Phone Number' required />
               <FormSelect name='country' required>
                 <option>Select Country</option>
-                {countries.map((country, countryKey) => (
-                  <option value={country.code} key={countryKey}>
+                {countries.all.map((country) => (
+                  <option key={country.alpha2} value={country.alpha2}>
                     {country.name}
                   </option>
                 ))}
@@ -92,9 +102,10 @@ const Book = () => {
             </FormContent>
             <FormContent>
               <FormH1>Enter Payment Details</FormH1>
-              <Text>CREDIT CARD</Text>
+              <FormLabel htmlFor='ccNumber'>CREDIT CARD</FormLabel>
               <FormInput
                 type='text'
+                id='ccNumber'
                 placeholder='1234 1234 1234 1234'
                 required
               />
