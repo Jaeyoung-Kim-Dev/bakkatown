@@ -111,10 +111,9 @@ export const FormButton = styled.button`
 `;
 
 export const Text = styled.span`
-  text-align: center;
-  margin-top: 24px;
+  text-align: left;
   color: #fff;
-  font-size: 14px;
+  font-size: 0.8rem;
 `;
 
 export const FormTextArea = styled.textarea`
