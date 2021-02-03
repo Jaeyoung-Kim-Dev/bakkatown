@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Container,
   FormWrap,
@@ -8,11 +8,21 @@ import {
   FormH1,
   FormLabel,
   FormInput,
+  FormSelect,
   FormButton,
   Text,
+  FormTextArea,
 } from './BookElements';
 
 const Book = () => {
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    fetch('./JSON/countries.json')
+      .then((response) => response.json())
+      .then((result) => setCountries(result));
+  }, []);
+
   return (
     <>
       <Container>
@@ -26,13 +36,17 @@ const Book = () => {
               <FormLabel htmlFor='bookTo'>To</FormLabel>
               <FormInput type='date' id='bookTo' required />
               <FormLabel htmlFor='guests'>Guests</FormLabel>
-              <FormInput
-                type='number'
-                id='guests'
-                min='1'
-                placeholder='2'
-                required
-              />
+              <FormSelect name='guests' placeholder='2' required>
+                <option value={1}>1</option>
+                <option value={2} selected>
+                  2
+                </option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+                <option value={6}>6</option>
+                <option value={7}>7</option>
+              </FormSelect>
               <FormLabel htmlFor='promoCode'>Promotion / Group Code</FormLabel>
               <FormInput type='text' id='promoCode' required />
             </FormContent>
@@ -64,13 +78,17 @@ const Book = () => {
               <FormH1>Enter Guest Details</FormH1>
               <FormInput type='text' placeholder='First Name' required />
               <FormInput type='text' placeholder='Last Name' required />
-              <FormInput type='text' placeholder='Email' required />
-              <FormInput type='text' placeholder='Phone Number' required />
-              <select name='country' placeholder='Select Country' required>
-                <option value='ca'>Canada</option>
-                <option value='us'>United States</option>
-              </select>
-              <FormInput type='text' placeholder='Comments' />
+              <FormInput type='email' placeholder='Email' required />
+              <FormInput type='phone' placeholder='Phone Number' required />
+              <FormSelect name='country' required>
+                <option>Select Country</option>
+                {countries.map((country, countryKey) => (
+                  <option value={country.code} key={countryKey}>
+                    {country.name}
+                  </option>
+                ))}
+              </FormSelect>
+              <FormTextArea placeholder='Comments' />
             </FormContent>
             <FormContent>
               <FormH1>Enter Payment Details</FormH1>

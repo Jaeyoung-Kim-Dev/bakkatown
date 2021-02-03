@@ -87,7 +87,14 @@ export const FormLabel = styled.label`
 `;
 
 export const FormInput = styled.input`
-  padding: 16px 16px;
+  padding: 12px 12px;
+  margin-bottom: 32px;
+  border: none;
+  border-radius: 4px;
+`;
+
+export const FormSelect = styled.select`
+  padding: 12px 12px;
   margin-bottom: 32px;
   border: none;
   border-radius: 4px;
@@ -95,7 +102,7 @@ export const FormInput = styled.input`
 
 export const FormButton = styled.button`
   background: #01bf71;
-  padding: 16px 0;
+  padding: 12px 0;
   border: none;
   border-radius: 4px;
   color: #fff;
@@ -108,4 +115,13 @@ export const Text = styled.span`
   margin-top: 24px;
   color: #fff;
   font-size: 14px;
+`;
+
+export const FormTextArea = styled.textarea`
+  padding: 12px 12px;
+  margin-bottom: 32px;
+  border: none;
+  border-radius: 4px;
+  resize: none;
+  height: 100px;
 `;

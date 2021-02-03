@@ -11,7 +11,7 @@ import {
   Img,
 } from './GalleryElements';
 
-const Gallery = ({ dark, imgStart }) => {
+const Gallery = ({ dark }) => {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
