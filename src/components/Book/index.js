@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { countries } from 'country-data';
 import {
   Container,
@@ -44,26 +45,34 @@ const Book = () => {
     event.preventDefault();
 
     const newBook = {
-      dateFrom: '',
-      dateTo: '',
-      guests: '',
-      promoCode: '',
-      roomType: '',
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      country: '',
-      comments: '',
-      ccNumber: '',
-      ccMonth: '',
-      ccYear: '',
-      cvc: '',
-      ccName: '',
-      ccAddress1: '',
-      ccAddress2: '',
-      ccZip: '',
+      dateFrom: booking.dateFrom,
+      dateTo: booking.dateTo,
+      guests: booking.guests,
+      promoCode: booking.promoCode,
+      roomType: booking.roomType,
+      firstName: booking.firstName,
+      lastName: booking.lastName,
+      email: booking.email,
+      phone: booking.phone,
+      country: booking.country,
+      comments: booking.comments,
+      ccNumber: booking.ccNumber,
+      ccMonth: booking.ccMonth,
+      ccYear: booking.ccYear,
+      cvc: booking.cvc,
+      ccName: booking.ccName,
+      ccAddress1: booking.ccAddress1,
+      ccAddress2: booking.ccAddress2,
+      ccZip: booking.ccZip,
     };
+
+    axios
+      .post(`https://jsonplaceholder.typicode.com/users`, { newBook })
+      // .post(`https://localhost:8080/`, { newBook })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
   };
 
   const handleChange = (event) => {
@@ -73,8 +82,6 @@ const Book = () => {
       [name]: value,
     }));
   };
-
-  console.log(booking);
 
   return (
     <>
@@ -105,12 +112,11 @@ const Book = () => {
                 name='guests'
                 onChange={handleChange}
                 placeholder='2'
+                defaultValue={2}
                 required
               >
                 <option value={1}>1</option>
-                <option value={2} selected>
-                  2
-                </option>
+                <option value={2}>2</option>
                 <option value={3}>3</option>
                 <option value={4}>4</option>
                 <option value={5}>5</option>
@@ -205,8 +211,8 @@ const Book = () => {
               />
               <FormSelect name='country' onChange={handleChange} required>
                 <option>Select Country</option>
-                {countries.all.map((country) => (
-                  <option key={country.alpha2} value={country.alpha2}>
+                {countries.all.map((country, key) => (
+                  <option key={key} value={country.alpha2}>
                     {country.name}
                   </option>
                 ))}
