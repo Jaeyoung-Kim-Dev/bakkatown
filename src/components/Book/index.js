@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { countries } from 'country-data';
 import {
   Container,
@@ -16,37 +16,97 @@ import {
 } from './BookElements';
 
 const Book = () => {
-  // const [countriesd, setCountries] = useState([]);
-  // const countriesw = countries.all;
-  // const countriesw = JSON.stringify(countries);
-  // const test = [1, 2, 3];
-  // const countriesw = countries;
+  const initialBook = {
+    dateFrom: '',
+    dateTo: '',
+    guests: 2,
+    promoCode: '',
+    roomType: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    country: '',
+    comments: '',
+    ccNumber: '',
+    ccMonth: '',
+    ccYear: '',
+    cvc: '',
+    ccName: '',
+    ccAddress1: '',
+    ccAddress2: '',
+    ccZip: '',
+  };
 
-  // useEffect(() => {
-  //   fetch('./JSON/countries.json')
-  //     .then((response) => response.json())
-  //     .then((result) => setCountries(result));
-  //   // setCountries(JSON.stringify(countries));
-  // }, []);
-  // console.log(typeof countriesw);
-  // // console.log(countriesw.all);
-  // console.log(test);
-  // console.log(countriesd);
+  const [booking, setBooking] = useState(initialBook);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const newBook = {
+      dateFrom: '',
+      dateTo: '',
+      guests: '',
+      promoCode: '',
+      roomType: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      country: '',
+      comments: '',
+      ccNumber: '',
+      ccMonth: '',
+      ccYear: '',
+      cvc: '',
+      ccName: '',
+      ccAddress1: '',
+      ccAddress2: '',
+      ccZip: '',
+    };
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setBooking((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  console.log(booking);
 
   return (
     <>
       <Container>
         <FormWrap>
           <Icon to='/'>Bakkatown Belize</Icon>
-          <Form action='#'>
+          <Form onSubmit={handleSubmit}>
             <FormContent>
               <FormH1>Date</FormH1>
-              <FormLabel htmlFor='bookFrom'>From</FormLabel>
-              <FormInput type='date' id='bookFrom' required />
-              <FormLabel htmlFor='bookTo'>To</FormLabel>
-              <FormInput type='date' id='bookTo' required />
+              <FormLabel htmlFor='dateFrom'>From</FormLabel>
+              <FormInput
+                type='date'
+                id='dateFrom'
+                name='dateFrom'
+                onChange={handleChange}
+                required
+              />
+              <FormLabel htmlFor='dateTo'>To</FormLabel>
+              <FormInput
+                type='date'
+                id='dateTo'
+                name='dateTo'
+                onChange={handleChange}
+                required
+              />
               <FormLabel htmlFor='guests'>Guests</FormLabel>
-              <FormSelect name='guests' placeholder='2' required>
+              <FormSelect
+                name='guests'
+                onChange={handleChange}
+                placeholder='2'
+                required
+              >
                 <option value={1}>1</option>
                 <option value={2} selected>
                   2
@@ -58,16 +118,36 @@ const Book = () => {
                 <option value={7}>7</option>
               </FormSelect>
               <FormLabel htmlFor='promoCode'>Promotion / Group Code</FormLabel>
-              <FormInput type='text' id='promoCode' required />
+              <FormInput
+                type='text'
+                id='promoCode'
+                name='promoCode'
+                onChange={handleChange}
+                required
+              />
             </FormContent>
             <FormContent>
               <FormH1>Choose Rental</FormH1>
               <FormLabel htmlFor='king'>
-                <FormInput type='radio' id='king' name='roomType' required />
+                <FormInput
+                  type='radio'
+                  id='king'
+                  name='roomType'
+                  value='king'
+                  onChange={handleChange}
+                  required
+                />
                 King Studio Apartment
               </FormLabel>
               <FormLabel htmlFor='queen'>
-                <FormInput type='radio' id='queen' name='roomType' required />
+                <FormInput
+                  type='radio'
+                  id='queen'
+                  name='roomType'
+                  value='queen'
+                  onChange={handleChange}
+                  required
+                />
                 Queen Apartments
               </FormLabel>
               <FormLabel htmlFor='tralapaCasita'>
@@ -75,22 +155,55 @@ const Book = () => {
                   type='radio'
                   id='tralapaCasita'
                   name='roomType'
+                  value='tralapaCasita'
+                  onChange={handleChange}
                   required
                 />
                 Tralapa Casita by the Sea
               </FormLabel>
               <FormLabel htmlFor='dorm'>
-                <FormInput type='radio' id='dorm' name='roomType' required />
+                <FormInput
+                  type='radio'
+                  id='dorm'
+                  name='roomType'
+                  value='dorm'
+                  onChange={handleChange}
+                  required
+                />
                 Hostel Mixed Dorm Room
               </FormLabel>
             </FormContent>
             <FormContent>
               <FormH1>Enter Guest Details</FormH1>
-              <FormInput type='text' placeholder='First Name' required />
-              <FormInput type='text' placeholder='Last Name' required />
-              <FormInput type='email' placeholder='Email' required />
-              <FormInput type='phone' placeholder='Phone Number' required />
-              <FormSelect name='country' required>
+              <FormInput
+                type='text'
+                name='firstName'
+                placeholder='First Name'
+                onChange={handleChange}
+                required
+              />
+              <FormInput
+                type='text'
+                name='lastName'
+                placeholder='Last Name'
+                onChange={handleChange}
+                required
+              />
+              <FormInput
+                type='email'
+                name='email'
+                placeholder='Email'
+                onChange={handleChange}
+                required
+              />
+              <FormInput
+                type='phone'
+                name='phone'
+                placeholder='Phone Number'
+                onChange={handleChange}
+                required
+              />
+              <FormSelect name='country' onChange={handleChange} required>
                 <option>Select Country</option>
                 {countries.all.map((country) => (
                   <option key={country.alpha2} value={country.alpha2}>
@@ -98,7 +211,11 @@ const Book = () => {
                   </option>
                 ))}
               </FormSelect>
-              <FormTextArea placeholder='Comments' />
+              <FormTextArea
+                name='comments'
+                placeholder='Comments'
+                onChange={handleChange}
+              />
             </FormContent>
             <FormContent>
               <FormH1>Enter Payment Details</FormH1>
@@ -106,15 +223,53 @@ const Book = () => {
               <FormInput
                 type='text'
                 id='ccNumber'
+                name='ccNumber'
                 placeholder='1234 1234 1234 1234'
+                onChange={handleChange}
                 required
               />
-              <FormInput type='text' placeholder='MM / YY' />
-              <FormInput type='text' placeholder='CVC' />
-              <FormInput type='text' placeholder='Name on card' />
-              <FormInput type='text' placeholder='Address (1/2)' />
-              <FormInput type='text' placeholder='Address (2/2)' />
-              <FormInput type='text' placeholder='ZIP Code' />
+              <FormInput
+                type='text'
+                name='ccMonth'
+                placeholder='MM'
+                onChange={handleChange}
+              />
+              <FormInput
+                type='text'
+                name='ccYear'
+                placeholder='YY'
+                onChange={handleChange}
+              />
+              <FormInput
+                type='text'
+                name='cvc'
+                placeholder='CVC'
+                onChange={handleChange}
+              />
+              <FormInput
+                type='text'
+                name='ccName'
+                placeholder='Name on card'
+                onChange={handleChange}
+              />
+              <FormInput
+                type='text'
+                name='ccAddress1'
+                placeholder='Address (1/2)'
+                onChange={handleChange}
+              />
+              <FormInput
+                type='text'
+                name='ccAddress2'
+                placeholder='Address (2/2)'
+                onChange={handleChange}
+              />
+              <FormInput
+                type='text'
+                name='ccZip'
+                placeholder='ZIP Code'
+                onChange={handleChange}
+              />
               <Text>
                 This site is protected by reCAPTCHA and the Google privacy
                 policy and Terms of Service apply.
