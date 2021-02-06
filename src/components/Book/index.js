@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { countries } from 'country-data';
+import { DateRangePicker } from 'react-date-range';
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 import {
   Container,
   FormWrap,
@@ -40,6 +44,13 @@ const Book = () => {
   };
 
   const [booking, setBooking] = useState(initialBook);
+  const [dateRange, setDateRange] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: 'selection',
+    },
+  ]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -83,15 +94,48 @@ const Book = () => {
     }));
   };
 
+  function dateHandleChange(ranges) {
+    setDateRange(ranges);
+    setBooking((prevState) => ({
+      ...prevState,
+      dateFrom: ranges[0].startDate,
+      dateTo: ranges[0].endDate,
+    }));
+  }
+
+  console.log(booking);
+
   return (
     <>
       <Container>
+        {/* <Tabs>
+          <TabList>
+            <Tab>Title 1</Tab>
+            <Tab>Title 2</Tab>
+          </TabList>
+          <TabPanel>
+            <h2>Any content 1</h2>
+          </TabPanel>
+          <TabPanel>
+            <h2>Any content 2</h2>
+          </TabPanel>
+        </Tabs> */}
         <FormWrap>
           <Icon to='/'>Bakkatown Belize</Icon>
           <Form onSubmit={handleSubmit}>
             <FormContent>
               <FormH1>Date</FormH1>
-              <FormLabel htmlFor='dateFrom'>From</FormLabel>
+              {/* <DateRangePicker ranges={[selectionRange]} onChange={handleChange} /> */}
+              <DateRangePicker
+                // onChange={(item) => setDateRange([item.selection])}
+                onChange={(item) => dateHandleChange([item.selection])}
+                showSelectionPreview={true}
+                moveRangeOnFirstSelection={false}
+                // months={1}
+                ranges={dateRange}
+                // direction='horizontal'
+              />
+              {/* <FormLabel htmlFor='dateFrom'>From</FormLabel>
               <FormInput
                 type='date'
                 id='dateFrom'
@@ -106,7 +150,7 @@ const Book = () => {
                 name='dateTo'
                 onChange={handleChange}
                 required
-              />
+              /> */}
               <FormLabel htmlFor='guests'>Guests</FormLabel>
               <FormSelect
                 name='guests'
@@ -123,11 +167,12 @@ const Book = () => {
                 <option value={6}>6</option>
                 <option value={7}>7</option>
               </FormSelect>
-              <FormLabel htmlFor='promoCode'>Promotion / Group Code</FormLabel>
+              {/* <FormLabel htmlFor='promoCode' ></FormLabel> */}
               <FormInput
                 type='text'
                 id='promoCode'
                 name='promoCode'
+                placeholder='Promotion / Group Code'
                 onChange={handleChange}
                 required
               />
