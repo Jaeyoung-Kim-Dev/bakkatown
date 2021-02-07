@@ -1,17 +1,17 @@
 import {
   InfoContainer,
   InfoWrapper,
-  InfoRow,
-  Column1,
-  TextWrapper,
-  TopLine,
-  Heading,
-  Subtitle,
-  BtnWrap,
-  ButtonS,
-  Column2,
-  ImgWrap,
-  Img,
+  // InfoRow,
+  // Column1,
+  // TextWrapper,
+  // TopLine,
+  // Heading,
+  // Subtitle,
+  // BtnWrap,
+  // ButtonS,
+  // Column2,
+  // ImgWrap,
+  // Img,
 } from './sectionElements';
 
 const Reviews = ({ dark, imgStart }) => {
@@ -20,8 +20,9 @@ const Reviews = ({ dark, imgStart }) => {
   return (
     <InfoContainer isDark={dark} id={id}>
       <InfoWrapper>
-        <InfoRow imgStart={imgStart}>
-          <Column1>
+        {/* <InfoRow imgStart={imgStart}> */}
+        <div className='elfsight-app-ab1e28fa-23b8-4446-a0a1-c7c0901a3471'></div>
+        {/* <Column1>
             <TextWrapper>
               <TopLine>{id}</TopLine>
               <Heading isDark={dark}>What do you think?</Heading>
@@ -41,6 +42,7 @@ const Reviews = ({ dark, imgStart }) => {
             </TextWrapper>
           </Column1>
           <Column2>
+            
             <ImgWrap>
               <Img
                 src={require(`../../images/${id}.jpg`)?.default}
@@ -48,8 +50,8 @@ const Reviews = ({ dark, imgStart }) => {
                 isDark={dark}
               />
             </ImgWrap>
-          </Column2>
-        </InfoRow>
+          </Column2> */}
+        {/* </InfoRow> */}
       </InfoWrapper>
     </InfoContainer>
   );
