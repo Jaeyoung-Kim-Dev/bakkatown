@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
+export const BookTabs = styled(Tabs)``;
+
+export const BookTab = styled(Tab)`
+  cursor: pointer;
+`;
+export const BookTabList = styled(TabList)`
+  display: flex;
+`;
+export const BookTabPanel = styled(TabPanel)``;
 
 export const Container = styled.div`
   /* min-height: 692px; */

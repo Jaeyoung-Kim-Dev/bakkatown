@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { countries } from 'country-data';
-import { DateRangePicker } from 'react-date-range';
+import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import 'react-tabs/style/react-tabs.css';
+// import 'react-tabs/style/react-tabs.css';
 import {
   Container,
   FormWrap,
@@ -19,6 +19,10 @@ import {
   FormButton,
   Text,
   FormTextArea,
+  BookTab,
+  BookTabs,
+  BookTabList,
+  BookTabPanel,
 } from './BookElements';
 
 const Book = () => {
@@ -112,42 +116,27 @@ const Book = () => {
         <Icon to='/'>Bakkatown Belize</Icon>
         <FormWrap>
           <Form onSubmit={handleSubmit}>
-            <Tabs>
-              <TabList>
-                <Tab>Date</Tab>
-                <Tab>Rental</Tab>
-                <Tab>Guest Details</Tab>
-                <Tab>Payment</Tab>
-              </TabList>
-              <TabPanel>
+            <BookTabs>
+              <BookTabList>
+                <BookTab>Availability</BookTab>
+                <BookTab>Rental</BookTab>
+                <BookTab>Guest Details</BookTab>
+                <BookTab>Payment</BookTab>
+              </BookTabList>
+              <BookTabPanel>
                 <FormContent>
                   <FormH1>Date</FormH1>
                   {/* <DateRangePicker ranges={[selectionRange]} onChange={handleChange} /> */}
-                  <DateRangePicker
+                  <DateRange
                     // onChange={(item) => setDateRange([item.selection])}
                     onChange={(item) => dateHandleChange([item.selection])}
                     showSelectionPreview={true}
                     moveRangeOnFirstSelection={false}
                     // months={1}
                     ranges={dateRange}
+                    minDate={new Date()}
                     // direction='horizontal'
                   />
-                  {/* <FormLabel htmlFor='dateFrom'>From</FormLabel>
-              <FormInput
-                type='date'
-                id='dateFrom'
-                name='dateFrom'
-                onChange={handleChange}
-                required
-              />
-              <FormLabel htmlFor='dateTo'>To</FormLabel>
-              <FormInput
-                type='date'
-                id='dateTo'
-                name='dateTo'
-                onChange={handleChange}
-                required
-              /> */}
                   <FormLabel htmlFor='guests'>Guests</FormLabel>
                   <FormSelect
                     name='guests'
@@ -174,8 +163,8 @@ const Book = () => {
                     required
                   />
                 </FormContent>
-              </TabPanel>
-              <TabPanel>
+              </BookTabPanel>
+              <BookTabPanel>
                 <FormContent>
                   <FormH1>Choose Rental</FormH1>
                   <FormLabel htmlFor='king'>
@@ -223,8 +212,8 @@ const Book = () => {
                     Hostel Mixed Dorm Room
                   </FormLabel>
                 </FormContent>
-              </TabPanel>
-              <TabPanel>
+              </BookTabPanel>
+              <BookTabPanel>
                 <FormContent>
                   <FormH1>Enter Guest Details</FormH1>
                   <FormInput
@@ -269,8 +258,8 @@ const Book = () => {
                     onChange={handleChange}
                   />
                 </FormContent>
-              </TabPanel>
-              <TabPanel>
+              </BookTabPanel>
+              <BookTabPanel>
                 <FormContent>
                   <FormH1>Enter Payment Details</FormH1>
                   <FormLabel htmlFor='ccNumber'>CREDIT CARD</FormLabel>
@@ -330,8 +319,8 @@ const Book = () => {
                   </Text>
                   <FormButton type='submit'>CONFIRM & PAY</FormButton>
                 </FormContent>
-              </TabPanel>
-            </Tabs>
+              </BookTabPanel>
+            </BookTabs>
           </Form>
         </FormWrap>
       </Container>

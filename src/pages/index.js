@@ -6,7 +6,7 @@ import Map from '../components/sections/indexMap';
 import Gallery from '../components/Gallery/index';
 import Rates from '../components/sections/indexRates';
 import Availability from '../components/sections/indexAvailability';
-import Reviews from '../components/sections/indexReviews';
+import Reviews from '../components/Reviews/index';
 import Contact from '../components/sections/indexContact';
 import Rooms from '../components/Rooms';
 import Navbar from '../components/Navbar';
