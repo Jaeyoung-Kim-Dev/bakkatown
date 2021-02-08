@@ -1,14 +1,23 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+// import 'react-tabs/style/react-tabs.css';
 
-export const BookTabs = styled(Tabs)``;
+export const BookTabs = styled(Tabs)`
+  display: flex;
+`;
 
 export const BookTab = styled(Tab)`
   cursor: pointer;
+  padding: 15px;
+
+  &.active {
+    background: #fff;
+  }
 `;
 export const BookTabList = styled(TabList)`
-  display: flex;
+  /* display: flex; */
+  list-style: none;
 `;
 export const BookTabPanel = styled(TabPanel)``;
 
