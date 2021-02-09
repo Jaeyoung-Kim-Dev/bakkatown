@@ -43,7 +43,7 @@ const Availability = (props) => {
   return (
     <>
       <FormContent>
-        <FormH1>AVAILABILITY</FormH1>
+        {/* <FormH1>AVAILABILITY</FormH1> */}
         <DateRange
           onChange={(item) => dateHandleChange([item.selection])}
           showSelectionPreview={true}

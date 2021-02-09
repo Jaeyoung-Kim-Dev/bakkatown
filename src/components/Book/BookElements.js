@@ -1,33 +1,17 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-// import 'react-tabs/style/react-tabs.css';
-
-// export const BookTabs = styled(Tabs)`
-//   display: flex;
-// `;
-
-// export const BookTab = styled(Tab)`
-//   cursor: pointer;
-//   padding: 15px;
-
-//   &.active {
-//     background: #fff;
-//   }
-// `;
-// export const BookTabList = styled(TabList)`
-//   /* display: flex; */
-//   list-style: none;
-// `;
-// export const BookTabPanel = styled(TabPanel)``;
 
 export const Container = styled.div`
+  /* display: flex; */
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
   /* min-height: 692px; */
   /* position: fixed; */
   /* bottom: 0;
   left: 0;
   right: 0;
-  top: 0; */
+  top: 0; 
   z-index: 0;
   /* overflow: hidden; */
   background: linear-gradient(
@@ -39,7 +23,7 @@ export const Container = styled.div`
 
 export const FormWrap = styled.div`
   /* height: 100%; */
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
 
@@ -93,7 +77,7 @@ export const FormContent = styled.div`
 `;
 
 export const FormH1 = styled.h1`
-  margin: 40px;
+  /* margin: 40px; */
   /* color: #fff; */
   font-size: 20px;
   font-weight: 400;
