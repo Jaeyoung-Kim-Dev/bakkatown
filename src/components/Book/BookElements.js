@@ -1,33 +1,33 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 // import 'react-tabs/style/react-tabs.css';
 
-export const BookTabs = styled(Tabs)`
-  display: flex;
-`;
+// export const BookTabs = styled(Tabs)`
+//   display: flex;
+// `;
 
-export const BookTab = styled(Tab)`
-  cursor: pointer;
-  padding: 15px;
+// export const BookTab = styled(Tab)`
+//   cursor: pointer;
+//   padding: 15px;
 
-  &.active {
-    background: #fff;
-  }
-`;
-export const BookTabList = styled(TabList)`
-  /* display: flex; */
-  list-style: none;
-`;
-export const BookTabPanel = styled(TabPanel)``;
+//   &.active {
+//     background: #fff;
+//   }
+// `;
+// export const BookTabList = styled(TabList)`
+//   /* display: flex; */
+//   list-style: none;
+// `;
+// export const BookTabPanel = styled(TabPanel)``;
 
 export const Container = styled.div`
   /* min-height: 692px; */
-  position: fixed;
-  bottom: 0;
+  /* position: fixed; */
+  /* bottom: 0;
   left: 0;
   right: 0;
-  top: 0;
+  top: 0; */
   z-index: 0;
   /* overflow: hidden; */
   background: linear-gradient(
@@ -78,14 +78,14 @@ export const Form = styled.form`
 `;
 
 export const FormContent = styled.div`
-  background: #010101;
+  /* background: #010101; */
   height: 100%;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   /* max-width: 350px; */
   padding: 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9); */
 
   @media screen and (max-width: 480px) {
     padding: 10px;
@@ -94,7 +94,7 @@ export const FormContent = styled.div`
 
 export const FormH1 = styled.h1`
   margin: 40px;
-  color: #fff;
+  /* color: #fff; */
   font-size: 20px;
   font-weight: 400;
   text-align: center;
@@ -103,7 +103,7 @@ export const FormH1 = styled.h1`
 export const FormLabel = styled.label`
   margin-bottom: 8px;
   font-size: 14px;
-  color: #fff;
+  /* color: #fff; */
 `;
 
 export const FormInput = styled.input`
@@ -125,14 +125,14 @@ export const FormButton = styled.button`
   padding: 12px 0;
   border: none;
   border-radius: 4px;
-  color: #fff;
+  /* color: #fff; */
   font-size: 20px;
   cursor: pointer;
 `;
 
 export const Text = styled.span`
   text-align: left;
-  color: #fff;
+  /* color: #fff; */
   font-size: 0.8rem;
 `;
 
