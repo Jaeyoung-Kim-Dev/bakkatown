@@ -18,11 +18,10 @@ import {
 } from './BookElements';
 
 const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
   selectEmpty: {
+    marginTop: theme.spacing(4),
+  },
+  formField: {
     marginTop: theme.spacing(2),
   },
 }));
@@ -80,94 +79,99 @@ const GuestDetails = (props) => {
   return (
     <>
       <FormContent>
-        <FormH1>Enter Guest Details</FormH1>
-        <TextField
-          id='standard-secondary'
-          label='First Name'
-          color='secondary'
-          name='firstName'
-          onChange={props.handleChange}
-          required
-        />
-        <TextField
-          id='standard-secondary'
-          label='Last Name'
-          color='secondary'
-          name='lastName'
-          onChange={props.handleChange}
-          required
-        />
-        <TextField
-          id='standard-secondary'
-          label='Email'
-          color='secondary'
-          name='email'
-          onChange={props.handleChange}
-          required
-        />
-        <FormControl>
-          <InputLabel htmlFor='formatted-text-mask-input'>Phone</InputLabel>
-          <Input
-            value={values.textmask}
-            onChange={phoneHandleChange}
-            name='textmask'
-            id='formatted-text-mask-input'
-            inputComponent={TextMaskCustom}
+        <FormControl className={classes.formControl}>
+          <TextField
+            id='standard-secondary'
+            label='First Name'
+            color='secondary'
+            name='firstName'
+            onChange={props.handleChange}
+            className={classes.formField}
+            required
           />
-        </FormControl>
-        <Select
-          labelId='demo-simple-select-placeholder-label-label'
-          id='demo-simple-select-placeholder-label'
-          name='country'
-          // value={props.booking.country}
-          onChange={props.handleChange}
-          displayEmpty
-          className={classes.selectEmpty}
-        >
-          {countries.all.map((country, key) => (
-            <MenuItem key={key} value={country.alpha2}>
-              {country.name}
-            </MenuItem>
-          ))}
-        </Select>
-        <TextField
-          id='standard-multiline-flexible'
-          name='comments'
-          label='Comments'
-          multiline
-          rowsMax={4}
-          value={props.booking.comments}
-          onChange={props.handleChange}
-        />
-        {/* <FormInput
+          <TextField
+            id='standard-secondary'
+            label='Last Name'
+            color='secondary'
+            name='lastName'
+            onChange={props.handleChange}
+            className={classes.formField}
+            required
+          />
+          <TextField
+            id='standard-secondary'
+            label='Email'
+            color='secondary'
+            name='email'
+            onChange={props.handleChange}
+            className={classes.formField}
+            required
+          />
+          <FormControl className={classes.formField}>
+            <InputLabel htmlFor='formatted-text-mask-input'>Phone</InputLabel>
+            <Input
+              value={values.textmask}
+              onChange={phoneHandleChange}
+              name='textmask'
+              id='formatted-text-mask-input'
+              inputComponent={TextMaskCustom}
+            />
+          </FormControl>
+          <Select
+            labelId='demo-simple-select-placeholder-label-label'
+            id='demo-simple-select-placeholder-label'
+            name='country'
+            // value={props.booking.country}
+            onChange={props.handleChange}
+            displayEmpty
+            className={classes.selectEmpty}
+          >
+            <MenuItem>Select Country</MenuItem>
+            {countries.all.map((country, key) => (
+              <MenuItem key={key} value={country.alpha2}>
+                {country.name}
+              </MenuItem>
+            ))}
+          </Select>
+          <TextField
+            id='standard-multiline-flexible'
+            name='comments'
+            label='Comments'
+            multiline
+            rowsMax={4}
+            value={props.booking.comments}
+            className={classes.formField}
+            onChange={props.handleChange}
+          />
+          {/* <FormInput
           type='text'
           name='firstName'
           placeholder='First Name'
           onChange={props.handleChange}
           required
         /> */}
-        {/* <FormInput
+          {/* <FormInput
           type='text'
           name='lastName'
           placeholder='Last Name'
           onChange={props.handleChange}
           required
         /> */}
-        {/* <FormInput
+          {/* <FormInput
           type='email'
           name='email'
           placeholder='Email'
           onChange={props.handleChange}
           required
         /> */}
-        {/* <FormInput
+          {/* <FormInput
           type='phone'
           name='phone'
           placeholder='Phone Number'
           onChange={props.handleChange}
           required
         /> */}
-        {/* <FormSelect name='country' onChange={props.handleChange} required>
+          {/* <FormSelect name='country' onChange={props.handleChange} required>
           <option>Select Country</option>
           {countries.all.map((country, key) => (
             <option key={key} value={country.alpha2}>
@@ -175,11 +179,12 @@ const GuestDetails = (props) => {
             </option>
           ))}
         </FormSelect> */}
-        {/* <FormTextArea
+          {/* <FormTextArea
           name='comments'
           placeholder='Comments'
           onChange={props.handleChange}
         /> */}
+        </FormControl>
       </FormContent>
     </>
   );
