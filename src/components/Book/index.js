@@ -14,9 +14,9 @@ import Divider from '@material-ui/core/Divider';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { Container, FormWrap, Icon, Form } from './BookElements';
-import Rooms from '../Rooms';
+// import Rooms from '../Rooms';
 import Availability from './Availability';
-// import Rental from './Rental';
+import Rental from './Rental';
 import GuestDetails from './GuestDetails';
 import Payment from './Payment';
 import Summary from './Summary';
@@ -174,7 +174,8 @@ const Book = () => {
                   </div>
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
-                  <Rooms handleChange={handleChange} />
+                  <Rental handleChange={handleChange} />
+                  {/* <Rooms handleChange={handleChange} /> */}
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
