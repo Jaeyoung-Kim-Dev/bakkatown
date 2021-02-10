@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BiUser, BiBed, BiBath, BiWifi } from 'react-icons/bi';
 import { RiParkingBoxLine } from 'react-icons/ri';
-import {
-  FormContent,
-  FormH1,
-  FormLabel,
-  FormInput,
-  ButtonS,
-  ButtonM,
-  RoomsWrapper,
-} from './BookElements';
+import { ButtonS, ButtonM, RoomsWrapper } from './BookElements';
 import {
   // RoomsWrapper,
   RoomsCard,

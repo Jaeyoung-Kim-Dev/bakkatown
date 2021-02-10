@@ -7,7 +7,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import { FormContent, FormH1, FormInput } from './BookElements';
+import { FormContent } from './BookElements';
 import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles((theme) => ({

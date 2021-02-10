@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormContent, FormH1, FormLabel, FormInput } from './BookElements';
+import { FormContent, FormH1 } from './BookElements';
 
 const Summary = (props) => {
   return (
