@@ -52,7 +52,7 @@ export const Form = styled.form`
   z-index: 1;
   display: flex;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 50px 32px;
   border-radius: 4px;
   justify-content: space-evenly;
 
@@ -127,4 +127,78 @@ export const FormTextArea = styled.textarea`
   border-radius: 4px;
   resize: none;
   height: 100px;
+`;
+
+export const RoomsWrapper = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 16px;
+  padding: 0 50px;
+
+  @media screen and (max-width: 400px) {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+`;
+
+export const ButtonS = styled.button`
+  border-radius: 50px;
+  background: #95e450;
+  white-space: nowrap;
+  padding: 12px 30px;
+  margin: 0 5px 0 5px;
+  /* color: #fff; */
+  font-size: 1.1rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #01bf71;
+  }
+`;
+
+export const ButtonM = styled.button`
+  border-radius: 50px;
+  background: #d4d3c9;
+  white-space: nowrap;
+  padding: 12px 30px;
+  margin: 0 5px 0 5px;
+  /* color: #fff; */
+  font-size: 0.9rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #b3b2ab;
+  }
+`;
+
+export const GuestDetailWrapper = styled.div`
+  /* max-width: 1400px; */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 30px 80px;
+  padding: 0 50px;
+
+  @media screen and (max-width: 400px) {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
 `;

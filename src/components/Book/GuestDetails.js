@@ -1,21 +1,15 @@
 import React from 'react';
 import { countries } from 'country-data';
-import PropTypes from 'prop-types';
-import MaskedInput from 'react-text-mask';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
+// import PropTypes from 'prop-types';
+// import MaskedInput from 'react-text-mask';
+// import Input from '@material-ui/core/Input';
+// import InputLabel from '@material-ui/core/InputLabel';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  FormContent,
-  FormH1,
-  FormInput,
-  FormSelect,
-  FormTextArea,
-} from './BookElements';
+import { GuestDetailWrapper, FormSelect } from './BookElements';
 
 const useStyles = makeStyles((theme) => ({
   selectEmpty: {
@@ -26,60 +20,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function TextMaskCustom(props) {
-  const { inputRef, ...other } = props;
-
-  return (
-    <MaskedInput
-      {...other}
-      ref={(ref) => {
-        inputRef(ref ? ref.inputElement : null);
-      }}
-      mask={[
-        '(',
-        /[1-9]/,
-        /\d/,
-        /\d/,
-        ')',
-        ' ',
-        /\d/,
-        /\d/,
-        /\d/,
-        '-',
-        /\d/,
-        /\d/,
-        /\d/,
-        /\d/,
-      ]}
-      placeholderChar={'\u2000'}
-      showMask
-    />
-  );
-}
-
-TextMaskCustom.propTypes = {
-  inputRef: PropTypes.func.isRequired,
-};
-
 const GuestDetails = (props) => {
   const classes = useStyles();
-  const [values, setValues] = React.useState({
-    textmask: '(   )    -    ',
-    numberformat: '1320',
-  });
-
-  const phoneHandleChange = (event) => {
-    setValues({
-      ...values,
-      [event.target.name]: event.target.value,
-    });
-    props.handleChange();
-  };
 
   return (
     <>
-      <FormContent>
-        <FormControl className={classes.formControl}>
+      <FormControl className={classes.formControl}>
+        <GuestDetailWrapper>
           <TextField
             id='standard-secondary'
             label='First Name'
@@ -107,16 +54,23 @@ const GuestDetails = (props) => {
             className={classes.formField}
             required
           />
-          <FormControl className={classes.formField}>
-            <InputLabel htmlFor='formatted-text-mask-input'>Phone</InputLabel>
-            <Input
-              value={values.textmask}
-              onChange={phoneHandleChange}
-              name='textmask'
-              id='formatted-text-mask-input'
-              inputComponent={TextMaskCustom}
-            />
-          </FormControl>
+          <TextField
+            id='standard-secondary'
+            label='Phone'
+            color='secondary'
+            name='phone'
+            onChange={props.handleChange}
+            className={classes.formField}
+            required
+          />
+          {/* <FormSelect name='country' onChange={props.handleChange} required>
+            <option>Select Country</option>
+            {countries.all.map((country, key) => (
+              <option key={key} value={country.alpha2}>
+                {country.name}
+              </option>
+            ))}
+          </FormSelect> */}
           <Select
             labelId='demo-simple-select-placeholder-label-label'
             id='demo-simple-select-placeholder-label'
@@ -184,8 +138,8 @@ const GuestDetails = (props) => {
           placeholder='Comments'
           onChange={props.handleChange}
         /> */}
-        </FormControl>
-      </FormContent>
+        </GuestDetailWrapper>
+      </FormControl>
     </>
   );
 };

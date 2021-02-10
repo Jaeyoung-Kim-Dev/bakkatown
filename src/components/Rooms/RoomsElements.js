@@ -88,7 +88,7 @@ export const RoomsH1 = styled.h1`
 `;
 
 export const RoomsH2 = styled.h2`
-  font-size: 1.1rem;
+  font-size: 1em;
   margin-bottom: 10px;
 `;
 
