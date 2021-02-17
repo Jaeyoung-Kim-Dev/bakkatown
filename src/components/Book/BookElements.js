@@ -143,7 +143,7 @@ export const RoomsWrapper = styled.div`
   }
 `;
 
-export const ButtonS = styled.button`
+export const ButtonS = styled.div`
   border-radius: 50px;
   background: #95e450;
   white-space: nowrap;
@@ -199,5 +199,25 @@ export const GuestDetailWrapper = styled.div`
   @media screen and (max-width: 400px) {
     grid-template-columns: 1fr;
     padding: 0 20px;
+  }
+`;
+
+export const RoomsCard = styled.div`
+  background: ${({ roomName, selectedRoom }) =>
+    roomName === selectedRoom ? '#ffe085' : '#fff'};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+  max-height: 500px;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
   }
 `;

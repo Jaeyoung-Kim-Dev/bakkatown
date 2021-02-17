@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BiUser, BiBed, BiBath, BiWifi } from 'react-icons/bi';
 import { RiParkingBoxLine } from 'react-icons/ri';
+import RoomLists from './roomlists.json';
 import {
   RoomsContainer,
   RoomsH1,
@@ -16,19 +17,11 @@ import {
 } from './RoomsElements';
 
 const Rooms = () => {
-  const [rooms, setRooms] = useState(() => []);
-
-  useEffect(() => {
-    fetch('./JSON/rooms.json')
-      .then((response) => response.json())
-      .then((result) => setRooms(result));
-  }, []);
-
   return (
     <RoomsContainer id='services'>
       <RoomsH1>Our Rooms</RoomsH1>
       <RoomsWrapper>
-        {rooms.map((room, key) => (
+        {RoomLists.roomlists.map((room, key) => (
           <RoomsCard key={key}>
             <RoomsH2>{room.name}</RoomsH2>
             <RoomsImage

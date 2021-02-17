@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import galleryData from './galleryData.json';
 import {
   GalleryContainer,
   GalleryWrapper,
@@ -12,14 +13,6 @@ import {
 } from './GalleryElements';
 
 const Gallery = ({ dark }) => {
-  const [photos, setPhotos] = useState([]);
-
-  useEffect(() => {
-    fetch('./JSON/gallery.json')
-      .then((response) => response.json())
-      .then((result) => setPhotos(result));
-  }, []);
-
   return (
     <GalleryContainer isDark={dark} id={'gallery'}>
       <GalleryWrapper>
@@ -28,7 +21,7 @@ const Gallery = ({ dark }) => {
           <Heading isDark={dark}>What does the Hotel look like?</Heading>
         </TextWrapper>
         <Carousel>
-          {photos.map((photo, key) => (
+          {galleryData.photoNames.map((photo, key) => (
             <ImgWrap key={key}>
               <Img
                 src={require(`../../images/gallery/${photo.fileName}`)?.default}

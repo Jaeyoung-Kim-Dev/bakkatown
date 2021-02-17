@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import NavItems from '../Navbar/navItems.json';
 import {
   SidebarContainer,
   Icon,
@@ -11,14 +12,6 @@ import {
 } from './SidebarElements';
 
 const Sidebar = ({ isOpen, toggle }) => {
-  const [navItems, setNavItems] = useState([]);
-
-  useEffect(() => {
-    fetch(`./JSON/navItems.json`)
-      .then((response) => response.json())
-      .then((result) => setNavItems(result));
-  }, []);
-
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>
       <Icon onClick={toggle}>
@@ -26,7 +19,7 @@ const Sidebar = ({ isOpen, toggle }) => {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          {navItems.map((navItem, key) => (
+          {NavItems.navNames.map((navItem, key) => (
             <SidebarLink
               key={key}
               to={navItem.itemName.toLowerCase().replace(' ', '')}

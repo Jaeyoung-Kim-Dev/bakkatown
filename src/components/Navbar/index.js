@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
+import { FaBars } from 'react-icons/fa';
+import { IconContext } from 'react-icons/lib';
+import NavItems from './navItems.json';
 import {
   Nav,
   NavbarContainer,
@@ -11,12 +14,9 @@ import {
   NavBtn,
   NavBtnLink,
 } from './NavbarElements';
-import { FaBars } from 'react-icons/fa';
-import { IconContext } from 'react-icons/lib';
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
-  const [navItems, setNavItems] = useState([]);
 
   const changeNav = () => {
     if (window.scrollY >= document.documentElement.clientHeight * 0.1) {
@@ -28,9 +28,6 @@ const Navbar = ({ toggle }) => {
 
   useEffect(() => {
     window.addEventListener('scroll', changeNav);
-    fetch(`./JSON/navItems.json`)
-      .then((response) => response.json())
-      .then((result) => setNavItems(result));
   }, []);
 
   const toggleHome = () => {
@@ -46,7 +43,7 @@ const Navbar = ({ toggle }) => {
               Bakkatown Belize
             </Navlogo>
             <NavMenu>
-              {navItems.map((navItem, key) => (
+              {NavItems.navNames.map((navItem, key) => (
                 <NavItem key={key}>
                   <NavLinks
                     to={navItem.itemName.toLowerCase().replace(' ', '')}

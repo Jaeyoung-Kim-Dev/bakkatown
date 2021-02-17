@@ -1,0 +1,37 @@
+{
+  "overviews": [
+    {
+      "id": "overview1",
+      "imgStart": true,
+      "heading": "What is BAKKATOWN?",
+      "subtitles": [
+        "BAKKATOWN is Back of Town.",
+        "This is where the local working people live.",
+        "Tourists stay in the high end properties on the reef side.",
+        "The lagoon is on the back of San Pedro Town, where the island is only 4 blocks wide in town."
+      ]
+    },
+    {
+      "id": "overview2",
+      "imgStart": false,
+      "heading": "What is BAKKATOWN Belize?",
+      "subtitles": [
+        "Situated on the edge of town and on the lagoon, BAKKATOWN Belize provides a safe and comfortable home in a safe local neighbourhood.",
+        "- Guests can live “with the Locals”.",
+        "- Eating and shopping at local shops.",
+        "- Meet people as they spend their days and evenings."
+      ]
+    },
+    {
+      "id": "overview2",
+      "imgStart": true,
+      "heading": "What is BAKKATOWN Belize?",
+      "subtitles": [
+        "We provide economical accommodations for Travellers.",
+        "Travellers who want to spend their time and money on activities and experiences.",
+        "Travellers who do not want an expensive hotel room and tourist restaurant where the only locals they meet are the ones serving and cleaning up after them.",
+        "The people who want to experience what Belize has to offer and value the Experience."
+      ]
+    }
+  ]
+}
