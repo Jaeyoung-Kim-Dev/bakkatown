@@ -1,0 +1,24 @@
+{
+  "photoNames": [
+    { "title": "Hotel photo 1", "fileName": "1.jpg" },
+    { "title": "Hotel photo 2", "fileName": "2.jpg" },
+    { "title": "Hotel photo 3", "fileName": "3.jpg" },
+    { "title": "Hotel photo 4", "fileName": "4.jpg" },
+    { "title": "Hotel photo 5", "fileName": "5.jpg" },
+    { "title": "Hotel photo 6", "fileName": "6.jpg" },
+    { "title": "Hotel photo 7", "fileName": "7.jpg" },
+    { "title": "Hotel photo 8", "fileName": "8.jpg" },
+    { "title": "Hotel photo 9", "fileName": "9.jpg" },
+    { "title": "Hotel photo 10", "fileName": "10.jpg" },
+    { "title": "Hotel photo 11", "fileName": "11.jpg" },
+    { "title": "Hotel photo 12", "fileName": "12.jpg" },
+    { "title": "Hotel photo 13", "fileName": "13.jpg" },
+    { "title": "Hotel photo 14", "fileName": "14.jpg" },
+    { "title": "Hotel photo 15", "fileName": "15.jpg" },
+    { "title": "Hotel photo 16", "fileName": "16.jpg" },
+    { "title": "Hotel photo 17", "fileName": "17.jpg" },
+    { "title": "Hotel photo 18", "fileName": "18.jpg" },
+    { "title": "Hotel photo 19", "fileName": "19.jpg" },
+    { "title": "Hotel photo 20", "fileName": "20.jpg" }
+  ]
+}

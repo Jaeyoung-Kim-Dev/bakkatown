@@ -75,7 +75,7 @@ const Footer = () => {
               Bakkatown Belize
             </SocialLogo>
             <WebsiteRights>
-              JK Copyright {new Date().getFullYear()} All rights reserved.
+              {new Date().getFullYear()} BAKKATOWN BELIZE. All rights reserved.
             </WebsiteRights>
             <SocialIcons>
               <SocialIconLink href='/' target='_blank' arial-label='Facebook'>

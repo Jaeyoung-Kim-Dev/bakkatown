@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+// import React, { useState, useEffect } from 'react';
 import { BiUser, BiBed, BiBath, BiWifi } from 'react-icons/bi';
 import { RiParkingBoxLine } from 'react-icons/ri';
-import { ButtonS, ButtonM, RoomsWrapper } from './BookElements';
+import { ButtonS, ButtonM, RoomsWrapper, RoomsCard } from './BookElements';
+import RoomLists from '../Rooms/roomlists.json';
 import {
   // RoomsWrapper,
-  RoomsCard,
   RoomsImage,
   RoomsH2,
   RoomsP,
@@ -14,19 +15,22 @@ import {
 } from '../Rooms/RoomsElements';
 
 const Rental = (props) => {
-  const [rooms, setRooms] = useState(() => []);
-
-  useEffect(() => {
-    fetch('./JSON/rooms.json')
-      .then((response) => response.json())
-      .then((result) => setRooms(result));
-  }, []);
+  function roomHandleChange(roomName) {
+    props.setBooking((prevState) => ({
+      ...prevState,
+      roomType: roomName,
+    }));
+  }
 
   return (
     <>
       <RoomsWrapper>
-        {rooms.map((room, key) => (
-          <RoomsCard key={key}>
+        {RoomLists.roomlists.map((room, key) => (
+          <RoomsCard
+            key={key}
+            roomName={room.name}
+            selectedRoom={props.booking.roomType}
+          >
             <RoomsH2>{room.name}</RoomsH2>
             <RoomsImage
               src={require(`../../images/rooms/${room.image}.jpg`)?.default}
@@ -90,59 +94,14 @@ const Rental = (props) => {
               Night
             </RoomsP>
             <BtnWrap>
-              <ButtonS>Select</ButtonS>
+              <ButtonS onClick={() => roomHandleChange(room.name)}>
+                Select
+              </ButtonS>
               <ButtonM>More Info</ButtonM>
             </BtnWrap>
           </RoomsCard>
         ))}
       </RoomsWrapper>
-
-      {/* <FormContent>
-        <FormLabel htmlFor='king'>
-          <FormInput
-            type='radio'
-            id='king'
-            name='roomType'
-            value='king'
-            onChange={props.handleChange}
-            required
-          />
-          King Studio Apartment
-        </FormLabel>
-        <FormLabel htmlFor='queen'>
-          <FormInput
-            type='radio'
-            id='queen'
-            name='roomType'
-            value='queen'
-            onChange={props.handleChange}
-            required
-          />
-          Queen Apartments
-        </FormLabel>
-        <FormLabel htmlFor='tralapaCasita'>
-          <FormInput
-            type='radio'
-            id='tralapaCasita'
-            name='roomType'
-            value='tralapaCasita'
-            onChange={props.handleChange}
-            required
-          />
-          Tralapa Casita by the Sea
-        </FormLabel>
-        <FormLabel htmlFor='dorm'>
-          <FormInput
-            type='radio'
-            id='dorm'
-            name='roomType'
-            value='dorm'
-            onChange={props.handleChange}
-            required
-          />
-          Hostel Mixed Dorm Room
-        </FormLabel>
-      </FormContent> */}
     </>
   );
 };

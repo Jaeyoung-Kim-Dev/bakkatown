@@ -10,12 +10,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import { Container, FormWrap, Icon, Form } from './BookElements';
-// import Rooms from '../Rooms';
 import Availability from './Availability';
 import Rental from './Rental';
 import GuestDetails from './GuestDetails';
 import Payment from './Payment';
 import Summary from './Summary';
+import Moment from 'react-moment';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,14 +57,6 @@ const Book = () => {
     phone: '',
     country: '',
     comments: '',
-    ccNumber: '',
-    ccMonth: '',
-    ccYear: '',
-    cvc: '',
-    ccName: '',
-    ccAddress1: '',
-    ccAddress2: '',
-    ccZip: '',
   };
 
   const [booking, setBooking] = useState(initialBook);
@@ -84,14 +76,6 @@ const Book = () => {
       phone: booking.phone,
       country: booking.country,
       comments: booking.comments,
-      ccNumber: booking.ccNumber,
-      ccMonth: booking.ccMonth,
-      ccYear: booking.ccYear,
-      cvc: booking.cvc,
-      ccName: booking.ccName,
-      ccAddress1: booking.ccAddress1,
-      ccAddress2: booking.ccAddress2,
-      ccZip: booking.ccZip,
     };
 
     axios
@@ -112,6 +96,20 @@ const Book = () => {
   };
 
   const classes = useStyles();
+
+  function changeDateFormat(_startDate, _endDate) {
+    return (
+      <div>
+        <Moment date={_startDate} format='ddd, DD MMM YY' /> {' - '}
+        <Moment date={_endDate} format='ddd, DD MMM YY' />
+        {' ('}
+        <Moment diff={_startDate} unit='days'>
+          {_endDate}
+        </Moment>
+        Night)
+      </div>
+    );
+  }
 
   console.log(booking);
 
@@ -134,8 +132,13 @@ const Book = () => {
                     </Typography>
                   </div>
                   <div className={classes.column}>
-                    <Typography className={classes.secondaryHeading}>
-                      date and guests
+                    <Typography
+                      className={classes.secondaryHeading}
+                      noWrap={true}
+                    >
+                      {booking.dateFrom !== '' && booking.dateTo !== ''
+                        ? changeDateFormat(booking.dateFrom, booking.dateTo)
+                        : ''}
                     </Typography>
                   </div>
                 </AccordionSummary>
@@ -165,12 +168,16 @@ const Book = () => {
                   </div>
                   <div className={classes.column}>
                     <Typography className={classes.secondaryHeading}>
-                      which room?
+                      {booking.roomType.name}
                     </Typography>
                   </div>
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
-                  <Rental handleChange={handleChange} />
+                  <Rental
+                    booking={booking}
+                    setBooking={setBooking}
+                    handleChange={handleChange}
+                  />
                   {/* <Rooms handleChange={handleChange} /> */}
                 </AccordionDetails>
                 <Divider />
@@ -194,7 +201,13 @@ const Book = () => {
                   </div>
                   <div className={classes.column}>
                     <Typography className={classes.secondaryHeading}>
-                      Guest Details
+                      {booking.firstName !== '' || booking.lastName !== '' ? (
+                        <div style={{ textTransform: 'uppercase' }}>
+                          {booking.firstName + ' ' + booking.lastName}
+                        </div>
+                      ) : (
+                        ''
+                      )}
                     </Typography>
                   </div>
                 </AccordionSummary>

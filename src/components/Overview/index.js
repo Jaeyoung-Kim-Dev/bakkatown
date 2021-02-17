@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import Overviews from './overview.json';
 import {
   OverviewContainer,
   OverviewWrapper,
@@ -16,20 +17,13 @@ import {
 } from './OverviewElements';
 
 const Overview = () => {
-  const [overviews, setOverviews] = useState([]);
   const dark = true;
-
-  useEffect(() => {
-    fetch('./JSON/overview.json')
-      .then((response) => response.json())
-      .then((result) => setOverviews(result));
-  }, []);
 
   return (
     <OverviewContainer isDark={dark} id={'overview'}>
       <OverviewWrapper>
         <Carousel>
-          {overviews.map((overview) => (
+          {Overviews.overviews.map((overview) => (
             <OverviewRow
               isDark={dark}
               imgStart={overview.imgStart}
