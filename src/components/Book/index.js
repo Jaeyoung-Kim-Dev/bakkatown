@@ -6,14 +6,14 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionActions from '@material-ui/core/AccordionActions';
 import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import { Container, FormWrap, Icon, Form } from './BookElements';
 import Availability from './Availability';
 import Rental from './Rental';
 import GuestDetails from './GuestDetails';
-import Payment from './Payment';
+// import Payment from './Payment';
 import Summary from './Summary';
 import Moment from 'react-moment';
 
@@ -60,6 +60,7 @@ const Book = () => {
   };
 
   const [booking, setBooking] = useState(initialBook);
+  const [stage, setStage] = useState([true, false, false, false]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -95,6 +96,12 @@ const Book = () => {
     }));
   };
 
+  function accordionHandleChange(_stage) {
+    let tempStage = [false, false, false, false];
+    tempStage[_stage] = true;
+    setStage(tempStage);
+  }
+
   const classes = useStyles();
 
   function changeDateFormat(_startDate, _endDate) {
@@ -111,8 +118,9 @@ const Book = () => {
     );
   }
 
+  console.log(stage);
   console.log(booking);
-
+  // console.log(stage.stage2);
   return (
     <>
       <Container>
@@ -120,11 +128,11 @@ const Book = () => {
           <Icon to='/'>Bakkatown Belize</Icon>
           <Form onSubmit={handleSubmit}>
             <div className={classes.root}>
-              <Accordion defaultExpanded>
+              <Accordion expanded={stage[0]}>
                 <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
                   aria-controls='panel1c-content'
                   id='panel1c-header'
+                  onClick={() => accordionHandleChange(0)}
                 >
                   <div className={classes.column}>
                     <Typography className={classes.heading}>
@@ -135,6 +143,7 @@ const Book = () => {
                     <Typography
                       className={classes.secondaryHeading}
                       noWrap={true}
+                      component={'span'}
                     >
                       {booking.dateFrom !== '' && booking.dateTo !== ''
                         ? changeDateFormat(booking.dateFrom, booking.dateTo)
@@ -151,24 +160,33 @@ const Book = () => {
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
-                  <Button size='small'>Cancel</Button>
-                  <Button size='small' color='primary'>
-                    Save
+                  <Button
+                    size='small'
+                    color='primary'
+                    onClick={() => accordionHandleChange(1)}
+                  >
+                    Next
                   </Button>
                 </AccordionActions>
               </Accordion>
-              <Accordion defaultExpanded>
+
+              <Accordion
+                expanded={stage[1]}
+                // onClick={() => accordionHandleChange(1)}
+              >
+                {/* <Accordion expanded={stage.stage2}> */}
                 <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
+                  // expandIcon={<ExpandMoreIcon />}
                   aria-controls='panel1c-content'
                   id='panel1c-header'
+                  onClick={() => (!stage[0] ? accordionHandleChange(1) : '')}
                 >
                   <div className={classes.column}>
                     <Typography className={classes.heading}>Rental</Typography>
                   </div>
                   <div className={classes.column}>
                     <Typography className={classes.secondaryHeading}>
-                      {booking.roomType.name}
+                      {booking.roomType}
                     </Typography>
                   </div>
                 </AccordionSummary>
@@ -182,17 +200,28 @@ const Book = () => {
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
-                  <Button size='small'>Cancel</Button>
-                  <Button size='small' color='primary'>
-                    Save
+                  <Button size='small' onClick={() => accordionHandleChange(0)}>
+                    Previous
+                  </Button>
+                  <Button
+                    size='small'
+                    color='primary'
+                    onClick={() => accordionHandleChange(2)}
+                  >
+                    Next
                   </Button>
                 </AccordionActions>
               </Accordion>
-              <Accordion defaultExpanded>
+              <Accordion
+                expanded={stage[2]}
+                // onClick={() => accordionHandleChange(2)}
+              >
+                {/* <Accordion expanded={stage.stage3}> */}
                 <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
+                  // expandIcon={<ExpandMoreIcon />}
                   aria-controls='panel1c-content'
                   id='panel1c-header'
+                  onClick={() => (stage[3] ? accordionHandleChange(2) : '')}
                 >
                   <div className={classes.column}>
                     <Typography className={classes.heading}>
@@ -216,35 +245,48 @@ const Book = () => {
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
-                  <Button size='small'>Cancel</Button>
-                  <Button size='small' color='primary'>
-                    Save
+                  <Button size='small' onClick={() => accordionHandleChange(1)}>
+                    Previous
+                  </Button>
+                  <Button
+                    size='small'
+                    color='primary'
+                    onClick={() => accordionHandleChange(3)}
+                  >
+                    Next
                   </Button>
                 </AccordionActions>
               </Accordion>
-              <Accordion defaultExpanded>
+              <Accordion
+                expanded={stage[3]}
+                // onClick={() => accordionHandleChange(3)}
+              >
+                {/* <Accordion expanded={stage.stage4}> */}
                 <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
+                  // expandIcon={<ExpandMoreIcon />}
                   aria-controls='panel1c-content'
                   id='panel1c-header'
+                  // onClick={() => accordionHandleChange(3)}
                 >
                   <div className={classes.column}>
                     <Typography className={classes.heading}>Payment</Typography>
                   </div>
-                  <div className={classes.column}>
+                  {/* <div className={classes.column}>
                     <Typography className={classes.secondaryHeading}>
                       Payment
                     </Typography>
-                  </div>
+                  </div> */}
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
-                  <Payment handleChange={handleChange} />
+                  {/* <Payment handleChange={handleChange} /> */}
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
-                  <Button size='small'>Cancel</Button>
+                  <Button size='small' onClick={() => accordionHandleChange(2)}>
+                    Previous
+                  </Button>
                   <Button size='small' color='primary'>
-                    Save
+                    Next
                   </Button>
                 </AccordionActions>
               </Accordion>

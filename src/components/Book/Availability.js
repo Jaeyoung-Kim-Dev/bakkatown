@@ -79,6 +79,8 @@ const Availability = (props) => {
             id='standard-secondary'
             label='Promotion / Group Code'
             color='secondary'
+            name='promoCode'
+            onChange={props.handleChange}
           />
         </FormControl>
       </FormContent>
