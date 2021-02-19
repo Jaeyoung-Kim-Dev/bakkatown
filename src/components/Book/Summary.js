@@ -10,7 +10,7 @@ const Summary = (props) => {
         <p>Date</p>
         {props.changeDateFormat(props.booking.dateFrom, props.booking.dateTo)}
         <Divider />
-        {props.booking.roomType}
+        {props.booking.roomType.name}
         <p>Rental price</p>
         {/* {props.booking.} */}
         <p>BTB Hotel Tax</p>
