@@ -28,8 +28,9 @@ export const FormWrap = styled.div`
   /* flex-direction: column; */
   justify-content: center;
 
-  @media screen and (max-width: 400px) {
-    height: 80%;
+  @media screen and (max-width: 1300px) {
+    /* height: 80%; */
+    flex-direction: column;
   }
 `;
 
@@ -52,12 +53,13 @@ export const Form = styled.form`
   z-index: 1;
   display: flex;
   /* margin: 0 auto; */
-  padding: 50px 32px;
+  padding-top: 50px;
+  margin-right: 30px;
   border-radius: 4px;
   justify-content: space-evenly;
 
-  @media screen and (max-width: 400px) {
-    padding: 32px 32px;
+  @media screen and (max-width: 1300px) {
+    margin-right: auto;
   }
 `;
 
@@ -237,6 +239,7 @@ export const SummaryWrapper = styled.div`
   /* padding: 20px 0 0 20px; */
   padding: 20px;
   background: #fff;
+  border-radius: 5px;
 
   @media screen and (max-width: 1300px) {
     display: none;
