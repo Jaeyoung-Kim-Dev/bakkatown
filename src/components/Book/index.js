@@ -60,7 +60,7 @@ const Book = () => {
 
   const [booking, setBooking] = useState(initialBook);
   const [stage, setStage] = useState([true, false, false]);
-  const [night, setNight] = useState();
+  const [night, setNight] = useState(0);
   const [confirm, setConfirm] = useState(false);
 
   const handleSubmit = (event) => {
@@ -111,11 +111,11 @@ const Book = () => {
       <div>
         <Moment date={_startDate} format='ddd, DD MMM YY' /> {' - '}
         <Moment date={_endDate} format='ddd, DD MMM YY' />
-        {' ('}
+        {/* {' ('}
         <Moment diff={_startDate} unit='days'>
           {_endDate}
         </Moment>{' '}
-        Night)
+        Night) */}
       </div>
     );
   }

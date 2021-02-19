@@ -11,13 +11,27 @@ import {
 import Divider from '@material-ui/core/Divider';
 
 const Summary = (props) => {
-  const roomPrice = formatCurrency(props.booking.roomType.price * props.night);
-  const roomTax = formatCurrency(
-    props.booking.roomType.price * props.night * 0.09
-  );
-  const roomTotalPrice = formatCurrency(
-    props.booking.roomType.price * props.night * 1.09
-  );
+  const roomPrice = props.booking.roomType
+    ? {
+        day: formatCurrency(props.booking.roomType.price),
+        days: formatCurrency(props.booking.roomType.price * props.night),
+        tax: formatCurrency(props.booking.roomType.price * props.night * 0.09),
+        total: formatCurrency(
+          props.booking.roomType.price * props.night * 1.09
+        ),
+      }
+    : 0;
+
+  // const roomPriceDay = formatCurrency(props.booking.roomType.price);
+  // const roomPriceDays = formatCurrency(
+  //   props.booking.roomType.price * props.night
+  // );
+  // const roomTax = formatCurrency(
+  //   props.booking.roomType.price * props.night * 0.09
+  // );
+  // const roomTotalPrice = formatCurrency(
+  //   props.booking.roomType.price * props.night * 1.09
+  // );
 
   return (
     <FormContent>
@@ -34,33 +48,38 @@ const Summary = (props) => {
         ) : (
           ''
         )}
-        {props.booking.roomType !== '' ? (
+        {props.booking.roomType !== '' && props.night !== 0 ? (
           <div>
             <br />
             <Divider />
             <SummaryDetailWrapper>
-              <h3>{props.booking.roomType.name}</h3>
+              <h4>{props.booking.roomType.name}</h4>
+              <h4>{roomPrice.day}</h4>
+            </SummaryDetailWrapper>
+            <SummaryDetailWrapper>
+              <h4>Night(s)</h4>
+              <h4>{props.night}</h4>
             </SummaryDetailWrapper>
             <SummaryDetailWrapper>
               <p>Rental price</p>
-              {roomPrice}
+              {roomPrice.days}
             </SummaryDetailWrapper>
             <SummaryDetailWrapper>
               <p>BTB Hotel Tax</p>
-              {roomTax}
+              {roomPrice.tax}
             </SummaryDetailWrapper>
             <SummaryDetailWrapper>
               <h4>SUBTOTAL</h4>
-              <h4>{roomTotalPrice}</h4>
+              <h4>{roomPrice.total}</h4>
             </SummaryDetailWrapper>
             <Divider />
             <SummaryDetailWrapper>
               <h3>Total</h3>
-              <h3>{roomTotalPrice}</h3>
+              <h3>{roomPrice.total}</h3>
             </SummaryDetailWrapper>
             <SummaryDetailWrapper>
               <p>Property's currency</p>
-              {roomTotalPrice}
+              {roomPrice.total}
             </SummaryDetailWrapper>
             <Divider />
             <SummaryPolicyWrapper>
