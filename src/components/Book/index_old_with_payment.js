@@ -19,9 +19,10 @@ import Moment from 'react-moment';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: '750px',
-    minWidth: '350px',
-    width: '80vw',
+    width: '750px',
+    // display: 'flex',
+    // flexDirection: 'column',
+    // marginTop: '100px',
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -59,7 +60,7 @@ const Book = () => {
   };
 
   const [booking, setBooking] = useState(initialBook);
-  const [stage, setStage] = useState([true, false, false]);
+  const [stage, setStage] = useState([true, false, false, false]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -96,7 +97,7 @@ const Book = () => {
   };
 
   function accordionHandleChange(_stage) {
-    let tempStage = [false, false, false];
+    let tempStage = [false, false, false, false];
     tempStage[_stage] = true;
     setStage(tempStage);
   }
@@ -117,15 +118,14 @@ const Book = () => {
     );
   }
 
-  // console.log(stage);
+  console.log(stage);
   console.log(booking);
-  console.log(booking.roomType);
   // console.log(stage.stage2);
   return (
     <>
       <Container>
-        <Icon to='/'>Bakkatown Belize</Icon>
         <FormWrap>
+          <Icon to='/'>Bakkatown Belize</Icon>
           <Form onSubmit={handleSubmit}>
             <div className={classes.root}>
               <Accordion expanded={stage[0]}>
@@ -186,7 +186,7 @@ const Book = () => {
                   </div>
                   <div className={classes.column}>
                     <Typography className={classes.secondaryHeading}>
-                      {booking.roomType.name}
+                      {booking.roomType}
                     </Typography>
                   </div>
                 </AccordionSummary>
@@ -221,7 +221,7 @@ const Book = () => {
                   // expandIcon={<ExpandMoreIcon />}
                   aria-controls='panel1c-content'
                   id='panel1c-header'
-                  // onClick={() => (stage[3] ? accordionHandleChange(2) : '')}
+                  onClick={() => (stage[3] ? accordionHandleChange(2) : '')}
                 >
                   <div className={classes.column}>
                     <Typography className={classes.heading}>
@@ -251,15 +251,48 @@ const Book = () => {
                   <Button
                     size='small'
                     color='primary'
-                    // onClick={() => accordionHandleChange(3)}
+                    onClick={() => accordionHandleChange(3)}
                   >
-                    Review
+                    Next
+                  </Button>
+                </AccordionActions>
+              </Accordion>
+              <Accordion
+                expanded={stage[3]}
+                // onClick={() => accordionHandleChange(3)}
+              >
+                {/* <Accordion expanded={stage.stage4}> */}
+                <AccordionSummary
+                  // expandIcon={<ExpandMoreIcon />}
+                  aria-controls='panel1c-content'
+                  id='panel1c-header'
+                  // onClick={() => accordionHandleChange(3)}
+                >
+                  <div className={classes.column}>
+                    <Typography className={classes.heading}>Payment</Typography>
+                  </div>
+                  {/* <div className={classes.column}>
+                    <Typography className={classes.secondaryHeading}>
+                      Payment
+                    </Typography>
+                  </div> */}
+                </AccordionSummary>
+                <AccordionDetails className={classes.details}>
+                  {/* <Payment handleChange={handleChange} /> */}
+                </AccordionDetails>
+                <Divider />
+                <AccordionActions>
+                  <Button size='small' onClick={() => accordionHandleChange(2)}>
+                    Previous
+                  </Button>
+                  <Button size='small' color='primary'>
+                    Next
                   </Button>
                 </AccordionActions>
               </Accordion>
             </div>
+            <Summary />
           </Form>
-          <Summary booking={booking} changeDateFormat={changeDateFormat} />
         </FormWrap>
       </Container>
     </>
