@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
@@ -34,16 +34,38 @@ export const FormWrap = styled.div`
   }
 `;
 
-export const Icon = styled(Link)`
-  margin: 30px;
+export const ButtonHome = styled(Link)`
+  margin: 50px;
   text-decoration: none;
   color: #fff;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 2rem;
 
   @media screen and (max-width: 480px) {
-    margin-left: 16px;
-    margin-top: 8px;
+    margin: 20px;
+    font-size: 1.7rem;
+  }
+`;
+
+export const ButtonPay = styled(Link)`
+  border-radius: 10px;
+  background: #fdd835;
+  padding: 10px;
+  margin: 20px;
+  color: #010606;
+  font-size: 1.5rem;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fd9d35;
   }
 `;
 
@@ -53,7 +75,7 @@ export const Form = styled.form`
   z-index: 1;
   display: flex;
   /* margin: 0 auto; */
-  padding-top: 50px;
+  /* padding-top: 50px; */
   margin-right: 30px;
   border-radius: 4px;
   justify-content: space-evenly;
@@ -235,13 +257,31 @@ export const SummaryWrapper = styled.div`
   flex-direction: column;
   /* align-items: center; */
   /* grid-gap: 30px 80px; */
-  margin-top: 50px;
+  /* margin-top: 50px; */
   /* padding: 20px 0 0 20px; */
   padding: 20px;
   background: #fff;
   border-radius: 5px;
+  width: 350px;
 
   @media screen and (max-width: 1300px) {
     display: none;
   }
+`;
+
+export const SummaryDetailWrapper = styled.div`
+  /* max-width: 1400px; */
+  /* margin: 0 auto; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.8rem 0 0.8rem;
+  /* padding: 0 50px 50px; */
+`;
+
+export const SummaryPolicyWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+  padding-top: 1rem;
 `;

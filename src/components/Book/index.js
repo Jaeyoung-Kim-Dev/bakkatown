@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
-import { Container, FormWrap, Icon, Form } from './BookElements';
+import { Container, FormWrap, ButtonHome, Form } from './BookElements';
 import Availability from './Availability';
 import Rental from './Rental';
 import GuestDetails from './GuestDetails';
@@ -60,6 +60,8 @@ const Book = () => {
 
   const [booking, setBooking] = useState(initialBook);
   const [stage, setStage] = useState([true, false, false]);
+  const [night, setNight] = useState();
+  const [confirm, setConfirm] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -99,6 +101,7 @@ const Book = () => {
     let tempStage = [false, false, false];
     tempStage[_stage] = true;
     setStage(tempStage);
+    setConfirm(false);
   }
 
   const classes = useStyles();
@@ -111,7 +114,7 @@ const Book = () => {
         {' ('}
         <Moment diff={_startDate} unit='days'>
           {_endDate}
-        </Moment>
+        </Moment>{' '}
         Night)
       </div>
     );
@@ -119,12 +122,13 @@ const Book = () => {
 
   // console.log(stage);
   console.log(booking);
-  console.log(booking.roomType);
+  console.log(night);
+  // console.log(night);
   // console.log(stage.stage2);
   return (
     <>
       <Container>
-        <Icon to='/'>Bakkatown Belize</Icon>
+        <ButtonHome to='/'>Bakkatown Belize</ButtonHome>
         <FormWrap>
           <Form onSubmit={handleSubmit}>
             <div className={classes.root}>
@@ -155,6 +159,7 @@ const Book = () => {
                   <Availability
                     booking={booking}
                     setBooking={setBooking}
+                    setNight={setNight}
                     handleChange={handleChange}
                   />
                 </AccordionDetails>
@@ -185,7 +190,10 @@ const Book = () => {
                     <Typography className={classes.heading}>Rental</Typography>
                   </div>
                   <div className={classes.column}>
-                    <Typography className={classes.secondaryHeading}>
+                    <Typography
+                      className={classes.secondaryHeading}
+                      noWrap={true}
+                    >
                       {booking.roomType.name}
                     </Typography>
                   </div>
@@ -251,15 +259,20 @@ const Book = () => {
                   <Button
                     size='small'
                     color='primary'
-                    // onClick={() => accordionHandleChange(3)}
+                    onClick={() => setConfirm(true)}
                   >
-                    Review
+                    Confirm
                   </Button>
                 </AccordionActions>
               </Accordion>
             </div>
           </Form>
-          <Summary booking={booking} changeDateFormat={changeDateFormat} />
+          <Summary
+            booking={booking}
+            changeDateFormat={changeDateFormat}
+            confirm={confirm}
+            night={night}
+          />
         </FormWrap>
       </Container>
     </>
