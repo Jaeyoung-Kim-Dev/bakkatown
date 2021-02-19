@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -20,6 +20,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// let calendarSize = document.documentElement.clientWidth > 800 ? 2 : 1;
+
 const Availability = (props) => {
   const [dateRange, setDateRange] = useState([
     {
@@ -28,6 +30,14 @@ const Availability = (props) => {
       key: 'selection',
     },
   ]);
+  const [calendarSize, setCalendarSize] = useState(2);
+
+  useEffect(() => {
+    function handleResize() {
+      setCalendarSize(window.innerWidth > 850 ? 2 : 1);
+    }
+    window.addEventListener('resize', handleResize);
+  });
 
   const classes = useStyles();
 
@@ -48,7 +58,7 @@ const Availability = (props) => {
           onChange={(item) => dateHandleChange([item.selection])}
           showSelectionPreview={true}
           moveRangeOnFirstSelection={false}
-          months={2}
+          months={calendarSize}
           ranges={dateRange}
           minDate={new Date()}
           direction='horizontal'

@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-  /* display: flex; */
+  display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
+  flex-direction: column;
   /* min-height: 692px; */
   /* position: fixed; */
   /* bottom: 0;
@@ -23,8 +24,8 @@ export const Container = styled.div`
 
 export const FormWrap = styled.div`
   /* height: 100%; */
-  /* display: flex; */
-  flex-direction: column;
+  display: flex;
+  /* flex-direction: column; */
   justify-content: center;
 
   @media screen and (max-width: 400px) {
@@ -33,7 +34,7 @@ export const FormWrap = styled.div`
 `;
 
 export const Icon = styled(Link)`
-  margin-left: 300px;
+  margin: 30px;
   text-decoration: none;
   color: #fff;
   font-weight: 700;
@@ -47,10 +48,10 @@ export const Icon = styled(Link)`
 
 export const Form = styled.form`
   height: auto;
-  width: 100%;
+  width: auto;
   z-index: 1;
   display: flex;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 50px 32px;
   border-radius: 4px;
   justify-content: space-evenly;
@@ -67,7 +68,7 @@ export const FormContent = styled.div`
   flex-direction: column;
   /* justify-content: center; */
   /* max-width: 350px; */
-  padding: 20px;
+  /* padding: 20px; */
   /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9); */
 
   @media screen and (max-width: 480px) {
@@ -137,7 +138,7 @@ export const RoomsWrapper = styled.div`
   grid-gap: 16px;
   padding: 0 50px;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 840px) {
     grid-template-columns: 1fr;
     padding: 0 20px;
   }
@@ -194,11 +195,12 @@ export const GuestDetailWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   grid-gap: 30px 80px;
-  padding: 0 50px;
+  padding: 0 50px 50px;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 720px) {
     grid-template-columns: 1fr;
-    padding: 0 20px;
+    grid-gap: 10px;
+    padding: 0 20px 20px;
   }
 `;
 
@@ -219,5 +221,24 @@ export const RoomsCard = styled.div`
     transform: scale(1.02);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+  }
+`;
+
+export const SummaryWrapper = styled.div`
+  /* max-width: 1400px; */
+  /* margin: 0 auto; */
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* grid-gap: 30px 80px; */
+  margin-top: 50px;
+  /* padding: 20px 0 0 20px; */
+  padding: 20px;
+  background: #fff;
+
+  @media screen and (max-width: 1300px) {
+    display: none;
   }
 `;

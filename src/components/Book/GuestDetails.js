@@ -63,14 +63,6 @@ const GuestDetails = (props) => {
             className={classes.formField}
             required
           />
-          {/* <FormSelect name='country' onChange={props.handleChange} required>
-            <option>Select Country</option>
-            {countries.all.map((country, key) => (
-              <option key={key} value={country.alpha2}>
-                {country.name}
-              </option>
-            ))}
-          </FormSelect> */}
           <Select
             labelId='demo-simple-select-placeholder-label-label'
             id='demo-simple-select-placeholder-label'
@@ -97,47 +89,6 @@ const GuestDetails = (props) => {
             className={classes.formField}
             onChange={props.handleChange}
           />
-          {/* <FormInput
-          type='text'
-          name='firstName'
-          placeholder='First Name'
-          onChange={props.handleChange}
-          required
-        /> */}
-          {/* <FormInput
-          type='text'
-          name='lastName'
-          placeholder='Last Name'
-          onChange={props.handleChange}
-          required
-        /> */}
-          {/* <FormInput
-          type='email'
-          name='email'
-          placeholder='Email'
-          onChange={props.handleChange}
-          required
-        /> */}
-          {/* <FormInput
-          type='phone'
-          name='phone'
-          placeholder='Phone Number'
-          onChange={props.handleChange}
-          required
-        /> */}
-          {/* <FormSelect name='country' onChange={props.handleChange} required>
-          <option>Select Country</option>
-          {countries.all.map((country, key) => (
-            <option key={key} value={country.alpha2}>
-              {country.name}
-            </option>
-          ))}
-        </FormSelect> */}
-          {/* <FormTextArea
-          name='comments'
-          placeholder='Comments'
-          onChange={props.handleChange}
-        /> */}
         </GuestDetailWrapper>
       </FormControl>
     </>

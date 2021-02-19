@@ -15,10 +15,10 @@ import {
 } from '../Rooms/RoomsElements';
 
 const Rental = (props) => {
-  function roomHandleChange(roomName) {
+  function roomHandleChange(room) {
     props.setBooking((prevState) => ({
       ...prevState,
-      roomType: roomName,
+      roomType: room,
     }));
   }
 
@@ -94,9 +94,7 @@ const Rental = (props) => {
               Night
             </RoomsP>
             <BtnWrap>
-              <ButtonS onClick={() => roomHandleChange(room.name)}>
-                Select
-              </ButtonS>
+              <ButtonS onClick={() => roomHandleChange(room)}>Select</ButtonS>
               <ButtonM>More Info</ButtonM>
             </BtnWrap>
           </RoomsCard>
