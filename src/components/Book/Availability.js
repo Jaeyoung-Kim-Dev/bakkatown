@@ -30,7 +30,9 @@ const Availability = (props) => {
       key: 'selection',
     },
   ]);
-  const [calendarSize, setCalendarSize] = useState(2);
+  const [calendarSize, setCalendarSize] = useState(
+    window.innerWidth > 850 ? 2 : 1
+  );
 
   useEffect(() => {
     function handleResize() {
