@@ -3,25 +3,25 @@ import { animateScroll as scroll } from 'react-scroll';
 import {
   FooterContainer,
   FooterWrap,
-  FooterLinkContainer,
-  FooterLinksWrapper,
-  FooterLinkItems,
-  FooterLinkTitle,
-  FooterLink,
+  // FooterLinkContainer,
+  // FooterLinksWrapper,
+  // FooterLinkItems,
+  // FooterLinkTitle,
+  // FooterLink,
   SocialMedia,
   SocialMediaWrap,
   SocialLogo,
   WebsiteRights,
-  SocialIcons,
-  SocialIconLink,
+  // SocialIcons,
+  // SocialIconLink,
 } from './FooterElements';
-import {
-  FaInstagram,
-  FaFacebook,
-  FaYoutube,
-  FaTwitter,
-  FaLinkedin,
-} from 'react-icons/fa';
+// import {
+//   FaInstagram,
+//   FaFacebook,
+//   FaYoutube,
+//   FaTwitter,
+//   FaLinkedin,
+// } from 'react-icons/fa';
 
 const Footer = () => {
   const toggleHome = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrap>
-        <FooterLinkContainer>
+        {/* <FooterLinkContainer>
           <FooterLinksWrapper>
             <FooterLinkItems>
               <FooterLinkTitle>Get to Know Us</FooterLinkTitle>
@@ -68,7 +68,7 @@ const Footer = () => {
               <FooterLink to='/signin'>Terms of Services</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
-        </FooterLinkContainer>
+        </FooterLinkContainer> */}
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo to='/' onClick={toggleHome}>
@@ -77,7 +77,7 @@ const Footer = () => {
             <WebsiteRights>
               {new Date().getFullYear()} BAKKATOWN BELIZE. All rights reserved.
             </WebsiteRights>
-            <SocialIcons>
+            {/* <SocialIcons>
               <SocialIconLink href='/' target='_blank' arial-label='Facebook'>
                 <FaFacebook />
               </SocialIconLink>
@@ -101,7 +101,7 @@ const Footer = () => {
               >
                 <FaLinkedin />
               </SocialIconLink>
-            </SocialIcons>
+            </SocialIcons> */}
           </SocialMediaWrap>
         </SocialMedia>
       </FooterWrap>

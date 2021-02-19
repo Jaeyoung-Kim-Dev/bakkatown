@@ -30,7 +30,9 @@ const Availability = (props) => {
       key: 'selection',
     },
   ]);
-  const [calendarSize, setCalendarSize] = useState();
+  const [calendarSize, setCalendarSize] = useState(
+    window.innerWidth > 850 ? 2 : 1
+  );
 
   useEffect(() => {
     function handleResize() {
@@ -48,6 +50,10 @@ const Availability = (props) => {
       dateFrom: ranges[0].startDate,
       dateTo: ranges[0].endDate,
     }));
+
+    const diffTime = Math.abs(ranges[0].endDate - ranges[0].startDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    props.setNight(diffDays);
   }
 
   return (

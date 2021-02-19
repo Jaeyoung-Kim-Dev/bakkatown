@@ -29,7 +29,7 @@ const Rental = (props) => {
           <RoomsCard
             key={key}
             roomName={room.name}
-            selectedRoom={props.booking.roomType}
+            selectedRoom={props.booking.roomType.name}
           >
             <RoomsH2>{room.name}</RoomsH2>
             <RoomsImage
