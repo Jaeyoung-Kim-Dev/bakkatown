@@ -7,27 +7,35 @@ import {
   useStripe,
 } from '@stripe/react-stripe-js';
 import './2-Card-Detailed.css';
+// import {
+//   FormContent,
+//   FormH1,
+//   FormLabel,
+//   FormInput,
+//   FormButton,
+//   Text,
+// } from './BookElements';
 
 const CARD_OPTIONS = {
   iconStyle: 'solid',
   style: {
     base: {
-      iconColor: '#000',
-      color: '#000',
+      iconColor: '#c4f0ff',
+      color: '#fff',
       fontWeight: 500,
       fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
       fontSize: '16px',
       fontSmoothing: 'antialiased',
       ':-webkit-autofill': {
-        color: '#ea3',
+        color: '#fce883',
       },
       '::placeholder': {
-        color: 'grey',
+        color: '#87bbfd',
       },
     },
     invalid: {
-      iconColor: '#000',
-      color: '#000',
+      iconColor: '#ffc7ee',
+      color: '#ffc7ee',
     },
   },
 };

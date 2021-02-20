@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import formatCurrency from '../../util';
 import {
   FormContent,
@@ -11,54 +11,48 @@ import {
 import Divider from '@material-ui/core/Divider';
 
 const Summary = (props) => {
-  const roomPrice = props.booking.roomType
-    ? {
-        day: formatCurrency(props.booking.roomType.price),
-        days: formatCurrency(props.booking.roomType.price * props.night),
-        tax: formatCurrency(props.booking.roomType.price * props.night * 0.09),
-        total: formatCurrency(
-          props.booking.roomType.price * props.night * 1.09
-        ),
-      }
-    : 0;
+  const [roomPrice, setRoomPrice] = useState({
+    day: '',
+    days: '',
+    tax: '',
+    total: '',
+  });
+  const { dateFrom, dateTo, roomType } = props.booking;
+  const night = props.night;
 
-  // const roomPriceDay = formatCurrency(props.booking.roomType.price);
-  // const roomPriceDays = formatCurrency(
-  //   props.booking.roomType.price * props.night
-  // );
-  // const roomTax = formatCurrency(
-  //   props.booking.roomType.price * props.night * 0.09
-  // );
-  // const roomTotalPrice = formatCurrency(
-  //   props.booking.roomType.price * props.night * 1.09
-  // );
+  useEffect(() => {
+    const _roomPrice = roomType.price;
+    _roomPrice &&
+      setRoomPrice({
+        day: formatCurrency(_roomPrice),
+        days: formatCurrency(_roomPrice * night),
+        tax: formatCurrency(_roomPrice * night * 0.09),
+        total: formatCurrency(_roomPrice * night * 1.09),
+      });
+  }, [roomType, night]);
 
   return (
     <FormContent>
       <SummaryWrapper>
         <FormH1>SUMMARY</FormH1>
-        {props.booking.dateTo !== '' ? (
-          <div>
-            <br /> <br />
-            {props.changeDateFormat(
-              props.booking.dateFrom,
-              props.booking.dateTo
-            )}
-          </div>
-        ) : (
-          ''
-        )}
-        {props.booking.roomType !== '' && props.night !== 0 ? (
+        <br />
+        {dateFrom && dateTo && (
           <div>
             <br />
+            {props.changeDateFormat(dateFrom, dateTo)}
+            <br />
+          </div>
+        )}
+        {roomType && dateFrom && (
+          <div>
             <Divider />
             <SummaryDetailWrapper>
-              <h4>{props.booking.roomType.name}</h4>
+              <h4>{roomType.name}</h4>
               <h4>{roomPrice.day}</h4>
             </SummaryDetailWrapper>
             <SummaryDetailWrapper>
               <h4>Night(s)</h4>
-              <h4>{props.night}</h4>
+              <h4>{night}</h4>
             </SummaryDetailWrapper>
             <SummaryDetailWrapper>
               <p>Rental price</p>
@@ -81,18 +75,16 @@ const Summary = (props) => {
               <p>Property's currency</p>
               {roomPrice.total}
             </SummaryDetailWrapper>
-            <Divider />
-            <SummaryPolicyWrapper>
-              <h4>Cancellation Policy:</h4>
-              <p>All paid prepayments are non-refundable.</p>
-              <h4>Damage Protection Policy:</h4>
-              <p>No damage deposit is due.</p>
-            </SummaryPolicyWrapper>
           </div>
-        ) : (
-          ''
         )}
-        {props.confirm ? <ButtonPay to='./payment'>P A Y</ButtonPay> : ''}
+        <Divider />
+        <SummaryPolicyWrapper>
+          <h4>Cancellation Policy:</h4>
+          <p>All paid prepayments are non-refundable.</p>
+          <h4>Damage Protection Policy:</h4>
+          <p>No damage deposit is due.</p>
+        </SummaryPolicyWrapper>
+        {props.confirm && <ButtonPay to='./payment'>Compete Booking</ButtonPay>}
       </SummaryWrapper>
     </FormContent>
   );

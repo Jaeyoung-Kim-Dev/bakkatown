@@ -5,7 +5,6 @@ import { RiParkingBoxLine } from 'react-icons/ri';
 import { ButtonS, ButtonM, RoomsWrapper, RoomsCard } from './BookElements';
 import RoomLists from '../Rooms/roomlists.json';
 import {
-  // RoomsWrapper,
   RoomsImage,
   RoomsH2,
   RoomsP,
@@ -15,12 +14,12 @@ import {
 } from '../Rooms/RoomsElements';
 
 const Rental = (props) => {
-  function roomHandleChange(room) {
+  const roomHandleChange = (room) => {
     props.setBooking((prevState) => ({
       ...prevState,
       roomType: room,
     }));
-  }
+  };
 
   return (
     <>
