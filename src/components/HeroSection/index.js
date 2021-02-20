@@ -12,9 +12,16 @@ import {
   Slider,
 } from './HeroElements';
 
+const heroImage =
+  window.innerHeight < window.innerWidth
+    ? require(`../../images/heroImageH.jpg`)?.default
+    : require(`../../images/heroImageV.jpg`)?.default;
+// const heroImageHorizontal = require(`../../images/heroImageH.jpg`)?.default;
+// const heroImageVertical = require(`../../images/heroImageV.jpg`)?.default;
+
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
-  const [heroImage, setHeroImage] = useState();
+  // const [heroImage, setHeroImage] = useState();
 
   const onHover = () => {
     setHover(!hover);
@@ -25,9 +32,6 @@ const HeroSection = () => {
 
   useEffect(() => {
     // document.documentElement.clientHeight < document.documentElement.clientWidth
-    window.innerHeight < window.innerWidth
-      ? setHeroImage(require(`../../images/heroImageH.jpg`)?.default)
-      : setHeroImage(require(`../../images/heroImageV.jpg`)?.default);
 
     let tl = new gsap.timeline();
     tl.from(content.current, {
