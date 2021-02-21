@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import StripeCheckout from 'react-stripe-checkout';
-import axios from 'axios';
-import { toast } from 'react-toastify';
 import formatCurrency from '../../util';
 import {
   FormContent,
   SummaryWrapper,
   FormH1,
+  ButtonPay,
   SummaryDetailWrapper,
   SummaryPolicyWrapper,
 } from './BookElements';
 import Divider from '@material-ui/core/Divider';
-import 'react-toastify/dist/ReactToastify.css';
-
-const taxRate = 0.09;
-toast.configure();
 
 const Summary = (props) => {
   const [roomPrice, setRoomPrice] = useState({
@@ -23,7 +17,6 @@ const Summary = (props) => {
     tax: '',
     total: '',
   });
-  const { booking } = props.booking;
   const { dateFrom, dateTo, roomType } = props.booking;
   const night = props.night;
 
@@ -33,26 +26,10 @@ const Summary = (props) => {
       setRoomPrice({
         day: formatCurrency(_roomPrice),
         days: formatCurrency(_roomPrice * night),
-        tax: formatCurrency(_roomPrice * night * taxRate),
-        total: formatCurrency(_roomPrice * night * (1 + taxRate)),
+        tax: formatCurrency(_roomPrice * night * 0.09),
+        total: formatCurrency(_roomPrice * night * 1.09),
       });
   }, [roomType, night]);
-
-  async function handleToken(token) {
-    console.log('post start');
-    const response = await axios.post(`http://localhost:8080/charge`, {
-      token,
-      booking,
-      amount: roomType.price * night * (1 + taxRate) * 100,
-    });
-    const { status } = response.data;
-    console.log('Response:', response.data);
-    if (status === 'success') {
-      toast('Success! Check email for details', { type: 'success' });
-    } else {
-      toast('Something went wrong', { type: 'error' });
-    }
-  }
 
   return (
     <FormContent>
@@ -106,18 +83,8 @@ const Summary = (props) => {
           <p>All paid prepayments are non-refundable.</p>
           <h4>Damage Protection Policy:</h4>
           <p>No damage deposit is due.</p>
-          <br />
         </SummaryPolicyWrapper>
-        {/* {props.confirm && <ButtonPay to='./payment'>Compete Booking</ButtonPay>} */}
-        {props.confirm && (
-          <StripeCheckout
-            stripeKey='pk_test_51IN11gDGhZ9LCyXGlTyb7qx9v99iwmLMZQt3YxsrSydM8WUe5KgPe7f1Ss2z47Ql9KOn4gKEFX9VcyMHFIkEt05X00gXrSdXYW'
-            token={handleToken}
-            amount={roomType.price * night * (1 + taxRate) * 100}
-            name={roomType.name}
-            billingAddress
-          />
-        )}
+        {props.confirm && <ButtonPay to='./payment'>Compete Booking</ButtonPay>}
       </SummaryWrapper>
     </FormContent>
   );

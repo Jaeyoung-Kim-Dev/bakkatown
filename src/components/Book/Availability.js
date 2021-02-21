@@ -31,12 +31,12 @@ const Availability = (props) => {
     },
   ]);
   const [calendarSize, setCalendarSize] = useState(
-    window.innerWidth > 850 ? 2 : 1
+    window.innerWidth > 1300 ? 2 : 1
   );
 
   useEffect(() => {
     function handleResize() {
-      setCalendarSize(window.innerWidth > 850 ? 2 : 1);
+      setCalendarSize(window.innerWidth > 1300 ? 2 : 1);
     }
     window.addEventListener('resize', handleResize);
   });

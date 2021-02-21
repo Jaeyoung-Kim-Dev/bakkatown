@@ -29,7 +29,7 @@ export const FormWrap = styled.div`
   justify-content: center;
   margin-bottom: 5vh;
 
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 840px) {
     /* height: 80%; */
     flex-direction: column;
   }
@@ -75,26 +75,20 @@ export const Form = styled.form`
   width: auto;
   z-index: 1;
   display: flex;
-  /* margin: 0 auto; */
-  /* padding-top: 50px; */
-  margin-right: 30px;
+  margin-right: 20px;
   border-radius: 4px;
   justify-content: space-evenly;
 
-  @media screen and (max-width: 1300px) {
-    margin-right: auto;
+  @media screen and (max-width: 840px) {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 `;
 
 export const FormContent = styled.div`
-  /* background: #010101; */
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* max-width: 350px; */
-  /* padding: 20px; */
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9); */
 
   @media screen and (max-width: 480px) {
     padding: 10px;
@@ -163,7 +157,7 @@ export const RoomsWrapper = styled.div`
   grid-gap: 16px;
   padding: 0 50px;
 
-  @media screen and (max-width: 840px) {
+  @media screen and (max-width: 1300px) {
     grid-template-columns: 1fr;
     padding: 0 20px;
   }
@@ -221,8 +215,9 @@ export const GuestDetailWrapper = styled.div`
   align-items: center;
   grid-gap: 30px 80px;
   padding: 0 50px 50px;
+  min-width: 320px;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 1300px) {
     grid-template-columns: 1fr;
     grid-gap: 10px;
     padding: 0 20px 20px;
@@ -250,7 +245,7 @@ export const RoomsCard = styled.div`
 `;
 
 export const SummaryWrapper = styled.div`
-  /* max-width: 1400px; */
+  max-width: 394.39px;
   /* margin: 0 auto; */
   /* display: grid; */
   /* grid-template-columns: 1fr 1fr; */
@@ -263,10 +258,10 @@ export const SummaryWrapper = styled.div`
   padding: 20px;
   background: #fff;
   border-radius: 5px;
-  width: 350px;
 
   @media screen and (max-width: 1300px) {
-    display: none;
+    width: 90vw;
+    /* display: none; */
   }
 `;
 
@@ -279,10 +274,26 @@ export const SummaryDetailWrapper = styled.div`
   margin: 0.8rem 0 0.8rem;
   /* padding: 0 50px 50px; */
 `;
+// export const SummaryDetailWrapper = styled.div`
+//   /* max-width: 1400px; */
+//   /* margin: 0 auto; */
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(var(—col-width), auto));
+//   /* padding: 0 50px 50px; */
+// `;
 
 export const SummaryPolicyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   line-height: 2rem;
   padding-top: 1rem;
+`;
+
+export const AccordionRoot = styled.div`
+  max-width: '750px';
+  min-width: '350px';
+
+  @media screen and (max-width: 440px) {
+    width: 90vw;
+  }
 `;
