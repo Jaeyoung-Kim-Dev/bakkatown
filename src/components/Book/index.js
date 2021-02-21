@@ -8,11 +8,17 @@ import AccordionActions from '@material-ui/core/AccordionActions';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
-import { Container, FormWrap, ButtonHome, Form } from './BookElements';
+import {
+  Container,
+  FormWrap,
+  AccordionRoot,
+  ButtonHome,
+  Form,
+} from './BookElements';
 import Availability from './Availability';
 import Rental from './Rental';
 import GuestDetails from './GuestDetails';
-import Payment from './Payment';
+// import Payment from './Payment';
 import Summary from './Summary';
 import Moment from 'react-moment';
 
@@ -20,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '750px',
     minWidth: '350px',
-    width: '90vw',
+    // width: '90vw',
+    // width: '80%',
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -40,15 +47,6 @@ const useStyles = makeStyles((theme) => ({
   column: {
     flexBasis: '33.33%',
   },
-  modal: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    overlay: { zIndex: 1000 },
-  },
 }));
 
 const Book = () => {
@@ -67,7 +65,7 @@ const Book = () => {
   };
 
   const [booking, setBooking] = useState(initialBook);
-  const [stage, setStage] = useState([true, false, false, false]);
+  const [stage, setStage] = useState([true, false, false]);
   const [night, setNight] = useState(0);
   const [confirm, setConfirm] = useState(false);
 
@@ -106,10 +104,15 @@ const Book = () => {
   };
 
   const accordionHandleChange = (_stage) => {
-    let tempStage = [false, false, false, false];
+    let tempStage = [false, false, false];
     tempStage[_stage] = true;
     setStage(tempStage);
     setConfirm(false);
+  };
+
+  const handleConfirm = () => {
+    setConfirm(true);
+    setStage(false, false, false);
   };
 
   const classes = useStyles();
@@ -123,18 +126,16 @@ const Book = () => {
     );
   };
 
-  // console.log(stage);
   console.log({ booking });
   console.log({ night });
-  // console.log(night);
-  // console.log(stage.stage2);
   return (
     <>
       <Container>
         <ButtonHome to='/'>Bakkatown Belize</ButtonHome>
         <FormWrap>
           <Form onSubmit={handleSubmit}>
-            <div className={classes.root}>
+            {/* <div className={classes.root}> */}
+            <AccordionRoot>
               <Accordion expanded={stage[0]}>
                 <AccordionSummary
                   aria-controls='panel1c-content'
@@ -220,9 +221,7 @@ const Book = () => {
                 <AccordionSummary
                   aria-controls='panel1c-content'
                   id='panel1c-header'
-                  onClick={() =>
-                    !stage[0] && !stage[1] && accordionHandleChange(2)
-                  }
+                  onClick={() => confirm && accordionHandleChange(2)}
                 >
                   <div className={classes.column}>
                     <Typography className={classes.heading}>
@@ -250,48 +249,13 @@ const Book = () => {
                   <Button
                     size='small'
                     color='primary'
-                    onClick={() => accordionHandleChange(3)}
+                    onClick={() => handleConfirm()}
                   >
-                    Next
+                    Confirm
                   </Button>
                 </AccordionActions>
               </Accordion>
-              <Accordion expanded={stage[3]}>
-                <AccordionSummary
-                  aria-controls='panel1c-content'
-                  id='panel1c-header'
-                >
-                  <div className={classes.column}>
-                    <Typography className={classes.heading}>Payment</Typography>
-                  </div>
-                  <div className={classes.column}>
-                    <Typography className={classes.secondaryHeading}>
-                      {booking.firstName && booking.lastName && (
-                        <div style={{ textTransform: 'uppercase' }}>
-                          {booking.firstName + ' ' + booking.lastName}
-                        </div>
-                      )}
-                    </Typography>
-                  </div>
-                </AccordionSummary>
-                <AccordionDetails className={classes.details}>
-                  <Payment booking={booking} handleChange={handleChange} />
-                </AccordionDetails>
-                <Divider />
-                <AccordionActions>
-                  <Button size='small' onClick={() => accordionHandleChange(2)}>
-                    Previous
-                  </Button>
-                  <Button
-                    size='small'
-                    color='primary'
-                    onClick={() => setConfirm(true)}
-                  >
-                    Review
-                  </Button>
-                </AccordionActions>
-              </Accordion>
-            </div>
+            </AccordionRoot>
           </Form>
           <Summary
             booking={booking}

@@ -1,0 +1,20 @@
+{
+  "name": "bakkatown-backend-node",
+  "version": "1.0.0",
+  "description": "",
+  "proxy": "http://localhost:8080/",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon src/server.js localhost 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "stripe": "^8.137.0",
+    "uuid": "^8.3.2"
+  }
+}

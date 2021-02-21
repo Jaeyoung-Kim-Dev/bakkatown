@@ -29,7 +29,7 @@ const HeroSection = () => {
   useEffect(() => {
     // document.documentElement.clientHeight < document.documentElement.clientWidth
     const selectHeroImage = async () => {
-      await setHeroImage(
+      setHeroImage(
         window.innerHeight < window.innerWidth
           ? require(`../../images/heroImageH.jpg`)?.default
           : require(`../../images/heroImageV.jpg`)?.default
