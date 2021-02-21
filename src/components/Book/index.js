@@ -229,7 +229,11 @@ const Book = () => {
                     </Typography>
                   </div>
                   <div className={classes.column}>
-                    <Typography className={classes.secondaryHeading}>
+                    <Typography
+                      className={classes.secondaryHeading}
+                      component={'span'}
+                      noWrap={true}
+                    >
                       {booking.firstName && booking.lastName && (
                         <div style={{ textTransform: 'uppercase' }}>
                           {booking.firstName + ' ' + booking.lastName}

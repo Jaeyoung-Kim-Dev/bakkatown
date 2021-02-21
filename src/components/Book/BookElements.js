@@ -89,6 +89,7 @@ export const FormContent = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @media screen and (max-width: 480px) {
     padding: 10px;
@@ -213,14 +214,15 @@ export const GuestDetailWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  grid-gap: 30px 80px;
-  padding: 0 50px 50px;
-  min-width: 320px;
+  grid-gap: 30px 50px;
+  padding-bottom: 50px;
+  width: 500px;
 
   @media screen and (max-width: 1300px) {
     grid-template-columns: 1fr;
     grid-gap: 10px;
     padding: 0 20px 20px;
+    width: 300px;
   }
 `;
 
