@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // let calendarSize = document.documentElement.clientWidth > 800 ? 2 : 1;
+// delete above?
 
 const Availability = (props) => {
   const [dateRange, setDateRange] = useState([
