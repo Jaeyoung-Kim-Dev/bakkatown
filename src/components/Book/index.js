@@ -30,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '750px',
     minWidth: '350px',
-    // width: '90vw',    
+    // width: '90vw',
+    // height
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
