@@ -3,7 +3,7 @@ const express = require('express');
 const stripe = require('stripe')(
   'sk_test_51IN11gDGhZ9LCyXGrtjNI6SDWR5awSzgev8J14PkZlS6Sz4Puh2TmaW1DKNJUKX1qJDSVuGU9S1IX5q7GhMSu27T00jWSbJ1dM'
 );
-const { v4: uuidv4 } = require('uuid');
+const uuidv4 = require('uuid');
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.post('/charge', async (req, res) => {
   let error;
   let status;
   try {
-    const { token, amount } = req.body;
+    const { token, booking } = req.body;
     // console.log({ booking });
     const customer = await stripe.customers.create({
       email: token.email,

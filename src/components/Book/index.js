@@ -8,6 +8,9 @@ import AccordionActions from '@material-ui/core/AccordionActions';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
+import Moment from 'react-moment';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Container,
   FormWrap,
@@ -18,9 +21,10 @@ import {
 import Availability from './Availability';
 import Rental from './Rental';
 import GuestDetails from './GuestDetails';
-// import Payment from './Payment';
 import Summary from './Summary';
-import Moment from 'react-moment';
+// import ScrollToTop from '../.. /components/ScrollToTop';
+
+toast.configure();
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -108,14 +112,51 @@ const Book = () => {
     tempStage[_stage] = true;
     setStage(tempStage);
     setConfirm(false);
+    window.scrollTo(0, 0);
   };
 
-  const handleConfirm = () => {
-    setConfirm(true);
-    setStage(false, false, false);
+  const validate = (_stage) => {
+    switch (_stage) {
+      case 0: //availability
+        if (!booking.dateFrom || !booking.dateTo) {
+          toast('Booking date cannot be empty.', { type: 'error' });
+        } else if (!night) {
+          toast('Check-in and out date cannot be the same.', { type: 'error' });
+        } else {
+          accordionHandleChange(_stage + 1);
+        }
+        break;
+      case 1:
+        if (!booking.roomType) {
+          toast('Please select a room.', { type: 'error' });
+        } else {
+          accordionHandleChange(_stage + 1);
+        }
+        break;
+      case 2:
+        if (!booking.firstName) {
+          toast('First name cannot be empty.', { type: 'error' });
+        } else if (!booking.lastName) {
+          toast('Last name cannot be empty.', { type: 'error' });
+        } else if (!booking.email) {
+          toast('Email cannot be empty.', { type: 'error' });
+        } else if (!booking.phone) {
+          toast('Phone number cannot be empty.', { type: 'error' });
+        } else if (!booking.country) {
+          toast('Country cannot be empty.', { type: 'error' });
+        } else {
+          setConfirm(true);
+          setStage(false, false, false);
+        }
+        break;
+      default:
+    }
   };
 
-  const classes = useStyles();
+  // const handleConfirm = () => {
+  //   setConfirm(true);
+  //   setStage(false, false, false);
+  // };
 
   const changeDateFormat = (_startDate, _endDate) => {
     return (
@@ -125,6 +166,8 @@ const Book = () => {
       </div>
     );
   };
+
+  const classes = useStyles();
 
   console.log({ booking });
   console.log({ night });
@@ -172,7 +215,8 @@ const Book = () => {
                   <Button
                     size='small'
                     color='primary'
-                    onClick={() => accordionHandleChange(1)}
+                    // onClick={() => accordionHandleChange(1)}
+                    onClick={() => validate(0)}
                   >
                     Next
                   </Button>
@@ -211,7 +255,7 @@ const Book = () => {
                   <Button
                     size='small'
                     color='primary'
-                    onClick={() => accordionHandleChange(2)}
+                    onClick={() => validate(1)}
                   >
                     Next
                   </Button>
@@ -253,7 +297,7 @@ const Book = () => {
                   <Button
                     size='small'
                     color='primary'
-                    onClick={() => handleConfirm()}
+                    onClick={() => validate(2)}
                   >
                     Confirm
                   </Button>
