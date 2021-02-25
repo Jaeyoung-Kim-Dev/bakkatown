@@ -24,7 +24,7 @@ const Summary = (props) => {
     total: '',
   });
   const { booking } = props.booking;
-  const { dateFrom, dateTo, roomType } = props.booking;
+  const { dateFrom, dateTo, roomType, guests } = props.booking;
   const night = props.night;
 
   useEffect(() => {
@@ -62,8 +62,15 @@ const Summary = (props) => {
         {dateFrom && dateTo && (
           <div>
             <br />
-            {props.changeDateFormat(dateFrom, dateTo)}
-            <br />
+            <SummaryDetailWrapper>
+              <p>Date</p>
+              {props.changeDateFormat(dateFrom, dateTo)}
+            </SummaryDetailWrapper>
+            <Divider />
+            <SummaryDetailWrapper>
+              <p>Guests</p>
+              {guests}
+            </SummaryDetailWrapper>
           </div>
         )}
         {roomType && dateFrom && (
@@ -113,7 +120,7 @@ const Summary = (props) => {
           <StripeCheckout
             stripeKey='pk_test_51IN11gDGhZ9LCyXGlTyb7qx9v99iwmLMZQt3YxsrSydM8WUe5KgPe7f1Ss2z47Ql9KOn4gKEFX9VcyMHFIkEt05X00gXrSdXYW'
             token={handleToken}
-            amount={roomType.price * night * (1 + taxRate) * 100}
+            totalAmount={roomType.price * night * (1 + taxRate) * 100}
             name={roomType.name}
             billingAddress
           />
