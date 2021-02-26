@@ -23,7 +23,6 @@ const Summary = (props) => {
     tax: '',
     total: '',
   });
-  const { booking } = props.booking;
   const { dateFrom, dateTo, roomType, guests } = props.booking;
   const night = props.night;
 
@@ -42,8 +41,8 @@ const Summary = (props) => {
     console.log('post start');
     const response = await axios.post(`http://localhost:8080/charge`, {
       token,
-      booking,
-      amount: roomType.price * night * (1 + taxRate) * 100,
+      booking: props.booking,
+      totalAmount: roomType.price * night * (1 + taxRate),
     });
     const { status } = response.data;
     console.log('Response:', response.data);
@@ -120,7 +119,6 @@ const Summary = (props) => {
           <StripeCheckout
             stripeKey='pk_test_51IN11gDGhZ9LCyXGlTyb7qx9v99iwmLMZQt3YxsrSydM8WUe5KgPe7f1Ss2z47Ql9KOn4gKEFX9VcyMHFIkEt05X00gXrSdXYW'
             token={handleToken}
-            totalAmount={roomType.price * night * (1 + taxRate) * 100}
             name={roomType.name}
             billingAddress
           />
