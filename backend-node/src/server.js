@@ -3,7 +3,7 @@ const express = require('express');
 const stripe = require('stripe')(
   'sk_test_51IN11gDGhZ9LCyXGrtjNI6SDWR5awSzgev8J14PkZlS6Sz4Puh2TmaW1DKNJUKX1qJDSVuGU9S1IX5q7GhMSu27T00jWSbJ1dM'
 );
-const uuidv4 = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.post('/charge', async (req, res) => {
   let error;
   let status;
   try {
-    const { token, booking } = req.body;
+    const { token, booking, totalAmount } = req.body;
     // console.log({ booking });
     const customer = await stripe.customers.create({
       email: token.email,
@@ -28,15 +28,14 @@ app.post('/charge', async (req, res) => {
     });
 
     const idempotencyKey = uuidv4();
+    console.log({ totalAmount, booking });
     const charge = await stripe.charges.create(
       {
-        // amount: Number(amount).toFixed(2),
-        amount: 100,
+        amount: Number(totalAmount).toFixed(0),
         currency: 'cad',
         customer: customer.id,
         receipt_email: token.email,
-        // description: `Purchased the ${booking.roomType.name}`,
-        description: `Purchased the something.`,
+        description: `Purchased the ${booking.roomType.name}`,
         shipping: {
           name: token.card.name,
           address: {
