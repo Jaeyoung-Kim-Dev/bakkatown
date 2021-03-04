@@ -14,6 +14,12 @@ import {
 } from '../Rooms/RoomsElements';
 
 const Rental = (props) => {
+  let filteredRoomLists = RoomLists;
+
+  filteredRoomLists = filteredRoomLists.filter((room) => {
+    return room.people >= props.booking.guests;
+  });
+
   const roomHandleChange = (room) => {
     props.setBooking((prevState) => ({
       ...prevState,
@@ -24,7 +30,7 @@ const Rental = (props) => {
   return (
     <>
       <RoomsWrapper>
-        {RoomLists.roomlists.map((room, key) => (
+        {filteredRoomLists.map((room, key) => (
           <RoomsCard
             key={key}
             roomName={room.name}

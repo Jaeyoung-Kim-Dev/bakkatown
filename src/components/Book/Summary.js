@@ -117,10 +117,12 @@ const Summary = (props) => {
         {/* {props.confirm && <ButtonPay to='./payment'>Compete Booking</ButtonPay>} */}
         {props.confirm && (
           <StripeCheckout
-            stripeKey='pk_test_51IN11gDGhZ9LCyXGlTyb7qx9v99iwmLMZQt3YxsrSydM8WUe5KgPe7f1Ss2z47Ql9KOn4gKEFX9VcyMHFIkEt05X00gXrSdXYW'
+            stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
+            // stripeKey='pk_test_51IN11gDGhZ9LCyXGlTyb7qx9v99iwmLMZQt3YxsrSydM8WUe5KgPe7f1Ss2z47Ql9KOn4gKEFX9VcyMHFIkEt05X00gXrSdXYW'
             token={handleToken}
             name={roomType.name}
             billingAddress
+            amount={roomType.price * night * (1 + taxRate) * 100}
           />
         )}
       </SummaryWrapper>
