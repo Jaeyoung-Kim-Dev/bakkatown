@@ -21,7 +21,7 @@ const Rooms = () => {
     <RoomsContainer id='services'>
       <RoomsH1>Our Rooms</RoomsH1>
       <RoomsWrapper>
-        {RoomLists.roomlists.map((room, key) => (
+        {RoomLists.map((room, key) => (
           <RoomsCard key={key}>
             <RoomsH2>{room.name}</RoomsH2>
             <RoomsImage

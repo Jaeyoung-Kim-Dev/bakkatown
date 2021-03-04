@@ -21,7 +21,7 @@ const Gallery = ({ dark }) => {
           <Heading isDark={dark}>What does the Hotel look like?</Heading>
         </TextWrapper>
         <Carousel>
-          {galleryData.photoNames.map((photo, key) => (
+          {galleryData.map((photo, key) => (
             <ImgWrap key={key}>
               <Img
                 src={require(`../../images/gallery/${photo.fileName}`)?.default}

@@ -28,7 +28,7 @@ app.post('/charge', async (req, res) => {
     });
 
     const idempotencyKey = uuidv4();
-    console.log({ totalAmount, booking });
+    console.log({ token });
     const charge = await stripe.charges.create(
       {
         amount: Number(totalAmount).toFixed(0),
