@@ -1,7 +1,7 @@
 import React from 'react';
 import { BiUser, BiBed, BiBath, BiWifi } from 'react-icons/bi';
 import { RiParkingBoxLine } from 'react-icons/ri';
-import RoomLists from './roomlists.json';
+import RoomLists from './roomLists.json';
 import {
   RoomsContainer,
   RoomsH1,

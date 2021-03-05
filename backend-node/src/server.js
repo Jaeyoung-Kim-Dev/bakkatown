@@ -4,14 +4,18 @@ const stripe = require('stripe')(
   'sk_test_51IN11gDGhZ9LCyXGrtjNI6SDWR5awSzgev8J14PkZlS6Sz4Puh2TmaW1DKNJUKX1qJDSVuGU9S1IX5q7GhMSu27T00jWSbJ1dM'
 );
 const { v4: uuidv4 } = require('uuid');
+const roomList = require('./roomLists.json');
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) => {
-  //res.send("Add your Stripe Secret Key to the .require('stripe') statement!");
+app.get('/', (req, res) => {});
+
+app.get('/book', (req, res) => {
+  console.log(roomList);
+  res.json(roomList);
 });
 
 app.post('/charge', async (req, res) => {
