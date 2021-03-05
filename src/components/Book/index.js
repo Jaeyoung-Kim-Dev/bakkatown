@@ -22,28 +22,16 @@ import Availability from './Availability';
 import Rental from './Rental';
 import GuestDetails from './GuestDetails';
 import Summary from './Summary';
-// import ScrollToTop from '../.. /components/ScrollToTop';
 
 toast.configure();
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: '750px',
-    minWidth: '350px',
-    // width: '90vw',
-    // height
-  },
   heading: {
     fontSize: theme.typography.pxToRem(15),
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
-  },
-  icon: {
-    verticalAlign: 'bottom',
-    height: 20,
-    width: 20,
   },
   details: {
     justifyContent: 'center',
@@ -53,51 +41,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Book = () => {
-  const initialBook = {
-    dateFrom: '',
-    dateTo: '',
-    guests: 2,
-    promoCode: '',
-    roomType: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    country: '',
-    comments: '',
-  };
+const initialBook = {
+  dateFrom: '',
+  dateTo: '',
+  guests: 2,
+  promoCode: '',
+  roomType: '',
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  country: '',
+  comments: '',
+};
 
+const Book = () => {
   const [booking, setBooking] = useState(initialBook);
+  const [roomLists, setRoomLists] = useState([]);
   const [stage, setStage] = useState([true, false, false]);
   const [night, setNight] = useState(0);
   const [confirm, setConfirm] = useState(false);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const newBook = {
-      dateFrom: booking.dateFrom,
-      dateTo: booking.dateTo,
-      guests: booking.guests,
-      promoCode: booking.promoCode,
-      roomType: booking.roomType,
-      firstName: booking.firstName,
-      lastName: booking.lastName,
-      email: booking.email,
-      phone: booking.phone,
-      country: booking.country,
-      comments: booking.comments,
-    };
-
-    axios
-      .post(`https://jsonplaceholder.typicode.com/users`, { newBook })
-      // .post(`https://localhost:8080/`, { newBook })
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
-  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -115,7 +78,7 @@ const Book = () => {
     window.scrollTo(0, 0);
   };
 
-  const validate = (_stage) => {
+  const validate = async (_stage) => {
     switch (_stage) {
       case 0: //availability
         if (!booking.dateFrom || !booking.dateTo) {
@@ -123,17 +86,22 @@ const Book = () => {
         } else if (!night) {
           toast('Check-in and out date cannot be the same.', { type: 'error' });
         } else {
+          fetchRoomData();
           accordionHandleChange(_stage + 1);
         }
         break;
-      case 1:
+      case 1: //rental
         if (!booking.roomType) {
-          toast('Please select a room.', { type: 'error' });
+          roomLists.length
+            ? toast('Please select a room.', { type: 'error' })
+            : toast('Please go back and select another dates.', {
+                type: 'error',
+              });
         } else {
           accordionHandleChange(_stage + 1);
         }
         break;
-      case 2:
+      case 2: //guest details
         if (!booking.firstName) {
           toast('First name cannot be empty.', { type: 'error' });
         } else if (!booking.lastName) {
@@ -153,10 +121,11 @@ const Book = () => {
     }
   };
 
-  // const handleConfirm = () => {
-  //   setConfirm(true);
-  //   setStage(false, false, false);
-  // };
+  function fetchRoomData() {
+    axios.get(`http://localhost:8080/room/available`).then((res) => {
+      setRoomLists(res.data);
+    });
+  }
 
   const changeDateFormat = (_startDate, _endDate) => {
     return (
@@ -169,15 +138,12 @@ const Book = () => {
 
   const classes = useStyles();
 
-  console.log({ booking });
-  console.log({ night });
   return (
     <>
       <Container>
         <ButtonHome to='/'>Bakkatown Belize</ButtonHome>
         <FormWrap>
-          <Form onSubmit={handleSubmit}>
-            {/* <div className={classes.root}> */}
+          <Form>
             <AccordionRoot>
               <Accordion expanded={stage[0]}>
                 <AccordionSummary
@@ -243,6 +209,7 @@ const Book = () => {
                 <AccordionDetails className={classes.details}>
                   <Rental
                     booking={booking}
+                    roomLists={roomLists}
                     setBooking={setBooking}
                     handleChange={handleChange}
                   />

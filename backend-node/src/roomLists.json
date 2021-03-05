@@ -1,46 +1,50 @@
 [
   {
-    "name": "King Studio Apartment",
-    "image": "King_Studio_Apartment",
-    "people": 2,
-    "bed": 1,
-    "bath": 1,
-    "sqf": 300,
+    "roomTypeId": 1,
+    "roomTitle": "King Studio Apartment",
+    "roomCost": 55.0,
+    "roomCapacity": 2,
+    "bedCount": 1,
+    "bathCount": 1,
+    "weeklyDiscount": 15,
+    "monthlyDiscount": 25,
     "wifi": true,
-    "parking": true,
-    "price": 70
+    "size": 300
   },
   {
-    "name": "Queen Apartments",
-    "image": "Queen_Apartments",
-    "people": 2,
-    "bed": 1,
-    "bath": 1,
-    "sqf": 250,
-    "wifi": false,
-    "parking": true,
-    "price": 63
+    "roomTypeId": 2,
+    "roomTitle": "Queen Apartments",
+    "roomCost": 50.0,
+    "roomCapacity": 2,
+    "bedCount": 1,
+    "bathCount": 1,
+    "weeklyDiscount": 15,
+    "monthlyDiscount": 25,
+    "wifi": true,
+    "size": 250
   },
   {
-    "name": "Tralapa Casita by the Sea",
-    "image": "Tralapa_Casita_by_the_Sea",
-    "people": 6,
-    "bed": 6,
-    "bath": 1,
-    "sqf": 400,
+    "roomTypeId": 3,
+    "roomTitle": "Tralapa Casita by the Sea",
+    "roomCost": 100.0,
+    "roomCapacity": 6,
+    "bedCount": 6,
+    "bathCount": 1,
+    "weeklyDiscount": 15,
+    "monthlyDiscount": 25,
     "wifi": true,
-    "parking": true,
-    "price": 127
+    "size": 400
   },
   {
-    "name": "Hostel Mixed Dorm Room",
-    "image": "Hostel_Mixed_Dorm_Room",
-    "people": 7,
-    "bed": 7,
-    "bath": 1,
-    "sqf": 400,
+    "roomTypeId": 4,
+    "roomTitle": "Hostel Mixed Dorm Room",
+    "roomCost": 15.0,
+    "roomCapacity": 7,
+    "bedCount": 7,
+    "bathCount": 1.5,
+    "weeklyDiscount": 15,
+    "monthlyDiscount": 25,
     "wifi": true,
-    "parking": true,
-    "price": 19
+    "size": 400
   }
 ]
