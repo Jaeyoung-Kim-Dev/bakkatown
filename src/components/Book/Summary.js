@@ -27,7 +27,7 @@ const Summary = (props) => {
   const night = props.night;
 
   useEffect(() => {
-    const _roomPrice = roomType.price;
+    const _roomPrice = roomType.roomCost;
     _roomPrice &&
       setRoomPrice({
         day: formatCurrency(_roomPrice),
@@ -42,7 +42,7 @@ const Summary = (props) => {
     const response = await axios.post(`http://localhost:8080/charge`, {
       token,
       booking: props.booking,
-      totalAmount: roomType.price * night * (1 + taxRate),
+      totalAmount: roomType.roomCost * night * (1 + taxRate),
     });
     const { status } = response.data;
     console.log('Response:', response.data);
@@ -76,7 +76,7 @@ const Summary = (props) => {
           <div>
             <Divider />
             <SummaryDetailWrapper>
-              <h4>{roomType.name}</h4>
+              <h4>{roomType.roomTitle}</h4>
               <h4>{roomPrice.day}</h4>
             </SummaryDetailWrapper>
             <SummaryDetailWrapper>
@@ -120,9 +120,9 @@ const Summary = (props) => {
             stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
             // stripeKey='pk_test_51IN11gDGhZ9LCyXGlTyb7qx9v99iwmLMZQt3YxsrSydM8WUe5KgPe7f1Ss2z47Ql9KOn4gKEFX9VcyMHFIkEt05X00gXrSdXYW'
             token={handleToken}
-            name={roomType.name}
+            name={roomType.roomTitle}
             billingAddress
-            amount={roomType.price * night * (1 + taxRate) * 100}
+            amount={roomType.roomCost * night * (1 + taxRate) * 100}
           />
         )}
       </SummaryWrapper>

@@ -13,19 +13,21 @@ app.use(cors());
 
 app.get('/', (req, res) => {});
 
-app.get('/book', (req, res) => {
+app.get('/room', (req, res) => {
+  console.log(roomList);
+  res.json(roomList);
+});
+
+app.get('/room/available', (req, res) => {
   console.log(roomList);
   res.json(roomList);
 });
 
 app.post('/charge', async (req, res) => {
-  // console.log('Request:', req.body);
-
   let error;
   let status;
   try {
     const { token, booking, totalAmount } = req.body;
-    // console.log({ booking });
     const customer = await stripe.customers.create({
       email: token.email,
       source: token.id,
