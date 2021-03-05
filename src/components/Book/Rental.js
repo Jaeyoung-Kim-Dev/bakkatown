@@ -1,9 +1,9 @@
-import React from 'react';
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { BiUser, BiBed, BiBath, BiWifi } from 'react-icons/bi';
 import { RiParkingBoxLine } from 'react-icons/ri';
 import { ButtonS, ButtonM, RoomsWrapper, RoomsCard } from './BookElements';
-import RoomLists from '../Rooms/roomlists.json';
+import RoomLists from '../Rooms/roomLists.json';
 import {
   RoomsImage,
   RoomsH2,
@@ -14,8 +14,23 @@ import {
 } from '../Rooms/RoomsElements';
 
 const Rental = (props) => {
-  let filteredRoomLists = RoomLists;
+  const [roomLists, setRoomLists] = useState();
 
+  useEffect(() => {
+    axios.get(`http://localhost:8080/book`).then((res) => {
+      const roomList = res.data;
+      setRoomLists(roomList);
+      console.log('2', { filteredRoomLists });
+    });
+
+    console.log('feched');
+  }, []);
+
+  // let filteredRoomLists = RoomLists;
+  // let filteredRoomLists = fetchRoomData;
+  let filteredRoomLists = roomLists;
+  // console.log('1', { filteredRoomLists });
+  // filteredRoomLists = RoomLists;
   filteredRoomLists = filteredRoomLists.filter((room) => {
     return room.people >= props.booking.guests;
   });

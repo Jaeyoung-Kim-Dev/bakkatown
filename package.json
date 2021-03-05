@@ -37,6 +37,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "nodemon backend-node/src/server.js localhost 8080",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
