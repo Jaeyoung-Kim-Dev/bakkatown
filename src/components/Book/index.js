@@ -202,7 +202,7 @@ const Book = () => {
                       className={classes.secondaryHeading}
                       noWrap={true}
                     >
-                      {booking.roomType.name}
+                      {booking.roomType.roomTitle}
                     </Typography>
                   </div>
                 </AccordionSummary>
