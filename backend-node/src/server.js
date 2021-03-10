@@ -19,8 +19,8 @@ app.get('/room', (req, res) => {
 });
 
 app.get('/room/available', (req, res) => {
-  console.log(roomList);
-  res.json(roomList);
+  console.log(req.query);
+  res.json(roomList.filter((room) => room.roomCapacity > 3));
 });
 
 app.post('/charge', async (req, res) => {

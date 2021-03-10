@@ -86,7 +86,7 @@ const Book = () => {
         } else if (!night) {
           toast('Check-in and out date cannot be the same.', { type: 'error' });
         } else {
-          fetchRoomData();
+          await fetchRoomData();
           accordionHandleChange(_stage + 1);
         }
         break;
@@ -121,10 +121,21 @@ const Book = () => {
     }
   };
 
-  function fetchRoomData() {
-    axios.get(`http://localhost:8080/room/available`).then((res) => {
-      setRoomLists(res.data);
-    });
+  async function fetchRoomData() {
+    await axios
+      .get('http://localhost:8080/room/available', {
+        params: {
+          dateFrom: booking.dateFrom,
+          dateTo: booking.dateTo,
+          guests: booking.guests,
+        },
+      })
+      .then((res) => {
+        setRoomLists(res.data);
+      })
+      .catch(() => {
+        toast('Something went wrong. Please try it later.', { type: 'error' });
+      });
   }
 
   const changeDateFormat = (_startDate, _endDate) => {

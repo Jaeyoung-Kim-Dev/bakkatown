@@ -36,6 +36,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "all": "(cd ./backend-node && nodemon src/server.js localhost 8080) & npm start",
     "start": "react-scripts start",
     "server": "nodemon backend-node/src/server.js localhost 8080",
     "build": "react-scripts build",
