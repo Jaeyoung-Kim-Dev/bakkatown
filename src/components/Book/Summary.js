@@ -118,7 +118,6 @@ const Summary = (props) => {
         {props.confirm && (
           <StripeCheckout
             stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
-            // stripeKey='pk_test_51IN11gDGhZ9LCyXGlTyb7qx9v99iwmLMZQt3YxsrSydM8WUe5KgPe7f1Ss2z47Ql9KOn4gKEFX9VcyMHFIkEt05X00gXrSdXYW'
             token={handleToken}
             name={roomType.roomTitle}
             billingAddress
