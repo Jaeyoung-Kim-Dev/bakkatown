@@ -227,8 +227,8 @@ export const GuestDetailWrapper = styled.div`
 `;
 
 export const RoomsCard = styled.div`
-  background: ${({ roomName, selectedRoom }) =>
-    roomName === selectedRoom ? '#ffe085' : '#fff'};
+  background: ${({ roomId, selectedRoom }) =>
+    roomId === selectedRoom ? '#ffe085' : '#fff'};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

@@ -4,7 +4,8 @@ const stripe = require('stripe')(
   'sk_test_51IN11gDGhZ9LCyXGrtjNI6SDWR5awSzgev8J14PkZlS6Sz4Puh2TmaW1DKNJUKX1qJDSVuGU9S1IX5q7GhMSu27T00jWSbJ1dM'
 );
 const { v4: uuidv4 } = require('uuid');
-const roomList = require('./roomLists.json');
+const bt_room_type = require('./bt_room_type.json');
+const bt_room = require('./bt_room.json');
 
 const app = express();
 
@@ -14,20 +15,20 @@ app.use(cors());
 app.get('/', (req, res) => {});
 
 app.get('/room', (req, res) => {
-  console.log(roomList);
-  res.json(roomList);
+  console.log(bt_room_type);
+  res.json(bt_room_type);
 });
 
 app.get('/room/available', (req, res) => {
   console.log(req.query);
-  res.json(roomList.filter((room) => room.roomCapacity > 3));
+  res.json(bt_room);
 });
 
 app.post('/charge', async (req, res) => {
   let error;
   let status;
   try {
-    const { token, booking, totalAmount } = req.body;
+    const { token, booking, roomId, totalAmount } = req.body;
     const customer = await stripe.customers.create({
       email: token.email,
       source: token.id,
@@ -57,7 +58,7 @@ app.post('/charge', async (req, res) => {
         idempotencyKey,
       }
     );
-    console.log('Charge:', { charge });
+    console.log({ booking });
     status = 'success';
   } catch (error) {
     console.error('Error:', error);

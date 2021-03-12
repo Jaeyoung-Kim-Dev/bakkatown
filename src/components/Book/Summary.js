@@ -23,7 +23,7 @@ const Summary = (props) => {
     tax: '',
     total: '',
   });
-  const { dateFrom, dateTo, roomType, guests } = props.booking;
+  const { dateFrom, dateTo, roomId, roomType, guests } = props.booking;
   const night = props.night;
 
   useEffect(() => {
@@ -42,6 +42,7 @@ const Summary = (props) => {
     const response = await axios.post(`http://localhost:8080/charge`, {
       token,
       booking: props.booking,
+      roomId: props.booking.roomId,
       totalAmount: roomType.roomCost * night * (1 + taxRate),
     });
     const { status } = response.data;

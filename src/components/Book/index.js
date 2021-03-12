@@ -46,6 +46,7 @@ const initialBook = {
   dateTo: '',
   guests: 2,
   promoCode: '',
+  roomId: '',
   roomType: '',
   firstName: '',
   lastName: '',
@@ -91,7 +92,7 @@ const Book = () => {
         }
         break;
       case 1: //rental
-        if (!booking.roomType) {
+        if (!booking.roomId) {
           roomLists.length
             ? toast('Please select a room.', { type: 'error' })
             : toast('Please go back and select another dates.', {
@@ -131,6 +132,7 @@ const Book = () => {
         },
       })
       .then((res) => {
+        console.log(res.data);
         setRoomLists(res.data);
       })
       .catch(() => {
