@@ -1,0 +1,34 @@
+[
+  {
+    "roomId": 1,
+    "roomName": "King 1",
+    "roomType": {
+      "roomTypeId": 1,
+      "roomTitle": "King Studio Apartment",
+      "roomCost": 55.0,
+      "roomCapacity": 2,
+      "bedCount": 1,
+      "bathCount": 1,
+      "weeklyDiscount": 15,
+      "monthlyDiscount": 25,
+      "wifi": true,
+      "size": 300
+    }
+  },
+  {
+    "roomId": 2,
+    "roomName": "Queen 1",
+    "roomType": {
+      "roomTypeId": 2,
+      "roomTitle": "Queen Apartments",
+      "roomCost": 50.0,
+      "roomCapacity": 2,
+      "bedCount": 1,
+      "bathCount": 1,
+      "weeklyDiscount": 15,
+      "monthlyDiscount": 25,
+      "wifi": true,
+      "size": 250
+    }
+  }
+]

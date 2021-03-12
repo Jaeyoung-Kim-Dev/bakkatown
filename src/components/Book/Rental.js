@@ -1,9 +1,6 @@
 import React from 'react';
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
 import { BiUser, BiBed, BiBath, BiWifi } from 'react-icons/bi';
 import { ButtonS, ButtonM, RoomsWrapper, RoomsCard } from './BookElements';
-// import RoomLists from '../Rooms/roomLists.json';
 import {
   RoomsImage,
   RoomsH2,
@@ -17,13 +14,14 @@ const Rental = (props) => {
   let filteredRoomLists = props.roomLists;
 
   filteredRoomLists = filteredRoomLists.filter((room) => {
-    return room.roomCapacity >= props.booking.guests;
+    return room.roomType.roomCapacity >= props.booking.guests;
   });
 
   const roomHandleChange = (room) => {
     props.setBooking((prevState) => ({
       ...prevState,
-      roomType: room,
+      roomId: room.roomId,
+      roomType: room.roomType,
     }));
   };
 
@@ -33,16 +31,17 @@ const Rental = (props) => {
         {filteredRoomLists.length ? (
           filteredRoomLists.map((room) => (
             <RoomsCard
-              key={room.roomTypeId}
-              roomName={room.roomTitle}
-              selectedRoom={props.booking.roomType.roomTitle}
+              key={room.roomType.roomTypeId}
+              roomId={room.roomId}
+              selectedRoom={props.booking.roomId}
             >
-              <RoomsH2>{room.roomTitle}</RoomsH2>
+              <RoomsH2>{room.roomType.roomTitle}</RoomsH2>
               <RoomsImage
                 src={
-                  require(`../../images/rooms/${room.roomTitle}.jpg`)?.default
+                  require(`../../images/rooms/${room.roomType.roomTitle}.jpg`)
+                    ?.default
                 }
-                alt={room.roomTitle}
+                alt={room.roomType.roomTitle}
               />
               {/* ?.default is temporary because of react-scripts v4.0.1's bug */}
 
@@ -54,7 +53,7 @@ const Rental = (props) => {
                       marginRight: '0.2rem',
                     }}
                   />
-                  {room.roomCapacity}
+                  {room.roomType.roomCapacity}
                 </RoomSpecList>
                 <RoomSpecList>
                   <BiBed
@@ -63,7 +62,7 @@ const Rental = (props) => {
                       marginRight: '0.2rem',
                     }}
                   />
-                  {room.bedCount}
+                  {room.roomType.bedCount}
                 </RoomSpecList>
                 <RoomSpecList>
                   <BiBath
@@ -72,10 +71,10 @@ const Rental = (props) => {
                       marginRight: '0.2rem',
                     }}
                   />
-                  {room.bathCount}
+                  {room.roomType.bathCount}
                 </RoomSpecList>
                 <RoomSpecList>
-                  {room.size}
+                  {room.roomType.size}
                   <span
                     style={{
                       fontSize: '0.7rem',
@@ -86,7 +85,7 @@ const Rental = (props) => {
                     SQF
                   </span>
                 </RoomSpecList>
-                {room.wifi && (
+                {room.roomType.wifi && (
                   <RoomSpecList>
                     <BiWifi />
                   </RoomSpecList>
@@ -94,8 +93,10 @@ const Rental = (props) => {
               </RoomSpecs>
               <RoomsP>
                 From{' '}
-                <span style={{ fontSize: '1.7rem' }}>${room.roomCost}</span> Per
-                Night
+                <span style={{ fontSize: '1.7rem' }}>
+                  ${room.roomType.roomCost}
+                </span>{' '}
+                Per Night
               </RoomsP>
               <BtnWrap>
                 <ButtonS onClick={() => roomHandleChange(room)}>Select</ButtonS>
