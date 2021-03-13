@@ -39,7 +39,7 @@ const Summary = (props) => {
 
   async function handleToken(token) {
     console.log('post start');
-    const response = await axios.post(`http://localhost:``8080/charge```, {
+    const response = await axios.post(`http://localhost:8080/charge`, {
       token,
       booking: props.booking,
       roomId: props.booking.roomId,
