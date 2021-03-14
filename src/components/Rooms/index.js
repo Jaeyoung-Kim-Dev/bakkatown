@@ -16,7 +16,6 @@ import {
   RoomSpecList,
 } from './RoomsElements';
 
-// TODO: apply redux
 const Rooms = () => {
   const [roomLists, setRoomLists] = useState([]);
 
