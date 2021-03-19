@@ -23,7 +23,7 @@ const Summary = (props) => {
     tax: '',
     total: '',
   });
-  const { dateFrom, dateTo, roomId, roomType, guests } = props.booking;
+  const { dateFrom, dateTo, roomType, guests } = props.booking;
   const night = props.night;
 
   useEffect(() => {
