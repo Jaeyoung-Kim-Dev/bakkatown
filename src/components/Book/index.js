@@ -11,6 +11,7 @@ import Divider from '@material-ui/core/Divider';
 import Moment from 'react-moment';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import store from '../../store';
 import {
   Container,
   FormWrap,
@@ -65,10 +66,9 @@ const Book = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setBooking((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    store.dispatch({ type: 'makeBooking', name: name, value: value });
+    setBooking(store.getState().booking);
+    console.log(booking);
   };
 
   const accordionHandleChange = (_stage) => {
