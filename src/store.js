@@ -1,21 +1,7 @@
-import { createStore } from 'redux';
-import axios from 'axios';
-import RoomLists from './components/Rooms/roomLists.json';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import thunk from 'react-redux'; // because used 'async' in action.
+import { RoomsReducer } from './reducers/roomsReducer';
 
-// const initialBook = {
-//   dateFrom: '',
-//   dateTo: '',
-//   guests: 2,
-//   promoCode: '',
-//   roomId: '',
-//   roomType: '',
-//   firstName: '',
-//   lastName: '',
-//   email: '',
-//   phone: '',
-//   country: '',
-//   comments: '',
-// };
 const initialState = {
   booking: {
     dateFrom: '',
@@ -34,33 +20,17 @@ const initialState = {
   roomLists: [],
 };
 
-export default createStore((state, action) => {
-  if (state === undefined) {
-    console.log('state is undefined');
-    return initialState;
-  }
-  console.log({ state, action });
+const composeEnhancer =
+  (window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__()) ||
+  compose;
 
-  switch (action.type) {
-    case 'makeBooking':
-      console.log('here in store');
-      return {
-        ...state,
-        booking: { ...state.booking, [action.name]: action.value },
-        // roomLists: await axios
-        //   .get(`http://localhost:8080/room`)
-        //   .then((res) => res.data),
-      };
-    case 'fetchRooms':
-      // console.log('here in store');
-      return {
-        ...state,
-        roomLists: RoomLists,
-        // roomLists: await axios
-        //   .get(`http://localhost:8080/room`)
-        //   .then((res) => res.data),
-      };
-    default:
-      return state;
-  }
-}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(
+  combineReducers({
+    roomLists: RoomsReducer,
+  }),
+  initialState,
+  composeEnhancer(applyMiddleware(thunk))
+);
+
+export default store;
