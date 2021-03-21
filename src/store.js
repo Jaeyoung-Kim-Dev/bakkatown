@@ -2,25 +2,42 @@ import { createStore } from 'redux';
 import axios from 'axios';
 import RoomLists from './components/Rooms/roomLists.json';
 
-const initialBook = {
-  dateFrom: '',
-  dateTo: '',
-  guests: 2,
-  promoCode: '',
-  roomId: '',
-  roomType: '',
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-  country: '',
-  comments: '',
+// const initialBook = {
+//   dateFrom: '',
+//   dateTo: '',
+//   guests: 2,
+//   promoCode: '',
+//   roomId: '',
+//   roomType: '',
+//   firstName: '',
+//   lastName: '',
+//   email: '',
+//   phone: '',
+//   country: '',
+//   comments: '',
+// };
+const initialState = {
+  booking: {
+    dateFrom: '',
+    dateTo: '',
+    guests: 2,
+    promoCode: '',
+    roomId: '',
+    roomType: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    country: '',
+    comments: '',
+  },
+  roomLists: [],
 };
 
 export default createStore((state, action) => {
   if (state === undefined) {
     console.log('state is undefined');
-    return { booking: initialBook, roomLists: [], ttt: 5 };
+    return initialState;
   }
   console.log({ state, action });
 

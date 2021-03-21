@@ -20,7 +20,7 @@
     "roomName": "Queen 1",
     "roomType": {
       "roomTypeId": 2,
-      "roomTitle": "Queen Apartments",
+      "roomTitle": "Queen Apartment",
       "roomCost": 50.0,
       "roomCapacity": 2,
       "bedCount": 1,

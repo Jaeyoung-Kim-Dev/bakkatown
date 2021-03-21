@@ -3,6 +3,7 @@ import store from '../../store';
 import axios from 'axios';
 import { BiUser, BiBed, BiBath, BiWifi } from 'react-icons/bi';
 // import RoomLists from './roomLists.json';
+import { connect } from 'react-redux';
 import {
   RoomsContainer,
   RoomsH1,
@@ -17,10 +18,8 @@ import {
   RoomSpecList,
 } from './RoomsElements';
 
-const Rooms = () => {
-  const [roomLists, setRoomLists] = useState(store.getState().roomLists);
-
-  store.subscribe(() => setRoomLists(store.getState().roomLists));
+const Rooms = (props) => {
+  // const [roomLists, setRoomLists] = useState(props.roomLists);
 
   useEffect(() => {
     store.dispatch({ type: 'fetchRooms' });
@@ -28,7 +27,9 @@ const Rooms = () => {
     //   setRoomLists(res.data);
     // });
   }, []);
-  console.log({ roomLists });
+  // console.log({ roomLists });
+  // store.subscribe(() => setRoomLists(props.roomLists));
+  console.log(props.roomLists);
 
   return (
     <RoomsContainer id='services'>
@@ -36,10 +37,10 @@ const Rooms = () => {
       {/* <button onClick={() => store.dispatch({ type: 'tt', newVal: 10 })}>
         e
       </button> */}
-      <button onClick={() => store.dispatch({ type: 'fetchRooms' })}>e</button>
-      {roomLists ? (
+      {/* <button onClick={() => store.dispatch({ type: 'fetchRooms' })}>e</button> */}
+      {props.roomLists ? (
         <RoomsWrapper>
-          {roomLists.map((room) => (
+          {props.roomLists.map((room) => (
             <RoomsCard key={room.roomTypeId}>
               <RoomsH2>{room.roomTitle}</RoomsH2>
               <RoomsImage
@@ -114,4 +115,18 @@ const Rooms = () => {
   );
 };
 
-export default Rooms;
+function mapReduxStateToReactProps(state) {
+  return {
+    roomLists: state.roomLists,
+  };
+}
+// function mapReduxDispatchToReactProps(state) {
+//   return {};
+// }
+
+export default connect(
+  mapReduxStateToReactProps
+  // mapReduxDispatchToReactProps
+)(Rooms);
+
+// export default Rooms;
