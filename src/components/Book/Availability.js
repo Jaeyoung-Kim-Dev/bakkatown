@@ -9,6 +9,8 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { FormContent } from './BookElements';
 import TextField from '@material-ui/core/TextField';
+import { connect } from 'react-redux';
+import { makeBooking } from '../../actions/bookingActions';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -19,9 +21,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
   },
 }));
-
-// let calendarSize = document.documentElement.clientWidth > 800 ? 2 : 1;
-// delete above?
 
 const Availability = (props) => {
   const [dateRange, setDateRange] = useState([
@@ -46,17 +45,18 @@ const Availability = (props) => {
 
   function dateHandleChange(ranges) {
     setDateRange(ranges);
-    props.setBooking((prevState) => ({
-      ...prevState,
-      dateFrom: ranges[0].startDate,
-      dateTo: ranges[0].endDate,
-    }));
+    // props.setBooking((prevState) => ({
+    //   ...prevState,
+    //   dateFrom: ranges[0].startDate,
+    //   dateTo: ranges[0].endDate,
+    // }));
+    // TODO: Fix it with Redux
 
     const diffTime = Math.abs(ranges[0].endDate - ranges[0].startDate);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     props.setNight(diffDays);
   }
-
+  // console.log(makeBooking); //todo: delete later
   return (
     <>
       <FormContent>
@@ -78,8 +78,8 @@ const Availability = (props) => {
             labelId='demo-simple-select-placeholder-label-label'
             id='demo-simple-select-placeholder-label'
             name='guests'
-            value={props.booking.guests}
-            onChange={props.handleChange}
+            value={props.guests}
+            onChange={makeBooking}
             displayEmpty
             className={classes.selectEmpty}
           >
@@ -97,7 +97,8 @@ const Availability = (props) => {
             label='Promotion / Group Code'
             color='secondary'
             name='promoCode'
-            onChange={props.handleChange}
+            onChange={makeBooking}
+            // onChange={(event) => makeBooking(event.target.value)}
           />
         </FormControl>
       </FormContent>
@@ -105,4 +106,9 @@ const Availability = (props) => {
   );
 };
 
-export default Availability;
+export default connect(
+  (state) => state.booking,
+  // makeBooking((event) => event.target)
+  makeBooking
+)(Availability);
+// export default Availability;

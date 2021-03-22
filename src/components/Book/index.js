@@ -12,6 +12,7 @@ import Moment from 'react-moment';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { connect } from 'react-redux';
+import { makeBooking } from '../../actions/bookingActions';
 import {
   Container,
   FormWrap,
@@ -156,7 +157,7 @@ const Book = (props) => {
                     </Typography>
                   </div>
                   <div className={classes.column}>
-                    <Typography
+                    {/* <Typography
                       className={classes.secondaryHeading}
                       noWrap={true}
                       component={'span'}
@@ -164,15 +165,15 @@ const Book = (props) => {
                       {booking.dateFrom &&
                         booking.dateTo &&
                         changeDateFormat(booking.dateFrom, booking.dateTo)}
-                    </Typography>
+                    </Typography> */}
                   </div>
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
                   <Availability
-                    booking={booking}
-                    setBooking={setBooking}
-                    setNight={setNight}
-                    handleChange={props.handleChange}
+                  // booking={booking}
+                  // setBooking={setBooking}
+                  // setNight={setNight}
+                  // handleChange={props.makeBooking}
                   />
                 </AccordionDetails>
                 <Divider />
@@ -201,17 +202,17 @@ const Book = (props) => {
                       className={classes.secondaryHeading}
                       noWrap={true}
                     >
-                      {booking.roomType.roomTitle}
+                      {/* {props.booking.roomType.roomTitle} */}
                     </Typography>
                   </div>
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
-                  <Rental
+                  {/* <Rental
                     booking={booking}
                     roomLists={roomLists}
                     // setBooking={setBooking}
-                    handleChange={props.handleChange}
-                  />
+                    handleChange={props.makeBooking}
+                  /> */}
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
@@ -239,7 +240,7 @@ const Book = (props) => {
                     </Typography>
                   </div>
                   <div className={classes.column}>
-                    <Typography
+                    {/* <Typography
                       className={classes.secondaryHeading}
                       component={'span'}
                       noWrap={true}
@@ -249,14 +250,14 @@ const Book = (props) => {
                           {booking.firstName + ' ' + booking.lastName}
                         </div>
                       )}
-                    </Typography>
+                    </Typography> */}
                   </div>
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
-                  <GuestDetails
+                  {/* <GuestDetails
                     booking={booking}
-                    handleChange={props.handleChange}
-                  />
+                    handleChange={props.makeBooking}
+                  /> */}
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
@@ -274,33 +275,40 @@ const Book = (props) => {
               </Accordion>
             </AccordionRoot>
           </Form>
-          <Summary
+          {/* <Summary
             booking={booking}
             changeDateFormat={changeDateFormat}
             confirm={confirm}
             night={night}
-          />
+          /> */}
         </FormWrap>
       </Container>
     </>
   );
 };
 
-function mapReduxStateToReactProps(state) {
-  return {
-    booking: state.booking,
-  };
-}
-function mapReduxDispatchToReactProps(dispatch) {
-  return {
-    handleChange: function (event) {
-      const { name, value } = event.target;
-      dispatch({ type: 'makeBooking', name: name, value: value });
-    },
-  };
-}
+// function mapReduxStateToReactProps(state) {
+//   return {
+//     booking: state.booking,
+//   };
+// }
+// function mapReduxDispatchToReactProps(dispatch) {
+//   return {
+//     handleChange: function (event) {
+//       const { name, value } = event.target;
+//       dispatch({ type: 'makeBooking', name: name, value: value });
+//     },
+//   };
+// }
 
+// export default connect(
+//   mapReduxStateToReactProps,
+//   mapReduxDispatchToReactProps
+// )(Book);
 export default connect(
-  mapReduxStateToReactProps,
-  mapReduxDispatchToReactProps
+  (state) => {
+    return state.booking;
+  }
+  // makeBooking((event) => event.target)
+  // makeBooking
 )(Book);
