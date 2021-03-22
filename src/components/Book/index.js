@@ -11,6 +11,8 @@ import Divider from '@material-ui/core/Divider';
 import Moment from 'react-moment';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { connect } from 'react-redux';
+import { makeBooking } from '../../actions/bookingActions';
 import {
   Container,
   FormWrap,
@@ -41,35 +43,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const initialBook = {
-  dateFrom: '',
-  dateTo: '',
-  guests: 2,
-  promoCode: '',
-  roomId: '',
-  roomType: '',
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-  country: '',
-  comments: '',
-};
-
-const Book = () => {
-  const [booking, setBooking] = useState(initialBook);
+const Book = (props) => {
+  const [booking, setBooking] = useState(props.booking);
+  // const [booking, setBooking] = useState(initialBook);
   const [roomLists, setRoomLists] = useState([]);
   const [stage, setStage] = useState([true, false, false]);
   const [night, setNight] = useState(0);
   const [confirm, setConfirm] = useState(false);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setBooking((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+  //   store.dispatch({ type: 'makeBooking', name: name, value: value });
+  //   setBooking(store.getState().booking);
+  //   console.log(booking);
+  // };
 
   const accordionHandleChange = (_stage) => {
     let tempStage = [false, false, false];
@@ -170,7 +157,7 @@ const Book = () => {
                     </Typography>
                   </div>
                   <div className={classes.column}>
-                    <Typography
+                    {/* <Typography
                       className={classes.secondaryHeading}
                       noWrap={true}
                       component={'span'}
@@ -178,15 +165,15 @@ const Book = () => {
                       {booking.dateFrom &&
                         booking.dateTo &&
                         changeDateFormat(booking.dateFrom, booking.dateTo)}
-                    </Typography>
+                    </Typography> */}
                   </div>
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
                   <Availability
-                    booking={booking}
-                    setBooking={setBooking}
-                    setNight={setNight}
-                    handleChange={handleChange}
+                  // booking={booking}
+                  // setBooking={setBooking}
+                  // setNight={setNight}
+                  // handleChange={props.makeBooking}
                   />
                 </AccordionDetails>
                 <Divider />
@@ -215,17 +202,17 @@ const Book = () => {
                       className={classes.secondaryHeading}
                       noWrap={true}
                     >
-                      {booking.roomType.roomTitle}
+                      {/* {props.booking.roomType.roomTitle} */}
                     </Typography>
                   </div>
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
-                  <Rental
+                  {/* <Rental
                     booking={booking}
                     roomLists={roomLists}
-                    setBooking={setBooking}
-                    handleChange={handleChange}
-                  />
+                    // setBooking={setBooking}
+                    handleChange={props.makeBooking}
+                  /> */}
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
@@ -253,7 +240,7 @@ const Book = () => {
                     </Typography>
                   </div>
                   <div className={classes.column}>
-                    <Typography
+                    {/* <Typography
                       className={classes.secondaryHeading}
                       component={'span'}
                       noWrap={true}
@@ -263,11 +250,14 @@ const Book = () => {
                           {booking.firstName + ' ' + booking.lastName}
                         </div>
                       )}
-                    </Typography>
+                    </Typography> */}
                   </div>
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
-                  <GuestDetails booking={booking} handleChange={handleChange} />
+                  {/* <GuestDetails
+                    booking={booking}
+                    handleChange={props.makeBooking}
+                  /> */}
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
@@ -285,16 +275,40 @@ const Book = () => {
               </Accordion>
             </AccordionRoot>
           </Form>
-          <Summary
+          {/* <Summary
             booking={booking}
             changeDateFormat={changeDateFormat}
             confirm={confirm}
             night={night}
-          />
+          /> */}
         </FormWrap>
       </Container>
     </>
   );
 };
 
-export default Book;
+// function mapReduxStateToReactProps(state) {
+//   return {
+//     booking: state.booking,
+//   };
+// }
+// function mapReduxDispatchToReactProps(dispatch) {
+//   return {
+//     handleChange: function (event) {
+//       const { name, value } = event.target;
+//       dispatch({ type: 'makeBooking', name: name, value: value });
+//     },
+//   };
+// }
+
+// export default connect(
+//   mapReduxStateToReactProps,
+//   mapReduxDispatchToReactProps
+// )(Book);
+export default connect(
+  (state) => {
+    return state.booking;
+  }
+  // makeBooking((event) => event.target)
+  // makeBooking
+)(Book);
