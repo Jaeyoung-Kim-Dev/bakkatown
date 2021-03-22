@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import thunk from 'react-redux'; // because used 'async' in action.
-import { RoomsReducer } from './reducers/roomsReducer';
+import thunk from 'redux-thunk'; // because used 'async' in action.
+import { bookingReducer } from './reducers/bookingReducer';
+import { roomsReducer } from './reducers/roomsReducer';
 
 const initialState = {
   booking: {
@@ -20,14 +21,12 @@ const initialState = {
   roomLists: [],
 };
 
-const composeEnhancer =
-  (window.__REDUX_DEVTOOLS_EXTENSION__ &&
-    window.__REDUX_DEVTOOLS_EXTENSION__()) ||
-  compose;
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   combineReducers({
-    roomLists: RoomsReducer,
+    booking: bookingReducer,
+    roomLists: roomsReducer,
   }),
   initialState,
   composeEnhancer(applyMiddleware(thunk))
