@@ -1,14 +1,14 @@
 import React from 'react';
-import NotFound from '../components/NotFound';
+import Payment from '../components/Payment';
 import ScrollToTop from '../components/ScrollToTop';
 
-const NotFoundPage = () => {
+const PaymentPage = () => {
   return (
     <>
       <ScrollToTop />
-      <NotFound />
+      <Payment />
     </>
   );
 };
 
-export default NotFoundPage;
+export default PaymentPage;

@@ -1,14 +1,14 @@
 import React from 'react';
-import NotFound from '../components/NotFound';
+import Login from '../components/Account/Login';
 import ScrollToTop from '../components/ScrollToTop';
 
-const NotFoundPage = () => {
+const LoginPage = () => {
   return (
     <>
       <ScrollToTop />
-      <NotFound />
+      <Login />
     </>
   );
 };
 
-export default NotFoundPage;
+export default LoginPage;
