@@ -10,7 +10,6 @@ import Select from '@material-ui/core/Select';
 import { FormContent } from './BookElements';
 import TextField from '@material-ui/core/TextField';
 import { connect } from 'react-redux';
-import { makeBooking } from '../../actions/bookingActions';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -56,7 +55,6 @@ const Availability = (props) => {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     props.setNight(diffDays);
   }
-  // console.log(makeBooking); //todo: delete later
   return (
     <>
       <FormContent>
@@ -79,7 +77,7 @@ const Availability = (props) => {
             id='demo-simple-select-placeholder-label'
             name='guests'
             value={props.guests}
-            onChange={makeBooking}
+            onChange={props.handleChange}
             displayEmpty
             className={classes.selectEmpty}
           >
@@ -97,8 +95,7 @@ const Availability = (props) => {
             label='Promotion / Group Code'
             color='secondary'
             name='promoCode'
-            onChange={makeBooking}
-            // onChange={(event) => makeBooking(event.target.value)}
+            onChange={props.handleChange}
           />
         </FormControl>
       </FormContent>
@@ -106,9 +103,4 @@ const Availability = (props) => {
   );
 };
 
-export default connect(
-  (state) => state.booking,
-  // makeBooking((event) => event.target)
-  makeBooking
-)(Availability);
-// export default Availability;
+export default connect((state) => state.booking)(Availability);

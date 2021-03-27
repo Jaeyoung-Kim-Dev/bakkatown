@@ -51,12 +51,16 @@ const Book = (props) => {
   const [night, setNight] = useState(0);
   const [confirm, setConfirm] = useState(false);
 
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-  //   store.dispatch({ type: 'makeBooking', name: name, value: value });
-  //   setBooking(store.getState().booking);
-  //   console.log(booking);
-  // };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    makeBooking(name, value);
+    console.log(name, value);
+    console.log(props);
+    // store.dispatch({ type: 'makeBooking', name: name, value: value });
+    // setBooking(store.getState().booking);
+
+    // console.log(booking);
+  };
 
   const accordionHandleChange = (_stage) => {
     let tempStage = [false, false, false];
@@ -170,10 +174,10 @@ const Book = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
                   <Availability
-                  // booking={booking}
-                  // setBooking={setBooking}
-                  // setNight={setNight}
-                  // handleChange={props.makeBooking}
+                    // booking={booking}
+                    // setBooking={setBooking}
+                    // setNight={setNight}
+                    handleChange={handleChange}
                   />
                 </AccordionDetails>
                 <Divider />
@@ -308,7 +312,7 @@ const Book = (props) => {
 export default connect(
   (state) => {
     return state.booking;
-  }
+  },
   // makeBooking((event) => event.target)
-  // makeBooking
+  { makeBooking }
 )(Book);
