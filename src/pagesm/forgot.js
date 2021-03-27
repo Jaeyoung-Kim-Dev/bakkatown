@@ -1,14 +1,14 @@
 import React from 'react';
-import Payment from '../components/Payment';
+import Forgot from '../components/AccountMatt/Forgot';
 import ScrollToTop from '../components/ScrollToTop';
 
-const PaymentPage = () => {
+const ForgotPage = () => {
   return (
     <>
       <ScrollToTop />
-      <Payment />
+      <Forgot />
     </>
   );
 };
 
-export default PaymentPage;
+export default ForgotPage;

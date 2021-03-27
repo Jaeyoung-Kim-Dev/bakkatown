@@ -69,6 +69,16 @@ const Navbar = ({ toggle }) => {
               >
                 BOOK
               </NavBtnLink>
+              <NavBtnLink
+                to='/login'
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact='true'
+                offset={document.documentElement.clientHeight * 0.1}
+              >
+                Log In
+              </NavBtnLink>
             </NavBtn>
             <MobileIcon onClick={toggle}>
               <FaBars />

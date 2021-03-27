@@ -18,38 +18,40 @@ export const Container = styled.div`
 `;
 
 export const FormWrap = styled.div`
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   @media screen and (max-width: 400px) {
-    height: 80%;
+    /* height: 80%; */
   }
 `;
 
-export const Icon = styled(Link)`
+export const HomeLink = styled(Link)`
   margin-left: 32px;
   margin-top: 32px;
   text-decoration: none;
   color: #fff;
   font-weight: 700;
   font-size: 32px;
+`;
 
-  @media screen and (max-width: 480px) {
-    margin-left: 16px;
-    margin-top: 8px;
-  }
+export const OtherLink = styled(Link)`
+  text-decoration: underline;
+  color: #fff;
 `;
 
 export const FormContent = styled.div`
-  height: 100%;
+  /* height: 100%; */
+  flex: 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   @media screen and (max-width: 480px) {
     padding: 10px;
+    height: 100%;
   }
 `;
 

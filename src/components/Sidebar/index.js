@@ -32,6 +32,9 @@ const Sidebar = ({ isOpen, toggle }) => {
         <SideBtnWrap>
           <SidebarRoute to='/book'>BOOK</SidebarRoute>
         </SideBtnWrap>
+        <SideBtnWrap>
+          <SidebarRoute to='/login'>Log In</SidebarRoute>
+        </SideBtnWrap>
       </SidebarWrapper>
     </SidebarContainer>
   );
