@@ -31,7 +31,7 @@ export const NavbarContainer = styled.div`
   z-index: 1;
   width: 100%;
   padding: 0 24px;
-  max-width: 1100px;
+  max-width: 1200px;
 `;
 
 export const Navlogo = styled(LinkR)`
@@ -53,7 +53,7 @@ export const Navlogo = styled(LinkR)`
 export const MobileIcon = styled.div`
   display: none;
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
@@ -69,7 +69,7 @@ export const NavMenu = styled.ul`
   text-align: center;
   margin-right: -22px;
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     display: none;
   }
 `;
@@ -110,6 +110,7 @@ export const NavBtnLink = styled(LinkR)`
   background: ${primary};
   white-space: nowrap;
   padding: 10px 22px;
+  margin: 10px;
   color: #010606;
   font-size: 16px;
   outline: none;
