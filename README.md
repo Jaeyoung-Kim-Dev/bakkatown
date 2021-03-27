@@ -1,5 +1,3 @@
-#TODO: Merged branch for redux, but it's postponed
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
