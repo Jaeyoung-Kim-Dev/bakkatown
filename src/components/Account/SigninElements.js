@@ -87,6 +87,7 @@ export const FormInput = styled.input`
   margin-bottom: 32px;
   border: none;
   border-radius: 4px;
+  background: ${({ readOnly }) => (readOnly ? 'lightgrey' : '#fff')};
 `;
 
 export const FormButton = styled.button`

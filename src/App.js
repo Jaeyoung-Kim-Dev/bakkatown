@@ -22,8 +22,17 @@ import ForgotPagem from './pagesm/forgot';
 import Accountm from './components/AccountMatt/Account';
 import Confirmm from './components/AccountMatt/Confirm';
 
+const { token, firstName, lastName, email } = localStorage.getItem;
+const loggedInUser = {
+  token: token,
+  firstName: firstName,
+  lastName: lastName,
+  email: email,
+};
+console.log({ loggedInUser });
+
 function App() {
-  const [user, setUser] = useState(localStorage.getItem('email'));
+  const [user, setUser] = useState(loggedInUser);
   const value = useMemo(() => ({ user, setUser }), [user, setUser]);
 
   return (
@@ -31,13 +40,16 @@ function App() {
       <Router>
         <Switch>
           <Route path='/' component={Home} exact />
-          <Route path='/signup' component={SignupPage} exact />
-          <Route path='/forgot' component={ForgotPage} exact />
-          <Route path='/book' component={BookPage} exact />
-          {/* <Route path='/login' component={LoginPage} exact /> */}
-          <Switch path='/login' exact>
-            {user ? <Redirect to='/' /> : <LoginPage />}
+          <Switch path='/signup' exact>
+            {user.email ? <Redirect to='/' /> : <SignupPage />}
           </Switch>
+          <Switch path='/forgot' exact>
+            {user.email ? <Redirect to='/' /> : <ForgotPage />}
+          </Switch>
+          <Switch path='/login' exact>
+            {user.email ? <Redirect to='/' /> : <LoginPage />}
+          </Switch>
+          <Route path='/book' component={BookPage} exact />
           <Route path='/account' component={Account} exact />
           <Route path='/confirm' component={Confirm} exact />
           {''}

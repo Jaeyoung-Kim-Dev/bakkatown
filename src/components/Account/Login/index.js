@@ -48,13 +48,21 @@ const SignIn = () => {
       .then((response) => {
         // console.log(response.status);
         // console.log(response.data);
-        const { token, email } = response.data;
+        const { token, firstName, lastName, email } = response.data;
+        console.log(token, firstName, lastName, email);
         if (response.status === 200) {
           localStorage.setItem('token', token);
+          localStorage.setItem('firstName', firstName);
+          localStorage.setItem('lastName', lastName);
           localStorage.setItem('email', email);
         }
-        setUser({ token: token, email: email });
-        // console.log(user);
+        setUser({
+          token: token,
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+        });
+        console.log(user);
       })
       .catch((error) => {
         console.log(error);
@@ -92,7 +100,7 @@ const SignIn = () => {
                 onChange={handleChange}
                 required
               />
-              <FormButton type='submit'>Continue</FormButton>
+              <FormButton type='submit'>Log In</FormButton>
               <Text>
                 Don't have an account? Make one{' '}
                 <OtherLink to='/signup'>here</OtherLink>
