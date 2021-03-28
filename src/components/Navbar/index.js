@@ -1,8 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import NavItems from './navItems.json';
+import { UserContext } from '../../UserContext';
+import { toast } from 'react-toastify';
 import {
   Nav,
   NavbarContainer,
@@ -16,7 +21,28 @@ import {
 } from './NavbarElements';
 
 const Navbar = ({ toggle }) => {
+  const { user, setUser } = useContext(UserContext);
   const [scrollNav, setScrollNav] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+    console.log(localStorage); // TODO: delete it later
+  };
+
+  const logOut = () => {
+    handleClose();
+    localStorage.clear();
+    setUser({ email: null });
+    toast('Your account has been successfully logged out.', {
+      type: 'success',
+    });
+    console.log(localStorage);
+  };
 
   const changeNav = () => {
     if (window.scrollY >= document.documentElement.clientHeight * 0.1) {
@@ -69,16 +95,40 @@ const Navbar = ({ toggle }) => {
               >
                 BOOK
               </NavBtnLink>
-              <NavBtnLink
-                to='/login'
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact='true'
-                offset={document.documentElement.clientHeight * 0.1}
-              >
-                Log In
-              </NavBtnLink>
+              {user.email ? (
+                <>
+                  <NavBtnLink onClick={handleClick}>
+                    {user.firstName} {user.lastName.charAt(0)}
+                    {'.'}
+                  </NavBtnLink>
+                  <Menu
+                    id='simple-menu'
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                  >
+                    <MenuItem onClick={handleClose}>
+                      <Link to='/'>Account</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      <Link to='/'>Reservations</Link>
+                    </MenuItem>
+                    <MenuItem onClick={logOut}>Logout</MenuItem>
+                  </Menu>
+                </>
+              ) : (
+                <NavBtnLink
+                  to='/login'
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact='true'
+                  offset={document.documentElement.clientHeight * 0.1}
+                >
+                  Log In
+                </NavBtnLink>
+              )}
             </NavBtn>
             <MobileIcon onClick={toggle}>
               <FaBars />

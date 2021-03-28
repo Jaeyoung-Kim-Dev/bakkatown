@@ -30,6 +30,36 @@ app.post('/login', async (req, res) => {
     console.log(email, password);
     const data = {
       token: 'generated_token_number',
+      firstName: 'John',
+      lastName: 'Doe',
+      email: email,
+    };
+    console.log(data);
+    res.json(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+
+app.post('/registration', async (req, res) => {
+  try {
+    const { firstName, lastName, email, password } = req.body;
+    console.log(firstName, lastName, email, password);
+    const data = {
+      token: 'generated_token_number',
+      email: email,
+    };
+    res.json(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+
+app.post('/forgot', async (req, res) => {
+  try {
+    const email = req.body.email;
+    console.log(email);
+    const data = {
       email: email,
     };
     res.json(data);

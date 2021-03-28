@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {
   Container,
   FormWrap,
@@ -11,33 +12,57 @@ import {
   FormButton,
   Text,
 } from '../SigninElements';
-import ApiService from '../ApiService';
 
 const Forgot = () => {
-  const [forgot, setForgot] = useState('');
+  const [forgot, setForgot] = useState(null);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  async function forgotRequest(data) {
+    try {
+      // console.log({ data });
+      return await axios.post('http://localhost:8080/forgot', {
+        email: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event);
+    // console.log(event);
 
-    ApiService.sendForgotRequest(forgot)
+    forgotRequest(forgot)
       .then((response) => {
-        console.log(response.status);
-        console.log(response.data);
+        // console.log(response.status);
+        // console.log(response.data);
+        // const { token, email } = response.data;
         if (response.status === 200) {
-          if (localStorage.getItem('token') !== null) {
-            localStorage.clear();
-          }
+          setIsSuccess(true);
         }
       })
-      .then(
-        () =>
-          // alert("A email link will be sent");
-          (document.location.href = 'http://localhost:3000/signin')
-      )
       .catch((error) => {
-        console.log(error.message);
+        console.log(error);
       });
+
+    // ApiService.sendForgotRequest(forgot)
+    //   .then((response) => {
+    //     console.log(response.status);
+    //     console.log(response.data);
+    //     if (response.status === 200) {
+    //       if (localStorage.getItem('token') !== null) {
+    //         localStorage.clear();
+    //       }
+    //     }
+    //   })
+    //   .then(
+    //     () =>
+    //       // alert("A email link will be sent");
+    //       (document.location.href = 'http://localhost:3000/signin')
+    //   )
+    //   .catch((error) => {
+    //     console.log(error.message);
+    //   });
   };
 
   return (
@@ -45,20 +70,31 @@ const Forgot = () => {
       <Container>
         <FormWrap>
           <FormContent>
-            <Form onSubmit={handleSubmit}>
-              <FormH1>Reset Password</FormH1>
-              <FormLabel htmlFor='email'>Email</FormLabel>
-              <FormInput
-                type='email'
-                id='email'
-                onChange={(e) => setForgot(e.target.value)}
-                required
-              />
-              <FormButton type='submit'>Continue</FormButton>
-              <Text>
-                <OtherLink to='/login'>Log in</OtherLink>
-              </Text>
-            </Form>
+            {isSuccess ? (
+              <Form>
+                <FormH1>We sent you an email to reset your password.</FormH1>
+                <Text>
+                  <OtherLink to='/login'>Log in</OtherLink>
+                </Text>
+              </Form>
+            ) : (
+              <Form onSubmit={handleSubmit}>
+                <FormH1>
+                  Please provide your email <br /> to reset the password
+                </FormH1>
+                <FormLabel htmlFor='email'>Email</FormLabel>
+                <FormInput
+                  type='email'
+                  id='email'
+                  onChange={(e) => setForgot(e.target.value)}
+                  required
+                />
+                <FormButton type='submit'>Send Password Reset Email</FormButton>
+                <Text>
+                  <OtherLink to='/login'>Log in</OtherLink>
+                </Text>
+              </Form>
+            )}
           </FormContent>
         </FormWrap>
       </Container>

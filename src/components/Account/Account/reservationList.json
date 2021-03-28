@@ -3,7 +3,7 @@
     {
       "id": 9929040,
       "name": "King Studio Apartment",
-      "image": "King_Studio_Apartment",
+      "image": "King Studio Apartment",
       "people": 2,
       "bed": 1,
       "bath": 1,
@@ -17,7 +17,7 @@
     {
       "id": 99341040,
       "name": "King Studio Apartment",
-      "image": "King_Studio_Apartment",
+      "image": "King Studio Apartment",
       "people": 2,
       "bed": 1,
       "bath": 1,
@@ -30,8 +30,8 @@
     },
     {
       "id": 9434040,
-      "name": "Queen Apartments",
-      "image": "Queen_Apartments",
+      "name": "Queen Apartment",
+      "image": "Queen Apartment",
       "people": 2,
       "bed": 1,
       "bath": 1,
