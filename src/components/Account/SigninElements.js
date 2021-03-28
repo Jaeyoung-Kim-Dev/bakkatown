@@ -10,11 +10,7 @@ export const Container = styled.div`
   top: 0;
   z-index: 0;
   /* overflow: hidden; */
-  background: linear-gradient(
-    108deg,
-    rgba(1, 147, 86, 1) 0%,
-    rgba(10, 201, 122, 1) 100%
-  );
+  background: linear-gradient(to left, #0178bd, #368dc5);
 `;
 
 export const FormWrap = styled.div`
@@ -28,14 +24,14 @@ export const FormWrap = styled.div`
   }
 `;
 
-export const HomeLink = styled(Link)`
-  margin-left: 32px;
-  margin-top: 32px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: 700;
-  font-size: 32px;
-`;
+// export const HomeLink = styled(Link)`
+//   margin-left: 32px;
+//   margin-top: 32px;
+//   text-decoration: none;
+//   color: #fff;
+//   font-weight: 700;
+//   font-size: 32px;
+// `;
 
 export const OtherLink = styled(Link)`
   text-decoration: underline;
@@ -56,7 +52,7 @@ export const FormContent = styled.div`
 `;
 
 export const Form = styled.form`
-  background: #010101;
+  background: #102948;
   max-width: 400px;
   height: auto;
   width: 100%;

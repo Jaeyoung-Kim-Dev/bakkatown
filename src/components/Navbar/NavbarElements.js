@@ -8,7 +8,7 @@ const textColor = '#fff';
 export const Nav = styled.nav`
   background: ${({ scrollNav }) => (scrollNav ? '#00223D' : 'transparent')};
   height: 10vh;
-  margin-top: -10vh;
+  /* margin-top: -10vh; */
   display: flex;
   justify-content: center;
   align-items: center;

@@ -6,7 +6,7 @@ import {
   FormInput,
   FormLabel,
   FormWrap,
-  HomeLink,
+  // HomeLink,
   OtherLink,
   FormContent,
   Form,
@@ -79,7 +79,6 @@ const SignUp = () => {
     <>
       <Container>
         <FormWrap>
-          <HomeLink to='/'>Bakkatown Belize</HomeLink>
           <FormContent>
             <Form onSubmit={handleSubmit}>
               <FormH1>Sign up for a new account</FormH1>
