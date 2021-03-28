@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import { UserContext } from '../../../UserContext';
 import {
   Container,
   FormWrap,
-  HomeLink,
   OtherLink,
   FormContent,
   Form,
@@ -21,11 +21,12 @@ const blankSignIn = {
 
 const SignIn = () => {
   const [signIn, setSignup] = useState(blankSignIn);
+  const { user, setUser } = useContext(UserContext);
 
   async function loginRequest(data) {
     try {
-      console.log(data);
-      return await axios.post('http://localhost:8080/api/v1/login', {
+      // console.log({ data });
+      return await axios.post('http://localhost:8080/login', {
         email: data.email,
         password: data.password,
       });
@@ -36,22 +37,24 @@ const SignIn = () => {
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event);
+    // console.log(event);
 
     const newSignIn = {
       email: signIn.email,
       password: signIn.password,
     };
 
-    loginRequest({ newSignIn })
+    loginRequest(newSignIn)
       .then((response) => {
-        console.log(response.status);
-        console.log(response.data);
-
+        // console.log(response.status);
+        // console.log(response.data);
+        const { token, email } = response.data;
         if (response.status === 200) {
-          localStorage.setItem('token', response.data.token);
-          localStorage.setItem('email', response.data.email);
+          localStorage.setItem('token', token);
+          localStorage.setItem('email', email);
         }
+        setUser({ token: token, email: email });
+        // console.log(user);
       })
       .catch((error) => {
         console.log(error);
@@ -70,7 +73,6 @@ const SignIn = () => {
     <>
       <Container>
         <FormWrap>
-          <HomeLink to='/'>Bakkatown Belize</HomeLink>
           <FormContent>
             <Form onSubmit={handleSubmit}>
               <FormH1>Sign in to your account</FormH1>
@@ -78,6 +80,7 @@ const SignIn = () => {
               <FormInput
                 type='email'
                 id='email'
+                name='email'
                 onChange={handleChange}
                 required
               />
@@ -85,6 +88,7 @@ const SignIn = () => {
               <FormInput
                 type='password'
                 id='password'
+                name='password'
                 onChange={handleChange}
                 required
               />

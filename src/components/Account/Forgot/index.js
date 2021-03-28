@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Container,
   FormWrap,
-  HomeLink,
   OtherLink,
   FormContent,
   Form,
@@ -45,7 +44,6 @@ const Forgot = () => {
     <>
       <Container>
         <FormWrap>
-          <HomeLink to='/'>Bakkatown Belize</HomeLink>
           <FormContent>
             <Form onSubmit={handleSubmit}>
               <FormH1>Reset Password</FormH1>

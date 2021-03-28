@@ -24,11 +24,26 @@ app.get('/room/available', (req, res) => {
   res.json(bt_room);
 });
 
+app.post('/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    console.log(email, password);
+    const data = {
+      token: 'generated_token_number',
+      email: email,
+    };
+    res.json(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+
 app.post('/charge', async (req, res) => {
   let error;
   let status;
+
   try {
-    const { token, booking, roomId, totalAmount } = req.body;
+    const { token, booking, totalAmount } = req.body;
     const customer = await stripe.customers.create({
       email: token.email,
       source: token.id,
