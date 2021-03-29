@@ -30,5 +30,37 @@
       "wifi": true,
       "size": 250
     }
+  },
+  {
+    "roomId": 3,
+    "roomName": "Tralapa 1",
+    "roomType": {
+      "roomTypeId": 3,
+      "roomTitle": "Tralapa Casita by the Sea",
+      "roomCost": 100.0,
+      "roomCapacity": 6,
+      "bedCount": 6,
+      "bathCount": 1,
+      "weeklyDiscount": 15,
+      "monthlyDiscount": 25,
+      "wifi": true,
+      "size": 400
+    }
+  },
+  {
+    "roomId": 4,
+    "roomName": "Hostel 1",
+    "roomType": {
+      "roomTypeId": 4,
+      "roomTitle": "Hostel Mixed Dorm Room",
+      "roomCost": 15.0,
+      "roomCapacity": 7,
+      "bedCount": 7,
+      "bathCount": 1.5,
+      "weeklyDiscount": 15,
+      "monthlyDiscount": 25,
+      "wifi": true,
+      "size": 400
+    }
   }
 ]

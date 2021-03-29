@@ -47,56 +47,56 @@
   },
   {
     "id": 9929241,
-    "people": 2,
-    "price": 119.9,
-    "startDate": "Mon Mar 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Wed Mar 31 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "people": 7,
+    "price": 109,
+    "startDate": "Wed Jan 19 2022 00:00:00 GMT-0700 (Mountain Standard Time)",
+    "endDate": "Thu Jan 20 2022 00:00:00 GMT-0700 (Mountain Standard Time)",
     "roomType": {
-      "roomId": 1,
-      "roomName": "King 1",
+      "roomId": 3,
+      "roomName": "Tralapa 1",
       "roomType": {
-        "roomTypeId": 1,
-        "roomTitle": "King Studio Apartment",
-        "roomCost": 55.0,
-        "roomCapacity": 2,
-        "bedCount": 1,
+        "roomTypeId": 3,
+        "roomTitle": "Tralapa Casita by the Sea",
+        "roomCost": 100.0,
+        "roomCapacity": 6,
+        "bedCount": 6,
         "bathCount": 1,
         "weeklyDiscount": 15,
         "monthlyDiscount": 25,
         "wifi": true,
-        "size": 300
+        "size": 400
       }
     }
   },
   {
     "id": 9929369,
-    "people": 4,
-    "price": 490.5,
-    "startDate": "Tue May 11 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Thu May 20 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "people": 6,
+    "price": 245.25,
+    "startDate": "Sat Nov 13 2021 00:00:00 GMT-0700 (Mountain Standard Time)",
+    "endDate": "Sun Nov 28 2021 00:00:00 GMT-0700 (Mountain Standard Time)",
     "roomType": {
-      "roomId": 2,
-      "roomName": "Queen 1",
+      "roomId": 4,
+      "roomName": "Hostel 1",
       "roomType": {
-        "roomTypeId": 2,
-        "roomTitle": "Queen Apartment",
-        "roomCost": 50.0,
-        "roomCapacity": 2,
-        "bedCount": 1,
-        "bathCount": 1,
+        "roomTypeId": 4,
+        "roomTitle": "Hostel Mixed Dorm Room",
+        "roomCost": 15.0,
+        "roomCapacity": 7,
+        "bedCount": 7,
+        "bathCount": 1.5,
         "weeklyDiscount": 15,
         "monthlyDiscount": 25,
         "wifi": true,
-        "size": 250
+        "size": 400
       }
     }
   },
   {
     "id": 9929440,
-    "people": 2,
-    "price": 119.9,
-    "startDate": "Mon Mar 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Wed Mar 31 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "people": 1,
+    "price": 1378.85,
+    "startDate": "Mon Jun 07 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Wed Jun 30 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
     "roomType": {
       "roomId": 1,
       "roomName": "King 1",
@@ -117,9 +117,9 @@
   {
     "id": 9929584,
     "people": 4,
-    "price": 490.5,
-    "startDate": "Tue May 11 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Thu May 20 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "price": 381.5,
+    "startDate": "Mon Jun 07 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Wed Jun 30 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
     "roomType": {
       "roomId": 2,
       "roomName": "Queen 1",
@@ -139,47 +139,47 @@
   },
   {
     "id": 9929641,
-    "people": 2,
-    "price": 119.9,
-    "startDate": "Mon Mar 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Wed Mar 31 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "people": 1,
+    "price": 436,
+    "startDate": "Sun Aug 01 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Thu Aug 05 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
     "roomType": {
-      "roomId": 1,
-      "roomName": "King 1",
+      "roomId": 3,
+      "roomName": "Tralapa 1",
       "roomType": {
-        "roomTypeId": 1,
-        "roomTitle": "King Studio Apartment",
-        "roomCost": 55.0,
-        "roomCapacity": 2,
-        "bedCount": 1,
+        "roomTypeId": 3,
+        "roomTitle": "Tralapa Casita by the Sea",
+        "roomCost": 100.0,
+        "roomCapacity": 6,
+        "bedCount": 6,
         "bathCount": 1,
         "weeklyDiscount": 15,
         "monthlyDiscount": 25,
         "wifi": true,
-        "size": 300
+        "size": 400
       }
     }
   },
   {
     "id": 9929769,
     "people": 4,
-    "price": 490.5,
-    "startDate": "Tue May 11 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Thu May 20 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "price": 196.2,
+    "startDate": "Fri Sep 17 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Wed Sep 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
     "roomType": {
-      "roomId": 2,
-      "roomName": "Queen 1",
+      "roomId": 4,
+      "roomName": "Hostel 1",
       "roomType": {
-        "roomTypeId": 2,
-        "roomTitle": "Queen Apartment",
-        "roomCost": 50.0,
-        "roomCapacity": 2,
-        "bedCount": 1,
-        "bathCount": 1,
+        "roomTypeId": 4,
+        "roomTitle": "Hostel Mixed Dorm Room",
+        "roomCost": 15.0,
+        "roomCapacity": 7,
+        "bedCount": 7,
+        "bathCount": 1.5,
         "weeklyDiscount": 15,
         "monthlyDiscount": 25,
         "wifi": true,
-        "size": 250
+        "size": 400
       }
     }
   }
