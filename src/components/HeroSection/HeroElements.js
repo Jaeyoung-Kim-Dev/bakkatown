@@ -5,7 +5,7 @@ import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md';
 
 export const HeroContainer = styled.div`
   display: flex;
-  height: 100vh;
+  height: 90vh;
   justify-content: center;
   align-items: center;
 `;

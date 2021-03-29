@@ -1,0 +1,57 @@
+{
+  "account": [
+    {
+      "id": 1,
+      "first": "Matt",
+      "last": "Jones",
+      "email": "testing@gmail.com",
+      "password": "hope",
+      "country": "Canada",
+      "phone": "403-123-4567",
+      "reservations": [
+        {
+          "id": 9929040,
+          "name": "King Studio Apartment",
+          "image": "King_Studio_Apartment",
+          "people": 2,
+          "bed": 1,
+          "bath": 1,
+          "sqf": 300,
+          "wifi": true,
+          "parking": true,
+          "price": 70,
+          "startDate": "April 10",
+          "endDate": "April 15"
+        },
+        {
+          "id": 9529040,
+          "name": "King Studio Apartment",
+          "image": "King_Studio_Apartment",
+          "people": 2,
+          "bed": 1,
+          "bath": 1,
+          "sqf": 300,
+          "wifi": true,
+          "parking": true,
+          "price": 70,
+          "startDate": "April 10",
+          "endDate": "April 15"
+        },
+        {
+          "id": 9434040,
+          "roomName": "Queen Apartments",
+          "image": "Queen_Apartments",
+          "people": 2,
+          "bed": 1,
+          "bath": 1,
+          "sqf": 250,
+          "wifi": false,
+          "parking": true,
+          "price": 1500,
+          "startDate": "Feb 20",
+          "endDate": "Feb 25"
+        }
+      ]
+    }
+  ]
+}

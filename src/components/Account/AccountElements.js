@@ -10,11 +10,9 @@ export const Container = styled.div`
   top: 0;
   z-index: 0;
   /* overflow: hidden; */
-  background: linear-gradient(
-    108deg,
-    rgba(1, 147, 86, 1) 0%,
-    rgba(10, 201, 122, 1) 100%
-  );
+  background: linear-gradient(108deg,
+  rgb(1, 147, 86) 0%,
+  rgba(10, 201, 122, 1) 100%);
 `;
 
 export const FormWrap = styled.div`
@@ -42,6 +40,21 @@ export const Icon = styled(Link)`
   }
 `;
 
+export const MiddleIcon = styled(Link)`
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 32px;
+
+  @media screen and (max-width: 480px) {
+    margin-left: 16px;
+    margin-top: 8px;
+  }
+`;
+
 export const FormContent = styled.div`
   height: 100%;
   display: flex;
@@ -53,6 +66,18 @@ export const FormContent = styled.div`
   }
 `;
 
+export const FormWrapper = styled.div`
+  background: #010101;
+  display: inline-flex;
+  height: auto;
+  z-index: 1;
+  margin: 0 auto;
+  padding: 80px 32px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+`;
+
+    // !!! don't use this. stops requests for some reason
 export const Form = styled.form`
   background: #010101;
   max-width: 400px;
@@ -106,4 +131,29 @@ export const Text = styled.span`
   margin-top: 24px;
   color: #fff;
   font-size: 14px;
+`;
+
+export const A = styled(Link)`
+  color: white;
+`;
+
+export const FormSelect = styled.select`
+  padding: 16px 1px;
+  margin-bottom: 32px;
+  border: none;
+  border-radius: 4px;
+`;
+
+export const AccountWrapper = styled.div`
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 30px 80px;
+  padding: 0 50px;
+
+  @media screen and (max-width: 400px) {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
 `;

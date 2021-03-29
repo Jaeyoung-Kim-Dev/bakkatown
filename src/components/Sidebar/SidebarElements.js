@@ -38,11 +38,11 @@ export const SidebarWrapper = styled.div`
 export const SidebarMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, 80px);
+  grid-template-rows: repeat(7, 80px);
   text-align: center;
 
   @media screen and (max-width: 768px) {
-    grid-template-rows: repeat(8, 60px);
+    grid-template-rows: repeat(7, 60px);
   }
 `;
 
@@ -74,6 +74,7 @@ export const SidebarRoute = styled(LinkR)`
   background: #01bf71;
   white-space: nowrap;
   padding: 16px 64px;
+  margin: 20px 0;
   color: #010606;
   font-size: 16px;
   outline: none;

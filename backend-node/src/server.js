@@ -6,6 +6,7 @@ const stripe = require('stripe')(
 const { v4: uuidv4 } = require('uuid');
 const bt_room_type = require('./bt_room_type.json');
 const bt_room = require('./bt_room.json');
+const reservation_list = require('./reservation_list.json');
 
 const app = express();
 
@@ -24,11 +25,77 @@ app.get('/room/available', (req, res) => {
   res.json(bt_room);
 });
 
+app.get('/reservations', (req, res) => {
+  console.log(req.query);
+  res.json(reservation_list);
+});
+
+app.post('/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    console.log(email, password);
+    const data = {
+      token: 'generated_token_number',
+      firstName: 'John',
+      lastName: 'Doe',
+      email: email,
+    };
+    console.log(data);
+    res.json(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+
+app.post('/registration', async (req, res) => {
+  try {
+    const { firstName, lastName, email, password } = req.body;
+    console.log(firstName, lastName, email, password);
+    const data = {
+      token: 'generated_token_number',
+      email: email,
+    };
+    res.json(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+
+app.post('/forgot', async (req, res) => {
+  try {
+    const email = req.body.email;
+    console.log(email);
+    const data = {
+      email: email,
+    };
+    res.json(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+
+app.post('/account', async (req, res) => {
+  try {
+    const { firstName, lastName, email, password } = req.body;
+    console.log(firstName, lastName, email, password);
+    const data = {
+      token: 'generated_token_number',
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+    };
+    res.json(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+
 app.post('/charge', async (req, res) => {
   let error;
   let status;
+
   try {
-    const { token, booking, roomId, totalAmount } = req.body;
+    const { token, booking, totalAmount } = req.body;
     const customer = await stripe.customers.create({
       email: token.email,
       source: token.id,
