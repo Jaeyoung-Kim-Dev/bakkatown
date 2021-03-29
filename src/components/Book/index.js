@@ -69,6 +69,7 @@ const Book = () => {
       ...prevState,
       [name]: value,
     }));
+    console.log(booking);
   };
 
   const accordionHandleChange = (_stage) => {
