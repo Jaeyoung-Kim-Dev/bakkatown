@@ -13,7 +13,8 @@ import NotFoundPage from './pages/notFound';
 import SignupPage from './pages/signup';
 import LoginPage from './pages/login';
 import ForgotPage from './pages/forgot';
-import Account from './components/Account/Account';
+import Account from './pages/account';
+import Reservations from './pages/reservations';
 import Confirm from './components/Account/Confirm';
 //
 import SignupPagem from './pagesm/signup';
@@ -50,7 +51,13 @@ function App() {
             {user.email ? <Redirect to='/' /> : <LoginPage />}
           </Switch>
           <Route path='/book' component={BookPage} exact />
-          <Route path='/account' component={Account} exact />
+          <Switch path='/account' exact>
+            {user.email ? <Account /> : <Redirect to='/' />}
+          </Switch>
+          {/* <Route path='/account' component={Account} exact /> */}
+          <Switch path='/reservations' exact>
+            {user.email ? <Reservations /> : <Redirect to='/' />}
+          </Switch>
           <Route path='/confirm' component={Confirm} exact />
           {''}
           <Route path='/signupm' component={SignupPagem} exact />

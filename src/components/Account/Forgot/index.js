@@ -9,7 +9,7 @@ import {
   FormH1,
   FormLabel,
   FormInput,
-  FormButton,
+  FormPrimaryButton,
   Text,
 } from '../SigninElements';
 
@@ -89,7 +89,9 @@ const Forgot = () => {
                   onChange={(e) => setForgot(e.target.value)}
                   required
                 />
-                <FormButton type='submit'>Send Password Reset Email</FormButton>
+                <FormPrimaryButton type='submit'>
+                  Send Password Reset Email
+                </FormPrimaryButton>
                 <Text>
                   <OtherLink to='/login'>Log in</OtherLink>
                 </Text>

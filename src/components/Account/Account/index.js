@@ -1,33 +1,38 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../../UserContext';
 import {
   Container,
   FormWrap,
-  OtherLink,
   FormContent,
   Form,
   FormH1,
   FormLabel,
   FormInput,
-  FormButton,
-  Text,
+  FormPrimaryButton,
+  FormSecondaryButton,
 } from '../SigninElements';
 
-const blankSignIn = {
-  email: '',
-  password: '',
-};
-
 const Account = () => {
-  const [signIn, setSignup] = useState(blankSignIn);
-  const [readMode, setReadMode] = useState(false);
   const { user, setUser } = useContext(UserContext);
+  const currentAccount = {
+    firstName: user.firstName,
+    lastName: user.lastName,
+    email: user.email,
+    password: user.password,
+  };
+  const [account, setAccount] = useState(currentAccount);
+  const [readMode, setReadMode] = useState(true);
+  const history = useHistory();
 
-  async function loginRequest(data) {
+  async function accountRequest(data) {
     try {
       // console.log({ data });
-      return await axios.post('http://localhost:8080/login', {
+      return await axios.post('http://localhost:8080/account', {
+        firstName: data.firstName,
+        lastName: data.lastName,
         email: data.email,
         password: data.password,
       });
@@ -36,16 +41,18 @@ const Account = () => {
     }
   }
 
-  let handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     // console.log(event);
 
-    const newSignIn = {
-      email: signIn.email,
-      password: signIn.password,
+    const newAccount = {
+      firstName: account.firstName,
+      lastName: account.lastName,
+      email: account.email,
+      password: account.password,
     };
 
-    loginRequest(newSignIn)
+    accountRequest(newAccount)
       .then((response) => {
         // console.log(response.status);
         // console.log(response.data);
@@ -56,14 +63,18 @@ const Account = () => {
           localStorage.setItem('firstName', firstName);
           localStorage.setItem('lastName', lastName);
           localStorage.setItem('email', email);
+          setUser({
+            token: token,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+          });
+          setReadMode(true);
+          toast('Your account has been successfully updated.', {
+            type: 'success',
+          });
         }
-        setUser({
-          token: token,
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-        });
-        console.log(user);
+        // console.log(user);
       })
       .catch((error) => {
         console.log(error);
@@ -72,11 +83,20 @@ const Account = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setSignup((prevState) => ({
+    setAccount((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+    console.log(account);
   };
+
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setAccount((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
 
   return (
     <>
@@ -90,6 +110,7 @@ const Account = () => {
                 type='text'
                 id='firstName'
                 name='firstName'
+                value={account.firstName}
                 readOnly={readMode}
                 onChange={handleChange}
                 required
@@ -99,6 +120,7 @@ const Account = () => {
                 type='text'
                 id='lastName'
                 name='lastName'
+                value={account.lastName}
                 readOnly={readMode}
                 onChange={handleChange}
                 required
@@ -108,6 +130,7 @@ const Account = () => {
                 type='email'
                 id='email'
                 name='email'
+                value={account.email}
                 readOnly={readMode}
                 onChange={handleChange}
                 required
@@ -118,9 +141,42 @@ const Account = () => {
                 id='password'
                 name='password'
                 readOnly={readMode}
+                placeholder={readMode ? '' : 'Only if you dont want to change'}
                 onChange={handleChange}
-                required
               />
+              {readMode ? (
+                <>
+                  <FormPrimaryButton
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setReadMode(false);
+                    }}
+                  >
+                    E D I T
+                  </FormPrimaryButton>
+                  <FormSecondaryButton
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setReadMode(true);
+                      history.push('/');
+                    }}
+                  >
+                    H O M E
+                  </FormSecondaryButton>
+                </>
+              ) : (
+                <>
+                  <FormPrimaryButton type='submit'>S A V E</FormPrimaryButton>
+                  <FormSecondaryButton
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setReadMode(true);
+                    }}
+                  >
+                    C A N C E L
+                  </FormSecondaryButton>
+                </>
+              )}
             </Form>
           </FormContent>
         </FormWrap>
