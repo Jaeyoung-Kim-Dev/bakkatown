@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import Book from '../components/Book';
+import Reservations from '../components/Account/Reservations';
 import ScrollToTop from '../components/ScrollToTop';
 
-const SigninPage = () => {
+const AccountPage = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -14,11 +14,11 @@ const SigninPage = () => {
   return (
     <>
       <ScrollToTop />
-      {/* <Navbar toggle={toggle} />
-      <Sidebar isOpen={isOpen} toggle={toggle} /> */}
-      <Book />
+      <Navbar toggle={toggle} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Reservations />
     </>
   );
 };
 
-export default SigninPage;
+export default AccountPage;

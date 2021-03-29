@@ -77,6 +77,7 @@ const Book = () => {
     setStage(tempStage);
     setConfirm(false);
     window.scrollTo(0, 0);
+    console.log(booking);
   };
 
   const validate = async (_stage) => {

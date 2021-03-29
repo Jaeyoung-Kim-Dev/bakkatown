@@ -1,0 +1,186 @@
+[
+  {
+    "id": 9929040,
+    "people": 2,
+    "price": 119.9,
+    "startDate": "Mon Mar 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Wed Mar 31 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "roomType": {
+      "roomId": 1,
+      "roomName": "King 1",
+      "roomType": {
+        "roomTypeId": 1,
+        "roomTitle": "King Studio Apartment",
+        "roomCost": 55.0,
+        "roomCapacity": 2,
+        "bedCount": 1,
+        "bathCount": 1,
+        "weeklyDiscount": 15,
+        "monthlyDiscount": 25,
+        "wifi": true,
+        "size": 300
+      }
+    }
+  },
+  {
+    "id": 9929184,
+    "people": 4,
+    "price": 490.5,
+    "startDate": "Tue May 11 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Thu May 20 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "roomType": {
+      "roomId": 2,
+      "roomName": "Queen 1",
+      "roomType": {
+        "roomTypeId": 2,
+        "roomTitle": "Queen Apartment",
+        "roomCost": 50.0,
+        "roomCapacity": 2,
+        "bedCount": 1,
+        "bathCount": 1,
+        "weeklyDiscount": 15,
+        "monthlyDiscount": 25,
+        "wifi": true,
+        "size": 250
+      }
+    }
+  },
+  {
+    "id": 9929241,
+    "people": 2,
+    "price": 119.9,
+    "startDate": "Mon Mar 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Wed Mar 31 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "roomType": {
+      "roomId": 1,
+      "roomName": "King 1",
+      "roomType": {
+        "roomTypeId": 1,
+        "roomTitle": "King Studio Apartment",
+        "roomCost": 55.0,
+        "roomCapacity": 2,
+        "bedCount": 1,
+        "bathCount": 1,
+        "weeklyDiscount": 15,
+        "monthlyDiscount": 25,
+        "wifi": true,
+        "size": 300
+      }
+    }
+  },
+  {
+    "id": 9929369,
+    "people": 4,
+    "price": 490.5,
+    "startDate": "Tue May 11 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Thu May 20 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "roomType": {
+      "roomId": 2,
+      "roomName": "Queen 1",
+      "roomType": {
+        "roomTypeId": 2,
+        "roomTitle": "Queen Apartment",
+        "roomCost": 50.0,
+        "roomCapacity": 2,
+        "bedCount": 1,
+        "bathCount": 1,
+        "weeklyDiscount": 15,
+        "monthlyDiscount": 25,
+        "wifi": true,
+        "size": 250
+      }
+    }
+  },
+  {
+    "id": 9929440,
+    "people": 2,
+    "price": 119.9,
+    "startDate": "Mon Mar 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Wed Mar 31 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "roomType": {
+      "roomId": 1,
+      "roomName": "King 1",
+      "roomType": {
+        "roomTypeId": 1,
+        "roomTitle": "King Studio Apartment",
+        "roomCost": 55.0,
+        "roomCapacity": 2,
+        "bedCount": 1,
+        "bathCount": 1,
+        "weeklyDiscount": 15,
+        "monthlyDiscount": 25,
+        "wifi": true,
+        "size": 300
+      }
+    }
+  },
+  {
+    "id": 9929584,
+    "people": 4,
+    "price": 490.5,
+    "startDate": "Tue May 11 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Thu May 20 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "roomType": {
+      "roomId": 2,
+      "roomName": "Queen 1",
+      "roomType": {
+        "roomTypeId": 2,
+        "roomTitle": "Queen Apartment",
+        "roomCost": 50.0,
+        "roomCapacity": 2,
+        "bedCount": 1,
+        "bathCount": 1,
+        "weeklyDiscount": 15,
+        "monthlyDiscount": 25,
+        "wifi": true,
+        "size": 250
+      }
+    }
+  },
+  {
+    "id": 9929641,
+    "people": 2,
+    "price": 119.9,
+    "startDate": "Mon Mar 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Wed Mar 31 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "roomType": {
+      "roomId": 1,
+      "roomName": "King 1",
+      "roomType": {
+        "roomTypeId": 1,
+        "roomTitle": "King Studio Apartment",
+        "roomCost": 55.0,
+        "roomCapacity": 2,
+        "bedCount": 1,
+        "bathCount": 1,
+        "weeklyDiscount": 15,
+        "monthlyDiscount": 25,
+        "wifi": true,
+        "size": 300
+      }
+    }
+  },
+  {
+    "id": 9929769,
+    "people": 4,
+    "price": 490.5,
+    "startDate": "Tue May 11 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "endDate": "Thu May 20 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "roomType": {
+      "roomId": 2,
+      "roomName": "Queen 1",
+      "roomType": {
+        "roomTypeId": 2,
+        "roomTitle": "Queen Apartment",
+        "roomCost": 50.0,
+        "roomCapacity": 2,
+        "bedCount": 1,
+        "bathCount": 1,
+        "weeklyDiscount": 15,
+        "monthlyDiscount": 25,
+        "wifi": true,
+        "size": 250
+      }
+    }
+  }
+]

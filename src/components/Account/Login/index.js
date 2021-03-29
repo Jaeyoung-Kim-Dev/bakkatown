@@ -10,7 +10,7 @@ import {
   FormH1,
   FormLabel,
   FormInput,
-  FormButton,
+  FormPrimaryButton,
   Text,
 } from '../SigninElements';
 
@@ -55,13 +55,13 @@ const SignIn = () => {
           localStorage.setItem('firstName', firstName);
           localStorage.setItem('lastName', lastName);
           localStorage.setItem('email', email);
+          setUser({
+            token: token,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+          });
         }
-        setUser({
-          token: token,
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-        });
         console.log(user);
       })
       .catch((error) => {
@@ -100,11 +100,12 @@ const SignIn = () => {
                 onChange={handleChange}
                 required
               />
-              <FormButton type='submit'>Log In</FormButton>
+              <FormPrimaryButton type='submit'>Log In</FormPrimaryButton>
               <Text>
                 Don't have an account? Make one{' '}
                 <OtherLink to='/signup'>here</OtherLink>
               </Text>
+              <br />
               <Text>
                 <OtherLink to='/forgot'>Forgot password</OtherLink>
               </Text>

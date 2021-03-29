@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {
   Container,
-  FormButton,
+  FormPrimaryButton,
   FormH1,
   FormInput,
   FormLabel,
@@ -150,7 +150,7 @@ const SignUp = () => {
                   onChange={handleChange}
                   required
                 />
-                <FormButton type='submit'>Submit</FormButton>
+                <FormPrimaryButton type='submit'>Submit</FormPrimaryButton>
                 <Text>
                   Do you have an account? Log in{' '}
                   <OtherLink to='/login'>here</OtherLink>

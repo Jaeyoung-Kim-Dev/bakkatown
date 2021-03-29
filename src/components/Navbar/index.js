@@ -109,10 +109,10 @@ const Navbar = ({ toggle }) => {
                     onClose={handleClose}
                   >
                     <MenuItem onClick={handleClose}>
-                      <Link to='/'>Account</Link>
+                      <Link to='/account'>Account</Link>
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
-                      <Link to='/'>Reservations</Link>
+                      <Link to='/reservations'>Reservations</Link>
                     </MenuItem>
                     <MenuItem onClick={logOut}>Logout</MenuItem>
                   </Menu>

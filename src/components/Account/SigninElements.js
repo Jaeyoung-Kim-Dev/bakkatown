@@ -59,17 +59,17 @@ export const Form = styled.form`
   z-index: 1;
   display: grid;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 50px 32px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 
   @media screen and (max-width: 400px) {
-    padding: 32px 32px;
+    padding: 22px 32px;
   }
 `;
 
 export const FormH1 = styled.h1`
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   color: #fff;
   font-size: 20px;
   font-weight: 400;
@@ -90,8 +90,19 @@ export const FormInput = styled.input`
   background: ${({ readOnly }) => (readOnly ? 'lightgrey' : '#fff')};
 `;
 
-export const FormButton = styled.button`
+export const FormPrimaryButton = styled.button`
   background: #01bf71;
+  margin-bottom: 32px;
+  padding: 16px 0;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+`;
+
+export const FormSecondaryButton = styled.button`
+  background: #ea6e03;
   padding: 16px 0;
   border: none;
   border-radius: 4px;
@@ -102,7 +113,25 @@ export const FormButton = styled.button`
 
 export const Text = styled.span`
   text-align: center;
-  margin-top: 24px;
+  /* margin-bottom: 24px; */
   color: #fff;
   font-size: 14px;
+`;
+
+export const TableWrapper = styled.div`
+  background: #f3f4ff;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  min-height: 700px;
+  max-height: 80vh;
+  z-index: 1;
+  margin: 0 auto;
+  padding: 50px 32px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+
+  @media screen and (max-width: 400px) {
+    /* padding: 22px 32px; */
+  }
 `;
