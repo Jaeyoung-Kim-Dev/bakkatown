@@ -300,7 +300,7 @@ export const AppliedPromoCode = styled.div`
   border-radius: 10px;
   background: linear-gradient(to left, #0178bd, #368dc5);
   color: #fff;
-  padding: 8px 10px;
+  padding: 8px 15px;
   /* margin: 0 5px 0 5px; */
   /* font-size: 0.9rem; */
   outline: none;
@@ -308,4 +308,16 @@ export const AppliedPromoCode = styled.div`
   display: inline-block;
   justify-content: center;
   align-items: center;
+`;
+
+export const RemovePromoCode = styled.div`
+  position: absolute;
+  /* transform: translateX(50px); */
+  transform: translate(340px, -20px);
+  border-radius: 30px;
+  background: #fff;
+  color: #000;
+  padding: 1px 7px 3px;
+  border: 1px solid #0178bd;
+  cursor: pointer;
 `;

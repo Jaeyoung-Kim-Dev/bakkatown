@@ -11,6 +11,7 @@ import {
   SummaryPolicyWrapper,
   ButtonM,
   AppliedPromoCode,
+  RemovePromoCode,
 } from './BookElements';
 import TextField from '@material-ui/core/TextField';
 import Divider from '@material-ui/core/Divider';
@@ -61,6 +62,14 @@ const Summary = (props) => {
       .catch(() => {
         toast('Invalid Promotion / Group Code.', { type: 'error' });
       });
+  };
+
+  const removePromo = () => {
+    props.setBooking((prevState) => ({
+      ...prevState,
+      promoCode: '',
+    }));
+    setUserPromoCode('');
   };
 
   async function handleToken(token) {
@@ -137,6 +146,7 @@ const Summary = (props) => {
               <SummaryDetailWrapper>
                 <p>Applied Porocode:</p>
                 <AppliedPromoCode>{props.booking.promoCode}</AppliedPromoCode>
+                <RemovePromoCode onClick={removePromo}>x</RemovePromoCode>
               </SummaryDetailWrapper>
             ) : (
               ''
@@ -149,7 +159,7 @@ const Summary = (props) => {
                 name='promoCode'
                 fullWidth={true}
                 value={userPromoCode}
-                onChange={(e) => setUserPromoCode(e.target.value)}
+                onChange={(e) => setUserPromoCode(e.target.value.toUpperCase())}
               />
               <ButtonM onClick={applyPromo}>Apply</ButtonM>
             </SummaryDetailWrapper>
