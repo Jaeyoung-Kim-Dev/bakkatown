@@ -247,8 +247,8 @@ export const SummaryWrapper = styled.div`
   /* margin: 0 auto; */
   /* display: grid; */
   /* grid-template-columns: 1fr 1fr; */
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   /* align-items: center; */
   /* grid-gap: 30px 80px; */
   /* margin-top: 50px; */
@@ -296,6 +296,14 @@ export const AccordionRoot = styled.div`
   }
 `;
 
+export const AppliedPromoCodeWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.8rem 0;
+  position: relative;
+`;
+
 export const AppliedPromoCode = styled.div`
   border-radius: 10px;
   background: linear-gradient(to left, #0178bd, #368dc5);
@@ -310,10 +318,32 @@ export const AppliedPromoCode = styled.div`
   align-items: center;
 `;
 
+export const ApplyPromo = styled.button`
+  border-radius: 10px;
+  background: #d4d3c9;
+  /* white-space: nowrap; */
+  padding: 8px 15px;
+  /* color: #fff; */
+  font-size: 0.9rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #b3b2ab;
+  }
+`;
+
 export const RemovePromoCode = styled.div`
   position: absolute;
-  /* transform: translateX(50px); */
-  transform: translate(340px, -20px);
+  top: 0;
+  right: 0;
+  transform: translate(10px, -10px);
   border-radius: 30px;
   background: #fff;
   color: #000;
