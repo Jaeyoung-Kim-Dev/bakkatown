@@ -9,7 +9,10 @@ import {
   FormH1,
   SummaryDetailWrapper,
   SummaryPolicyWrapper,
+  ButtonM,
+  AppliedPromoCode,
 } from './BookElements';
+import TextField from '@material-ui/core/TextField';
 import Divider from '@material-ui/core/Divider';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -17,13 +20,14 @@ const taxRate = 0.09;
 toast.configure();
 
 const Summary = (props) => {
+  const [userPromoCode, setUserPromoCode] = useState('');
   const [roomPrice, setRoomPrice] = useState({
     day: '',
     days: '',
     tax: '',
     total: '',
   });
-  const { dateFrom, dateTo, roomType, guests } = props.booking;
+  const { dateFrom, dateTo, roomType, guests, promoCode } = props.booking;
   const night = props.night;
 
   useEffect(() => {
@@ -36,6 +40,28 @@ const Summary = (props) => {
         total: formatCurrency(_roomPrice * night * (1 + taxRate)),
       });
   }, [roomType, night]);
+
+  const applyPromo = async () => {
+    await axios
+      .get('http://localhost:8080/promo', {
+        params: {
+          promoCode: userPromoCode,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        props.setBooking((prevState) => ({
+          ...prevState,
+          promoCode: res.data.promoCode,
+        }));
+        toast('The code applied successfully.', { type: 'success' });
+        setUserPromoCode('');
+        console.log(props.booking);
+      })
+      .catch(() => {
+        toast('Invalid Promotion / Group Code.', { type: 'error' });
+      });
+  };
 
   async function handleToken(token) {
     console.log('post start');
@@ -105,16 +131,38 @@ const Summary = (props) => {
               <p>Property's currency</p>
               {roomPrice.total}
             </SummaryDetailWrapper>
+            <Divider />
+            <br />
+            {props.booking.promoCode ? (
+              <SummaryDetailWrapper>
+                <p>Applied Porocode:</p>
+                <AppliedPromoCode>{props.booking.promoCode}</AppliedPromoCode>
+              </SummaryDetailWrapper>
+            ) : (
+              ''
+            )}
+            <SummaryDetailWrapper>
+              <TextField
+                id='standard-secondary'
+                label='Promotion / Group Code'
+                color='secondary'
+                name='promoCode'
+                fullWidth={true}
+                value={userPromoCode}
+                onChange={(e) => setUserPromoCode(e.target.value)}
+              />
+              <ButtonM onClick={applyPromo}>Apply</ButtonM>
+            </SummaryDetailWrapper>
           </div>
         )}
-        <Divider />
+        {/* <Divider /> */}
         <SummaryPolicyWrapper>
           <h4>Cancellation Policy:</h4>
           <p>All paid prepayments are non-refundable.</p>
           <h4>Damage Protection Policy:</h4>
           <p>No damage deposit is due.</p>
-          <br />
         </SummaryPolicyWrapper>
+        <br />
         {/* {props.confirm && <ButtonPay to='./payment'>Compete Booking</ButtonPay>} */}
         {props.confirm && (
           <StripeCheckout

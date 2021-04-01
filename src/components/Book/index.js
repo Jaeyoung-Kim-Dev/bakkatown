@@ -289,6 +289,8 @@ const Book = () => {
           </Form>
           <Summary
             booking={booking}
+            // handleChange={handleChange}
+            setBooking={setBooking}
             changeDateFormat={changeDateFormat}
             confirm={confirm}
             night={night}

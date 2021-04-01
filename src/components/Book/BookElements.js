@@ -295,3 +295,17 @@ export const AccordionRoot = styled.div`
     width: 90vw;
   }
 `;
+
+export const AppliedPromoCode = styled.div`
+  border-radius: 10px;
+  background: linear-gradient(to left, #0178bd, #368dc5);
+  color: #fff;
+  padding: 8px 10px;
+  /* margin: 0 5px 0 5px; */
+  /* font-size: 0.9rem; */
+  outline: none;
+  border: none;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+`;
