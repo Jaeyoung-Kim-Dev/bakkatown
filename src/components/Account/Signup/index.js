@@ -12,8 +12,7 @@ import {
   FormContent,
   Form,
   Text,
-} from '../SigninElements';
-import ApiService from '../ApiService';
+} from '../AccountElements';
 
 const blankSignup = {
   firstName: '',

@@ -30,6 +30,14 @@ app.get('/reservations', (req, res) => {
   res.json(reservation_list);
 });
 
+app.get('/promo', (req, res) => {
+  console.log(req.query);
+  res.json({
+    promoCode: req.query.promoCode,
+    discountRate: 20,
+  });
+});
+
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;

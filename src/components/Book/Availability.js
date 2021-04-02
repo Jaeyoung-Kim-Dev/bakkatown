@@ -8,7 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { FormContent } from './BookElements';
-import TextField from '@material-ui/core/TextField';
+// import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -91,14 +91,14 @@ const Availability = (props) => {
             <MenuItem value={6}>6</MenuItem>
             <MenuItem value={7}>7</MenuItem>
           </Select>
-          <br />
+          {/* <br />
           <TextField
             id='standard-secondary'
             label='Promotion / Group Code'
             color='secondary'
             name='promoCode'
             onChange={props.handleChange}
-          />
+          /> */}
         </FormControl>
       </FormContent>
     </>

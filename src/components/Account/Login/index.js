@@ -12,7 +12,7 @@ import {
   FormInput,
   FormPrimaryButton,
   Text,
-} from '../SigninElements';
+} from '../AccountElements';
 
 const blankSignIn = {
   email: '',

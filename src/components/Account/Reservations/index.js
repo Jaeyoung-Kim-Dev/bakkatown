@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useMemo, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { DataGrid } from '@material-ui/data-grid';
-import { useHistory } from 'react-router-dom';
-import Moment from 'react-moment';
 import { UserContext } from '../../../UserContext';
 import formatCurrency from '../../../util';
 import {
@@ -12,12 +10,7 @@ import {
   FormContent,
   TableWrapper,
   FormH1,
-  FormLabel,
-  FormInput,
-  FormPrimaryButton,
-  FormSecondaryButton,
-  Text,
-} from '../SigninElements';
+} from '../AccountElements';
 import moment from 'moment';
 
 const columns = [
@@ -68,15 +61,7 @@ const Reservations = () => {
             <FormH1>My Reservations</FormH1>
             {reservations.length ? (
               <TableWrapper>
-                <DataGrid
-                  rows={rows}
-                  columns={columns}
-                  // pageSize={5}
-                  // color={'#fff'}
-                  // autoHeight={true}
-                  autoPageSize={true}
-                  // checkboxSelection
-                />
+                <DataGrid rows={rows} columns={columns} autoPageSize={true} />
               </TableWrapper>
             ) : (
               ''

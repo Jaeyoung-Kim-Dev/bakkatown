@@ -11,7 +11,7 @@ import {
   FormInput,
   FormPrimaryButton,
   Text,
-} from '../SigninElements';
+} from '../AccountElements';
 
 const Forgot = () => {
   const [forgot, setForgot] = useState(null);

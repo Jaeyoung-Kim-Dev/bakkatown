@@ -13,7 +13,7 @@ import {
   FormInput,
   FormPrimaryButton,
   FormSecondaryButton,
-} from '../SigninElements';
+} from '../AccountElements';
 
 const Account = () => {
   const { user, setUser } = useContext(UserContext);
