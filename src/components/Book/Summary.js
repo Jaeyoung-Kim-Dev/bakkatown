@@ -9,9 +9,10 @@ import {
   FormH1,
   SummaryDetailWrapper,
   SummaryPolicyWrapper,
-  ButtonM,
+  AppliedPromoCodeWrapper,
   AppliedPromoCode,
   RemovePromoCode,
+  ApplyPromo,
 } from './BookElements';
 import TextField from '@material-ui/core/TextField';
 import Divider from '@material-ui/core/Divider';
@@ -22,11 +23,14 @@ toast.configure();
 
 const Summary = (props) => {
   const [userPromoCode, setUserPromoCode] = useState('');
+  const [discountRate, setDiscountRate] = useState(0);
   const [roomPrice, setRoomPrice] = useState({
     day: '',
     days: '',
     tax: '',
     total: '',
+    discount: '',
+    afterDiscountTotal: '',
   });
   const { dateFrom, dateTo, roomType, guests, promoCode } = props.booking;
   const night = props.night;
@@ -39,8 +43,14 @@ const Summary = (props) => {
         days: formatCurrency(_roomPrice * night),
         tax: formatCurrency(_roomPrice * night * taxRate),
         total: formatCurrency(_roomPrice * night * (1 + taxRate)),
+        discount: formatCurrency(
+          _roomPrice * night * (1 + taxRate) * discountRate * 0.01
+        ),
+        afterDiscountTotal: formatCurrency(
+          (_roomPrice * night * (1 + taxRate) * (100 - discountRate)) / 100
+        ),
       });
-  }, [roomType, night]);
+  }, [roomType, night, discountRate]);
 
   const applyPromo = async () => {
     await axios
@@ -57,6 +67,7 @@ const Summary = (props) => {
         }));
         toast('The code applied successfully.', { type: 'success' });
         setUserPromoCode('');
+        setDiscountRate(res.data.discountRate);
         console.log(props.booking);
       })
       .catch(() => {
@@ -70,6 +81,7 @@ const Summary = (props) => {
       promoCode: '',
     }));
     setUserPromoCode('');
+    setDiscountRate(0);
   };
 
   async function handleToken(token) {
@@ -132,24 +144,43 @@ const Summary = (props) => {
               <h4>{roomPrice.total}</h4>
             </SummaryDetailWrapper>
             <Divider />
-            <SummaryDetailWrapper>
-              <h3>Total</h3>
-              <h3>{roomPrice.total}</h3>
-            </SummaryDetailWrapper>
-            <SummaryDetailWrapper>
-              <p>Property's currency</p>
-              {roomPrice.total}
-            </SummaryDetailWrapper>
-            <Divider />
-            <br />
+
             {props.booking.promoCode ? (
-              <SummaryDetailWrapper>
-                <p>Applied Porocode:</p>
-                <AppliedPromoCode>{props.booking.promoCode}</AppliedPromoCode>
-                <RemovePromoCode onClick={removePromo}>x</RemovePromoCode>
-              </SummaryDetailWrapper>
+              <>
+                <SummaryDetailWrapper>
+                  <p>Instant Savings</p>-{roomPrice.discount}
+                </SummaryDetailWrapper>
+                <SummaryDetailWrapper>
+                  <h3>Total</h3>
+                  <h3>{roomPrice.afterDiscountTotal}</h3>
+                </SummaryDetailWrapper>
+                <SummaryDetailWrapper>
+                  <p>Property's currency</p>
+                  {roomPrice.afterDiscountTotal}
+                </SummaryDetailWrapper>
+                <Divider />
+                <AppliedPromoCodeWrapper>
+                  <p>Code applied:</p>
+                  <div>
+                    <AppliedPromoCode>
+                      {props.booking.promoCode} (-
+                      {discountRate}%)
+                    </AppliedPromoCode>
+                    <RemovePromoCode onClick={removePromo}>x</RemovePromoCode>
+                  </div>
+                </AppliedPromoCodeWrapper>
+              </>
             ) : (
-              ''
+              <>
+                <SummaryDetailWrapper>
+                  <h3>Total</h3>
+                  <h3>{roomPrice.total}</h3>
+                </SummaryDetailWrapper>
+                <SummaryDetailWrapper>
+                  <p>Property's currency</p>
+                  {roomPrice.total}
+                </SummaryDetailWrapper>
+              </>
             )}
             <SummaryDetailWrapper>
               <TextField
@@ -161,7 +192,7 @@ const Summary = (props) => {
                 value={userPromoCode}
                 onChange={(e) => setUserPromoCode(e.target.value.toUpperCase())}
               />
-              <ButtonM onClick={applyPromo}>Apply</ButtonM>
+              <ApplyPromo onClick={applyPromo}>Apply</ApplyPromo>
             </SummaryDetailWrapper>
           </div>
         )}
@@ -180,7 +211,9 @@ const Summary = (props) => {
             token={handleToken}
             name={roomType.roomTitle}
             billingAddress
-            amount={roomType.roomCost * night * (1 + taxRate) * 100}
+            amount={
+              roomType.roomCost * night * (1 + taxRate) * (100 - discountRate)
+            }
           />
         )}
       </SummaryWrapper>
