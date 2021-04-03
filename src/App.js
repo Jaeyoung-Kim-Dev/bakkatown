@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import './App.css';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router, // Used HashRouter to connect to Spring and URL will be like ':8080/#/book'
+  // BrowserRouter as Router,
   Switch,
   Route,
   Redirect,

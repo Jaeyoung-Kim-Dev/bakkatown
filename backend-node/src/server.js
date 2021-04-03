@@ -13,24 +13,24 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) => {});
+// app.get('/', (req, res) => {});
 
-app.get('/room', (req, res) => {
+app.get('/api/room', (req, res) => {
   console.log(bt_room_type);
   res.json(bt_room_type);
 });
 
-app.get('/room/available', (req, res) => {
+app.get('/api/room/available', (req, res) => {
   console.log(req.query);
   res.json(bt_room);
 });
 
-app.get('/reservations', (req, res) => {
+app.get('/api/reservations', (req, res) => {
   console.log(req.query);
   res.json(reservation_list);
 });
 
-app.get('/promo', (req, res) => {
+app.get('/api/promo', (req, res) => {
   console.log(req.query);
   res.json({
     promoCode: req.query.promoCode,
@@ -38,7 +38,7 @@ app.get('/promo', (req, res) => {
   });
 });
 
-app.post('/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     console.log(email, password);
@@ -55,7 +55,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
-app.post('/registration', async (req, res) => {
+app.post('/api/registration', async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
     console.log(firstName, lastName, email, password);
@@ -69,7 +69,7 @@ app.post('/registration', async (req, res) => {
   }
 });
 
-app.post('/forgot', async (req, res) => {
+app.post('/api/forgot', async (req, res) => {
   try {
     const email = req.body.email;
     console.log(email);
@@ -82,7 +82,7 @@ app.post('/forgot', async (req, res) => {
   }
 });
 
-app.post('/account', async (req, res) => {
+app.post('/api/account', async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
     console.log(firstName, lastName, email, password);
@@ -98,7 +98,7 @@ app.post('/account', async (req, res) => {
   }
 });
 
-app.post('/charge', async (req, res) => {
+app.post('/api/charge', async (req, res) => {
   let error;
   let status;
 
