@@ -17,12 +17,6 @@ import ForgotPage from './pages/forgot';
 import Account from './pages/account';
 import Reservations from './pages/reservations';
 import Confirm from './components/Account/Confirm';
-//
-import SignupPagem from './pagesm/signup';
-import LoginPagem from './pagesm/login';
-import ForgotPagem from './pagesm/forgot';
-import Accountm from './components/AccountMatt/Account';
-import Confirmm from './components/AccountMatt/Confirm';
 
 const { token, firstName, lastName, email } = localStorage.getItem;
 const loggedInUser = {
@@ -60,13 +54,6 @@ function App() {
             {user.email ? <Reservations /> : <Redirect to='/' />}
           </Switch>
           <Route path='/confirm' component={Confirm} exact />
-          {''}
-          <Route path='/signupm' component={SignupPagem} exact />
-          <Route path='/forgotm' component={ForgotPagem} exact />
-          <Route path='/loginm' component={LoginPagem} exact />
-          <Route path='/accountm' component={Accountm} exact />
-          <Route path='/confirmm' component={Confirmm} exact />
-          {''}
           <Route component={NotFoundPage} />
         </Switch>
       </Router>
