@@ -26,7 +26,7 @@ const SignIn = () => {
   async function loginRequest(data) {
     try {
       // console.log({ data });
-      return await axios.post('http://localhost:8080/login', {
+      return await axios.post('/api/login', {
         email: data.email,
         password: data.password,
       });

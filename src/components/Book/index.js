@@ -126,7 +126,7 @@ const Book = () => {
 
   async function fetchRoomData() {
     await axios
-      .get('http://localhost:8080/room/available', {
+      .get('/api/room/available', {
         params: {
           dateFrom: booking.dateFrom,
           dateTo: booking.dateTo,

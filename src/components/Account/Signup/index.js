@@ -28,7 +28,7 @@ const SignUp = () => {
   async function signupRequest(data) {
     try {
       // console.log({ data });
-      return await axios.post('http://localhost:8080/registration', {
+      return await axios.post('/api/registration', {
         email: data.email,
         password: data.password,
       });

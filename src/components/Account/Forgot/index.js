@@ -20,7 +20,7 @@ const Forgot = () => {
   async function forgotRequest(data) {
     try {
       // console.log({ data });
-      return await axios.post('http://localhost:8080/forgot', {
+      return await axios.post('/api/forgot', {
         email: data,
       });
     } catch (error) {

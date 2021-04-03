@@ -54,7 +54,7 @@ const Summary = (props) => {
 
   const applyPromo = async () => {
     await axios
-      .get('http://localhost:8080/promo', {
+      .get('/api/promo', {
         params: {
           promoCode: userPromoCode,
         },
@@ -85,8 +85,8 @@ const Summary = (props) => {
   };
 
   async function handleToken(token) {
-    console.log('post start');
-    const response = await axios.post(`http://localhost:8080/charge`, {
+    console.log('post start1');
+    const response = await axios.post(`/api/charge`, {
       token,
       booking: props.booking,
       roomId: props.booking.roomId,

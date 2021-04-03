@@ -29,7 +29,7 @@ const Reservations = () => {
 
   async function fetchReservations() {
     await axios
-      .get('http://localhost:8080/reservations', {
+      .get('/api/reservations', {
         params: {
           email: user.email,
         },
