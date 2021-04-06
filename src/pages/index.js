@@ -32,7 +32,7 @@ const Home = () => {
       <Rates dark={false} imgStart={true} />
       <Availability dark={true} imgStart={false} />
       <Reviews dark={false} imgStart={true} />
-      <Rooms />
+      {/* <Rooms /> */}
       <Contact dark={false} imgStart={false} />
       <Footer />
     </>

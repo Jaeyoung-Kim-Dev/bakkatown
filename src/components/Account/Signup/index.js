@@ -29,6 +29,8 @@ const SignUp = () => {
     try {
       // console.log({ data });
       return await axios.post('/api/registration', {
+        firstName: data.firstName,
+        lastName: signdataup.lastName,
         email: data.email,
         password: data.password,
       });

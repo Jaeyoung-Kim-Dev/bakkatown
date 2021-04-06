@@ -16,7 +16,6 @@ import LoginPage from './pages/login';
 import ForgotPage from './pages/forgot';
 import Account from './pages/account';
 import Reservations from './pages/reservations';
-import Confirm from './components/Account/Confirm';
 
 const { token, firstName, lastName, email } = localStorage.getItem;
 const loggedInUser = {
@@ -53,7 +52,6 @@ function App() {
           <Switch path='/reservations' exact>
             {user.email ? <Reservations /> : <Redirect to='/' />}
           </Switch>
-          <Route path='/confirm' component={Confirm} exact />
           <Route component={NotFoundPage} />
         </Switch>
       </Router>

@@ -32,7 +32,14 @@ const Summary = (props) => {
     discount: '',
     afterDiscountTotal: '',
   });
-  const { dateFrom, dateTo, roomType, guests, promoCode } = props.booking;
+  const {
+    dateFrom,
+    dateTo,
+    roomId,
+    roomType,
+    guests,
+    promoCode,
+  } = props.booking;
   const night = props.night;
 
   useEffect(() => {
@@ -89,7 +96,7 @@ const Summary = (props) => {
     const response = await axios.post(`/api/charge`, {
       token,
       booking: props.booking,
-      roomId: props.booking.roomId,
+      roomId: roomId,
       totalAmount: roomType.roomCost * night * (1 + taxRate),
     });
     const { status } = response.data;
@@ -145,7 +152,7 @@ const Summary = (props) => {
             </SummaryDetailWrapper>
             <Divider />
 
-            {props.booking.promoCode ? (
+            {promoCode ? (
               <>
                 <SummaryDetailWrapper>
                   <p>Instant Savings</p>-{roomPrice.discount}
@@ -163,7 +170,7 @@ const Summary = (props) => {
                   <p>Code applied:</p>
                   <div>
                     <AppliedPromoCode>
-                      {props.booking.promoCode} (-
+                      {promoCode} (-
                       {discountRate}%)
                     </AppliedPromoCode>
                     <RemovePromoCode onClick={removePromo}>x</RemovePromoCode>

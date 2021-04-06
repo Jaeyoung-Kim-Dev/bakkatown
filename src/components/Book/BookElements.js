@@ -323,11 +323,13 @@ export const ApplyPromo = styled.button`
   background: #d4d3c9;
   /* white-space: nowrap; */
   padding: 8px 15px;
+  margin-left: 10px;
   /* color: #fff; */
   font-size: 0.9rem;
   outline: none;
   border: none;
   cursor: pointer;
+  transform: translateY(8px);
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
