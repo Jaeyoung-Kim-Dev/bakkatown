@@ -1,0 +1,67 @@
+{
+  "messages": [
+    {
+      "text": "Ethan here",
+      "id": "1",
+      "sender": {
+        "name": "Ethan",
+        "uid": "ethan",
+        "avatar": "https://data.cometchat.com/assets/images/avatars/ironman.png"
+      }
+    },
+    {
+      "text": "I can tell by the image",
+      "id": "2",
+      "sender": {
+        "name": "admin",
+        "uid": "admin",
+        "avatar": "https://banner2.cleanpng.com/20181231/fta/kisspng-computer-icons-user-profile-portable-network-graph-circle-svg-png-icon-free-download-5-4714-onli-5c2a3809d6e8e6.1821006915462707298803.jpg"
+      }
+    },
+    {
+      "text": "sick",
+      "id": "3",
+      "sender": {
+        "name": "Ethan",
+        "uid": "ethan",
+        "avatar": "https://data.cometchat.com/assets/images/avatars/ironman.png"
+      }
+    },
+    {
+      "text": "can i have a discount ? ",
+      "id": "4",
+      "sender": {
+        "name": "Ethan",
+        "uid": "ethan",
+        "avatar": "https://data.cometchat.com/assets/images/avatars/ironman.png"
+      }
+    },
+    {
+      "text": "nope",
+      "id": "5",
+      "sender": {
+        "name": "admin",
+        "uid": "admin",
+        "avatar": "https://banner2.cleanpng.com/20181231/fta/kisspng-computer-icons-user-profile-portable-network-graph-circle-svg-png-icon-free-download-5-4714-onli-5c2a3809d6e8e6.1821006915462707298803.jpg"
+      }
+    },
+    {
+      "text": "why are you making such a long convo?",
+      "id": "6",
+      "sender": {
+        "name": "Ethan",
+        "uid": "ethan",
+        "avatar": "https://data.cometchat.com/assets/images/avatars/ironman.png"
+      }
+    },
+    {
+      "text": "to test responsiveness",
+      "id": "7",
+      "sender": {
+        "name": "admin",
+        "uid": "admin",
+        "avatar": "https://banner2.cleanpng.com/20181231/fta/kisspng-computer-icons-user-profile-portable-network-graph-circle-svg-png-icon-free-download-5-4714-onli-5c2a3809d6e8e6.1821006915462707298803.jpg"
+      }
+    }
+  ]
+}

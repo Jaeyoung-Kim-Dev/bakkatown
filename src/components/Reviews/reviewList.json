@@ -1,0 +1,174 @@
+{
+  "Reviews": [
+    {
+      "id": "617701065",
+      "createdAt": "2020-03-13",
+      "comments": "Friendly and helpful hosts. The room was nice.",
+      "listing": {
+        "id": "36763865",
+        "name": "Bakkatown Belize Guest House Queen Studio #5",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/60ebf4ed-e3dd-41a4-b759-ef1d80d8a2fd.jpg?aki_policy=large"
+      },
+      "reviewer": {
+        "id": "149653922",
+        "smartName": "May",
+        "location": "Australia",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/user/11068ef4-eca3-4a2e-9ac8-f5091efaddbe.jpg?aki_policy=large"
+      }
+    },
+    {
+      "id": "616688597",
+      "createdAt": "2020-03-10",
+      "comments": "The guest house is just a few minutes walk from downtown. It's clean and the staff I dealt with, Benigno, Vivian and Arturo, were all friendly and helpful. They have a nice fleet of bikes available and they are happy to offer tips on restaurants, tours and activities to pursue on the island. I would definitely stay there again.",
+      "listing": {
+        "id": "36763221",
+        "name": "Bakkatown Belize Guest House Queen Studio #3",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/6e014564-d25f-46ca-90db-7a33b030b1a0.jpg?aki_policy=large"
+      },
+      "reviewer": {
+        "id": "18168586",
+        "smartName": "Dana",
+        "location": "Brattleboro, VT",
+        "pictureUrl": "https://a0.muscache.com/im/users/18168586/profile_pic/1420900576/original.jpg?aki_policy=large"
+      }
+    },
+    {
+      "id": "616518619",
+      "createdAt": "2020-03-09",
+      "comments": "Super clean, great hot shower, and big, comfortable bed.  Great kitchen set up with all you need to make a meal. Can be a bit noisy at night, but a pair of earplugs will do the trick! Nice to be near locals!",
+      "listing": {
+        "id": "36764375",
+        "name": "Bakkatown Belize Guest House King Studio #9",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/798ea12c-92b3-4405-bba6-e71f9ddaa38d.jpg?aki_policy=large"
+      },
+      "reviewer": {
+        "id": "2723581",
+        "smartName": "Elizabeth",
+        "location": "Portland, OR",
+        "pictureUrl": "https://a0.muscache.com/im/users/2723581/profile_pic/1342493095/original.jpg?aki_policy=large"
+      }
+    },
+    {
+      "id": "614923950",
+      "createdAt": "2020-03-06",
+      "comments": "excellent budget place, clean, relaxed. convenient location near airstrip. If you are tall prepare to bend over > the dorm is excellent value, but ceiling is not very high since it is in the basement under the house. But apart from that: good place, enjoyed my stay with Benigno",
+      "listing": {
+        "id": "36765857",
+        "name": "Bakkatown Belize Hostel Bed #4",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/72d0d525-88ae-409c-b6dc-ae195f9c354f.jpg?aki_policy=large"
+      },
+      "reviewer": {
+        "id": "23919835",
+        "smartName": "Thora",
+        "location": "None",
+        "pictureUrl": "https://a0.muscache.com/im/users/23919835/profile_pic/1416380128/original.jpg?aki_policy=large"
+      }
+    },
+    {
+      "id": "614885281",
+      "createdAt": "2020-03-06",
+      "comments": "This is an excellent place to rent for the value! Benigno’s place is a conveniently located property and he was excellent to communicate with up until the arrival and was so sweet to greet us upon arriving. The “Bakkatown Guest House” is within walking distance from the airport, restaurants, grocery stores, and town!",
+      "listing": {
+        "id": "36764375",
+        "name": "Bakkatown Belize Guest House King Studio #9",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/798ea12c-92b3-4405-bba6-e71f9ddaa38d.jpg?aki_policy=large"
+      },
+      "reviewer": {
+        "id": "89396447",
+        "smartName": "Kate",
+        "location": "Nantucket, MA",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/user/feaa4758-0fb8-41bc-8884-f7f7b04d2133.jpg?aki_policy=large"
+      }
+    },
+    {
+      "id": "614595622",
+      "createdAt": "2020-03-05",
+      "comments": "Great host! Will definitely stay again and be recommending it to friends who travel. A+++",
+      "listing": {
+        "id": "36670756",
+        "name": "Bakkatown Belize Guest House Queen Studio #2",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/f8723b64-1ecf-4704-94ce-ae48749351fc.jpg?aki_policy=large"
+      },
+      "reviewer": {
+        "id": "100660499",
+        "smartName": "Dave",
+        "location": "Pittsburgh, PA",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/user/5ac1afc5-35f4-4c67-a125-001556915f12.jpg?aki_policy=large"
+      }
+    },
+    {
+      "id": "614267113",
+      "createdAt": "2020-03-04",
+      "comments": "Très bon rapport qualité-prix! Bel accueil, des gens toujours disponibles pour nos besoins, bien localisé!",
+      "listing": {
+        "id": "36763865",
+        "name": "Bakkatown Belize Guest House Queen Studio #5",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/60ebf4ed-e3dd-41a4-b759-ef1d80d8a2fd.jpg?aki_policy=large"
+      },
+      "reviewer": {
+        "id": "323097291",
+        "smartName": "Mireille",
+        "location": "Cowansville, Canada",
+        "pictureUrl": "https://a0.muscache.com/defaults/user_pic-225x225.png?v=3"
+      },
+      "translation": {
+        "comments": "Very good value for money! Nice welcome, people always available for our needs, well located!",
+        "commentsLanguage": "fr",
+        "disclaimer": "Translated from French"
+      }
+    },
+    {
+      "id": "614253284",
+      "createdAt": "2020-03-04",
+      "comments": "This was the first time I stayed in a hostel. It was hassle free. I would definitely stay here again. It is within walking distance to the water taxi and many great restaurants. It also had a lounge area with hammocks which was nice and comfortable.",
+      "listing": {
+        "id": "36764009",
+        "name": "Bakkatown Belize Hostel Bed #1",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/76dbd40c-e70f-4c00-9d2e-9a4cbd922ced.jpg?aki_policy=large"
+      },
+      "reviewer": {
+        "id": "37189837",
+        "smartName": "Michael",
+        "location": "Titusville, FL",
+        "pictureUrl": "https://a0.muscache.com/im/users/37189837/profile_pic/1435721117/original.jpg?aki_policy=large"
+      }
+    },
+    {
+      "id": "613769189",
+      "createdAt": "2020-03-02",
+      "comments": "Lalloggio è in una posizione ottimale, a 5 minuti a piedi dal terminal dei bus e dal centro di San Pedro, ma fuori dalla via principale più trafficata!\nappartamento è semplicemente delizioso, piccolo ma nuovo, pulito e ben organizzato! \nBenigno è sempre pronto ad aiutarvi o fornirvi ciò che vi manca!\nAbbiamo passato qui dei bellissimi giorni!",
+      "listing": {
+        "id": "36764068",
+        "name": "Bakkatown Belize Guest House Queen Studio #6",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/7c7b75ce-c8c0-4776-9161-f9b48ab707af.jpg?aki_policy=large"
+      },
+      "reviewer": {
+        "id": "12596187",
+        "smartName": "Elisa",
+        "location": "Rimini, Italy",
+        "pictureUrl": "https://a0.muscache.com/im/users/12596187/profile_pic/1393412423/original.jpg?aki_policy=large"
+      },
+      "translation": {
+        "comments": "The accommodation is in an excellent location, 5 minutes walk from the bus terminal and the center of San Pedro, but off the busiest main street!\nThe apartment is simply delightful, small but new, clean and well organized!\nBenigno is always ready to help you or provide you with what you are missing!\nWe spent some beautiful days here!",
+        "commentsLanguage": "it",
+        "disclaimer": "Translated from Italian"
+      }
+    },
+    {
+      "id": "612061626",
+      "createdAt": "2020-02-28",
+      "comments": "I love Bakkatown! Close to the action, but far enough that you're staying in a neighborhood, not a ball of tourists! Easy access to my favorite dive shop (SSFDC).",
+      "listing": {
+        "id": "36670756",
+        "name": "Bakkatown Belize Guest House Queen Studio #2",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/f8723b64-1ecf-4704-94ce-ae48749351fc.jpg?aki_policy=large"
+      },
+      "reviewer": {
+        "id": "831412",
+        "smartName": "Terry",
+        "location": "Madison, AL",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/user/609c986c-e9d8-4e29-8d06-76849cca20ef.jpg?aki_policy=large"
+      }
+    }
+  ]
+}

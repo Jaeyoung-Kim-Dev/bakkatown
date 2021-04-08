@@ -1,0 +1,26 @@
+[
+  {
+    "description": "test 1",
+    "code": "T1",
+    "amount": 50,
+    "enabled": true
+  },
+  {
+    "description": "Test 2",
+    "code": "FOOD",
+    "amount": 6,
+    "enabled": true
+  },
+  {
+    "description": "Test 3",
+    "code": "three",
+    "amount": 66,
+    "enabled": true
+  },
+  {
+    "description": "Test 4",
+    "code": "BELIEZE",
+    "amount": 1,
+    "enabled": false
+  }
+]

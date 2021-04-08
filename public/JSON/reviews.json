@@ -1,0 +1,33 @@
+{
+  "reviews": [{
+    "id": 0,
+    "room": "king room",
+    "guest": "matt",
+    "rating": "4",
+    "message": "wow what a nice room",
+    "source": "airbnb",
+    "enabled": false,
+    "date": "March 10"
+  },
+    {
+      "id": 1,
+      "room": "queen room",
+      "guest": "ethan",
+      "rating": "4",
+      "message": "it's alright",
+      "source": "airbnb",
+      "enabled": true,
+      "date": "March 10"
+    },
+    {
+      "id": 2,
+      "room": "trapala room",
+      "guest": "naeun",
+      "rating": "4",
+      "message": "this is just a trailer?",
+      "source": "airbnb",
+      "enabled": false,
+      "date": "March 10"
+    }
+  ]
+}

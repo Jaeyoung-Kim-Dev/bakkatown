@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import Reservations from '../components/Account/Reservations';
+import Messages from '../components/Account/Messages';
 import ScrollToTop from '../components/ScrollToTop';
 
-const ReservationsPage = () => {
+const MessagesPage = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -16,9 +16,9 @@ const ReservationsPage = () => {
       <ScrollToTop />
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Reservations />
+      <Messages />
     </>
   );
 };
 
-export default ReservationsPage;
+export default MessagesPage;
