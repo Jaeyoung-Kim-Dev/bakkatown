@@ -1,0 +1,188 @@
+{
+  "Airbnb": {
+    "Tralapa": {
+      "1": "https://www.airbnb.ca/calendar/ical/36766288.ics?s=05e86ea1ce316c8ad69e8eab5fb26da8"
+    },
+    "King": {
+      "1": "https://www.airbnb.ca/calendar/ical/36451250.ics?s=a95327e336c80101fa9004d2530ddb19",
+      "9": "https://www.airbnb.ca/calendar/ical/36764375.ics?s=dae54f10daa1d6f8792834ca1b0a86ae"
+    },
+    "Queen": {
+        "2": "https://www.airbnb.ca/calendar/ical/36670756.ics?s=7d5e82965d6db4b944b023064a0cd46f",
+        "3": "https://www.airbnb.ca/calendar/ical/36763221.ics?s=dacef65ff16249f686a5331584ed0adb",
+        "4": "https://www.airbnb.ca/calendar/ical/36763413.ics?s=2e5376d8f7480ceaa3c279e5af13a6dc",
+        "5": "https://www.airbnb.ca/calendar/ical/36763865.ics?s=f48adbbc23dcca13e45034e910dd80f6",
+        "6": "https://www.airbnb.ca/calendar/ical/36764068.ics?s=06e5b9cee3407e33e9bbe9e172f9859f",
+        "7": "https://www.airbnb.ca/calendar/ical/36764177.ics?s=4fc53c05c056a66b1b24dc367aaa4e7c",
+        "8": "https://www.airbnb.ca/calendar/ical/36764274.ics?s=5a8d1536c36a87860ab518fb22b90058"
+      },
+    "Hostel": {
+      "1": "https://www.airbnb.ca/calendar/ical/36764009.ics?s=40275d0e4fccb597556c79c755ea2bf7",
+      "2": "https://www.airbnb.ca/calendar/ical/36765300.ics?s=1f24bf1a48fb5c30c75127f79bb710f7",
+      "3": "https://www.airbnb.ca/calendar/ical/36765625.ics?s=f8e03515abbead524f3367005ff2d524",
+      "4": "https://www.airbnb.ca/calendar/ical/36765857.ics?s=af46a16b5ba01944c6395bf8ee6f22bd",
+      "5": "https://www.airbnb.ca/calendar/ical/36765948.ics?s=2cd4edda4064d6403036f85387383b730",
+      "6": "https://www.airbnb.ca/calendar/ical/36766070.ics?s=6e1b2284883acf3d2ffb731a5353df66",
+      "7": "https://www.airbnb.ca/calendar/ical/36766162.ics?s=bd525795bbd07294d7efb1032a9502b0"
+    },
+    "Testing": {
+      "1": "https://www.airbnb.ca/calendar/ical/36766070.ics?s=6e1b2284883acf3d2ffb731a5353df66"
+    }
+  },
+  "Google": {
+    "Tralapa": [
+      {
+        "Id": 1,
+        "AirbnbRoomTypeId": 1,
+        "CalendarId": "21ktdfue0t3apqgnibckthsmrc@group.calendar.google.com",
+        "PublicUrl": "https://calendar.google.com/calendar/embed?src=21ktdfue0t3apqgnibckthsmrc%40group.calendar.google.com&ctz=America%2FBelize",
+        "PublicICal": "https://calendar.google.com/calendar/ical/21ktdfue0t3apqgnibckthsmrc%40group.calendar.google.com/public/basic.ics",
+        "PrivateICal": "https://calendar.google.com/calendar/ical/21ktdfue0t3apqgnibckthsmrc%40group.calendar.google.com/private-332f708c25a127c7784f6c69f8910e11/basic.ics"
+      }
+    ],
+    "King": [
+      {
+        "Id": 2,
+        "AirbnbRoomTypeId": 1,
+        "CalendarId": "7jeaqt1k8ugukcb34qiaf5q4s4@group.calendar.google.com",
+        "PublicUrl": "https://calendar.google.com/calendar/embed?src=7jeaqt1k8ugukcb34qiaf5q4s4%40group.calendar.google.com&ctz=America%2FBelize",
+        "PublicICal": "https://calendar.google.com/calendar/ical/7jeaqt1k8ugukcb34qiaf5q4s4%40group.calendar.google.com/public/basic.ics",
+        "PrivateICal": "https://calendar.google.com/calendar/ical/7jeaqt1k8ugukcb34qiaf5q4s4%40group.calendar.google.com/private-034a0c4ddda41ade308b00bf1c284852/basic.ics"
+      },
+      {
+        "Id": 3,
+        "AirbnbRoomTypeId": 9,
+        "CalendarId": "v6fqbo8tapssojbv4fog1agee4@group.calendar.google.com",
+        "PublicUrl": "https://calendar.google.com/calendar/embed?src=v6fqbo8tapssojbv4fog1agee4%40group.calendar.google.com&ctz=America%2FBelize",
+        "PublicICal": "https://calendar.google.com/calendar/ical/v6fqbo8tapssojbv4fog1agee4%40group.calendar.google.com/public/basic.ics",
+        "PrivateICal": "https://calendar.google.com/calendar/ical/v6fqbo8tapssojbv4fog1agee4%40group.calendar.google.com/private-cf017c0aed19e2bbb2578b14379aa811/basic.ics"
+      }
+    ],
+    "Queen": [
+      {
+        "Id": 4,
+        "AirbnbRoomTypeId": 2,
+        "CalendarId": "hqrossjfshhl161iqe344845hk@group.calendar.google.com",
+        "PublicUrl": "https://calendar.google.com/calendar/embed?src=hqrossjfshhl161iqe344845hk%40group.calendar.google.com&ctz=America%2FBelize",
+        "PublicICal": "https://calendar.google.com/calendar/ical/hqrossjfshhl161iqe344845hk%40group.calendar.google.com/public/basic.ics",
+        "PrivateICal": "https://calendar.google.com/calendar/ical/hqrossjfshhl161iqe344845hk%40group.calendar.google.com/private-f48b0502b1a1576eb285222908a9a6e1/basic.ics"
+      },
+      {
+        "Id": 5,
+        "AirbnbRoomTypeId": 3,
+        "CalendarId": "9bn5i7fblajiibb3sb6h6smqn0@group.calendar.google.com",
+        "PublicUrl": "https://calendar.google.com/calendar/embed?src=9bn5i7fblajiibb3sb6h6smqn0%40group.calendar.google.com&ctz=America%2FBelize",
+        "PublicICal": "https://calendar.google.com/calendar/ical/9bn5i7fblajiibb3sb6h6smqn0%40group.calendar.google.com/public/basic.ics",
+        "PrivateICal": "https://calendar.google.com/calendar/ical/9bn5i7fblajiibb3sb6h6smqn0%40group.calendar.google.com/private-e5b550b0ca48e4ce80268bd40b509c3a/basic.ics"
+      },
+      {
+        "Id": 6,
+        "AirbnbRoomTypeId": 4,
+        "CalendarId": "6ua5qr6fcnilo82jaqo50n7op8@group.calendar.google.com",
+        "PublicUrl": "https://calendar.google.com/calendar/embed?src=6ua5qr6fcnilo82jaqo50n7op8%40group.calendar.google.com&ctz=America%2FBelize",
+        "PublicICal": "https://calendar.google.com/calendar/ical/6ua5qr6fcnilo82jaqo50n7op8%40group.calendar.google.com/public/basic.ics",
+        "PrivateICal": "https://calendar.google.com/calendar/ical/6ua5qr6fcnilo82jaqo50n7op8%40group.calendar.google.com/private-0f37c2027489f9d3aad172b9e332f611/basic.ics"
+      },
+      {
+        "Id": 7,
+        "AirbnbRoomTypeId": 5,
+        "CalendarId": "",
+        "PublicUrl": "",
+        "PublicICal": "",
+        "PrivateICal": ""
+      },
+      {
+        "Id": 8,
+        "AirbnbRoomTypeId": 6,
+        "CalendarId": "",
+        "PublicUrl": "",
+        "PublicICal": "",
+        "PrivateICal": ""
+      },
+      {
+        "Id": 9,
+        "AirbnbRoomTypeId": 7,
+        "CalendarId": "",
+        "PublicUrl": "",
+        "PublicICal": "",
+        "PrivateICal": ""
+      },
+      {
+        "Id": 10,
+        "AirbnbRoomTypeId": 8,
+        "CalendarId": "",
+        "PublicUrl": "",
+        "PublicICal": "",
+        "PrivateICal": ""
+      }
+    ],
+    "Hostel": [
+      {
+        "Id": 11,
+        "AirbnbRoomTypeId": 1,
+        "CalendarId": "",
+        "PublicUrl": "",
+        "PublicICal": "",
+        "PrivateICal": ""
+      },
+      {
+        "Id": 12,
+        "AirbnbRoomTypeId": 2,
+        "CalendarId": "",
+        "PublicUrl": "",
+        "PublicICal": "",
+        "PrivateICal": ""
+      },
+      {
+        "Id": 13,
+        "AirbnbRoomTypeId": 3,
+        "CalendarId": "",
+        "PublicUrl": "",
+        "PublicICal": "",
+        "PrivateICal": ""
+      },
+      {
+        "Id": 14,
+        "AirbnbRoomTypeId": 4,
+        "CalendarId": "",
+        "PublicUrl": "",
+        "PublicICal": "",
+        "PrivateICal": ""
+      },
+      {
+        "Id": 15,
+        "AirbnbRoomTypeId": 5,
+        "CalendarId": "",
+        "PublicUrl": "",
+        "PublicICal": "",
+        "PrivateICal": ""
+      },
+      {
+        "Id": 16,
+        "AirbnbRoomTypeId": 6,
+        "CalendarId": "",
+        "PublicUrl": "",
+        "PublicICal": "",
+        "PrivateICal": ""
+      },
+      {
+        "Id": 17,
+        "AirbnbRoomTypeId": 7,
+        "CalendarId": "",
+        "PublicUrl": "",
+        "PublicICal": "",
+        "PrivateICal": ""
+      }
+    ],
+    "Testing": [
+      {
+        "Id": 0,
+        "AirbnbRoomTypeId": 1,
+        "CalendarId": "db0mdgc9qej2sdfgonrfme4ghk@group.calendar.google.com",
+        "PublicUrl": "https://calendar.google.com/calendar/embed?src=db0mdgc9qej2sdfgonrfme4ghk%40group.calendar.google.com&ctz=America%2FBelize",
+        "PublicICal": "https://calendar.google.com/calendar/ical/db0mdgc9qej2sdfgonrfme4ghk%40group.calendar.google.com/public/basic.ics",
+        "PrivateICal": "https://calendar.google.com/calendar/ical/db0mdgc9qej2sdfgonrfme4ghk%40group.calendar.google.com/private-d4dc190b4fd57f22e47a96cccccd3793/basic.ics"
+      }
+    ]
+  }
+}

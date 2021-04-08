@@ -18,7 +18,6 @@ const btnBgHoverLight = '#01BF71';
 export const ReviewsContainer = styled.div`
   color: #fff;
   background: ${({ isDark }) => (isDark ? backgroundDark : backgroundLight)};
-
   @media screen and (max-width: 768px) {
     padding: 100px 0;
   } ;
@@ -36,7 +35,6 @@ export const ReviewsWrapper = styled.div`
   /* padding: 0 24px; */
   justify-content: center;
   align-items: center;
-
   @media screen and (max-width: 768px) {
     height: auto;
     /* padding: 3vh; */
@@ -48,11 +46,10 @@ export const ReviewsRow = styled.div`
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
   grid-template-areas: ${({ imgStart }) =>
-    imgStart ? `'col2 col1'` : `'col1 col2'`};
-
+          imgStart ? `'col2 col1'` : `'col1 col2'`};
   @media screen and (max-width: 768px) {
     grid-template-areas: ${({ imgStart }) =>
-      imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
+            imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   } ;
 `;
 
@@ -92,7 +89,6 @@ export const Heading = styled.h1`
   line-height: 1.1;
   font-weight: 600;
   color: ${({ isDark }) => (isDark ? headingDark : headingLight)};
-
   @media screen and (max-width: 480px) {
     font-size: 32px;
   } ;
@@ -127,7 +123,6 @@ export const ButtonS = styled(LinkS)`
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
-
   &:hover {
     transition: all 0.2s ease-in-out;
     background: ${({ isDark }) => (isDark ? btnBgHoverDark : btnBgHoverLight)};
@@ -149,7 +144,6 @@ export const ButtonA = styled.a`
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
-
   &:hover {
     transition: all 0.2s ease-in-out;
     background: ${({ isDark }) => (isDark ? btnBgHoverDark : btnBgHoverLight)};
@@ -170,7 +164,6 @@ export const Img = styled.img`
   /* padding-right: 0; */
   border-radius: 10px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
-
   @media screen and (max-width: 768px) {
     max-height: 45vh;
   } ;

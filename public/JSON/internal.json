@@ -1,0 +1,11 @@
+{
+  "threeDaysAmount": 15,
+  "threeDaysEnabled": true,
+  "threeDaysCode": "ThreeDay",
+  "weekAmount": 20,
+  "weekEnabled": true,
+  "weekCode": "Week",
+  "monthAmount": 25,
+  "monthEnabled": false,
+  "monthCode": "Month"
+}

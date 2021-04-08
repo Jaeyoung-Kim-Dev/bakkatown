@@ -1,0 +1,36 @@
+{
+  "messages": [
+    {
+      "text": "Hey there",
+      "id": "1",
+      "sender": {
+        "name": "Dohui",
+        "avatar": "https://banner2.cleanpng.com/20181231/fta/kisspng-computer-icons-user-profile-portable-network-graph-circle-svg-png-icon-free-download-5-4714-onli-5c2a3809d6e8e6.1821006915462707298803.jpg"
+      }
+    },
+    {
+      "text": "Hello Dohui",
+      "id": "2",
+      "sender": {
+        "uid": "admin",
+        "avatar": "https://data.cometchat.com/assets/images/avatars/ironman.png"
+      }
+    },
+    {
+      "text": "This is woooowie isn't it?!",
+      "id": "3",
+      "sender": {
+        "name": "Dohui",
+        "avatar": "https://banner2.cleanpng.com/20181231/fta/kisspng-computer-icons-user-profile-portable-network-graph-circle-svg-png-icon-free-download-5-4714-onli-5c2a3809d6e8e6.1821006915462707298803.jpg"
+      }
+    },
+    {
+      "text": "Sure is",
+      "id": "4",
+      "sender": {
+        "uid": "admin",
+        "avatar": "https://data.cometchat.com/assets/images/avatars/ironman.png"
+      }
+    }
+  ]
+}

@@ -16,6 +16,8 @@ import LoginPage from './pages/login';
 import ForgotPage from './pages/forgot';
 import Account from './pages/account';
 import Reservations from './pages/reservations';
+import Messages from './pages/messages';
+import Admin from './pages/admin';
 
 const { token, firstName, lastName, email } = localStorage.getItem;
 const loggedInUser = {
@@ -48,10 +50,13 @@ function App() {
           <Switch path='/account' exact>
             {user.email ? <Account /> : <Redirect to='/' />}
           </Switch>
-          {/* <Route path='/account' component={Account} exact /> */}
           <Switch path='/reservations' exact>
             {user.email ? <Reservations /> : <Redirect to='/' />}
           </Switch>
+          <Switch path='/messages' exact>
+            {user.email ? <Messages /> : <Redirect to='/' />}
+          </Switch>
+          <Route path='/admin' component={Admin} exact />
           <Route component={NotFoundPage} />
         </Switch>
       </Router>

@@ -114,6 +114,9 @@ const Navbar = ({ toggle }) => {
                     <MenuItem onClick={handleClose}>
                       <Link to='/reservations'>Reservations</Link>
                     </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      <Link to='/messages'>Messages</Link>
+                    </MenuItem>
                     <MenuItem onClick={logOut}>Logout</MenuItem>
                   </Menu>
                 </>

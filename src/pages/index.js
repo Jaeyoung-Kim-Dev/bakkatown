@@ -8,7 +8,7 @@ import Rates from '../components/sections/indexRates';
 import Availability from '../components/sections/indexAvailability';
 import Reviews from '../components/Reviews/index';
 import Contact from '../components/sections/indexContact';
-import Rooms from '../components/Rooms';
+// import Rooms from '../components/Rooms';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
