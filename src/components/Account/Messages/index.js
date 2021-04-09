@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 // import './message.css'; // don't do default import or it messes all the other css for some reason
 import { ChatBox } from 'react-chatbox-component';
 import axios from 'axios';
