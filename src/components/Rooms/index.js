@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BiUser, BiBed, BiBath, BiWifi } from 'react-icons/bi';
-// import RoomLists from './roomLists.json';
+import RoomLists from './roomlists.json';
 import {
   RoomsContainer,
   RoomsH1,
@@ -10,33 +10,57 @@ import {
   RoomsImage,
   RoomsH2,
   RoomsP,
-  BtnWrap,
-  Button,
   RoomSpecs,
   RoomSpecList,
 } from './RoomsElements';
+// import King from './rooms/King.jpg'
+// import Queen from './rooms/Queen Apartment.jpg'
+// import Hostel from './rooms/Hostel Mixed Dorm Room.jpg'
+// import Tralapa from './rooms/Tralapa Casita by the Sea.jpg'
+
 
 const Rooms = () => {
   const [roomLists, setRoomLists] = useState([]);
 
+  // useEffect(() => {
+  //   let images = [King, Queen, Hostel, Tralapa];
+  //   let temp = RoomLists;
+  //   let counter = 0;
+  //   temp.forEach(room => room.roomImg = images[counter++])
+  //   setRoomLists(temp)
+  // }, []);
+
   useEffect(() => {
-    axios.get(`/api/room`).then((res) => {
+
+    // setRoomLists(RoomLists) todo maybe change this if not working in the end
+    axios.get(`http://localhost:8080/api/room`).then((res) => {
+    console.log(roomLists)
       setRoomLists(res.data);
-    });
+    }).catch(() => console.log('No updates on rooms'));
   }, []);
 
+
+  // useEffect(() => {
+  //   let images = [King, Queen, Hostel, Tralapa];
+  //   let temp = RoomLists;
+  //   let counter = 0;
+  //   temp.forEach(room => room.roomImg = images[counter++])
+  //   setRoomLists(temp)
+  // }, []);
+
   return (
-    <RoomsContainer id='services'>
-      <RoomsH1>Our Rooms</RoomsH1>
+      (roomLists &&
+      <RoomsContainer id='services'>
+       <RoomsH1>Our Rooms</RoomsH1>
       <RoomsWrapper>
-        {roomLists.map((room) => (
-          <RoomsCard key={room.roomTypeId}>
+        {roomLists.map((room, key) => (
+          <RoomsCard key={key}>
             <RoomsH2>{room.roomTitle}</RoomsH2>
             <RoomsImage
+              // src={room.roomImg}
               src={require(`../../images/rooms/${room.roomTitle}.jpg`)?.default}
               alt={room.roomTitle}
             />
-            {/* ?.default is temporary because of react-scripts v4.0.1's bug */}
 
             <RoomSpecs>
               <RoomSpecList>
@@ -88,13 +112,13 @@ const Rooms = () => {
               From <span style={{ fontSize: '1.7rem' }}>${room.roomCost}</span>{' '}
               Per Night
             </RoomsP>
-            <BtnWrap>
-              <Button>More Info</Button>
-            </BtnWrap>
+            {/*<BtnWrap>*/}
+            {/*  <Button>More Info</Button>*/}
+            {/*</BtnWrap>*/}
           </RoomsCard>
         ))}
       </RoomsWrapper>
-    </RoomsContainer>
+    </RoomsContainer>)
   );
 };
 

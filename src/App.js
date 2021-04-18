@@ -1,8 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import './App.css';
 import {
-  HashRouter as Router, // Used HashRouter to connect to Spring and URL will be like ':8080/#/book'
-  // BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -16,10 +15,13 @@ import LoginPage from './pages/login';
 import ForgotPage from './pages/forgot';
 import Account from './pages/account';
 import Reservations from './pages/reservations';
-import Messages from './pages/messages';
-import Admin from './pages/admin';
+import Confirm from './components/Account/Confirm/confirm.js';
+import BookingConfirm from './components/Account/Confirm/bookingconfirm';
 
-const { token, firstName, lastName, email } = localStorage.getItem;
+const token = localStorage.getItem('token');
+const firstName = localStorage.getItem('firstName');
+const lastName = localStorage.getItem('lastName');
+const email = localStorage.getItem('email');
 const loggedInUser = {
   token: token,
   firstName: firstName,
@@ -53,10 +55,8 @@ function App() {
           <Switch path='/reservations' exact>
             {user.email ? <Reservations /> : <Redirect to='/' />}
           </Switch>
-          <Switch path='/messages' exact>
-            {user.email ? <Messages /> : <Redirect to='/' />}
-          </Switch>
-          <Route path='/admin' component={Admin} exact />
+          <Route path='/confirm' component={Confirm} exact />
+          <Route path='/bookingconfirm' component={BookingConfirm} exact />
           <Route component={NotFoundPage} />
         </Switch>
       </Router>

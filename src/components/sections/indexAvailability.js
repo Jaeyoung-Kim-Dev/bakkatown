@@ -8,7 +8,7 @@ import {
   Heading,
   Subtitle,
   BtnWrap,
-  ButtonS,
+  ButtonR,
   Column2,
   ImgWrap,
   Img,
@@ -24,16 +24,16 @@ const Availability = ({ dark, imgStart }) => {
           <Column1>
             <TextWrapper>
               <TopLine>{id}</TopLine>
-              <Heading isDark={dark}>Availability...</Heading>
-              <Subtitle isDark={dark}>Calendar here</Subtitle>
+              <Heading isDark={dark}>Availability</Heading>
+              {/* <Subtitle isDark={dark}>Check availability</Subtitle> */}
               <BtnWrap>
-                <ButtonS
-                  to='*'
+                <ButtonR
+                  to='./book'
                   offset={-document.documentElement.clientHeight * 0.1}
                   isDark={dark}
                 >
-                  More..
-                </ButtonS>
+                  BOOK
+                </ButtonR>
               </BtnWrap>
             </TextWrapper>
           </Column1>

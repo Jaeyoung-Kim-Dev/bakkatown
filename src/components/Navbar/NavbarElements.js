@@ -38,7 +38,7 @@ export const Navlogo = styled(LinkR)`
   color: ${textColor};
   justify-self: flex-start;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   margin-left: 24px;
@@ -64,10 +64,11 @@ export const MobileIcon = styled.div`
 
 export const NavMenu = styled.ul`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  /* text-align: center; */
   list-style: none;
-  text-align: center;
-  margin-right: -22px;
+  /* margin-right: -5px; */
+  margin-top: 10px;
 
   @media screen and (max-width: 1200px) {
     display: none;
@@ -75,7 +76,7 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavItem = styled.li`
-  height: 10vh;
+  /* height: 100%; */
 `;
 
 export const NavLinks = styled(LinkS)`
@@ -125,4 +126,10 @@ export const NavBtnLink = styled(LinkR)`
     background: ${textColor};
     color: #010606;
   }
+`;
+
+export const AccountLink = styled(LinkR)`
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
 `;

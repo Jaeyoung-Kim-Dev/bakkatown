@@ -162,11 +162,11 @@ export const RoomsWrapper = styled.div`
 
 export const ButtonS = styled.div`
   border-radius: 50px;
-  background: #95e450;
+  background: #0178bd;
   white-space: nowrap;
   padding: 12px 30px;
   margin: 0 5px 0 5px;
-  /* color: #fff; */
+  color: #fff;
   font-size: 1.1rem;
   outline: none;
   border: none;
@@ -178,7 +178,7 @@ export const ButtonS = styled.div`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #01bf71;
+    background: #02324e;
   }
 `;
 
@@ -224,7 +224,7 @@ export const GuestDetailWrapper = styled.div`
 
 export const RoomsCard = styled.div`
   background: ${({ roomId, selectedRoom }) =>
-    roomId === selectedRoom ? '#ffe085' : '#fff'};
+    roomId === selectedRoom ? '#c1e0f7' : '#fff'};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -352,4 +352,51 @@ export const RemovePromoCode = styled.div`
   padding: 1px 7px 3px;
   border: 1px solid #0178bd;
   cursor: pointer;
+`;
+
+export const ConfirmWrapper = styled.div`
+  width: 600px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 600px) {
+    width: 90vw;
+    margin-top: 15vh;
+    /* display: none; */
+  }
+`;
+
+export const ReservationID = styled.div`
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+`;
+
+export const ButtonHomeFromBook = styled(Link)`
+  border-radius: 50px;
+  background: linear-gradient(to left, #0178bd, #368dc5);
+  /* white-space: nowrap; */
+  padding: 12px 30px;
+  margin: 70px 0 20px;
+  color: #fff;
+  font-size: 1.1rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  /* margin: 50px;
+
+  color: #fff;
+  font-weight: 700;
+  font-size: 2rem; */
+
+  /* @media screen and (max-width: 480px) {
+    margin: 20px;
+    font-size: 1.7rem;
+  } */
 `;

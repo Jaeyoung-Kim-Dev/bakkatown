@@ -1,0 +1,26 @@
+{
+  "reservationId": 12,
+  "totalCost": 59.95,
+  "totalPaid": 0.0,
+  "checkIn": "2021-03-28T00:00:00.000+00:00",
+  "checkOut": "2021-03-29T00:00:00.000+00:00",
+  "depositPaid": false,
+  "depositAmount": 0.0,
+  "country": "AQ",
+  "room": {
+    "roomId": 1,
+    "roomName": "King 1",
+    "roomType": {
+      "roomTypeId": 1,
+      "roomTitle": "King Studio Apartment",
+      "roomCost": 55.0,
+      "roomCapacity": 2,
+      "bedCount": 1,
+      "bathCount": 1.0,
+      "weeklyDiscount": 15,
+      "monthlyDiscount": 25,
+      "wifi": true,
+      "size": 300
+    }
+  }
+}

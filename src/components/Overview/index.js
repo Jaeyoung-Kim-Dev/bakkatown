@@ -38,14 +38,6 @@ const Overview = () => {
                       {subtitle}
                     </Subtitle>
                   ))}
-                  {/* 
-                  <Subtitle isDark={dark}>
-                    BAKKATOWN is Back of Town. <br />
-                    This is where the local working people live. <br />
-                    Tourists stay in the high end properties on the reef side.
-                    <br /> The lagoon is on the back of San Pedro Town, where
-                    the island is only 4 blocks wide in town.
-                  </Subtitle> */}
                 </TextWrapper>
               </Column1>
               <Column2>

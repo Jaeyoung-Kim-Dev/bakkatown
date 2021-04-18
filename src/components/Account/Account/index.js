@@ -30,7 +30,7 @@ const Account = () => {
   async function accountRequest(data) {
     try {
       // console.log({ data });
-      return await axios.post('/api/account', {
+      return await axios.post('http://localhost:8080/api/account/', {
         firstName: data.firstName,
         lastName: data.lastName,
         email: data.email,

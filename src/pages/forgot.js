@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
 import Forgot from '../components/Account/Forgot';
 import ScrollToTop from '../components/ScrollToTop';
 
@@ -14,8 +12,6 @@ const ForgotPage = () => {
   return (
     <>
       <ScrollToTop />
-      <Navbar toggle={toggle} />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
       <Forgot />
     </>
   );

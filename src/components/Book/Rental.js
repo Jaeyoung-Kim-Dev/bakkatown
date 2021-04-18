@@ -28,7 +28,11 @@ const Rental = (props) => {
   return (
     <>
       <RoomsWrapper>
-        {filteredRoomLists.length ? (
+        {props.isLoading ? (
+          <div>
+            <h1>Loading...</h1>
+          </div>
+        ) : filteredRoomLists.length ? (
           filteredRoomLists.map((room) => (
             <RoomsCard
               key={room.roomType.roomTypeId}
@@ -99,8 +103,8 @@ const Rental = (props) => {
                 Per Night
               </RoomsP>
               <BtnWrap>
-                <ButtonS onClick={() => roomHandleChange(room)}>Select</ButtonS>
-                <ButtonM>More Info</ButtonM>
+                <ButtonS onClick={() => roomHandleChange(room)}>SELECT</ButtonS>
+                {/* <ButtonM>More Info</ButtonM> */}
               </BtnWrap>
             </RoomsCard>
           ))

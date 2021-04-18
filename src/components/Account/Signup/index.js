@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import {
   Container,
@@ -7,12 +7,13 @@ import {
   FormInput,
   FormLabel,
   FormWrap,
-  // HomeLink,
   OtherLink,
   FormContent,
   Form,
   Text,
+  ButtonHome,
 } from '../AccountElements';
+import { UserContext } from '../../../UserContext';
 
 const blankSignup = {
   firstName: '',
@@ -24,11 +25,11 @@ const blankSignup = {
 const SignUp = () => {
   const [signup, setSignup] = useState(blankSignup);
   const [isSuccess, setIsSuccess] = useState(false);
+  const { user, setUser } = useContext(UserContext);
 
   async function signupRequest(data) {
     try {
-      // console.log({ data });
-      return await axios.post('/api/registration', {
+      return await axios.post('/api/account/registration', {
         firstName: data.firstName,
         lastName: data.lastName,
         email: data.email,
@@ -41,7 +42,6 @@ const SignUp = () => {
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(event);
 
     let newSignup = {
       firstName: signup.firstName,
@@ -56,43 +56,24 @@ const SignUp = () => {
 
     signupRequest(newSignup)
       .then((response) => {
-        // console.log(response.status);
-        // console.log(response.data);
-        // const { token, email } = response.data;
         if (response.status === 200) {
           setIsSuccess(true);
+          const { token, firstName, lastName, email } = response.data;
+          localStorage.setItem('token', token);
+          localStorage.setItem('firstName', firstName);
+          localStorage.setItem('lastName', lastName);
+          localStorage.setItem('email', email);
+          setUser({
+            token: token,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+          });
         }
-        // console.log(user);
       })
       .catch((error) => {
         console.log(error);
       });
-
-    // ApiService.registerUser(
-    //   newSignup.firstName,
-    //   newSignup.lastName,
-    //   newSignup.email,
-    //   newSignup.password
-    // )
-    //   .then((response) => {
-    //     console.log(response.status);
-    //     console.log(response.data.token);
-    //     // nope need to hit email first
-    //     if (response.status === 200) {
-    //       localStorage.setItem('token', response.data.token);
-    //       localStorage.setItem('email', newSignup.email);
-    //       // todo hash these later example below
-    //       window.axios.defaults.headers.common['Authorization'] =
-    //         response.data.token;
-    //       document.location.href = 'http://localhost:3000/account';
-    //     } else {
-    //       console.log('bad signup');
-    //       document.location.href = 'http://localhost:3000/signup';
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log('error : ', error);
-    //   });
   };
 
   const handleChange = (event) => {
@@ -107,6 +88,7 @@ const SignUp = () => {
     <>
       <Container>
         <FormWrap>
+          <ButtonHome to='/'>Bakkatown Belize</ButtonHome>
           <FormContent>
             {isSuccess ? (
               <Form>
@@ -151,7 +133,7 @@ const SignUp = () => {
                   onChange={handleChange}
                   required
                 />
-                <FormPrimaryButton type='submit'>Submit</FormPrimaryButton>
+                <FormPrimaryButton type='submit'>SUBMIT</FormPrimaryButton>
                 <Text>
                   Do you have an account? Log in{' '}
                   <OtherLink to='/login'>here</OtherLink>
@@ -168,18 +150,18 @@ const SignUp = () => {
           <form onSubmit={handleSubmit} className={classes.form}>
             <FormH1>Sign up for a new account</FormH1>
 
-            <FormLabel htmlFor='firstname'>First Name</FormLabel>
+            <FormLabel htmlFor='firstName'>First Name</FormLabel>
             <FormInput
-              name='firstname'
-              id='firstname'
+              name='firstName'
+              id='firstName'
               onChange={handleChange}
               required
             />
 
-            <FormLabel htmlFor='lastname'>Last Name</FormLabel>
+            <FormLabel htmlFor='lastName'>Last Name</FormLabel>
             <FormInput
-              name='lastname'
-              id='lastname'
+              name='lastName'
+              id='lastName'
               onChange={handleChange}
               required
             />

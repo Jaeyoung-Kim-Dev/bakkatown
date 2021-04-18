@@ -22,6 +22,7 @@ import Availability from './Availability';
 import Rental from './Rental';
 import GuestDetails from './GuestDetails';
 import Summary from './Summary';
+import Confirm from './Confirm';
 
 toast.configure();
 
@@ -56,12 +57,14 @@ const initialBook = {
   comments: '',
 };
 
-const Book = () => {
+const Book = (props) => {
   const [booking, setBooking] = useState(initialBook);
   const [roomLists, setRoomLists] = useState([]);
   const [stage, setStage] = useState([true, false, false]);
   const [night, setNight] = useState(0);
   const [confirm, setConfirm] = useState(false);
+  const [reservationId, setReservationId] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -69,9 +72,9 @@ const Book = () => {
       ...prevState,
       [name]: value,
     }));
-    console.log(booking);
+    // console.log(booking);
   };
-
+  // console.log({ roomLists });
   const accordionHandleChange = (_stage) => {
     let tempStage = [false, false, false];
     tempStage[_stage] = true;
@@ -89,8 +92,11 @@ const Book = () => {
         } else if (!night) {
           toast('Check-in and out date cannot be the same.', { type: 'error' });
         } else {
-          await fetchRoomData();
+          setIsLoading(true);
+          setRoomLists([]);
           accordionHandleChange(_stage + 1);
+          await fetchRoomData();
+          setIsLoading(false);
         }
         break;
       case 1: //rental
@@ -126,7 +132,7 @@ const Book = () => {
 
   async function fetchRoomData() {
     await axios
-      .get('/room/available', {
+      .get('/api/room/available', {
         params: {
           dateFrom: booking.dateFrom,
           dateTo: booking.dateTo,
@@ -134,7 +140,7 @@ const Book = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setRoomLists(res.data);
       })
       .catch(() => {
@@ -157,145 +163,167 @@ const Book = () => {
     <>
       <Container>
         <ButtonHome to='/'>Bakkatown Belize</ButtonHome>
-        <FormWrap>
-          <Form>
-            <AccordionRoot>
-              <Accordion expanded={stage[0]}>
-                <AccordionSummary
-                  aria-controls='panel1c-content'
-                  id='panel1c-header'
-                  onClick={() => accordionHandleChange(0)}
-                >
-                  <div className={classes.column}>
-                    <Typography className={classes.heading}>
-                      Availability
-                    </Typography>
-                  </div>
-                  <div className={classes.column}>
-                    <Typography
-                      className={classes.secondaryHeading}
-                      noWrap={true}
-                      component={'span'}
-                    >
-                      {booking.dateFrom &&
-                        booking.dateTo &&
-                        changeDateFormat(booking.dateFrom, booking.dateTo)}
-                    </Typography>
-                  </div>
-                </AccordionSummary>
-                <AccordionDetails className={classes.details}>
-                  <Availability
-                    booking={booking}
-                    setBooking={setBooking}
-                    setNight={setNight}
-                    handleChange={handleChange}
-                  />
-                </AccordionDetails>
-                <Divider />
-                <AccordionActions>
-                  <Button
-                    size='small'
-                    color='primary'
-                    // onClick={() => accordionHandleChange(1)}
-                    onClick={() => validate(0)}
+        {reservationId ? (
+          <FormWrap>
+            <Confirm
+              reservationId={reservationId}
+              setReservationId={setReservationId}
+            />
+          </FormWrap>
+        ) : (
+          <FormWrap>
+            <Form>
+              <AccordionRoot>
+                <Accordion expanded={stage[0]}>
+                  <AccordionSummary
+                    aria-controls='panel1c-content'
+                    id='panel1c-header'
+                    onClick={() => accordionHandleChange(0)}
                   >
-                    Next
-                  </Button>
-                </AccordionActions>
-              </Accordion>
-              <Accordion expanded={stage[1]}>
-                <AccordionSummary
-                  aria-controls='panel1c-content'
-                  id='panel1c-header'
-                  onClick={() => !stage[0] && accordionHandleChange(1)}
-                >
-                  <div className={classes.column}>
-                    <Typography className={classes.heading}>Rental</Typography>
-                  </div>
-                  <div className={classes.column}>
-                    <Typography
-                      className={classes.secondaryHeading}
-                      noWrap={true}
+                    <div className={classes.column}>
+                      <Typography className={classes.heading}>
+                        Availability
+                      </Typography>
+                    </div>
+                    <div className={classes.column}>
+                      <Typography
+                        className={classes.secondaryHeading}
+                        noWrap={true}
+                        component={'span'}
+                      >
+                        {booking.dateFrom &&
+                          booking.dateTo &&
+                          changeDateFormat(booking.dateFrom, booking.dateTo)}
+                      </Typography>
+                    </div>
+                  </AccordionSummary>
+                  <AccordionDetails className={classes.details}>
+                    <Availability
+                      booking={booking}
+                      setBooking={setBooking}
+                      setNight={setNight}
+                      handleChange={handleChange}
+                    />
+                  </AccordionDetails>
+                  <Divider />
+                  <AccordionActions>
+                    <Button
+                      size='small'
+                      color='primary'
+                      // onClick={() => accordionHandleChange(1)}
+                      onClick={() => validate(0)}
                     >
-                      {booking.roomType.roomTitle}
-                    </Typography>
-                  </div>
-                </AccordionSummary>
-                <AccordionDetails className={classes.details}>
-                  <Rental
-                    booking={booking}
-                    roomLists={roomLists}
-                    setBooking={setBooking}
-                    handleChange={handleChange}
-                  />
-                </AccordionDetails>
-                <Divider />
-                <AccordionActions>
-                  <Button size='small' onClick={() => accordionHandleChange(0)}>
-                    Previous
-                  </Button>
-                  <Button
-                    size='small'
-                    color='primary'
-                    onClick={() => validate(1)}
+                      Next
+                    </Button>
+                  </AccordionActions>
+                </Accordion>
+                <Accordion expanded={stage[1]}>
+                  <AccordionSummary
+                    aria-controls='panel1c-content'
+                    id='panel1c-header'
+                    onClick={() => !stage[0] && accordionHandleChange(1)}
                   >
-                    Next
-                  </Button>
-                </AccordionActions>
-              </Accordion>
-              <Accordion expanded={stage[2]}>
-                <AccordionSummary
-                  aria-controls='panel1c-content'
-                  id='panel1c-header'
-                  onClick={() => confirm && accordionHandleChange(2)}
-                >
-                  <div className={classes.column}>
-                    <Typography className={classes.heading}>
-                      Guest Details
-                    </Typography>
-                  </div>
-                  <div className={classes.column}>
-                    <Typography
-                      className={classes.secondaryHeading}
-                      component={'span'}
-                      noWrap={true}
+                    <div className={classes.column}>
+                      <Typography className={classes.heading}>
+                        Rental
+                      </Typography>
+                    </div>
+                    <div className={classes.column}>
+                      <Typography
+                        className={classes.secondaryHeading}
+                        noWrap={true}
+                      >
+                        {booking.roomType.roomTitle}
+                      </Typography>
+                    </div>
+                  </AccordionSummary>
+                  <AccordionDetails className={classes.details}>
+                    <Rental
+                      booking={booking}
+                      roomLists={roomLists}
+                      setBooking={setBooking}
+                      isLoading={isLoading}
+                      handleChange={handleChange}
+                    />
+                  </AccordionDetails>
+                  <Divider />
+                  <AccordionActions>
+                    <Button
+                      size='small'
+                      onClick={() => accordionHandleChange(0)}
                     >
-                      {booking.firstName && booking.lastName && (
-                        <div style={{ textTransform: 'uppercase' }}>
-                          {booking.firstName + ' ' + booking.lastName}
-                        </div>
-                      )}
-                    </Typography>
-                  </div>
-                </AccordionSummary>
-                <AccordionDetails className={classes.details}>
-                  <GuestDetails booking={booking} handleChange={handleChange} />
-                </AccordionDetails>
-                <Divider />
-                <AccordionActions>
-                  <Button size='small' onClick={() => accordionHandleChange(1)}>
-                    Previous
-                  </Button>
-                  <Button
-                    size='small'
-                    color='primary'
-                    onClick={() => validate(2)}
+                      Previous
+                    </Button>
+                    <Button
+                      size='small'
+                      color='primary'
+                      onClick={() => validate(1)}
+                    >
+                      Next
+                    </Button>
+                  </AccordionActions>
+                </Accordion>
+                <Accordion expanded={stage[2]}>
+                  <AccordionSummary
+                    aria-controls='panel1c-content'
+                    id='panel1c-header'
+                    onClick={() => confirm && accordionHandleChange(2)}
                   >
-                    Confirm
-                  </Button>
-                </AccordionActions>
-              </Accordion>
-            </AccordionRoot>
-          </Form>
-          <Summary
-            booking={booking}
-            // handleChange={handleChange}
-            setBooking={setBooking}
-            changeDateFormat={changeDateFormat}
-            confirm={confirm}
-            night={night}
-          />
-        </FormWrap>
+                    <div className={classes.column}>
+                      <Typography className={classes.heading}>
+                        Guest Details
+                      </Typography>
+                    </div>
+                    <div className={classes.column}>
+                      <Typography
+                        className={classes.secondaryHeading}
+                        component={'span'}
+                        noWrap={true}
+                      >
+                        {booking.firstName && booking.lastName && (
+                          <div style={{ textTransform: 'uppercase' }}>
+                            {booking.firstName + ' ' + booking.lastName}
+                          </div>
+                        )}
+                      </Typography>
+                    </div>
+                  </AccordionSummary>
+                  <AccordionDetails className={classes.details}>
+                    <GuestDetails
+                      booking={booking}
+                      handleChange={handleChange}
+                    />
+                  </AccordionDetails>
+                  <Divider />
+                  <AccordionActions>
+                    <Button
+                      size='small'
+                      onClick={() => accordionHandleChange(1)}
+                    >
+                      Previous
+                    </Button>
+                    <Button
+                      size='small'
+                      color='primary'
+                      onClick={() => validate(2)}
+                    >
+                      Confirm
+                    </Button>
+                  </AccordionActions>
+                </Accordion>
+              </AccordionRoot>
+            </Form>
+            <Summary
+              booking={booking}
+              // handleChange={handleChange}
+              setBooking={setBooking}
+              setReservationId={setReservationId}
+              changeDateFormat={changeDateFormat}
+              confirm={confirm}
+              night={night}
+            />
+          </FormWrap>
+        )}
       </Container>
     </>
   );

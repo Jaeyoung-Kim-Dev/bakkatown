@@ -12,7 +12,9 @@ import {
   FormInput,
   FormPrimaryButton,
   Text,
+  ButtonHome,
 } from '../AccountElements';
+import { toast } from 'react-toastify';
 
 const blankSignIn = {
   email: '',
@@ -25,8 +27,7 @@ const SignIn = () => {
 
   async function loginRequest(data) {
     try {
-      // console.log({ data });
-      return await axios.post('/api/login', {
+      return await axios.post('/api/account/login', {
         email: data.email,
         password: data.password,
       });
@@ -46,8 +47,7 @@ const SignIn = () => {
 
     loginRequest(newSignIn)
       .then((response) => {
-        // console.log(response.status);
-        // console.log(response.data);
+        console.log(response.data);
         const { token, firstName, lastName, email } = response.data;
         console.log(token, firstName, lastName, email);
         if (response.status === 200) {
@@ -62,9 +62,9 @@ const SignIn = () => {
             email: email,
           });
         }
-        console.log(user);
       })
       .catch((error) => {
+        toast.error('Could not sign in. Please try again.');
         console.log(error);
       });
   };
@@ -81,6 +81,7 @@ const SignIn = () => {
     <>
       <Container>
         <FormWrap>
+          <ButtonHome to='/'>Bakkatown Belize</ButtonHome>
           <FormContent>
             <Form onSubmit={handleSubmit}>
               <FormH1>Sign in to your account</FormH1>
@@ -100,7 +101,7 @@ const SignIn = () => {
                 onChange={handleChange}
                 required
               />
-              <FormPrimaryButton type='submit'>Log In</FormPrimaryButton>
+              <FormPrimaryButton type='submit'>LOG IN</FormPrimaryButton>
               <Text>
                 Don't have an account? Make one{' '}
                 <OtherLink to='/signup'>here</OtherLink>

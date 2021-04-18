@@ -1,42 +1,37 @@
 import {
   ReviewsContainer,
+  ReviewsWrapper,
+  TextWrapper,
   TopLine,
   Heading,
 } from './reviewsElements';
-import ReviewSlider from "./ReviewSlider";
-import {makeStyles} from "@material-ui/core/styles";
+import ReviewSlider from './ReviewSlider';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    height: "75vh",
-    width: "100%",
-    padding: "5vh",
-  },
   slider: {
-    margin: "auto",
-    width: "75%",
-    minHeight: "50vh",
+    margin: 'auto',
+    width: '90%',
+    // minHeight: '70vh',
     backgroundColor: 'transparent',
+    alignContent: 'center',
+    textAlign: 'left',
   },
-  middle: {
-    alignContent:"center",
-    textAlign: "center",
-    padding: '2vh',
-  }
 }));
 
-
-const Reviews = ({ dark, imgStart }) => {
+const Reviews = ({ dark }) => {
   const id = 'reviews';
   const classes = useStyles();
 
   return (
-      <ReviewsContainer className={classes.container} isDark={dark} id={'reviews'}>
-        {/*<ReviewsWrapper>*/}
-        <TopLine className={classes.middle}>{id}</TopLine>
-        <Heading className={classes.middle} isDark={dark}>What do you think?</Heading>
+    <ReviewsContainer isDark={dark} id={'reviews'}>
+      <ReviewsWrapper>
+        <TextWrapper>
+          <TopLine>{id}</TopLine>
+          <Heading isDark={dark}>What do you think?</Heading>
+        </TextWrapper>
         <div className={classes.slider}>
-          <ReviewSlider  />
+          <ReviewSlider />
           {/*<div className='elfsight-app-ab1e28fa-23b8-4446-a0a1-c7c0901a3471'></div>*/}
           {/* <BtnWrap>
           <ButtonS
@@ -48,8 +43,8 @@ const Reviews = ({ dark, imgStart }) => {
           </ButtonS>
         </BtnWrap> */}
         </div>
-        {/*</ReviewsWrapper>*/}
-      </ReviewsContainer>
+      </ReviewsWrapper>
+    </ReviewsContainer>
   );
 };
 

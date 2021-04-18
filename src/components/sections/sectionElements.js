@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link as LinkS } from 'react-scroll';
+import { Link as LinkR } from 'react-router-dom';
 
 const backgroundDark = '#030929';
 const backgroundLight = '#f5faff';
@@ -132,6 +133,29 @@ export const ButtonS = styled(LinkS)`
   }
 `;
 
+export const ButtonR = styled(LinkR)`
+  border-radius: 25px;
+  background: #01bf71;
+  white-space: nowrap;
+  padding: 12px 30px;
+  color: #010606;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+  }
+`;
+
 export const ButtonA = styled.a`
   border-radius: 50px;
   background: ${({ isDark }) => (isDark ? btnBgDark : btnBgLight)};
@@ -157,6 +181,7 @@ export const ButtonA = styled.a`
 export const ImgWrap = styled.div`
   max-width: 555px;
   height: 100%;
+  align-content: center;
   justify-content: center;
   display: flex;
 `;
@@ -171,5 +196,17 @@ export const Img = styled.img`
 
   @media screen and (max-width: 768px) {
     max-height: 45vh;
+  } ;
+`;
+
+export const MapIframe = styled.iframe`
+  border: none;
+  width: 400px;
+  height: 500px;
+  margin-right: 10px;
+
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+    margin: 0;
   } ;
 `;
