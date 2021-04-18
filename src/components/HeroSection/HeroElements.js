@@ -6,6 +6,8 @@ import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md';
 export const HeroContainer = styled.div`
   display: flex;
   height: 90vh;
+  width: 100%;
+  transform: translateY(-5vh);
   justify-content: center;
   align-items: center;
 `;

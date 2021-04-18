@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { gsap, Power2 } from 'gsap';
 import {
   HeroContainer,
@@ -12,12 +12,23 @@ import {
   Slider,
 } from './HeroElements';
 
-// const heroImageHorizontal = require(`../../images/heroImageH.jpg`)?.default;
-// const heroImageVertical = require(`../../images/heroImageV.jpg`)?.default;
-
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
   const [heroImage, setHeroImage] = useState();
+
+  const selectHeroImage = () => {
+    setHeroImage(
+      window.innerHeight < window.innerWidth
+        ? require(`../../images/heroImageH.jpg`)?.default
+        : require(`../../images/heroImageV.jpg`)?.default
+    );
+  };
+
+  useEffect(() => {
+    selectHeroImage();
+    window.addEventListener('resize', selectHeroImage);
+    return () => window.removeEventListener('resize', selectHeroImage);
+  }, []);
 
   const onHover = () => {
     setHover(!hover);
@@ -28,14 +39,6 @@ const HeroSection = () => {
 
   useEffect(() => {
     // document.documentElement.clientHeight < document.documentElement.clientWidth
-    const selectHeroImage = async () => {
-      setHeroImage(
-        window.innerHeight < window.innerWidth
-          ? require(`../../images/heroImageH.jpg`)?.default
-          : require(`../../images/heroImageV.jpg`)?.default
-      );
-    };
-    selectHeroImage();
 
     let tl = new gsap.timeline();
     tl.from(content.current, {

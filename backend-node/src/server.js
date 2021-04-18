@@ -6,6 +6,7 @@ const stripe = require('stripe')(
 const { v4: uuidv4 } = require('uuid');
 const bt_room_type = require('./bt_room_type.json');
 const bt_room = require('./bt_room.json');
+const bookconfirm = require('./bookconfirm.json');
 const reservation_list = require('./reservation_list.json');
 
 const app = express();
@@ -22,10 +23,11 @@ app.get('/api/room', (req, res) => {
 
 app.get('/api/room/available', (req, res) => {
   console.log(req.query);
-  res.json(bt_room);
+  setTimeout(() => res.json(bt_room), 1000);
+  // res.json(bt_room);
 });
 
-app.get('/api/reservations', (req, res) => {
+app.get('/api/account/reservations', (req, res) => {
   console.log(req.query);
   res.json(reservation_list);
 });
@@ -38,7 +40,7 @@ app.get('/api/promo', (req, res) => {
   });
 });
 
-app.post('/api/login', async (req, res) => {
+app.post('/api/account/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     console.log(email, password);
@@ -55,7 +57,7 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-app.post('/api/registration', async (req, res) => {
+app.post('/api/account/registration', async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
     console.log(firstName, lastName, email, password);
@@ -69,7 +71,7 @@ app.post('/api/registration', async (req, res) => {
   }
 });
 
-app.post('/api/forgot', async (req, res) => {
+app.post('/api/account/forgot', async (req, res) => {
   try {
     const email = req.body.email;
     console.log(email);
@@ -98,49 +100,60 @@ app.post('/api/account', async (req, res) => {
   }
 });
 
-app.post('/api/charge', async (req, res) => {
-  let error;
-  let status;
-
-  try {
-    const { token, booking, totalAmount } = req.body;
-    const customer = await stripe.customers.create({
-      email: token.email,
-      source: token.id,
-    });
-
-    const idempotencyKey = uuidv4();
-    console.log({ token });
-    const charge = await stripe.charges.create(
-      {
-        amount: Number(totalAmount).toFixed(0),
-        currency: 'cad',
-        customer: customer.id,
-        receipt_email: token.email,
-        description: `Purchased the ${booking.roomType.name}`,
-        shipping: {
-          name: token.card.name,
-          address: {
-            line1: token.card.address_line1,
-            line2: token.card.address_line2,
-            city: token.card.address_city,
-            country: token.card.address_country,
-            postal_code: token.card.address_zip,
-          },
-        },
-      },
-      {
-        idempotencyKey,
-      }
-    );
-    console.log({ booking });
-    status = 'success';
-  } catch (error) {
-    console.error('Error:', error);
-    status = 'failure';
-  }
-
-  res.json({ error, status });
+app.get('/api/promo', (req, res) => {
+  console.log(req.query);
+  res.json({
+    promoCode: req.query.promoCode,
+    discountRate: 20,
+  });
 });
+
+app.post('/api/charge', async (req, res) => {
+  res.json(bookconfirm);
+});
+// app.post('/api/charge', async (req, res) => {
+//   let error;
+//   let status;
+
+//   try {
+//     const { token, booking, totalAmount } = req.body;
+//     const customer = await stripe.customers.create({
+//       email: token.email,
+//       source: token.id,
+//     });
+
+//     const idempotencyKey = uuidv4();
+//     console.log({ token });
+//     const charge = await stripe.charges.create(
+//       {
+//         amount: Number(totalAmount).toFixed(0),
+//         currency: 'cad',
+//         customer: customer.id,
+//         receipt_email: token.email,
+//         description: `Purchased the ${booking.roomType.name}`,
+//         shipping: {
+//           name: token.card.name,
+//           address: {
+//             line1: token.card.address_line1,
+//             line2: token.card.address_line2,
+//             city: token.card.address_city,
+//             country: token.card.address_country,
+//             postal_code: token.card.address_zip,
+//           },
+//         },
+//       },
+//       {
+//         idempotencyKey,
+//       }
+//     );
+//     console.log({ booking });
+//     status = 'success';
+//   } catch (error) {
+//     console.error('Error:', error);
+//     status = 'failure';
+//   }
+
+//   res.json({ error, status });
+// });
 
 app.listen(8080);

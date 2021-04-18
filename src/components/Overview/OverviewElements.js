@@ -18,21 +18,20 @@ const subtitleLight = '#030929';
 export const OverviewContainer = styled.div`
   color: #fff;
   background: ${({ isDark }) => (isDark ? backgroundDark : backgroundLight)};
-
+  /* padding: 5vh 10% 0; */
+  display: flex;
   @media screen and (max-width: 768px) {
     padding: 100px 0;
   } ;
 `;
 
 export const OverviewWrapper = styled.div`
-  display: grid;
   z-index: 1;
   height: 90vh;
   width: 100%;
   max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
-  /* padding: 0 24px; */
   justify-content: center;
   align-items: center;
 
@@ -47,6 +46,7 @@ export const OverviewRow = styled.div`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
+  overflow: hidden;
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 
@@ -57,12 +57,12 @@ export const OverviewRow = styled.div`
 `;
 
 export const Column1 = styled.div`
-  /* padding: 20px; */
+  padding: 20px;
   grid-area: col1;
 `;
 
 export const Column2 = styled.div`
-  /* padding: 20px; */
+  padding: 20px;
   grid-area: col2;
 `;
 
@@ -70,8 +70,7 @@ export const TextWrapper = styled.div`
   max-width: 540px;
   /* padding-top: 0; */
   margin-left: 10px;
-  /* justify-content: center; */
-  text-align: ${({ imgStart }) => (imgStart ? 'left' : 'right')};
+  text-align: left;
 `;
 
 export const TopLine = styled.p`
@@ -106,54 +105,6 @@ export const Subtitle = styled.p`
   line-height: 24px;
   color: ${({ isDark }) => (isDark ? subtitleDark : subtitleLight)};
 `;
-
-// export const BtnWrap = styled.div`
-//   display: flex;
-//   justify-content: flex-start;
-// `;
-
-// export const ButtonS = styled(LinkS)`
-//   border-radius: 50px;
-//   background: ${({ isDark }) => (isDark ? btnBgDark : btnBgLight)};
-//   white-space: nowrap;
-//   padding: 12px 30px;
-//   color: ${({ isDark }) => (isDark ? btnTxtDark : btnTxtLight)};
-//   font-size: 16px;
-//   outline: none;
-//   border: none;
-//   cursor: pointer;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   transition: all 0.2s ease-in-out;
-
-//   &:hover {
-//     transition: all 0.2s ease-in-out;
-//     background: ${({ isDark }) => (isDark ? btnBgHoverDark : btnBgHoverLight)};
-//   }
-// `;
-
-// export const ButtonA = styled.a`
-//   border-radius: 50px;
-//   background: ${({ isDark }) => (isDark ? btnBgDark : btnBgLight)};
-//   white-space: nowrap;
-//   padding: 12px 30px;
-//   color: ${({ isDark }) => (isDark ? btnTxtDark : btnTxtLight)};
-//   font-size: 16px;
-//   text-decoration: none;
-//   outline: none;
-//   border: none;
-//   cursor: pointer;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   transition: all 0.2s ease-in-out;
-
-//   &:hover {
-//     transition: all 0.2s ease-in-out;
-//     background: ${({ isDark }) => (isDark ? btnBgHoverDark : btnBgHoverLight)};
-//   }
-// `;
 
 export const ImgWrap = styled.div`
   max-width: 555px;

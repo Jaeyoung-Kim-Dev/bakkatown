@@ -78,7 +78,7 @@ const Summary = (props) => {
         console.log(props.booking);
       })
       .catch(() => {
-        toast('Invalid Promotion / Group Code.', { type: 'error' });
+        toast('Invalid Promotion Code.', { type: 'error' });
       });
   };
 
@@ -92,20 +92,20 @@ const Summary = (props) => {
   };
 
   async function handleToken(token) {
-    console.log('post start1');
-    const response = await axios.post(`/api/charge`, {
-      token,
-      booking: props.booking,
-      roomId: roomId,
-      totalAmount: roomType.roomCost * night * (1 + taxRate),
-    });
-    const { status } = response.data;
-    console.log('Response:', response.data);
-    if (status === 'success') {
-      toast('Success! Check email for details', { type: 'success' });
-    } else {
-      toast('Something went wrong', { type: 'error' });
-    }
+    await axios
+      .post(`/api/charge`, {
+        token,
+        booking: props.booking,
+        roomId: roomId,
+        totalAmount: roomType.roomCost * night * (1 + taxRate),
+      })
+      .then((res) => {
+        console.log(res.data);
+        props.setReservationId(res.data.reservationId);
+      })
+      .catch(() => {
+        toast('Something went wrong.', { type: 'error' });
+      });
   }
 
   return (
@@ -192,14 +192,14 @@ const Summary = (props) => {
             <SummaryDetailWrapper>
               <TextField
                 id='standard-secondary'
-                label='Promotion / Group Code'
+                label='Promotion Code'
                 color='secondary'
                 name='promoCode'
                 fullWidth={true}
                 value={userPromoCode}
                 onChange={(e) => setUserPromoCode(e.target.value.toUpperCase())}
               />
-              <ApplyPromo onClick={applyPromo}>Apply</ApplyPromo>
+              <ApplyPromo onClick={applyPromo}>APPLY</ApplyPromo>
             </SummaryDetailWrapper>
           </div>
         )}

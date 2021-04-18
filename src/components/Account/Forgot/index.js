@@ -11,6 +11,7 @@ import {
   FormInput,
   FormPrimaryButton,
   Text,
+  ButtonHome,
 } from '../AccountElements';
 
 const Forgot = () => {
@@ -19,8 +20,7 @@ const Forgot = () => {
 
   async function forgotRequest(data) {
     try {
-      // console.log({ data });
-      return await axios.post('/api/forgot', {
+      return await axios.post('http://localhost:8080/api/account/forgot', {
         email: data,
       });
     } catch (error) {
@@ -30,13 +30,9 @@ const Forgot = () => {
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(event);
 
     forgotRequest(forgot)
       .then((response) => {
-        // console.log(response.status);
-        // console.log(response.data);
-        // const { token, email } = response.data;
         if (response.status === 200) {
           setIsSuccess(true);
         }
@@ -44,31 +40,13 @@ const Forgot = () => {
       .catch((error) => {
         console.log(error);
       });
-
-    // ApiService.sendForgotRequest(forgot)
-    //   .then((response) => {
-    //     console.log(response.status);
-    //     console.log(response.data);
-    //     if (response.status === 200) {
-    //       if (localStorage.getItem('token') !== null) {
-    //         localStorage.clear();
-    //       }
-    //     }
-    //   })
-    //   .then(
-    //     () =>
-    //       // alert("A email link will be sent");
-    //       (document.location.href = 'http://localhost:3000/signin')
-    //   )
-    //   .catch((error) => {
-    //     console.log(error.message);
-    //   });
   };
 
   return (
     <>
       <Container>
         <FormWrap>
+          <ButtonHome to='/'>Bakkatown Belize</ButtonHome>
           <FormContent>
             {isSuccess ? (
               <Form>
@@ -100,26 +78,6 @@ const Forgot = () => {
           </FormContent>
         </FormWrap>
       </Container>
-      {/* <Container className={classes.container}>
-        <Icon className={classes.icon}>Bakkatown Belize</Icon>
-        <div className={classes.root}>
-          <form onSubmit={handleSubmit} className={classes.form}>
-            <FormH1>Please provide your account email</FormH1>
-            <FormLabel htmlFor='email'>Email</FormLabel>
-            <FormInput
-              name='email'
-              id='email'
-              onChange={handleChange}
-              required
-            />
-
-            <FormButton onSubmit={handleSubmit}>Continue</FormButton>
-            <Text>
-              <A to='/signin'>Sign in</A>
-            </Text>
-          </form>
-        </div>
-      </Container> */}
     </>
   );
 };

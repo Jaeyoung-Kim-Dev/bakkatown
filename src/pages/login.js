@@ -14,7 +14,6 @@ const LoginPage = () => {
   return (
     <>
       <ScrollToTop />
-      <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Login />
     </>

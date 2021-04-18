@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
-// import Overview from '../components/sections/indexOverview';
-import Overview from '../components/Overview/index';
+import Overview from '../components/sections/indexOverview';
+// import Overview from '../components/Overview/index';
 import Map from '../components/sections/indexMap';
 import Gallery from '../components/Gallery/index';
 import Rates from '../components/sections/indexRates';
@@ -12,6 +12,7 @@ import Contact from '../components/sections/indexContact';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
+// import Rooms from '../components/Rooms';
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,15 +26,16 @@ const Home = () => {
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <HeroSection />
-      {/* <InfoSection jsonFile={'overview'} dark={true} imgStart={false} /> */}
-      <Overview />
+      {/* <Overview /> */}
+      <Overview dark={true} imgStart={false} />
       <Map dark={false} imgStart={true} />
       <Gallery dark={true} imgStart={false} />
       <Rates dark={false} imgStart={true} />
       <Availability dark={true} imgStart={false} />
       <Reviews dark={false} imgStart={true} />
       {/* <Rooms /> */}
-      <Contact dark={false} imgStart={false} />
+      {/* <Contact dark={false} imgStart={false} /> */}
+      <Contact dark={true} imgStart={true} />
       <Footer />
     </>
   );

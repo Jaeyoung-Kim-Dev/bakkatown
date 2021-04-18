@@ -7,7 +7,7 @@ import {AppBar, Tab, Tabs} from "@material-ui/core";
 import * as PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 import {tabStyle} from "../Styles";
-import {DateRange, EventNote, NoteAdd, RateReview, Settings} from "@material-ui/icons";
+import {DateRange, EventNote, RateReview, Settings} from "@material-ui/icons";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;

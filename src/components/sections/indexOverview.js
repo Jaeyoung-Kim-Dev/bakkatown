@@ -1,4 +1,3 @@
-import { FiPhone, FiMail } from 'react-icons/fi';
 import {
   InfoContainer,
   InfoWrapper,
@@ -9,14 +8,14 @@ import {
   Heading,
   Subtitle,
   BtnWrap,
-  ButtonA,
+  ButtonS,
   Column2,
   ImgWrap,
   Img,
 } from './sectionElements';
 
-const Contact = ({ dark, imgStart }) => {
-  const id = 'contact';
+const Overview = ({ dark, imgStart }) => {
+  const id = 'overview';
 
   return (
     <InfoContainer isDark={dark} id={id}>
@@ -25,24 +24,23 @@ const Contact = ({ dark, imgStart }) => {
           <Column1>
             <TextWrapper>
               <TopLine>{id}</TopLine>
-              <Heading isDark={dark}>BAKKATOWN BELIZE</Heading>
+              <Heading isDark={dark}>What is BAKKATOWN?</Heading>
               <Subtitle isDark={dark}>
-                <FiMail style={{ marginRight: '15px' }} />
-                bakkatown@gmail.com
+                BAKKATOWN is Back of Town. <br />
+                This is where the local working people live. <br />
+                Tourists stay in the high end properties on the reef side.
+                <br /> The lagoon is on the back of San Pedro Town, where the
+                island is only 4 blocks wide in town.
               </Subtitle>
-              <Subtitle isDark={dark}>
-                <FiPhone style={{ marginRight: '15px' }} />
-                +5016140034
-              </Subtitle>
-              <BtnWrap>
-                <ButtonA
-                  href='mailto:bakkatown@gmail.com?subject=Mail from Bakkatown Belize Website&body=Hello, Bakkatown Belize!'
+              {/* <BtnWrap>
+                <ButtonS
+                  to='*'
                   offset={-document.documentElement.clientHeight * 0.1}
                   isDark={dark}
                 >
-                  LEAVE A MESSAGE
-                </ButtonA>
-              </BtnWrap>
+                  More..
+                </ButtonS>
+              </BtnWrap> */}
             </TextWrapper>
           </Column1>
           <Column2>
@@ -60,4 +58,4 @@ const Contact = ({ dark, imgStart }) => {
   );
 };
 
-export default Contact;
+export default Overview;

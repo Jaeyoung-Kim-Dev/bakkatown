@@ -8,7 +8,7 @@ import {
   Heading,
   Subtitle,
   BtnWrap,
-  ButtonS,
+  ButtonR,
   Column2,
   ImgWrap,
   Img,
@@ -26,8 +26,9 @@ const Rates = ({ dark, imgStart }) => {
               <TopLine>{id}</TopLine>
               <Heading isDark={dark}>Local Rates</Heading>
               <Subtitle isDark={dark}>
-                <span style={{ fontWeight: 'bold' }}>Rates Table here...</span>
-                <br /> <br /> <br />
+                {/* <span style={{ fontWeight: 'bold' }}>Rates Table here...</span>
+                <br /> <br />  */}
+                <br />
                 <span
                   style={{
                     fontWeight: 'bold',
@@ -50,13 +51,13 @@ const Rates = ({ dark, imgStart }) => {
                 <br /> No damage deposit is due.
               </Subtitle>
               <BtnWrap>
-                <ButtonS
-                  to='*'
+                <ButtonR
+                  to='./book'
                   offset={-document.documentElement.clientHeight * 0.1}
                   isDark={dark}
                 >
-                  More..
-                </ButtonS>
+                  BOOK
+                </ButtonR>
               </BtnWrap>
             </TextWrapper>
           </Column1>

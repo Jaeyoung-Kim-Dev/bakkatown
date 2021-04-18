@@ -29,13 +29,13 @@ const Reservations = () => {
 
   async function fetchReservations() {
     await axios
-      .get('/api/reservations', {
+      .get('/api/account/reservations', {
         params: {
           email: user.email,
         },
       })
       .then((res) => {
-        // console.log(res.data);
+        console.log(res.data);
         setReservations(res.data);
       })
       .catch(() => {
@@ -44,11 +44,11 @@ const Reservations = () => {
   }
 
   const rows = reservations.map((reservation) => ({
-    id: reservation.id,
-    startDate: moment(reservation.startDate).format('ddd, DD MMM YY'),
-    endDate: moment(reservation.endDate).format('ddd, DD MMM YY'),
-    room: reservation.roomType.roomType.roomTitle,
-    totalAmount: formatCurrency(reservation.price),
+    id: reservation.reservationId,
+    startDate: moment(reservation.checkIn).format('ddd, DD MMM YY'),
+    endDate: moment(reservation.checkOut).format('ddd, DD MMM YY'),
+    room: reservation.room.roomType.roomTitle,
+    totalAmount: formatCurrency(reservation.totalCost),
   }));
 
   console.log(rows);
@@ -64,7 +64,7 @@ const Reservations = () => {
                 <DataGrid rows={rows} columns={columns} autoPageSize={true} />
               </TableWrapper>
             ) : (
-              ''
+              <FormH1>No reservation found.</FormH1>
             )}
           </FormContent>
         </FormWrap>

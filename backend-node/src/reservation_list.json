@@ -1,11 +1,11 @@
 [
   {
-    "id": 9929040,
+    "reservationId": 9929040,
     "people": 2,
     "price": 119.9,
-    "startDate": "Mon Mar 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Wed Mar 31 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "roomType": {
+    "checkIn": "Mon Mar 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "checkOut": "Wed Mar 31 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "room": {
       "roomId": 1,
       "roomName": "King 1",
       "roomType": {
@@ -23,12 +23,12 @@
     }
   },
   {
-    "id": 9929184,
+    "reservationId": 9929184,
     "people": 4,
     "price": 490.5,
-    "startDate": "Tue May 11 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Thu May 20 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "roomType": {
+    "checkIn": "Tue May 11 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "checkOut": "Thu May 20 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "room": {
       "roomId": 2,
       "roomName": "Queen 1",
       "roomType": {
@@ -46,12 +46,12 @@
     }
   },
   {
-    "id": 9929241,
+    "reservationId": 9929241,
     "people": 7,
     "price": 109,
-    "startDate": "Wed Jan 19 2022 00:00:00 GMT-0700 (Mountain Standard Time)",
-    "endDate": "Thu Jan 20 2022 00:00:00 GMT-0700 (Mountain Standard Time)",
-    "roomType": {
+    "checkIn": "Wed Jan 19 2022 00:00:00 GMT-0700 (Mountain Standard Time)",
+    "checkOut": "Thu Jan 20 2022 00:00:00 GMT-0700 (Mountain Standard Time)",
+    "room": {
       "roomId": 3,
       "roomName": "Tralapa 1",
       "roomType": {
@@ -69,12 +69,12 @@
     }
   },
   {
-    "id": 9929369,
+    "reservationId": 9929369,
     "people": 6,
     "price": 245.25,
-    "startDate": "Sat Nov 13 2021 00:00:00 GMT-0700 (Mountain Standard Time)",
-    "endDate": "Sun Nov 28 2021 00:00:00 GMT-0700 (Mountain Standard Time)",
-    "roomType": {
+    "checkIn": "Sat Nov 13 2021 00:00:00 GMT-0700 (Mountain Standard Time)",
+    "checkOut": "Sun Nov 28 2021 00:00:00 GMT-0700 (Mountain Standard Time)",
+    "room": {
       "roomId": 4,
       "roomName": "Hostel 1",
       "roomType": {
@@ -92,12 +92,12 @@
     }
   },
   {
-    "id": 9929440,
+    "reservationId": 9929440,
     "people": 1,
     "price": 1378.85,
-    "startDate": "Mon Jun 07 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Wed Jun 30 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "roomType": {
+    "checkIn": "Mon Jun 07 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "checkOut": "Wed Jun 30 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "room": {
       "roomId": 1,
       "roomName": "King 1",
       "roomType": {
@@ -115,12 +115,12 @@
     }
   },
   {
-    "id": 9929584,
+    "reservationId": 9929584,
     "people": 4,
     "price": 381.5,
-    "startDate": "Mon Jun 07 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Wed Jun 30 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "roomType": {
+    "checkIn": "Mon Jun 07 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "checkOut": "Wed Jun 30 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "room": {
       "roomId": 2,
       "roomName": "Queen 1",
       "roomType": {
@@ -138,12 +138,12 @@
     }
   },
   {
-    "id": 9929641,
+    "reservationId": 9929641,
     "people": 1,
     "price": 436,
-    "startDate": "Sun Aug 01 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Thu Aug 05 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "roomType": {
+    "checkIn": "Sun Aug 01 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "checkOut": "Thu Aug 05 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "room": {
       "roomId": 3,
       "roomName": "Tralapa 1",
       "roomType": {
@@ -161,12 +161,12 @@
     }
   },
   {
-    "id": 9929769,
+    "reservationId": 9929769,
     "people": 4,
     "price": 196.2,
-    "startDate": "Fri Sep 17 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "endDate": "Wed Sep 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
-    "roomType": {
+    "checkIn": "Fri Sep 17 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "checkOut": "Wed Sep 29 2021 00:00:00 GMT-0600 (Mountain Daylight Time)",
+    "room": {
       "roomId": 4,
       "roomName": "Hostel 1",
       "roomType": {

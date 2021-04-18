@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
-import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import Menu from '@material-ui/core/Menu';
@@ -18,6 +17,7 @@ import {
   NavLinks,
   NavBtn,
   NavBtnLink,
+  AccountLink,
 } from './NavbarElements';
 
 const Navbar = ({ toggle }) => {
@@ -31,7 +31,6 @@ const Navbar = ({ toggle }) => {
 
   const handleClose = () => {
     setAnchorEl(null);
-    console.log(localStorage); // TODO: delete it later
   };
 
   const logOut = () => {
@@ -109,13 +108,10 @@ const Navbar = ({ toggle }) => {
                     onClose={handleClose}
                   >
                     <MenuItem onClick={handleClose}>
-                      <Link to='/account'>Account</Link>
+                      <AccountLink to='/account'>Account</AccountLink>
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
-                      <Link to='/reservations'>Reservations</Link>
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                      <Link to='/messages'>Messages</Link>
+                      <AccountLink to='/reservations'>Reservations</AccountLink>
                     </MenuItem>
                     <MenuItem onClick={logOut}>Logout</MenuItem>
                   </Menu>
@@ -129,7 +125,7 @@ const Navbar = ({ toggle }) => {
                   exact='true'
                   offset={document.documentElement.clientHeight * 0.1}
                 >
-                  Log In
+                  LOG IN
                 </NavBtnLink>
               )}
             </NavBtn>
