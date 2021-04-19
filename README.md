@@ -43,6 +43,15 @@
 
 > Live Demo <a href="http://ec2-18-223-124-121.us-east-2.compute.amazonaws.com:8080/#/" target="_blank"> HERE </a>
 
+## Screenshots
+
+![hero](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/1_hero.jpeg?raw=true)
+![book_date](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/2_book_date.jpg?raw=true)
+![book_rental](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/3_book_rental.jpeg?raw=true)
+![overview](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/4_overview.jpeg?raw=true)
+![map](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/5_map.jpeg?raw=true)
+![signup](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/6_signup.jpeg?raw=true)
+
 ## Install
 
 ```sh
