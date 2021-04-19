@@ -2,7 +2,7 @@
 
 ## What project it is
 
-> This is the Capstone team project I had in the last semester of college(SAIT), and I was one of six team members. I'm in charge of the design and function development of front-end for users. In this repository, only the code I wrote exists due to security reasons.
+> This is the Capstone team project I had in the last semester of college(SAIT), and I was one of six team members. I was in charge of the design and function development of front-end for users. In this repository, only the code I wrote exists due to security reasons.
 
 ## What I worked on
 
@@ -18,7 +18,6 @@
 - Availability Page
 - Reviews Page
 - Contact Page
-  <br/>
 
 ## What is the purpose of the project?
 
@@ -37,7 +36,7 @@
 </p>
 
 - Other 1: Used Axios for REST API.
-- Other 2: Used Stripe for credit card payme.
+- Other 2: Used Stripe for credit card payment.
 
 ## Demo
 
@@ -45,12 +44,29 @@
 
 ## Screenshots
 
-![hero](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/1_hero.jpeg?raw=true)
-![book_date](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/2_book_date.jpg?raw=true)
-![book_rental](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/3_book_rental.jpeg?raw=true)
-![overview](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/4_overview.jpeg?raw=true)
-![map](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/5_map.jpeg?raw=true)
-![signup](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/6_signup.jpeg?raw=true)
+> Landing page
+>
+> ![hero](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/1_hero.jpeg?raw=true)
+
+> Booking Select Dates
+>
+> ![book_date](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/2_book_date.jpg?raw=true)
+
+> Book Rental Rooms
+>
+> ![book_rental](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/3_book_rental.jpeg?raw=true)
+
+> Overview Page
+>
+> ![overview](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/4_overview.jpeg?raw=true)
+
+> Map page
+>
+> ![map](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/5_map.jpeg?raw=true)
+
+> Sign up
+>
+> ![signup](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/6_signup.jpeg?raw=true)
 
 ## Install
 
@@ -62,12 +78,6 @@ npm install
 
 ```sh
 npm run start
-```
-
-## Run tests
-
-```sh
-npm run test
 ```
 
 ## Author
