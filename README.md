@@ -2,7 +2,7 @@
 
 ## What project is it?
 
-> This is the Capstone team project I had in the last semester of college(SAIT), and I was one of six team members. I was in charge of the design and function development of front-end for users. In this repository, only the code I wrote exists due to security reasons.
+> This is the Capstone team project I had in the last semester of college (SAIT), and I was one of six team members. I was in charge of the design and function development of front-end for users. In this repository, only the code I wrote exists due to security reasons.
 
 ## What I worked on
 
