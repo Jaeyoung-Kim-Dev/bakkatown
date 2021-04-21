@@ -21,7 +21,7 @@
 
 ## What is the purpose of the project?
 
-> BakkaTown Hostel is a young accommodation business located in San Pedro. The current system has been not created a lot of interest for the business and created booking errors in the past. The new web app will have a centralized booking management system plus a more user-friendly UI for their clients. This system document will specify the newly designed booking system with details such as the business objectives, user requirements, system functionality, and booking solution.
+> BakkaTown Hostel is a accommodation business located in San Pedro. The current system has been not created a lot of interest for the business and created booking errors in the past. The new web app has a centralized booking management system plus a more user-friendly UI for their clients.
 
 ## Languages and tools
 
