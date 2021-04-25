@@ -40,7 +40,7 @@
 
 ## Demo
 
-> Live Demo <a href="http://ec2-18-223-124-121.us-east-2.compute.amazonaws.com:8080/#/" target="_blank"> HERE </a>
+> Live Demo <a href="http://ec2-3-138-184-79.us-east-2.compute.amazonaws.com:8080/#/" target="_blank"> HERE </a>
 
 ## Screenshots
 
