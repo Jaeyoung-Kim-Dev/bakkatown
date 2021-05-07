@@ -46,27 +46,27 @@
 
 > Landing page
 >
-> ![hero](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/1_hero.jpeg?raw=true)
+> ![hero](./screenshots/1_hero.jpeg?raw=true)
 
 > Booking Select Dates
 >
-> ![book_date](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/2_book_date.jpg?raw=true)
+> ![book_date](./screenshots/2_book_date.jpg?raw=true)
 
 > Book Rental Rooms
 >
-> ![book_rental](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/3_book_rental.jpeg?raw=true)
+> ![book_rental](./screenshots/3_book_rental.jpeg?raw=true)
 
 > Overview Page
 >
-> ![overview](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/4_overview.jpeg?raw=true)
+> ![overview](./screenshots/4_overview.jpeg?raw=true)
 
 > Map page
 >
-> ![map](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/5_map.jpeg?raw=true)
+> ![map](./screenshots/5_map.jpeg?raw=true)
 
 > Sign up
 >
-> ![signup](https://github.com/Jaeyoung-Kim-Dev/bakkatown/blob/master/screenshots/6_signup.jpeg?raw=true)
+> ![signup](./screenshots/6_signup.jpeg?raw=true)
 
 ## Install
 
